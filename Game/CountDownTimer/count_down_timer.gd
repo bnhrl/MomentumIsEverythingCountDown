@@ -44,6 +44,7 @@ func _process_expiration() -> void:
 	if time <= 0.0:
 		expire()
 		time = 0.0
+		label.text = "0.0"
 
 var has_expired := false
 func expire() -> void:

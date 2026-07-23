@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://fr8karxanqon"]
+
+[ext_resource type="Script" uid="uid://o1mh1gpwbbvf" path="res://Game/Player/player.gd" id="1_m57qa"]
+[ext_resource type="Texture2D" uid="uid://br1doxg8djgap" path="res://Game/Player/segment.png" id="2_s3asc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c6smh"]
+
+[sub_resource type="Curve" id="Curve_c6smh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.39043823, 1), -1.6422175, -1.6422175, 0, 0, Vector2(1, 0.57024795), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Player" type="CharacterBody2D" unique_id=2013412106]
+script = ExtResource("1_m57qa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1423663064]
+shape = SubResource("CircleShape2D_c6smh")
+
+[node name="Model" type="CanvasGroup" parent="." unique_id=597892759]
+
+[node name="Tail" type="Line2D" parent="Model" unique_id=618724663]
+top_level = true
+z_index = -1
+texture_repeat = 2
+points = PackedVector2Array(0, 0, 11, 0, 15, 0, 20, 0, 25, 0, 30, 0, 35, 0, 40, 0, 50, 0)
+width_curve = SubResource("Curve_c6smh")
+default_color = Color(1, 0.65, 0, 1)
+texture = ExtResource("2_s3asc")
+texture_mode = 1
+joint_mode = 2
+end_cap_mode = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="Model" unique_id=1400161394]
+color = Color(0.5568, 0.71807986, 0.96, 1)
+polygon = PackedVector2Array(0, -10, -7, -7, -10, 0, -7, 7, 0, 10, 7, 7, 10, 0, 7, -7)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Model" unique_id=232795012]
+color = Color(0.12156863, 0.45882353, 0.95686275, 1)
+polygon = PackedVector2Array(0, -5, -4, -3, -5, 0, -3.5, 3.5, 0, 5, 3.5, 3.5, 5, 0, 3.5, -3.5)
