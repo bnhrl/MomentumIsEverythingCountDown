@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://crkrc2q1qfpns"]
+
+[ext_resource type="Script" uid="uid://cuufmsnljmbd8" path="res://Game/CountDownTimer/count_down_timer.gd" id="1_ddtig"]
+
+[node name="CountDownTimer" type="Node2D" unique_id=102296066]
+script = ExtResource("1_ddtig")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=53583873]
+offset_right = 640.0
+offset_bottom = 61.0
+offset_transform_enabled = true
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "30.00"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BeatTimer" type="Timer" parent="." unique_id=608885056]
+one_shot = true
+
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="." unique_id=489885819]
+
+[connection signal="timeout" from="BeatTimer" to="." method="_on_beat_timer_timeout"]
