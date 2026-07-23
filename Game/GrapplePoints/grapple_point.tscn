@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c2mrm5rc4nnir"]
+
+[ext_resource type="Script" uid="uid://nantb8xlfve7" path="res://Game/GrapplePoints/grapple_point.gd" id="1_3tkon"]
+
+[node name="GrapplePoint0" type="Area2D" unique_id=907286068]
+script = ExtResource("1_3tkon")
+
+[node name="Visual" type="Polygon2D" parent="." unique_id=873595959]
+polygon = PackedVector2Array(0, -5, -5, 0, 0, 5, 5, 0)
+
+[node name="Collision" type="CollisionPolygon2D" parent="." unique_id=1981361459]
+polygon = PackedVector2Array(0, -5, -5, 0, 0, 5, 5, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

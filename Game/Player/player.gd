@@ -7,26 +7,36 @@ var momentum := Vector2.ZERO
 
 func _ready() -> void:
 	_ready_tail()
+	Camera.target = self
 
 func _physics_process(delta: float) -> void:
 	_process_movement(delta)
 	_process_tail(delta)
 	_process_visuals(delta)
 	_process_grabber()
+	_process_grappling(delta)
 
 
 # Movement
 func _process_movement(delta: float) -> void:
 	var input_direction := Input.get_vector("left", "right", "up", "down")
+	if grappled_object: 
+		input_direction = Vector2.ZERO
+		if Input.is_action_pressed("left"):
+			momentum = momentum.rotated(-delta*32.0)*60*delta
+		elif Input.is_action_pressed("right"):
+			momentum = momentum.rotated(delta*32.0)*60*delta
 	
 	velocity = input_direction * SPEED + momentum
-	momentum = momentum.move_toward(Vector2.ZERO, delta)
+	momentum = LerpHelper.lv2(momentum, Vector2.ZERO, 3.0, delta)
 	
 	move_and_slide()
 
 
 # Tail
-const TAIL_DIST := 8.0
+const DEFAULT_TAIL_DIST := 8.0
+var target_tail_dist := DEFAULT_TAIL_DIST
+var tail_dist := DEFAULT_TAIL_DIST
 @onready var tail: Line2D = $Model/Tail
 var tail_points: Array[Vector2]
 
@@ -36,33 +46,81 @@ func _ready_tail() -> void:
 		tail_points[i+2] = Vector2.ZERO
 
 func _process_tail(delta: float) -> void:
-	var direction := global_position.direction_to(get_global_mouse_position())
+	tail_dist = LerpHelper.lf(tail_dist, target_tail_dist, 12.0, delta)
+	tail.width = clampf(DEFAULT_TAIL_DIST/tail_dist*12.0, 5.0, 16.0)
 	
-	tail_points[1] = direction * TAIL_DIST
+	var direction := global_position.direction_to(get_global_mouse_position())
+	if grappled_object: direction = global_position.direction_to(grappled_object.global_position)
+	tail_points[1] = direction * tail_dist
 	
 	for i in range(tail_points.size()-2):
 		var point := tail_points[i+2]
-		var target := direction * i*TAIL_DIST
-		point = LerpHelper.lv2(point, target, TAIL_DIST*7-i*TAIL_DIST, delta)
+		var target := direction * i*tail_dist
+		point = LerpHelper.lv2(point, target, tail_dist*7-i*tail_dist, delta)
 		tail_points[i+2] = point
 	
 	tail.points = tail_points
 
-# Visuals
+# Body Visuals (TEMPORARY)
 @onready var visual_0: Polygon2D = $Model/Visual0
 @onready var visual_1: Polygon2D = $Model/Visual1
-@onready var visual_2: Polygon2D = $Model/Visual2
-@onready var visual_3: Polygon2D = $Model/Visual3
-func _process_visuals(delta: float) -> void:
+func _process_visuals(delta: float) -> void: 
 	var angle := get_angle_to(get_global_mouse_position())
 	visual_0.rotation = LerpHelper.la(visual_0.rotation, angle, 16.0, delta)
 	visual_1.rotation = LerpHelper.la(visual_0.rotation, angle, 24.0, delta)
-	visual_2.rotation += delta*2.0
-	visual_3.rotation -= delta*1.5
+
 
 # Grabber
 @onready var grabber: Area2D = $Model/Grabber
-func _process_grabber() -> void:
+func _process_grabber() -> void: # Anchors and rotates the grabber based off of the tail
 	var last_point := tail_points[tail_points.size()-1]
 	grabber.position = last_point
 	grabber.rotation = last_point.angle()
+
+
+# Grappling
+var holding_grapple := false
+var attempting_to_grapple := false
+var grappled_object: Node2D
+func _process_grappling(delta: float) -> void:
+	_process_grapple_controls()
+	if !grappled_object: 
+		if attempting_to_grapple:
+			for body in grabber.get_overlapping_areas():
+				pass
+			for area in grabber.get_overlapping_areas():
+				if area is GrapplePoint:
+					hit_grapple(area)
+		return
+	
+	tail_points[tail_points.size()-1] = grappled_object.global_position - global_position
+	tail_dist = global_position.distance_to(grappled_object.global_position)*0.133
+	momentum += global_position.direction_to(grappled_object.global_position) * 3000.0 * delta
+
+func _process_grapple_controls() -> void:
+	if !grappled_object:
+		if Input.is_action_pressed("grapple") and !attempting_to_grapple and !holding_grapple:
+			holding_grapple = true
+			target_tail_dist = 32.0
+			attempting_to_grapple = true
+			await Delays.wait(0.5)
+			attempting_to_grapple = false
+		elif !Input.is_action_pressed("grapple") or !attempting_to_grapple:
+			if !Input.is_action_pressed("grapple"): holding_grapple = false
+			target_tail_dist = DEFAULT_TAIL_DIST
+	else:
+		if !Input.is_action_pressed("grapple"):
+			grappled_object = null
+
+func hit_grapple(node: Node2D) -> void:
+	print("Grappled " + node.name + "!")
+	grappled_object = node
+	attempting_to_grapple = false
+
+func release_grapple() -> void:
+	grappled_object = null
+
+func passed_grapple_object() -> void:
+	if !grappled_object: return
+	grappled_object = null
+	momentum *= 2

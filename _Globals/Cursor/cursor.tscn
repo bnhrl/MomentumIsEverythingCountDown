@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b2yt7evteq6qx"]
+
+[ext_resource type="Script" uid="uid://bxueqg7vh4kua" path="res://_Globals/Cursor/_Cursor.gd" id="1_ltw8t"]
+
+[node name="Cursor" type="CanvasLayer" unique_id=607214282]
+script = ExtResource("1_ltw8t")
+
+[node name="CursorObject" type="Node2D" parent="." unique_id=724732679]
+
+[node name="Visual1" type="Polygon2D" parent="CursorObject" unique_id=1885440409]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, -6, -6, 0, 0, 6, 6, 0)
+
+[node name="Visual0" type="Polygon2D" parent="CursorObject" unique_id=1949847239]
+polygon = PackedVector2Array(0, -4, -4, 0, 0, 4, 4, 0)

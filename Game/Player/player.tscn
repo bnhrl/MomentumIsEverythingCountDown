@@ -23,6 +23,7 @@ offsets = PackedFloat32Array(0.4408867, 1)
 colors = PackedColorArray(0.5529412, 0.7176471, 0.95686275, 1, 1, 0.6, 0, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_letr6"]
+radius = 15.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2013412106]
 script = ExtResource("1_m57qa")
@@ -43,17 +44,6 @@ texture_mode = 1
 joint_mode = 2
 end_cap_mode = 2
 
-[node name="Visual2" type="Polygon2D" parent="Model" unique_id=1057603758]
-rotation = -0.2617994
-scale = Vector2(0.7, 0.7)
-color = Color(0.5568, 0.71807986, 0.96, 1)
-polygon = PackedVector2Array(-1.4285713, -11.428571, -13, -13, -17, -17, -16, -12, -8, -8, -12, -2, -19, -3, -24, 2, -25, 5, -23, 4, -21, 1, -16, 0, -12, 1, -9, 9, -9, 13, -7, 21, 0, 22, -5, 19, -7, 14, -4.285714, 12.857142, 0, 8.571428, 5, 14, 2, 16, 5, 19, 11, 22, 6, 18, 8, 15, 8.571428, 11.428571, 8.571428, 1.4285713, 11.428571, -1.4285713, 17, -14, 15, -15, 10, -20, 11, -17, 14, -13, 11.428571, -11.428571)
-
-[node name="Visual3" type="Polygon2D" parent="Model" unique_id=767808422]
-scale = Vector2(0.7, 0.7)
-color = Color(0.5568, 0.71807986, 0.96, 1)
-polygon = PackedVector2Array(-4.285714, -12.857142, -7.1428566, -18.571428, -12.857142, -21.42857, -5.7142854, -22.857141, -2.8571427, -18.571428, -1.4285713, -12.857142, 1.4285713, -5.7142854, 12.857142, -5.7142854, 18.571428, -9.999999, 24.285713, -9.999999, 19.999998, -7.1428566, 12.857142, -2.8571427, 5.7142854, -2.8571427, 14.285713, 5.7142854, 22.857141, 2.8571427, 18.571428, 8.571428, 12.857142, 8.571428, 4.285714, 1.4285713, -7.1428566, 9.999999, -11.428571, 14.285713, -12.857142, 21.42857, -14.285713, 18.571428, -12.857142, 12.857142, -9.999999, 8.571428, -5.7142854, 2.8571427)
-
 [node name="Visual0" type="Polygon2D" parent="Model" unique_id=1400161394]
 color = Color(0.5568, 0.71807986, 0.96, 1)
 polygon = PackedVector2Array(0, -10, -7, -7, -10, 0, -7, 7, 0, 10, 7, 7, 10, 0, 7, -7)
@@ -71,5 +61,5 @@ offset = Vector2(0, 2)
 polygon = PackedVector2Array(-1, 0, -1, -4, 2, -5, 9, -6, 10, -10, 12, -10, 12, -7, 10, -5, 5, -3, 8, -2, 15, -2, 18, -4, 19, -2, 15, 0, 9, 0, 5, 0, 7, 3, 7, 7, 6, 7, 5, 4)
 
 [node name="Collision" type="CollisionShape2D" parent="Model/Grabber" unique_id=344104193]
-position = Vector2(9, 0)
+position = Vector2(6, 0)
 shape = SubResource("CircleShape2D_letr6")

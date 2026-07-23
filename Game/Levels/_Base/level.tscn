@@ -1,7 +1,25 @@
 [gd_scene format=3 uid="uid://co1sgdv2x4nyr"]
 
 [ext_resource type="PackedScene" uid="uid://fr8karxanqon" path="res://Game/Player/player.tscn" id="1_ag3y2"]
+[ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="2_1kmpi"]
 
 [node name="Level" type="Node2D" unique_id=1414133645]
 
-[node name="Player" parent="." unique_id=2013412106 instance=ExtResource("1_ag3y2")]
+[node name="Bounds" type="Control" parent="." unique_id=1811867841]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="temp" type="Node" parent="." unique_id=1293760514]
+
+[node name="Player" parent="temp" unique_id=2013412106 instance=ExtResource("1_ag3y2")]
+
+[node name="GrapplePoint0" parent="temp" unique_id=907286068 instance=ExtResource("2_1kmpi")]
+position = Vector2(65, 246)
+
+[node name="GrapplePoint1" parent="temp" unique_id=255816644 instance=ExtResource("2_1kmpi")]
+position = Vector2(261, 100)
+
+[node name="GrapplePoint2" parent="temp" unique_id=1590516925 instance=ExtResource("2_1kmpi")]
+position = Vector2(297, 257)
