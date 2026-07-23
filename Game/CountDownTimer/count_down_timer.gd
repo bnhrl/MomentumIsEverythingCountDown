@@ -1,7 +1,5 @@
 class_name CountDownTimer extends Node2D
 
-signal expired
-
 @onready var label: RichTextLabel = $Label
 @onready var beat_timer: Timer = $BeatTimer
 
@@ -9,11 +7,14 @@ signal expired
 @onready var max_time := time
 
 func _process(delta: float) -> void:
+	_process_background()
 	if has_expired: return
 	
 	_process_counting(delta)
 	_process_expiration()
 
+
+# Counting
 func _process_counting(delta: float) -> void:
 	time -= delta
 	label.text = str(snappedf(time, 0.1))
@@ -25,6 +26,7 @@ func _process_counting(delta: float) -> void:
 		beat_timer.start(clampf(time*0.1, 0.25, 5.0))
 
 
+# Beating
 func _on_beat_timer_timeout() -> void:
 	beat()
 
@@ -40,6 +42,10 @@ func beat_sound() -> void:
 	sound_player.pitch_scale = clampf(randf_range(0.9, 1.1) + (max_time*0.5/time), 0.9, 2.0)
 	sound_player.play()
 
+
+# Expiration
+signal expired
+
 func _process_expiration() -> void:
 	if time <= 0.0:
 		expire()
@@ -50,3 +56,15 @@ var has_expired := false
 func expire() -> void:
 	has_expired = true
 	expired.emit()
+
+
+# Backgrounds
+@onready var backgrounds := [$WIPBackground0, $WIPBackground1]
+func _process_background() -> void:
+	if time > max_time*0.5: return
+		
+	for b: Node2D in backgrounds:
+		var rand_x := clampf(randf_range(-max_time*0.5/time, max_time/time), -8.0, 8.0)*0.2
+		var rand_y := clampf(randf_range(-max_time*0.5/time, max_time/time), -8.0, 8.0)*0.2
+		b.offset = Vector2(rand_x, rand_y)
+	
