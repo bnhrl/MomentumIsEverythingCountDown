@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b8f2vxq8e2wo1"]
+
+[ext_resource type="Script" uid="uid://b2e7j2n0j4kpj" path="res://UI/Buttons/ui_button.gd" id="1_k47w0"]
+
+[node name="UIButton" type="RichTextLabel" unique_id=1301211313]
+clip_contents = false
+offset_right = 96.0
+offset_bottom = 24.0
+offset_transform_enabled = true
+theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_constants/outline_size = 4
+text = "UI Button"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_k47w0")
+
+[connection signal="mouse_entered" from="." to="." method="hover"]
+[connection signal="mouse_exited" from="." to="." method="unhover"]

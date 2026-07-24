@@ -65,13 +65,13 @@ func _process_tail(delta: float) -> void:
 	
 	tail.points = tail_points
 
-# Body Visuals (TEMPORARY)
-@onready var visual_0: Polygon2D = $Model/Visual0
-@onready var visual_1: Polygon2D = $Model/Visual1
+# Body Visuals (TEMPORARY?)
+@onready var body: Sprite2D = $Model/Body
+@onready var center: Sprite2D = $Model/Center
 func _process_visuals(delta: float) -> void: 
 	var angle := get_angle_to(get_global_mouse_position())
-	visual_0.rotation = LerpHelper.la(visual_0.rotation, angle, 16.0, delta)
-	visual_1.rotation = LerpHelper.la(visual_0.rotation, angle, 24.0, delta)
+	body.rotation = LerpHelper.la(body.rotation, angle, 16.0, delta)
+	center.rotation = LerpHelper.la(center.rotation, angle, 4.0, delta)
 
 
 # Grabber
@@ -101,7 +101,7 @@ func _process_grappling(delta: float) -> void:
 		return
 	
 	tail_points[tail_points.size()-1] = grappled_object.global_position - global_position
-	tail_dist = global_position.distance_to(grappled_object.global_position)*0.133
+	tail_dist = global_position.distance_to(grappled_object.global_position)*0.11
 	momentum += global_position.direction_to(grappled_object.global_position) * 3000.0 * delta
 
 func _process_grapple_controls() -> void:

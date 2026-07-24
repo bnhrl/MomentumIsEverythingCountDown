@@ -15,5 +15,8 @@ func _process_zoom(delta: float) -> void:
 	var target_zoom := Vector2(z,z)
 	zoom = LerpHelper.lv2(zoom, target_zoom, 8.0, delta)
 
-func set_camera_bounds(left_top: Vector2, right_bottom: Vector2) -> void:
-	pass
+func set_bounds(left_top: Vector2i, right_bottom: Vector2i) -> void:
+	limit_left = left_top.x
+	limit_top = left_top.y
+	limit_right = right_bottom.x
+	limit_bottom = right_bottom.y
