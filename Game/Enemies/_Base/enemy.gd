@@ -56,9 +56,8 @@ func _process_passing() -> void:
 			if collider is Player:
 				if collider.get_momentum() >= momentum_to_kill:
 					die()
-				else: # TODO add player death
-					#collider.die()
-					pass
+				else: 
+					collider.die()
 				break
 
 

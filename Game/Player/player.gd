@@ -20,6 +20,8 @@ func _physics_process(delta: float) -> void:
 
 # Movement
 func _process_movement(delta: float) -> void:
+	if dead: return
+	
 	var input_direction := Input.get_vector("left", "right", "up", "down")
 	if grappled_object: 
 		input_direction = Vector2.ZERO
@@ -41,6 +43,7 @@ func _process_movement(delta: float) -> void:
 
 func get_momentum() -> float:
 	return momentum.length()
+
 
 # Tail
 const DEFAULT_TAIL_DIST := 8.0
@@ -101,7 +104,7 @@ var attempting_to_grapple := false
 var grappled_object: Node2D
 @onready var grapple_direction_indicator: Polygon2D = $GrappleDirectionIndicator
 func _process_grappling(delta: float) -> void:
-	_process_grapple_controls()
+	if !dead: _process_grapple_controls()
 	if !grappled_object: 
 		if attempting_to_grapple: # Attempting grapple
 			target_tail_dist = GRAPPLING_TAIL_DIST
@@ -152,3 +155,20 @@ func passed_grapple_object() -> void:
 	if !grappled_object: return
 	grappled_object = null
 	momentum *= 2
+
+
+# Death
+signal died
+var dead := false
+
+func die(reason := "") -> void:
+	if dead: return
+	
+	dead = true
+	if reason == "Pit":
+		var tween := create_tween()
+		tween.tween_property($Model, "scale", Vector2(.001, .001), 0.385).set_trans(Tween.TRANS_EXPO)
+		tween.tween_callback(died.emit)
+	else:
+		queue_free()
+		died.emit()

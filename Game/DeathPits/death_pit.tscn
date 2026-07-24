@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b26pe4dttgfvl"]
+
+[ext_resource type="Script" uid="uid://cxb3fkjkqk0yf" path="res://Game/DeathPits/death_pit.gd" id="1_oo0c1"]
+
+[node name="DeathPit" type="Polygon2D" unique_id=1582885165]
+color = Color(0, 0, 0, 0.6)
+polygon = PackedVector2Array(5, 0, 0, 5, -5, 0, 0, -5)
+script = ExtResource("1_oo0c1")
+momentum_required = null
+
+[node name="FallArea" type="Area2D" parent="." unique_id=252475237]
+
+[node name="Collision" type="CollisionPolygon2D" parent="FallArea" unique_id=1328679439]
+
+[node name="Dark" type="Polygon2D" parent="." unique_id=2040589739]
+color = Color(0, 0, 0, 0.6)
+polygon = PackedVector2Array(4, 0, 0, 4, -4, 0, 0, -4)
+
+[node name="Darker" type="Polygon2D" parent="Dark" unique_id=1983333470]
+color = Color(0, 0, 0, 0.6)
+polygon = PackedVector2Array(3, 0, 0, 3, -3, 0, 0, -3)

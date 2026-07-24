@@ -4,13 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="2_nmra5"]
 [ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="3_13qiw"]
 [ext_resource type="PackedScene" uid="uid://tms7gslr1oip" path="res://Game/Enemies/_Base/enemy.tscn" id="4_nmra5"]
+[ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="5_13qiw"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_nmra5"]
-vertices = PackedVector2Array(494.25, 107.00781, 410.14063, 222.78906, 294.6797, 358.6172, 200.02344, 351.1172, 85.07031, 312.17188, 70.86719, 265.10156, 59.132813, 130.07813, 107, -25.5, 574.6719, -80.28125, 545.47656, -265.10938, 107, -30.21875, 162.6875, -163.86719, 237.61719, -258.5078, 340.9922, -371.53906, 479.4922, -357.5)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8), PackedInt32Array(9, 8, 7, 10, 11, 12, 13, 14)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_13qiw"]
+vertices = PackedVector2Array(92.52344, -29.273438, 92.046875, -28.117188, 36, -31.601563, 36, -32.890625, 248.60156, 6.359375, 249.3125, 2.2734375, 338.1875, -378.85938, 483.34375, -364.14844, 552.1406, -267.82813, 581.89844, -79.390625, 500.3672, 110.50781, 415.64063, 227.13281, 297.70313, 365.8828, 198.60156, 358.03125, 156.60938, -167.46875, 232.29688, -263.07813, 211.53906, -57.101563, 211.95313, -19.671875, 218.42188, -36.296875, 190.90625, 17.25, 79.39844, 317.64063, 63.960938, 266.4375, 52.039063, 129.32031, 180.4375, -17.242188, 100, -26.546875, 169.72656, -37.59375, 100, -31.601563, 171.79688, -40.578125, 188.14844, -38.539063, 192.25781, -42.648438)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8, 9, 10, 11, 12, 13), PackedInt32Array(14, 15, 6, 5, 16), PackedInt32Array(5, 17, 18), PackedInt32Array(19, 4, 13, 20, 21, 22), PackedInt32Array(23, 19, 22, 24, 25), PackedInt32Array(25, 24, 26, 14, 27), PackedInt32Array(28, 27, 14, 29), PackedInt32Array(16, 29, 14), PackedInt32Array(16, 5, 18)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(33, -399, 619, -399, 619, 389, 33, 389)])
 source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
+agent_radius = 3.0
 
 [node name="Level1" unique_id=1414133645 instance=ExtResource("1_g51mk")]
 
@@ -28,7 +30,7 @@ polygon = PackedVector2Array(97, -32, 97, -27, 49, 129, 61, 267, 80, 330, 35, 51
 
 [node name="NavigationRegion" parent="." index="4" unique_id=517625210]
 visible = false
-navigation_polygon = SubResource("NavigationPolygon_nmra5")
+navigation_polygon = SubResource("NavigationPolygon_13qiw")
 
 [node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("3_13qiw")]
 position = Vector2(151, 205)
@@ -48,5 +50,10 @@ position = Vector2(443, -159)
 [node name="GrapplePoint5" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="5" unique_id=1282204096 instance=ExtResource("3_13qiw")]
 position = Vector2(387, -236)
 
-[node name="Enemy" parent="." index="7" unique_id=613541596 instance=ExtResource("4_nmra5")]
+[node name="DeathPit" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("5_13qiw")]
+position = Vector2(198, -17)
+polygon = PackedVector2Array(12, -35.199997, 17.231731, -19.383675, 10.231731, -1.3836746, 48, 20.800001, -5, 30.800001, -14.768269, -1.3836746, -24.768269, -20.383675, -8.768269, -18.383675, -3.7682683, -23.383675)
+momentum_required = 200.0
+
+[node name="Enemy" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="0" unique_id=613541596 instance=ExtResource("4_nmra5")]
 position = Vector2(360, 117)
