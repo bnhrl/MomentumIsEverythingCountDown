@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://d3xhd06mdlv8l"]
+
+[ext_resource type="PackedScene" uid="uid://tms7gslr1oip" path="res://Game/Enemies/_Base/enemy.tscn" id="1_d1ykc"]
+[ext_resource type="Texture2D" uid="uid://ceg5rwrka3hs1" path="res://Game/Enemies/WhiteBloodCell/white_blood_cell.png" id="2_g7tu3"]
+[ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="2_k2oa1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbwo6"]
+atlas = ExtResource("2_g7tu3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moo4x"]
+atlas = ExtResource("2_g7tu3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_togod"]
+atlas = ExtResource("2_g7tu3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhq6v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbwo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moo4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_togod")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WhiteBloodCell" unique_id=613541596 instance=ExtResource("1_d1ykc")]
+speed = 2000.0
+momentum_to_kill = 250.0
+direction_smoothed = false
+max_dist_from_origin = 100
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Model" parent_id_path=PackedInt32Array(87698194) index="0" unique_id=871299225]
+sprite_frames = SubResource("SpriteFrames_uhq6v")
+autoplay = "default"
+frame_progress = 0.09712265
+
+[node name="GrapplePoint" parent="." index="4" unique_id=907286068 instance=ExtResource("2_k2oa1")]
+visible = false

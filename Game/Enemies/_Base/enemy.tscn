@@ -30,7 +30,7 @@ debug_color = Color(0.99470645, 0, 0.22376983, 0)
 
 [node name="Model" type="CanvasGroup" parent="." unique_id=87698194]
 material = ExtResource("2_flhjw")
+scale = Vector2(0.8, 0.8)
 
-[node name="TestVisual_REPLACE_LATER" type="Polygon2D" parent="Model" unique_id=1131845848]
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(0, -8, 6, -5, 8, 0, 5, 6, 0, 8, -6, 5, -8, 0, -6, -5)
+[node name="IdleTimer" type="Timer" parent="." unique_id=205446577]
+one_shot = true

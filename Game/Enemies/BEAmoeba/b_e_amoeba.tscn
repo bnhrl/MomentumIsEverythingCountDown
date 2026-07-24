@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bjng875ivkyon"]
+
+[ext_resource type="PackedScene" uid="uid://tms7gslr1oip" path="res://Game/Enemies/_Base/enemy.tscn" id="1_uhq6v"]
+[ext_resource type="Script" uid="uid://bpinayf33n7m" path="res://Game/Enemies/BEAmoeba/b_e_amoeba.gd" id="2_avk6h"]
+[ext_resource type="Texture2D" uid="uid://cfgo17hod55k1" path="res://Game/Enemies/BEAmoeba/b_e_amoeba.png" id="2_msuof"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6smh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_msuof")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_c6smh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.2169423, 0.0, 0, 0]
+point_count = 2
+
+[node name="BEAmoeba0" unique_id=613541596 instance=ExtResource("1_uhq6v")]
+script = ExtResource("2_avk6h")
+speed = 10000.0
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Model" parent_id_path=PackedInt32Array(87698194) index="0" unique_id=903206068]
+sprite_frames = SubResource("SpriteFrames_c6smh")
+
+[node name="TailL" type="Line2D" parent="Model" parent_id_path=PackedInt32Array(87698194) index="1" unique_id=1998279126]
+position = Vector2(-19, -4)
+points = PackedVector2Array(0, 0, -5, 0, -10, 0, -15, 0, -20, 0, -25, 0)
+width = 3.0
+width_curve = SubResource("Curve_c6smh")
+default_color = Color(0.9098039, 0.22745098, 0.22745098, 0.7921569)
+
+[node name="TailR" type="Line2D" parent="Model" parent_id_path=PackedInt32Array(87698194) index="2" unique_id=355830719]
+position = Vector2(-19, 4)
+points = PackedVector2Array(0, 0, -5, 0, -10, 0, -15, 0, -20, 0, -25, 0)
+width = 3.0
+width_curve = SubResource("Curve_c6smh")
+default_color = Color(0.9098039, 0.22745098, 0.22745098, 0.7921569)
+
+[node name="TailStart" type="Marker2D" parent="Model" parent_id_path=PackedInt32Array(87698194) index="3" unique_id=996429863]
+position = Vector2(-19, 0)
+scale = Vector2(1.2499999, 1.2499999)
+gizmo_extents = 1.0
+
+[node name="TailAnchor" type="Node2D" parent="Model" parent_id_path=PackedInt32Array(87698194) index="4" unique_id=1247611181]
+top_level = true
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="TailMarker" type="Marker2D" parent="Model/TailAnchor" index="0" unique_id=1081391641]
+position = Vector2(-42.999992, 0)
+scale = Vector2(1.0000001, 1.0000001)
+gizmo_extents = 1.0

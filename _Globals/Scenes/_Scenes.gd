@@ -21,15 +21,15 @@ func swap_scene(scene_name: String) -> void:
 	get_tree().change_scene_to_packed(scene)
 	await _fade_out()
 
-func _fade_in() -> Signal:
+func _fade_in(time := 0.5) -> Signal:
 	var tween := create_tween()
 	fade.show()
-	tween.tween_property(fade, "modulate:a", 1.0, 0.5).from(0.0)
+	tween.tween_property(fade, "modulate:a", 1.0, time).from(0.0)
 	return tween.finished
 
-func _fade_out() -> Signal:
+func _fade_out(time := 0.5) -> Signal:
 	var tween := create_tween()
-	tween.tween_property(fade, "modulate:a", 0.0, 0.5).from(1.0)
+	tween.tween_property(fade, "modulate:a", 0.0, time).from(1.0)
 	tween.tween_property(fade, "visible", false, 0.0)
 	return tween.finished
 @onready var fade: ColorRect = $Fade

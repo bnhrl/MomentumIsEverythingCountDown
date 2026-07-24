@@ -60,6 +60,8 @@ func _ready_tail() -> void:
 		tail_points[i+2] = Vector2.ZERO
 
 func _process_tail(delta: float) -> void:
+	if dead: return
+	
 	tail_dist = LerpHelper.lf(tail_dist, target_tail_dist, 12.0, delta)
 	tail.width = clampf(DEFAULT_TAIL_DIST/tail_dist*12.0, 5.0, 16.0)
 	
@@ -84,6 +86,8 @@ func _process_tail(delta: float) -> void:
 @onready var _body: AnimatedSprite2D = $Model/Body
 @onready var _center: Sprite2D = $Model/Center
 func _process_visuals(delta: float) -> void: 
+	if dead: return
+	
 	var angle := get_angle_to(get_global_mouse_position())
 	_body.rotation = LerpHelper.la(_body.rotation, angle, 16.0, delta)
 	_center.rotation = LerpHelper.la(_center.rotation, angle, 4.0, delta)
@@ -170,5 +174,4 @@ func die(reason := "") -> void:
 		tween.tween_property($Model, "scale", Vector2(.001, .001), 0.385).set_trans(Tween.TRANS_EXPO)
 		tween.tween_callback(died.emit)
 	else:
-		queue_free()
 		died.emit()

@@ -7,6 +7,7 @@ func _ready() -> void:
 	
 	Camera.set_bounds($Bounds.position, $Bounds.size + $Bounds.position)
 	PlayerManager.add_player(self)
+	PlayerManager.player.died.connect(player_dead)
 	RenderingServer.global_shader_parameter_set("outline_color", outline_color)
 
 @export_tool_button("Rebake Navigation") var rebake := func() -> void:
@@ -29,3 +30,11 @@ func _ready() -> void:
 
 func get_player_spawn_point() -> Vector2:
 	return $PlayerSpawnPoint.global_position
+
+func _on_count_down_timer_expired() -> void:
+	Effects.intensify()
+
+func player_dead() -> void:
+	await Scenes._fade_in(0.25)
+	get_tree().reload_current_scene()
+	Scenes._fade_out(0.25)

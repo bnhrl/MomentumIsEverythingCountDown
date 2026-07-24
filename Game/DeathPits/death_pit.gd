@@ -25,7 +25,6 @@ func shrink_polygon(array: PackedVector2Array, amount: float) -> PackedVector2Ar
 	var temp: Array[Vector2]
 	for v in array:
 		temp.append(v * amount)
-	print(PackedVector2Array(temp))
 	return PackedVector2Array(temp)
 
 
