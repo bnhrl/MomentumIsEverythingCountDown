@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://o2gmqwsx58wo" path="res://Game/MainMenu/Credits/credits.gd" id="1_n060q"]
 
 [node name="Credits" type="Control" unique_id=986538535]
+z_index = 10
 layout_mode = 3
 anchors_preset = 0
 offset_left = 50.0
@@ -15,7 +16,20 @@ script = ExtResource("1_n060q")
 layout_mode = 0
 offset_right = 540.0
 offset_bottom = 320.0
-color = Color(0.91775256, 0.67851543, 0.92947316, 0.5)
+color = Color(0.91775256, 0.67851543, 0.92947316, 0.75000006)
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=387886005]
+layout_mode = 0
+offset_right = 135.0
+offset_bottom = 31.5
+scale = Vector2(4, 4)
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BtnBnhrl" parent="." unique_id=1301211313 instance=ExtResource("1_fixii")]
 layout_mode = 0
@@ -53,15 +67,17 @@ default_color = Color(0.68235296, 0.13725491, 0.20392157, 1)
 hover_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 hover_size = Vector2(1.25, 2)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=387886005]
+[node name="BtnClose" parent="." unique_id=998908830 instance=ExtResource("1_fixii")]
 layout_mode = 0
-offset_right = 135.0
-offset_bottom = 31.5
-scale = Vector2(4, 4)
-mouse_filter = 2
-theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
-theme_override_constants/outline_size = 4
-bbcode_enabled = true
-text = "Credits"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 508.0
+offset_right = 540.0
+offset_bottom = 29.0
+theme_override_colors/default_color = Color(0.91764706, 0.6784314, 0.92941177, 1)
+text = "X"
+default_color = Color(0.91764706, 0.6784314, 0.92941177, 1)
+hover_size = Vector2(2, 2)
+
+[connection signal="pressed" from="BtnBnhrl" to="." method="_on_btn_bnhrl_pressed"]
+[connection signal="pressed" from="BtnCatJug" to="." method="_on_btn_cat_jug_pressed"]
+[connection signal="pressed" from="BtnCuptain" to="." method="_on_btn_cuptain_pressed"]
+[connection signal="pressed" from="BtnClose" to="." method="_on_btn_close_pressed"]

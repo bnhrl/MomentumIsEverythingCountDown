@@ -7,8 +7,11 @@ func _ready() -> void:
 func _on_btn_start_pressed() -> void:
 	Scenes.swap_scene("Level Select")
 
+var credits: Control
 func _on_btn_credits_pressed() -> void:
-	pass # TODO make credits screen. Presumably a little drop down into the main menu instead of a different scene?
+	if credits: return
+	credits = preload("uid://og05ddis16cd").instantiate()
+	add_child(credits)
 
 func _on_btn_quit_pressed() -> void:
 	$BtnQuit/CanvasLayer/Clair.play()
