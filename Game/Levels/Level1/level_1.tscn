@@ -23,13 +23,16 @@ offset_top = -399.0
 offset_right = 619.0
 offset_bottom = 389.0
 
+[node name="ExitingLabel" parent="UILayer" parent_id_path=PackedInt32Array(3946053) index="0" unique_id=482272356]
+visible = false
+
 [node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("2_nmra5")]
 polygon = PackedVector2Array(94, -25, 154, -169, 230, -265, 337, -382, 485, -367, 555, -269, 585, -79, 503, 112, 418, 229, 299, 369, 198, 361, 77, 320, 32, 513, 1089, 477, 1115, -29, 990, -703, -221, -680, -388, -55)
 
 [node name="PolygonWall1" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="1" unique_id=763877813 instance=ExtResource("2_nmra5")]
 polygon = PackedVector2Array(97, -32, 97, -27, 49, 129, 61, 267, 80, 330, 35, 512, -437, 521, -387, -63)
 
-[node name="NavigationRegion" parent="." index="4" unique_id=517625210]
+[node name="NavigationRegion" parent="." index="5" unique_id=517625210]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_13qiw")
 

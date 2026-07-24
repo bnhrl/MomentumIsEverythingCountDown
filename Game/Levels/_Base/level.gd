@@ -9,6 +9,28 @@ func _ready() -> void:
 	PlayerManager.add_player(self)
 	PlayerManager.player.died.connect(player_dead)
 	RenderingServer.global_shader_parameter_set("outline_color", outline_color)
+	exiting_label.add_theme_color_override("font_outline_color", outline_color)
+
+const EXITING := 1.0
+var exiting := EXITING
+@onready var exiting_label: RichTextLabel = $UILayer/ExitingLabel
+func _process(delta: float) -> void:
+	if Engine.is_editor_hint(): return
+	
+	_process_exiting(delta)
+
+func _process_exiting(delta: float) -> void:
+	if exiting <= 0: return
+	
+	if Input.is_action_pressed("escape"):
+		exiting -= delta
+		if exiting <= 0.0:
+			Scenes.swap_scene("Level Select")
+		exiting_label.text = "Exiting... " + str(snappedf(exiting, 0.1))
+		exiting_label.show()
+	else:
+		exiting = EXITING
+		exiting_label.hide()
 
 @export_tool_button("Rebake Navigation") var rebake := func() -> void:
 	$NavigationRegion.show()

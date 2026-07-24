@@ -7,7 +7,7 @@ func _ready() -> void:
 	refresh.call()
 	
 	if Engine.is_editor_hint(): return
-	$FallArea/Collision.polygon = shrink_polygon(polygon, 0.6)
+	$FallArea/Collision.polygon = shrink_polygon(polygon, 0.5)
 
 func _process(_delta: float) -> void:
 	_process_falling()

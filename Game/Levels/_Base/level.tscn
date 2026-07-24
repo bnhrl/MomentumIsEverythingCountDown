@@ -28,6 +28,20 @@ offset_bottom = 360.0
 [node name="PlayerSpawnPoint" type="Marker2D" parent="." unique_id=1452407390]
 position = Vector2(320, 180)
 
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=3946053]
+
+[node name="ExitingLabel" type="RichTextLabel" parent="UILayer" unique_id=482272356]
+clip_contents = false
+offset_left = 5.0
+offset_top = -4.0
+offset_right = 165.0
+offset_bottom = 28.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "Exiting... 0.0"
+scroll_active = false
+
 [node name="CountDownTimer" parent="." unique_id=102296066 instance=ExtResource("2_mndar")]
 
 [node name="WallLayer" type="CanvasGroup" parent="." unique_id=332655601 groups=["navigation_group"]]
