@@ -2,7 +2,19 @@
 
 [ext_resource type="Script" uid="uid://cm2cu6c3ds62w" path="res://Game/LevelSelect/level_select.gd" id="1_kh25d"]
 [ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/UIButton/ui_button.tscn" id="2_eeebr"]
+[ext_resource type="Texture2D" uid="uid://cmaseo76xk400" path="res://Game/LevelSelect/brain1.png" id="2_sxw8k"]
 [ext_resource type="PackedScene" uid="uid://tsffeia6kcry" path="res://UI/Buttons/LevelButton/level_button.tscn" id="3_eeebr"]
+[ext_resource type="Shader" uid="uid://chwkgj0slhnlv" path="res://Assets/Shaders/wavy.gdshader" id="5_jddyg"]
+[ext_resource type="Texture2D" uid="uid://baodxxg4uk2ig" path="res://Game/MainMenu/background.png" id="6_cj7vv"]
+[ext_resource type="Texture2D" uid="uid://cnxx80ngtathh" path="res://Game/LevelSelect/brain_outline.png" id="7_jddyg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2r30p"]
+shader = ExtResource("5_jddyg")
+shader_parameter/on_canvas_group = true
+shader_parameter/wave_x = -100.0
+shader_parameter/wave_y = 100.0
+shader_parameter/ferocity = 0.03
+shader_parameter/speed = 4.0
 
 [node name="LevelSelect" type="Control" unique_id=1723362477]
 layout_mode = 3
@@ -19,6 +31,8 @@ offset_left = 24.0
 offset_top = 285.0
 offset_right = 114.0
 offset_bottom = 342.0
+theme_override_colors/default_color = Color(0.28235295, 0.2901961, 0.46666667, 1)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 text = "Back to 
 Main Menu"
 
@@ -32,11 +46,35 @@ offset_bottom = 357.0
 
 [node name="BtnLevel1" parent="." unique_id=1780013496 instance=ExtResource("3_eeebr")]
 layout_mode = 0
-offset_left = 295.0
-offset_top = 189.0
-offset_right = 319.0
-offset_bottom = 219.0
+offset_left = 345.0
+offset_top = 137.0
+offset_right = 369.0
+offset_bottom = 167.0
 text = "1"
 level = 1
+
+[node name="Background" type="CanvasGroup" parent="." unique_id=1425335490]
+z_index = -2
+material = SubResource("ShaderMaterial_2r30p")
+
+[node name="Background" type="Sprite2D" parent="Background" unique_id=1758841412]
+position = Vector2(320, 180)
+scale = Vector2(1.1, 1.15)
+texture = ExtResource("6_cj7vv")
+
+[node name="Brain" type="CanvasGroup" parent="." unique_id=394255663]
+
+[node name="Brain" type="Sprite2D" parent="Brain" unique_id=1135274877]
+z_index = -1
+position = Vector2(320, 130)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_sxw8k")
+
+[node name="Outline" type="Sprite2D" parent="Brain" unique_id=1472059363]
+modulate = Color(1, 1, 1, 0.74509805)
+z_index = -2
+position = Vector2(320, 230)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_jddyg")
 
 [connection signal="pressed" from="BtnMainMenu" to="." method="_on_btn_main_menu_pressed"]
