@@ -66,4 +66,4 @@ position = Vector2(5, 0)
 texture = ExtResource("5_segth")
 
 [node name="GrappleDirectionIndicator" type="Polygon2D" parent="." unique_id=1750413852]
-polygon = PackedVector2Array(12, -3, 16, 0, 12, 3)
+polygon = PackedVector2Array(12, -8, 24, 0, 12, 8, 18, 0)

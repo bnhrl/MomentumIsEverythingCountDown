@@ -1,3 +1,4 @@
 
-https://itch.io/queue/c/5127941/cc0-fonts?game_id=1992921
-https://pixabay.com/sound-effects/film-special-effects-heartbeat-02-225103/
+font:          https://itch.io/queue/c/5127941/cc0-fonts?game_id=1992921
+heartbeat sfx: https://pixabay.com/sound-effects/film-special-effects-heartbeat-02-225103/
+clair de lune: https://soundcloud.com/laurensgoedhart/claude-debussys-clair-de-lune

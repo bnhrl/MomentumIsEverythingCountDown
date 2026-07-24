@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://co1sgdv2x4nyr"]
 
 [ext_resource type="Script" uid="uid://nhvbyg5sl1vd" path="res://Game/Levels/_Base/level.gd" id="1_4nsif"]
-[ext_resource type="PackedScene" uid="uid://fr8karxanqon" path="res://Game/Player/player.tscn" id="1_ag3y2"]
 [ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="2_1kmpi"]
 
 [sub_resource type="TileSet" id="TileSet_4nsif"]
@@ -18,6 +17,9 @@ offset_left = -523.0
 offset_top = -340.0
 offset_right = 978.0
 offset_bottom = 637.0
+
+[node name="PlayerSpawnPoint" type="Marker2D" parent="." unique_id=1452407390]
+position = Vector2(320, 180)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1951823628]
 tile_set = SubResource("TileSet_4nsif")
@@ -37,8 +39,6 @@ polygon = PackedVector2Array(44, -111, -89, 76, -86, 339, 28, 446, 397, 463, 706
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="temp/Collisions" unique_id=704112373]
 polygon = PackedVector2Array(44, -111, -89, 76, -86, 339, 28, 446, 397, 463, 706, 439, 782, 274, 780, -15, 666, -100, 283, -116, 22, -78, 114, -188, 417, -187, 747, -194, 865, -94, 912, 114, 877, 446, 727, 524, 40, 517, -152, 476, -231, 230, -164, -15, -85, -111)
-
-[node name="Player" parent="temp" unique_id=2013412106 instance=ExtResource("1_ag3y2")]
 
 [node name="GrapplePoint0" parent="temp" unique_id=907286068 instance=ExtResource("2_1kmpi")]
 position = Vector2(151, 205)
