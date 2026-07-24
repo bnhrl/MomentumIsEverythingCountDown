@@ -19,6 +19,9 @@ texture = ExtResource("2_cknqb")
 offset_right = 640.0
 offset_bottom = 61.0
 offset_transform_enabled = true
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.3019608, 0.39607844, 0.7058824, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
@@ -31,13 +34,5 @@ vertical_alignment = 1
 one_shot = true
 
 [node name="SoundPlayer" type="AudioStreamPlayer" parent="." unique_id=489885819]
-
-[node name="Control" type="Control" parent="." unique_id=675753509]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 265.0
-offset_top = 19.0
-offset_right = 375.0
-offset_bottom = 49.0
 
 [connection signal="timeout" from="BeatTimer" to="." method="_on_beat_timer_timeout"]

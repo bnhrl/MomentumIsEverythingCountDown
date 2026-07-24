@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://b1aob121surnv"]
 
 [ext_resource type="Script" uid="uid://cxv3c3emyk0et" path="res://Game/PolygonWalls/polygon_wall.gd" id="1_85go0"]
+[ext_resource type="Shader" uid="uid://wu085sklw13i" path="res://Assets/Shaders/world_tiling_2d.gdshader" id="1_ijl1s"]
+[ext_resource type="Texture2D" uid="uid://mqn0w60a17mn" path="res://Game/PolygonWalls/tile_sample.png" id="2_esf1g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mndar"]
+shader = ExtResource("1_ijl1s")
+shader_parameter/tile_texture = ExtResource("2_esf1g")
+shader_parameter/tile_size = Vector2(16, 16)
 
 [node name="PolygonWall0" type="Polygon2D" unique_id=293361938]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_mndar")
 polygon = PackedVector2Array(2, 2, 2, -2, -2, -2, -2, 2)
 script = ExtResource("1_85go0")
 

@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d2t4whxx1mrd8"]
+
+[ext_resource type="Shader" uid="uid://y6t5gm6jds58" path="res://Assets/Shaders/outline_2d.gdshader" id="1_wtxr5"]
+
+[resource]
+shader = ExtResource("1_wtxr5")
+shader_parameter/on_canvas_group = true
+shader_parameter/outline_thickness = 1.0

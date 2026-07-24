@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b0s8e77ml1pdy"]
+
+[ext_resource type="PackedScene" uid="uid://co1sgdv2x4nyr" path="res://Game/Levels/_Base/level.tscn" id="1_g51mk"]
+[ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="2_nmra5"]
+[ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="3_13qiw"]
+[ext_resource type="PackedScene" uid="uid://tms7gslr1oip" path="res://Game/Enemies/_Base/enemy.tscn" id="4_nmra5"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nmra5"]
+vertices = PackedVector2Array(1097.6719, 259.71094, 1017.25, 447.0078, 933.1406, 562.78906, 817.6797, 698.6172, 723.02344, 691.1172, 608.0703, 652.1719, 593.8672, 605.10156, 582.1328, 470.07813, 630.1328, 314.10156, 1068.4766, 74.88281, 629.8125, 310.25, 685.6875, 176.11719, 760.6172, 81.47656, 863.9922, -31.539063, 1002.4922, -17.5, 609.2578, 304.5, 221.84375, 280.3828, 604.84375, 250.72656, 123.85156, 287.96875, 123.86719, 287.96094, 122.22656, 294.20313, 2566.8672, 318.71875, 1933.7969, 1129.4063, 1648.0469, 310.34375, 1521.2891, -373.15625, 2534.3516, -538.53125, 1621.5234, 826.6797, 345.89844, 1266.7109, 542.3203, 863.4375, 75.09375, 871.21094, 542.5781, 862.28906, -365.70313, 740.64844, 124.46875, 294.34375, 172.82031, -524.5, 125.57031, 281.52344, 126.17969, 274.4297, 126.77344, 267.6875, 129.32031, 267.4922, 294.28125, -349.85938, 1268.1406, -609.97656)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), PackedInt32Array(9, 8, 10, 11, 12, 13, 14), PackedInt32Array(15, 16, 17), PackedInt32Array(18, 19, 20), PackedInt32Array(21, 22, 23, 24, 25), PackedInt32Array(26, 23, 22), PackedInt32Array(26, 22, 27, 28), PackedInt32Array(29, 30, 28, 27), PackedInt32Array(29, 27, 31), PackedInt32Array(32, 29, 31, 20), PackedInt32Array(20, 31, 33, 18), PackedInt32Array(34, 18, 33, 35), PackedInt32Array(36, 35, 33), PackedInt32Array(37, 36, 33, 38), PackedInt32Array(24, 38, 33, 39, 25)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(166, -534, -378, 744, 343, 1277, 1939, 1139, 2577, 322, 2544, -548, 1268, -620)])
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation_group"
+
+[node name="Level1" unique_id=1414133645 instance=ExtResource("1_g51mk")]
+
+[node name="Bounds" parent="." index="0" unique_id=1811867841]
+offset_left = 33.0
+offset_top = -399.0
+offset_right = 619.0
+offset_bottom = 389.0
+
+[node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("2_nmra5")]
+polygon = PackedVector2Array(94, -25, 154, -169, 230, -265, 337, -382, 485, -367, 555, -269, 585, -79, 503, 112, 418, 229, 299, 369, 198, 361, 77, 320, 32, 513, 1089, 477, 1115, -29, 990, -703, -221, -680, -388, -55)
+
+[node name="PolygonWall1" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="1" unique_id=763877813 instance=ExtResource("2_nmra5")]
+polygon = PackedVector2Array(91, -100, 97, -27, 49, 129, 61, 267, 80, 330, 35, 512, -437, 521, -387, -63)
+
+[node name="NavigationRegion" parent="." index="4" unique_id=517625210]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_nmra5")
+
+[node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("3_13qiw")]
+position = Vector2(151, 205)
+
+[node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="1" unique_id=2045350531 instance=ExtResource("3_13qiw")]
+position = Vector2(261, 100)
+
+[node name="GrapplePoint2" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="2" unique_id=594168116 instance=ExtResource("3_13qiw")]
+position = Vector2(297, 257)
+
+[node name="GrapplePoint3" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="3" unique_id=2120793187 instance=ExtResource("3_13qiw")]
+position = Vector2(341, -33)
+
+[node name="GrapplePoint4" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="4" unique_id=16360908 instance=ExtResource("3_13qiw")]
+position = Vector2(443, -159)
+
+[node name="GrapplePoint5" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="5" unique_id=1282204096 instance=ExtResource("3_13qiw")]
+position = Vector2(387, -236)
+
+[node name="Enemy" parent="." index="7" unique_id=613541596 instance=ExtResource("4_nmra5")]
+position = Vector2(360, 117)

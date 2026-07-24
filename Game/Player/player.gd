@@ -110,7 +110,7 @@ func _process_grappling(delta: float) -> void:
 		return
 	
 	tail_points[tail_points.size()-1] = grappled_object.global_position - global_position
-	tail_dist = global_position.distance_to(grappled_object.global_position)*0.11
+	tail_dist = global_position.distance_to(grappled_object.global_position)*0.09
 	momentum += global_position.direction_to(grappled_object.global_position) * 3000.0 * delta
 
 func _process_grapple_controls() -> void:

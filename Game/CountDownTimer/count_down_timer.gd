@@ -15,10 +15,12 @@ func _process(delta: float) -> void:
 
 
 # Counting
+var color := Color("4d65b4")
 func _process_counting(delta: float) -> void:
 	time -= delta
 	label.text = str(snappedf(time, 0.1))
-	label.modulate = LerpHelper.l(label.modulate, Color.WHITE, 16.0, delta)
+	label.add_theme_color_override("default_color", color)
+	color = LerpHelper.l(color, Color("4d65b4"), 8.0, delta)
 	label.offset_transform_scale = LerpHelper.lv2(label.offset_transform_scale, Vector2(1,1), 16.0, delta)
 	
 	if time <= max_time*0.5 and beat_timer.is_stopped():
@@ -31,7 +33,7 @@ func _on_beat_timer_timeout() -> void:
 	beat()
 
 func beat() -> void:
-	label.modulate = Color.RED
+	color = Color("ae2334")
 	label.offset_transform_scale = Vector2(1.25, 1.25)
 	beat_sound()
 
@@ -58,11 +60,11 @@ func expire() -> void:
 	expired.emit()
 	await Delays.wait(0.25)
 	var tween := create_tween()
-	tween.parallel().tween_property(label, "position:y", 800, 1.0+randf_range(-0.2,0.2)).set_trans(Tween.TRANS_EXPO)
-	tween.parallel().tween_property(label, "rotation_degrees", randf_range(-30, 30), 1.0+randf_range(-0.2,0.2))
+	tween.parallel().tween_property(label, "position:y", 800, 1.4+randf_range(-0.2,0.2)).set_trans(Tween.TRANS_EXPO)
+	tween.parallel().tween_property(label, "rotation_degrees", randf_range(-30, 30), 1.4+randf_range(-0.2,0.2))
 	for b: Node2D in backgrounds:
-		tween.parallel().tween_property(b, "position:y", 800, 1.0+randf_range(-0.2,0.2)).set_trans(Tween.TRANS_EXPO)
-		tween.parallel().tween_property(b, "rotation_degrees", randf_range(-30, 30), 1.0+randf_range(-0.2,0.2))
+		tween.parallel().tween_property(b, "position:y", 800, 1.4+randf_range(-0.2,0.2)).set_trans(Tween.TRANS_EXPO)
+		tween.parallel().tween_property(b, "rotation_degrees", randf_range(-30, 30), 1.4+randf_range(-0.2,0.2))
 
 # Backgrounds
 @onready var backgrounds := [$Background0, $Background1]

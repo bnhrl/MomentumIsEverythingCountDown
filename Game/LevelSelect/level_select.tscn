@@ -23,11 +23,20 @@ text = "Back to
 Main Menu"
 
 [node name="Btn0_TEST_REMOVE_LATER" parent="." unique_id=636891361 instance=ExtResource("3_eeebr")]
+visible = false
 layout_mode = 0
 offset_left = 614.0
 offset_top = 327.0
 offset_right = 638.0
 offset_bottom = 357.0
-theme_override_colors/default_color = Color(0.3019608, 0.39607844, 0.7058824, 1)
+
+[node name="BtnLevel1" parent="." unique_id=1780013496 instance=ExtResource("3_eeebr")]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 189.0
+offset_right = 319.0
+offset_bottom = 219.0
+text = "1"
+level = 1
 
 [connection signal="pressed" from="BtnMainMenu" to="." method="_on_btn_main_menu_pressed"]

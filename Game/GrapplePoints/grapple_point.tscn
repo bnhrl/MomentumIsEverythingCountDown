@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://c2mrm5rc4nnir"]
 
 [ext_resource type="Script" uid="uid://nantb8xlfve7" path="res://Game/GrapplePoints/grapple_point.gd" id="1_3tkon"]
+[ext_resource type="Shader" uid="uid://y6t5gm6jds58" path="res://Assets/Shaders/outline_2d.gdshader" id="2_k4ofb"]
+[ext_resource type="Texture2D" uid="uid://cdav3g1awkt3j" path="res://Game/GrapplePoints/grapple_point.png" id="2_o8gs3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrik5"]
+shader = ExtResource("2_k4ofb")
+shader_parameter/on_canvas_group = false
+shader_parameter/outline_thickness = 1.0
 
 [node name="GrapplePoint0" type="Area2D" unique_id=907286068]
 script = ExtResource("1_3tkon")
 
-[node name="Visual" type="Polygon2D" parent="." unique_id=873595959]
-polygon = PackedVector2Array(0, -5, -5, 0, 0, 5, 5, 0)
+[node name="Sprite" type="Sprite2D" parent="." unique_id=364388009]
+material = SubResource("ShaderMaterial_yrik5")
+texture = ExtResource("2_o8gs3")
 
 [node name="Collision" type="CollisionPolygon2D" parent="." unique_id=1981361459]
 polygon = PackedVector2Array(0, -5, -5, 0, 0, 5, 5, 0)

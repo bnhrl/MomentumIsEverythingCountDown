@@ -13,6 +13,7 @@ config_version=5
 config/name="MomentumIsEverythingCountDown"
 run/main_scene="uid://bd8qt04xi4h20"
 config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/bg_color=Color(0.38431373, 0.33333334, 0.39607844, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -40,6 +41,7 @@ window/stretch/aspect="expand"
 folder_colors={
 "res://Assets/": "gray",
 "res://Game/CountDownTimer/": "yellow",
+"res://Game/Enemies/": "yellow",
 "res://Game/GrapplePoints/": "yellow",
 "res://Game/LevelSelect/": "blue",
 "res://Game/Levels/": "blue",
@@ -107,3 +109,11 @@ rendering_device/driver.windows="d3d12"
 anti_aliasing/screen_space_roughness_limiter/enabled=false
 textures/decals/filter=0
 textures/light_projectors/filter=0
+environment/defaults/default_clear_color=Color(0.38431373, 0.33333334, 0.39607844, 1)
+
+[shader_globals]
+
+outline_color={
+"type": "vec4",
+"value": Vector4(1, 1, 1, 1)
+}

@@ -1,21 +1,18 @@
 [gd_scene format=3 uid="uid://fr8karxanqon"]
 
 [ext_resource type="Script" uid="uid://o1mh1gpwbbvf" path="res://Game/Player/player.gd" id="1_m57qa"]
+[ext_resource type="Shader" uid="uid://y6t5gm6jds58" path="res://Assets/Shaders/outline_2d.gdshader" id="2_p2hw7"]
 [ext_resource type="Texture2D" uid="uid://br1doxg8djgap" path="res://Game/Player/segment.png" id="2_s3asc"]
-[ext_resource type="Shader" uid="uid://chwkgj0slhnlv" path="res://Assets/Shaders/wavy.gdshader" id="3_letr6"]
 [ext_resource type="Texture2D" uid="uid://ca8cvbmay8xv3" path="res://Game/Player/body.png" id="4_vytja"]
 [ext_resource type="Texture2D" uid="uid://cssfj3ctnv83q" path="res://Game/Player/center.png" id="5_p2hw7"]
 [ext_resource type="Texture2D" uid="uid://bb4dfknaejnqo" path="res://Game/Player/grabber.png" id="5_segth"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6smh"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_letr6"]
-shader = ExtResource("3_letr6")
-shader_parameter/on_canvas_group = true
-shader_parameter/wave_x = 100.0
-shader_parameter/wave_y = 100.0
-shader_parameter/ferocity = 0.02
-shader_parameter/speed = 5.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_853w4"]
+shader = ExtResource("2_p2hw7")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
 
 [sub_resource type="Curve" id="Curve_c6smh"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.39043823, 1), -1.6422175, -1.6422175, 0, 0, Vector2(1, 0.57024795), 0.0, 0.0, 0, 0]
@@ -35,7 +32,7 @@ script = ExtResource("1_m57qa")
 shape = SubResource("CircleShape2D_c6smh")
 
 [node name="Model" type="CanvasGroup" parent="." unique_id=597892759]
-material = SubResource("ShaderMaterial_letr6")
+material = SubResource("ShaderMaterial_853w4")
 
 [node name="Tail" type="Line2D" parent="Model" unique_id=618724663]
 texture_repeat = 2

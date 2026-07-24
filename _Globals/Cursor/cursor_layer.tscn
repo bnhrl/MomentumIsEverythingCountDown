@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b2yt7evteq6qx"]
 
 [ext_resource type="Script" uid="uid://bxueqg7vh4kua" path="res://_Globals/Cursor/_Cursor.gd" id="1_8fpq0"]
+[ext_resource type="Material" uid="uid://behb1ngel53g" path="res://Assets/Materials/outline_2d.tres" id="2_tslkf"]
 [ext_resource type="Texture2D" uid="uid://cqbr57cb13n7b" path="res://_Globals/Cursor/cursor.png" id="2_u8h05"]
 
 [node name="Cursor" type="CanvasLayer" unique_id=607214282]
@@ -8,5 +9,6 @@ script = ExtResource("1_8fpq0")
 
 [node name="CursorObject" type="Node2D" parent="." unique_id=724732679]
 
-[node name="Sprite2D" type="Sprite2D" parent="CursorObject" unique_id=1869862200]
+[node name="Sprite" type="Sprite2D" parent="CursorObject" unique_id=1869862200]
+material = ExtResource("2_tslkf")
 texture = ExtResource("2_u8h05")

@@ -1,70 +1,46 @@
 [gd_scene format=3 uid="uid://co1sgdv2x4nyr"]
 
 [ext_resource type="Script" uid="uid://nhvbyg5sl1vd" path="res://Game/Levels/_Base/level.gd" id="1_4nsif"]
-[ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="2_1kmpi"]
-[ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="2_4nsif"]
 [ext_resource type="PackedScene" uid="uid://crkrc2q1qfpns" path="res://Game/CountDownTimer/count_down_timer.tscn" id="2_mndar"]
+[ext_resource type="Shader" uid="uid://y6t5gm6jds58" path="res://Assets/Shaders/outline_2d.gdshader" id="3_4nsif"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mndar"]
+shader = ExtResource("3_4nsif")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+
+[sub_resource type="TileSet" id="TileSet_4nsif"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4nsif"]
 source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
 
-[sub_resource type="TileSet" id="TileSet_4nsif"]
-
-[node name="Level" type="Node2D" unique_id=1414133645]
+[node name="Level0" type="Node2D" unique_id=1414133645]
 script = ExtResource("1_4nsif")
 
 [node name="Bounds" type="Control" parent="." unique_id=1811867841]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -523.0
-offset_top = -340.0
-offset_right = 978.0
-offset_bottom = 637.0
+offset_right = 640.0
+offset_bottom = 360.0
 
 [node name="PlayerSpawnPoint" type="Marker2D" parent="." unique_id=1452407390]
 position = Vector2(320, 180)
+
+[node name="CountDownTimer" parent="." unique_id=102296066 instance=ExtResource("2_mndar")]
+
+[node name="WallLayer" type="CanvasGroup" parent="." unique_id=332655601]
+material = SubResource("ShaderMaterial_mndar")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="WallLayer" unique_id=1951823628 groups=["navigation_group"]]
+tile_set = SubResource("TileSet_4nsif")
+
+[node name="PolygonWalls" type="Node2D" parent="WallLayer" unique_id=576414089 groups=["navigation_group"]]
 
 [node name="NavigationRegion" type="NavigationRegion2D" parent="." unique_id=517625210]
 position = Vector2(-523, -340)
 navigation_polygon = SubResource("NavigationPolygon_4nsif")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1951823628 groups=["navigation_group"]]
-tile_set = SubResource("TileSet_4nsif")
+[node name="GrapplePoints" type="Node" parent="." unique_id=882760734]
 
-[node name="CountDownTimer" parent="." unique_id=102296066 instance=ExtResource("2_mndar")]
-
-[node name="Polygons" type="Node" parent="." unique_id=576881246 groups=["navigation_group"]]
-
-[node name="PolygonWall0" parent="Polygons" unique_id=293361938 instance=ExtResource("2_4nsif")]
-polygon = PackedVector2Array(2, 2, 2, -2, -12, -19, -1, 13)
-
-[node name="temp" type="Node" parent="." unique_id=1293760514]
-
-[node name="Collisions" type="StaticBody2D" parent="temp" unique_id=1946216247]
-position = Vector2(-262, -103)
-scale = Vector2(1.5, 1.5)
-
-[node name="Polygon2D" type="Polygon2D" parent="temp/Collisions" unique_id=1806525439]
-polygon = PackedVector2Array(44, -111, -89, 76, -86, 339, 28, 446, 397, 463, 706, 439, 782, 274, 780, -15, 666, -100, 283, -116, 22, -78, 114, -188, 417, -187, 747, -194, 865, -94, 912, 114, 877, 446, 727, 524, 40, 517, -152, 476, -231, 230, -164, -15, -85, -111)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="temp/Collisions" unique_id=704112373]
-polygon = PackedVector2Array(44, -111, -89, 76, -86, 339, 28, 446, 397, 463, 706, 439, 782, 274, 780, -15, 666, -100, 283, -116, 22, -78, 114, -188, 417, -187, 747, -194, 865, -94, 912, 114, 877, 446, 727, 524, 40, 517, -152, 476, -231, 230, -164, -15, -85, -111)
-
-[node name="GrapplePoint0" parent="temp" unique_id=907286068 instance=ExtResource("2_1kmpi")]
-position = Vector2(151, 205)
-
-[node name="GrapplePoint1" parent="temp" unique_id=255816644 instance=ExtResource("2_1kmpi")]
-position = Vector2(261, 100)
-
-[node name="GrapplePoint2" parent="temp" unique_id=1590516925 instance=ExtResource("2_1kmpi")]
-position = Vector2(297, 257)
-
-[node name="GrapplePoint3" parent="temp" unique_id=399200449 instance=ExtResource("2_1kmpi")]
-position = Vector2(341, -33)
-
-[node name="GrapplePoint4" parent="temp" unique_id=340549066 instance=ExtResource("2_1kmpi")]
-position = Vector2(443, -159)
-
-[node name="GrapplePoint5" parent="temp" unique_id=1618993034 instance=ExtResource("2_1kmpi")]
-position = Vector2(387, -236)
+[node name="Enemies" type="Node" parent="." unique_id=1295879779]
