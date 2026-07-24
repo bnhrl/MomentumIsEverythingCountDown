@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfgo17hod55k1"
-path="res://.godot/imported/Amobea.png-651c851dbcfcc1bbe4bcc3741bc0a8ea.ctex"
+path="res://.godot/imported/Amoeba.png-2d529baf1c81b462ae6846839e9b0478.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Enemies/BEAmobea/Amobea.png"
-dest_files=["res://.godot/imported/Amobea.png-651c851dbcfcc1bbe4bcc3741bc0a8ea.ctex"]
+source_file="res://Game/Enemies/BEAmoeba/Amoeba.png"
+dest_files=["res://.godot/imported/Amoeba.png-2d529baf1c81b462ae6846839e9b0478.ctex"]
 
 [params]
 
