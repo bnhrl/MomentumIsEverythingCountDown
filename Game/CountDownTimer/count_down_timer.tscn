@@ -1,28 +1,19 @@
 [gd_scene format=3 uid="uid://crkrc2q1qfpns"]
 
 [ext_resource type="Script" uid="uid://cuufmsnljmbd8" path="res://Game/CountDownTimer/count_down_timer.gd" id="1_ddtig"]
+[ext_resource type="Texture2D" uid="uid://bcsrbcpelioff" path="res://Game/CountDownTimer/background_0.png" id="2_cknqb"]
+[ext_resource type="Texture2D" uid="uid://c0l5iyclmsmr3" path="res://Game/CountDownTimer/background_1.png" id="2_ngxpk"]
 
-[sub_resource type="Gradient" id="Gradient_ddtig"]
-colors = PackedColorArray(0.5568628, 0.7176471, 0.9607843, 1, 1, 0.6, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_ddtig"]
-gradient = SubResource("Gradient_ddtig")
-width = 128
-
-[node name="CountDownTimer" type="Node2D" unique_id=102296066]
+[node name="CountDownTimer" type="CanvasLayer" unique_id=468220952]
 script = ExtResource("1_ddtig")
 
-[node name="WIPBackground1" type="Polygon2D" parent="." unique_id=1894035525]
-position = Vector2(322, 28)
-rotation = 3.1415927
-scale = Vector2(1.2, -1.2)
-color = Color(0.31014192, 3.4593978e-07, 1.5642495e-07, 1)
-polygon = PackedVector2Array(-53, -17, -70, 16, 59, 24, 65, -8)
+[node name="Background1" type="Sprite2D" parent="." unique_id=1236765804]
+position = Vector2(317, 32)
+texture = ExtResource("2_ngxpk")
 
-[node name="WIPBackground0" type="Polygon2D" parent="." unique_id=1225424733]
-position = Vector2(257, 33)
-texture = SubResource("GradientTexture1D_ddtig")
-polygon = PackedVector2Array(12.219147, -21.123049, -4.7808533, 11.876951, 124.21915, 19.876951, 130.21915, -12.123049)
+[node name="Background0" type="Sprite2D" parent="." unique_id=1675795084]
+position = Vector2(317, 32)
+texture = ExtResource("2_cknqb")
 
 [node name="Label" type="RichTextLabel" parent="." unique_id=53583873]
 offset_right = 640.0
@@ -40,5 +31,13 @@ vertical_alignment = 1
 one_shot = true
 
 [node name="SoundPlayer" type="AudioStreamPlayer" parent="." unique_id=489885819]
+
+[node name="Control" type="Control" parent="." unique_id=675753509]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 265.0
+offset_top = 19.0
+offset_right = 375.0
+offset_bottom = 49.0
 
 [connection signal="timeout" from="BeatTimer" to="." method="_on_beat_timer_timeout"]

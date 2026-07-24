@@ -59,9 +59,10 @@ func _process_tail(delta: float) -> void:
 	
 	var direction := global_position.direction_to(get_global_mouse_position())
 	if grappled_object: direction = global_position.direction_to(grappled_object.global_position)
+	elif attempting_to_grapple: direction = grapple_direction
 	tail_points[1] = direction * tail_dist
 	
-	var lerp_mult := 1.0
+	var lerp_mult := 0.5
 	if attempting_to_grapple: lerp_mult = 5.0
 	for i in range(tail_points.size()-2):
 		var point := tail_points[i+2]
@@ -71,7 +72,7 @@ func _process_tail(delta: float) -> void:
 	
 	tail.points = tail_points
 
-# Body Visuals (TEMPORARY?)
+# Body Visuals
 @onready var _body: Sprite2D = $Model/Body
 @onready var _center: Sprite2D = $Model/Center
 func _process_visuals(delta: float) -> void: 
@@ -89,6 +90,7 @@ func _process_grabber() -> void: # Anchors and rotates the grabber based off of 
 
 
 # Grappling
+var grapple_direction: Vector2
 var attempting_to_grapple := false
 var grappled_object: Node2D
 @onready var grapple_direction_indicator: Polygon2D = $GrappleDirectionIndicator
@@ -97,8 +99,9 @@ func _process_grappling(delta: float) -> void:
 	if !grappled_object: 
 		if attempting_to_grapple: # Attempting grapple
 			target_tail_dist = GRAPPLING_TAIL_DIST
-			for body in grabber.get_overlapping_areas():
-				pass
+			for body in grabber.get_overlapping_bodies():
+				if body is StaticBody2D:
+					attempting_to_grapple = false
 			for area in grabber.get_overlapping_areas():
 				if area is GrapplePoint:
 					hit_grapple(area)
@@ -117,6 +120,7 @@ func _process_grapple_controls() -> void:
 			grapple_direction_indicator.look_at(get_global_mouse_position())
 			grapple_direction_indicator.show()
 		elif Input.is_action_just_released("grapple") and !attempting_to_grapple: # Grapple shoot
+			grapple_direction = global_position.direction_to(get_global_mouse_position())
 			grapple_direction_indicator.hide()
 			attempting_to_grapple = true
 			await Delays.wait(0.5)

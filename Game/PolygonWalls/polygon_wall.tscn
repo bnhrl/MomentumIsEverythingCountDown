@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b1aob121surnv"]
+
+[ext_resource type="Script" uid="uid://cxv3c3emyk0et" path="res://Game/PolygonWalls/polygon_wall.gd" id="1_85go0"]
+
+[node name="PolygonWall0" type="Polygon2D" unique_id=293361938]
+polygon = PackedVector2Array(2, 2, 2, -2, -2, -2, -2, 2)
+script = ExtResource("1_85go0")
+
+[node name="StaticBody" type="StaticBody2D" parent="." unique_id=1621912054]
+
+[node name="Collision" type="CollisionPolygon2D" parent="StaticBody" unique_id=1280681852]

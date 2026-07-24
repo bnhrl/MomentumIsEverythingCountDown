@@ -1,4 +1,4 @@
-class_name CountDownTimer extends Node2D
+class_name CountDownTimer extends CanvasLayer
 
 @onready var label: RichTextLabel = $Label
 @onready var beat_timer: Timer = $BeatTimer
@@ -39,7 +39,7 @@ func beat() -> void:
 const BEAT_SOUNDS := [preload("uid://bw2v7g84dqasy"),preload("uid://bnciwk4cpicw7"),preload("uid://cqldb2pvo4yil")]
 func beat_sound() -> void:
 	sound_player.stream = BEAT_SOUNDS[randi_range(0,2)]
-	sound_player.pitch_scale = clampf(randf_range(0.9, 1.1) + (max_time*0.5/time), 0.9, 2.0)
+	sound_player.pitch_scale = clampf(randf_range(0.9, 1.1) + (max_time*0.5/time)-0.2, 0.9, 2.0)
 	sound_player.play()
 
 
@@ -47,7 +47,7 @@ func beat_sound() -> void:
 signal expired
 
 func _process_expiration() -> void:
-	if time <= 0.0:
+	if time <= 0.0 and !has_expired:
 		expire()
 		time = 0.0
 		label.text = "0.0"
@@ -56,15 +56,22 @@ var has_expired := false
 func expire() -> void:
 	has_expired = true
 	expired.emit()
-
+	await Delays.wait(0.25)
+	var tween := create_tween()
+	tween.parallel().tween_property(label, "position:y", 800, 1.0+randf_range(-0.2,0.2)).set_trans(Tween.TRANS_EXPO)
+	tween.parallel().tween_property(label, "rotation_degrees", randf_range(-30, 30), 1.0+randf_range(-0.2,0.2))
+	for b: Node2D in backgrounds:
+		tween.parallel().tween_property(b, "position:y", 800, 1.0+randf_range(-0.2,0.2)).set_trans(Tween.TRANS_EXPO)
+		tween.parallel().tween_property(b, "rotation_degrees", randf_range(-30, 30), 1.0+randf_range(-0.2,0.2))
 
 # Backgrounds
-@onready var backgrounds := [$WIPBackground0, $WIPBackground1]
+@onready var backgrounds := [$Background0, $Background1]
 func _process_background() -> void:
-	if time > max_time*0.5: return
-		
+	if time > max_time*0.5 or has_expired: 
+		return
+	
 	for b: Node2D in backgrounds:
-		var rand_x := clampf(randf_range(-max_time*0.5/time, max_time/time), -8.0, 8.0)*0.2
-		var rand_y := clampf(randf_range(-max_time*0.5/time, max_time/time), -8.0, 8.0)*0.2
+		var rand_x := clampf(randf_range(-max_time*0.5/time, max_time/time)+0.01, -8.0, 8.0)*0.2
+		var rand_y := clampf(randf_range(-max_time*0.5/time, max_time/time)+0.01, -8.0, 8.0)*0.2
 		b.offset = Vector2(rand_x, rand_y)
 	

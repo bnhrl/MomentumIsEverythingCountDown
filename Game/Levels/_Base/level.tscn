@@ -2,10 +2,14 @@
 
 [ext_resource type="Script" uid="uid://nhvbyg5sl1vd" path="res://Game/Levels/_Base/level.gd" id="1_4nsif"]
 [ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="2_1kmpi"]
-
-[sub_resource type="TileSet" id="TileSet_4nsif"]
+[ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="2_4nsif"]
+[ext_resource type="PackedScene" uid="uid://crkrc2q1qfpns" path="res://Game/CountDownTimer/count_down_timer.tscn" id="2_mndar"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4nsif"]
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation_group"
+
+[sub_resource type="TileSet" id="TileSet_4nsif"]
 
 [node name="Level" type="Node2D" unique_id=1414133645]
 script = ExtResource("1_4nsif")
@@ -21,12 +25,19 @@ offset_bottom = 637.0
 [node name="PlayerSpawnPoint" type="Marker2D" parent="." unique_id=1452407390]
 position = Vector2(320, 180)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1951823628]
-tile_set = SubResource("TileSet_4nsif")
-
 [node name="NavigationRegion" type="NavigationRegion2D" parent="." unique_id=517625210]
 position = Vector2(-523, -340)
 navigation_polygon = SubResource("NavigationPolygon_4nsif")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1951823628 groups=["navigation_group"]]
+tile_set = SubResource("TileSet_4nsif")
+
+[node name="CountDownTimer" parent="." unique_id=102296066 instance=ExtResource("2_mndar")]
+
+[node name="Polygons" type="Node" parent="." unique_id=576881246 groups=["navigation_group"]]
+
+[node name="PolygonWall0" parent="Polygons" unique_id=293361938 instance=ExtResource("2_4nsif")]
+polygon = PackedVector2Array(2, 2, 2, -2, -12, -19, -1, 13)
 
 [node name="temp" type="Node" parent="." unique_id=1293760514]
 

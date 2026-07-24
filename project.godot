@@ -39,11 +39,18 @@ window/stretch/aspect="expand"
 
 folder_colors={
 "res://Assets/": "gray",
+"res://Game/CountDownTimer/": "yellow",
+"res://Game/GrapplePoints/": "yellow",
 "res://Game/LevelSelect/": "blue",
 "res://Game/Levels/": "blue",
 "res://Game/Player/": "green",
+"res://Game/PolygonWalls/": "yellow",
 "res://_Globals/": "gray"
 }
+
+[global_group]
+
+navigation_group=""
 
 [gui]
 
