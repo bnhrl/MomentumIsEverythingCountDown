@@ -26,7 +26,7 @@ func _process_following() -> void:
 func _process_zoom(delta: float) -> void:
 	var z := 1.0 + (1.0-GameTime.time_scale)*0.1
 	var target_zoom := Vector2(z,z)
-	zoom = LerpHelper.lv2(zoom, target_zoom, 16.0, delta)
+	zoom = LerpHelper.lv2(zoom, target_zoom, 12.0, delta)
 
 
 # Camera Shake

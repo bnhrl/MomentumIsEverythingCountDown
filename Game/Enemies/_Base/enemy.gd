@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent
 
 @export var speed := 3000.0
-@export var momentum_to_kill := 200.0
+@export var momentum_to_kill := 333.0
 
 var target: Node2D
 
