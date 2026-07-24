@@ -6,8 +6,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mndar"]
 shader = ExtResource("3_4nsif")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/line_thickness = 1.0
+shader_parameter/on_canvas_group = true
+shader_parameter/outline_thickness = 1.0
 
 [sub_resource type="TileSet" id="TileSet_4nsif"]
 
@@ -38,7 +38,6 @@ tile_set = SubResource("TileSet_4nsif")
 [node name="PolygonWalls" type="Node2D" parent="WallLayer" unique_id=576414089 groups=["navigation_group"]]
 
 [node name="NavigationRegion" type="NavigationRegion2D" parent="." unique_id=517625210]
-position = Vector2(-523, -340)
 navigation_polygon = SubResource("NavigationPolygon_4nsif")
 
 [node name="GrapplePoints" type="Node" parent="." unique_id=882760734]

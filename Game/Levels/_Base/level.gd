@@ -11,7 +11,18 @@ func _ready() -> void:
 
 @export_tool_button("Rebake Navigation") var rebake := func() -> void:
 	$NavigationRegion.show()
-	$NavigationRegion.navigation_polygon = $NavigationRegion.navigation_polygon.duplicate()
+	var bounds_rect: Rect2 = $Bounds.get_rect()
+	var points := PackedVector2Array([
+		bounds_rect.position,
+		bounds_rect.position+Vector2(bounds_rect.size.x, 0.0),
+		bounds_rect.position + bounds_rect.size,
+		bounds_rect.position+Vector2(0.0, bounds_rect.size.y),
+	])
+	
+	var nav_poly: NavigationPolygon = $NavigationRegion.navigation_polygon.duplicate()
+	nav_poly.clear_outlines()
+	nav_poly.add_outline(points)
+	$NavigationRegion.navigation_polygon = nav_poly
 	$NavigationRegion.bake_navigation_polygon()
 	await get_tree().create_timer(0.75).timeout
 	$NavigationRegion.hide()

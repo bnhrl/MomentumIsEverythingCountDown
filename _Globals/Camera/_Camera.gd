@@ -15,8 +15,9 @@ var target: Node2D
 @onready var target_position := get_viewport_rect().size/2.0
 
 func _process_following() -> void:
+	offset = camera_shake
 	if target:
-		target_position = target.global_position + camera_shake
+		target_position = target.global_position
 	else:
 		target_position = get_viewport_rect().size/2.0
 	global_position = target_position

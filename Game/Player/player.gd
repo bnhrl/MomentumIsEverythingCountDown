@@ -23,10 +23,6 @@ func _process_movement(delta: float) -> void:
 	var input_direction := Input.get_vector("left", "right", "up", "down")
 	if grappled_object: 
 		input_direction = Vector2.ZERO
-		#if Input.is_action_pressed("left"):
-			#momentum = momentum.rotated(-delta*32.0)*60*delta
-		#elif Input.is_action_pressed("right"):
-			#momentum = momentum.rotated(delta*32.0)*60*delta
 	
 	velocity = input_direction * SPEED + momentum
 	momentum = LerpHelper.lv2(momentum, Vector2.ZERO, 3.0, delta)
@@ -34,12 +30,14 @@ func _process_movement(delta: float) -> void:
 	#print("Current Momentum: " + str(int(momentum.length())))
 	
 	move_and_slide()
-	for i in get_slide_collision_count():
-		var collision := get_slide_collision(i)
-		if collision:
-			momentum = momentum.bounce(collision.get_normal())*0.8
-			velocity = velocity.bounce(collision.get_normal())*0.8
-			break
+	if get_momentum() >= 100: # Ricocheting
+		for i in get_slide_collision_count():
+			var collision := get_slide_collision(i)
+			if collision:
+				momentum = momentum.bounce(collision.get_normal())*0.8
+				velocity = velocity.bounce(collision.get_normal())*0.8
+				Camera.add_shake(clampf(get_momentum()*0.005, 0.0, 2.5))
+				break
 
 func get_momentum() -> float:
 	return momentum.length()
