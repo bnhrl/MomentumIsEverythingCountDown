@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://y3wlg3brvmeg"]
+
+[ext_resource type="Script" uid="uid://c15b4fbsq0j5v" path="res://_Globals/Effects/_Effects.gd" id="1_btiq3"]
+[ext_resource type="Shader" uid="uid://dhtqxbym460ta" path="res://Assets/Shaders/effect_brighten.gdshader" id="3_2inh8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6smh"]
+shader = ExtResource("3_2inh8")
+shader_parameter/mult = 0.0
+
+[node name="EffectsLayer" type="CanvasLayer" unique_id=1427142918]
+layer = 9
+script = ExtResource("1_btiq3")
+
+[node name="Brighten" type="ColorRect" parent="." unique_id=543014607]
+material = SubResource("ShaderMaterial_c6smh")
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2

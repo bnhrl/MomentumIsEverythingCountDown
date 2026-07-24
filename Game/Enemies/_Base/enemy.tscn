@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://tms7gslr1oip"]
 
 [ext_resource type="Script" uid="uid://cc4ekuuqlnyow" path="res://Game/Enemies/_Base/enemy.gd" id="1_qsd2j"]
+[ext_resource type="Material" uid="uid://d2t4whxx1mrd8" path="res://Assets/Materials/outline_2d_canvas_group.tres" id="2_flhjw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6smh"]
 radius = 8.0
@@ -9,6 +10,8 @@ radius = 8.0
 radius = 125.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=613541596]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_qsd2j")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=837188640]
@@ -24,3 +27,10 @@ target_position = Vector2(125, 0)
 [node name="Collision" type="CollisionShape2D" parent="DetectionArea" unique_id=1541580241]
 shape = SubResource("CircleShape2D_853w4")
 debug_color = Color(0.99470645, 0, 0.22376983, 0)
+
+[node name="Model" type="CanvasGroup" parent="." unique_id=87698194]
+material = ExtResource("2_flhjw")
+
+[node name="TestVisual_REPLACE_LATER" type="Polygon2D" parent="Model" unique_id=1131845848]
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(0, -8, 6, -5, 8, 0, 5, 6, 0, 8, -6, 5, -8, 0, -6, -5)

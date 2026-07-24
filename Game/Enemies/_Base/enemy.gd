@@ -3,12 +3,14 @@ extends CharacterBody2D
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent
 
 @export var speed := 3000.0
+@export var momentum_to_kill := 200.0
 
 var target: Node2D
 
 func _physics_process(delta: float) -> void:
 	_process_movement(delta)
 	_process_detection()
+	_process_passing()
 
 
 # Movement
@@ -43,3 +45,26 @@ func _process_detection() -> void:
 func can_see_object(object: Node2D) -> bool:
 	if detection_ray.is_colliding() and detection_ray.get_collider() == object: return true
 	return false
+
+
+# Passing
+func _process_passing() -> void:
+	for i in get_slide_collision_count():
+		var collision := get_slide_collision(i)
+		if collision:
+			var collider := collision.get_collider()
+			if collider is Player:
+				if collider.get_momentum() >= momentum_to_kill:
+					die()
+				else: # TODO add player death
+					#collider.die()
+					pass
+				break
+
+
+# Death
+func die() -> void:
+	GameTime.set_temp_scale(0.01)
+	Effects.brighten(.75)
+	Camera.add_shake()
+	queue_free()

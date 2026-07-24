@@ -31,6 +31,8 @@ func _process_movement(delta: float) -> void:
 	velocity = input_direction * SPEED + momentum
 	momentum = LerpHelper.lv2(momentum, Vector2.ZERO, 3.0, delta)
 	
+	#print("Current Momentum: " + str(int(momentum.length())))
+	
 	move_and_slide()
 	for i in get_slide_collision_count():
 		var collision := get_slide_collision(i)
@@ -39,9 +41,12 @@ func _process_movement(delta: float) -> void:
 			velocity = velocity.bounce(collision.get_normal())*0.8
 			break
 
+func get_momentum() -> float:
+	return momentum.length()
 
 # Tail
 const DEFAULT_TAIL_DIST := 8.0
+const RETRACTED_TAIL_DIST := 3.0
 const GRAPPLING_TAIL_DIST := 40.0
 var target_tail_dist := DEFAULT_TAIL_DIST
 var tail_dist := DEFAULT_TAIL_DIST
@@ -64,6 +69,7 @@ func _process_tail(delta: float) -> void:
 	
 	var lerp_mult := 0.5
 	if attempting_to_grapple: lerp_mult = 5.0
+	elif retracting_tail: lerp_mult = 16.0
 	for i in range(tail_points.size()-2):
 		var point := tail_points[i+2]
 		var target := direction * i*tail_dist
@@ -72,8 +78,9 @@ func _process_tail(delta: float) -> void:
 	
 	tail.points = tail_points
 
+
 # Body Visuals
-@onready var _body: Sprite2D = $Model/Body
+@onready var _body: AnimatedSprite2D = $Model/Body
 @onready var _center: Sprite2D = $Model/Center
 func _process_visuals(delta: float) -> void: 
 	var angle := get_angle_to(get_global_mouse_position())
@@ -91,6 +98,7 @@ func _process_grabber() -> void: # Anchors and rotates the grabber based off of 
 
 # Grappling
 var grapple_direction: Vector2
+var retracting_tail := false
 var attempting_to_grapple := false
 var grappled_object: Node2D
 @onready var grapple_direction_indicator: Polygon2D = $GrappleDirectionIndicator
@@ -106,20 +114,24 @@ func _process_grappling(delta: float) -> void:
 				if area is GrapplePoint:
 					hit_grapple(area)
 		else:
-			target_tail_dist = DEFAULT_TAIL_DIST
+			if retracting_tail: target_tail_dist = RETRACTED_TAIL_DIST
+			else:               target_tail_dist = DEFAULT_TAIL_DIST
 		return
 	
 	tail_points[tail_points.size()-1] = grappled_object.global_position - global_position
 	tail_dist = global_position.distance_to(grappled_object.global_position)*0.09
+	target_tail_dist = global_position.distance_to(grappled_object.global_position)*0.09
 	momentum += global_position.direction_to(grappled_object.global_position) * 3000.0 * delta
 
 func _process_grapple_controls() -> void:
 	if !grappled_object:
 		if Input.is_action_pressed("grapple") and !attempting_to_grapple: # Grapple slow-down
+			retracting_tail = true
 			GameTime.set_temp_scale(0.1)
 			grapple_direction_indicator.look_at(get_global_mouse_position())
 			grapple_direction_indicator.show()
 		elif Input.is_action_just_released("grapple") and !attempting_to_grapple: # Grapple shoot
+			retracting_tail = false
 			grapple_direction = global_position.direction_to(get_global_mouse_position())
 			grapple_direction_indicator.hide()
 			attempting_to_grapple = true

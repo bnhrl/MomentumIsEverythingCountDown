@@ -20,9 +20,10 @@ config/icon="res://icon.svg"
 
 Delays="*uid://b4yfch5nbpepm"
 Cursor="*uid://b2yt7evteq6qx"
-Camera="*uid://i6e8vkirx2w3"
 GameTime="*uid://do5at2mhoc1xd"
+Camera="*uid://i6e8vkirx2w3"
 Scenes="*uid://cs65ae3kb78oi"
+Effects="*uid://y3wlg3brvmeg"
 PlayerManager="*uid://g1y2tcup3peo"
 
 [debug]

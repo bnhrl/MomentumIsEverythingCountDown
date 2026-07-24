@@ -11,8 +11,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_853w4"]
 shader = ExtResource("2_p2hw7")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/line_thickness = 1.0
+shader_parameter/on_canvas_group = true
+shader_parameter/outline_thickness = 1.0
 
 [sub_resource type="Curve" id="Curve_c6smh"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.39043823, 1), -1.6422175, -1.6422175, 0, 0, Vector2(1, 0.57024795), 0.0, 0.0, 0, 0]
@@ -22,8 +22,52 @@ point_count = 3
 offsets = PackedFloat32Array(0.4408867, 1)
 colors = PackedColorArray(0.3019608, 0.60784316, 0.9019608, 1, 0.9411765, 0.30980393, 0.47058824, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2hw7"]
+atlas = ExtResource("4_vytja")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch4ko"]
+atlas = ExtResource("4_vytja")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6smh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2hw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ch4ko")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.5
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_letr6"]
 radius = 15.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh1aq"]
+atlas = ExtResource("5_segth")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ddeg"]
+atlas = ExtResource("5_segth")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_853w4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh1aq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ddeg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.5
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=2013412106]
 script = ExtResource("1_m57qa")
@@ -44,23 +88,27 @@ texture_mode = 1
 joint_mode = 2
 end_cap_mode = 2
 
-[node name="Body" type="Sprite2D" parent="Model" unique_id=398680062]
-texture = ExtResource("4_vytja")
+[node name="Body" type="AnimatedSprite2D" parent="Model" unique_id=1593210744]
+sprite_frames = SubResource("SpriteFrames_c6smh")
+autoplay = "default"
+frame_progress = 0.15166096
 
 [node name="Center" type="Sprite2D" parent="Model" unique_id=2061725635]
 texture = ExtResource("5_p2hw7")
 
 [node name="Grabber" type="Area2D" parent="Model" unique_id=1042861233]
 position = Vector2(51, 0)
+collision_mask = 3
 
 [node name="Collision" type="CollisionShape2D" parent="Model/Grabber" unique_id=344104193]
 z_index = -1
 position = Vector2(6, 0)
 shape = SubResource("CircleShape2D_letr6")
 
-[node name="Sprite" type="Sprite2D" parent="Model/Grabber" unique_id=825507264]
+[node name="Sprite" type="AnimatedSprite2D" parent="Model/Grabber" unique_id=41229790]
 position = Vector2(5, 0)
-texture = ExtResource("5_segth")
+sprite_frames = SubResource("SpriteFrames_853w4")
+autoplay = "default"
 
 [node name="GrappleDirectionIndicator" type="Polygon2D" parent="." unique_id=1750413852]
 polygon = PackedVector2Array(12, -8, 24, 0, 12, 8, 18, 0)
