@@ -1,8 +1,8 @@
 shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
-
 uniform bool on_canvas_group = false;
+
 uniform float wave_x = 10.0;
 uniform float wave_y = 10.0;
 uniform float ferocity = 1.0;

@@ -13,9 +13,10 @@ func _process(delta: float) -> void:
 @export_tool_button("Refresh") var refresh := func() -> void:
 	add_theme_color_override("default_color", default_color)
 
+
 # Hovering
-@export var default_color := Color(0.5,0.5,0.5)
-@export var hover_color := Color.WHITE
+@export var default_color := Color("4d65b4")
+@export var hover_color := Color("e83b3b")
 @export var hover_size := Vector2(1.5, 1.5)
 var hovered := false
 @onready var color := default_color
@@ -43,6 +44,8 @@ signal pressed
 signal pressed_self(btn: UIButton) ## In case you need to reference the button that emitted the signal.
 
 func _process_pressing() -> void:
-	if Input.is_action_just_pressed("button_press"):
-		pressed.emit()
-		pressed_self.emit(self)
+	if Input.is_action_just_pressed("button_press") and hovered: press()
+
+func press() -> void:
+	pressed.emit()
+	pressed_self.emit(self)

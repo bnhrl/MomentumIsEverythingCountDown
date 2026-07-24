@@ -1,15 +1,12 @@
 [gd_scene format=3 uid="uid://b2yt7evteq6qx"]
 
-[ext_resource type="Script" uid="uid://bxueqg7vh4kua" path="res://_Globals/Cursor/_Cursor.gd" id="1_ltw8t"]
+[ext_resource type="Script" uid="uid://bxueqg7vh4kua" path="res://_Globals/Cursor/_Cursor.gd" id="1_8fpq0"]
+[ext_resource type="Texture2D" uid="uid://cqbr57cb13n7b" path="res://_Globals/Cursor/cursor.png" id="2_u8h05"]
 
 [node name="Cursor" type="CanvasLayer" unique_id=607214282]
-script = ExtResource("1_ltw8t")
+script = ExtResource("1_8fpq0")
 
 [node name="CursorObject" type="Node2D" parent="." unique_id=724732679]
 
-[node name="Visual1" type="Polygon2D" parent="CursorObject" unique_id=1885440409]
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(0, 0, 0, 8, 8, 0)
-
-[node name="Visual0" type="Polygon2D" parent="CursorObject" unique_id=1949847239]
-polygon = PackedVector2Array(1, 1, 1, 5, 5, 1)
+[node name="Sprite2D" type="Sprite2D" parent="CursorObject" unique_id=1869862200]
+texture = ExtResource("2_u8h05")

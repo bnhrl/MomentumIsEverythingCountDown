@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://tsffeia6kcry"]
+
+[ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/UIButton/ui_button.tscn" id="1_q2kld"]
+[ext_resource type="Script" uid="uid://ctylvnbbiyt5s" path="res://UI/Buttons/LevelButton/level_button.gd" id="1_rxaxb"]
+
+[node name="LevelButton" unique_id=1301211313 instance=ExtResource("1_q2kld")]
+offset_right = 24.0
+offset_bottom = 30.0
+text = "0"
+script = ExtResource("1_rxaxb")
+level = 0

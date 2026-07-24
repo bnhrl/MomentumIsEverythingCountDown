@@ -8,6 +8,8 @@ var target: Node2D
 func _process(_delta: float) -> void:
 	if target:
 		global_position = target.global_position
+	else:
+		global_position = get_viewport_rect().size/2.0
 	#_process_zoom(delta)
 
 func _process_zoom(delta: float) -> void:

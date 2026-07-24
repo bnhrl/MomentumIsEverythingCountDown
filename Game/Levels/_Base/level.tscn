@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://fr8karxanqon" path="res://Game/Player/player.tscn" id="1_ag3y2"]
 [ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="2_1kmpi"]
 
+[sub_resource type="TileSet" id="TileSet_4nsif"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4nsif"]
+
 [node name="Level" type="Node2D" unique_id=1414133645]
 script = ExtResource("1_4nsif")
 
@@ -14,6 +18,13 @@ offset_left = -523.0
 offset_top = -340.0
 offset_right = 978.0
 offset_bottom = 637.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1951823628]
+tile_set = SubResource("TileSet_4nsif")
+
+[node name="NavigationRegion" type="NavigationRegion2D" parent="." unique_id=517625210]
+position = Vector2(-523, -340)
+navigation_polygon = SubResource("NavigationPolygon_4nsif")
 
 [node name="temp" type="Node" parent="." unique_id=1293760514]
 
@@ -37,3 +48,12 @@ position = Vector2(261, 100)
 
 [node name="GrapplePoint2" parent="temp" unique_id=1590516925 instance=ExtResource("2_1kmpi")]
 position = Vector2(297, 257)
+
+[node name="GrapplePoint3" parent="temp" unique_id=399200449 instance=ExtResource("2_1kmpi")]
+position = Vector2(341, -33)
+
+[node name="GrapplePoint4" parent="temp" unique_id=340549066 instance=ExtResource("2_1kmpi")]
+position = Vector2(443, -159)
+
+[node name="GrapplePoint5" parent="temp" unique_id=1618993034 instance=ExtResource("2_1kmpi")]
+position = Vector2(387, -236)

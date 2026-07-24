@@ -32,6 +32,12 @@ func _process_movement(delta: float) -> void:
 	momentum = LerpHelper.lv2(momentum, Vector2.ZERO, 3.0, delta)
 	
 	move_and_slide()
+	for i in get_slide_collision_count():
+		var collision := get_slide_collision(i)
+		if collision:
+			momentum = momentum.bounce(collision.get_normal())*0.8
+			velocity = velocity.bounce(collision.get_normal())*0.8
+			break
 
 
 # Tail
@@ -66,12 +72,12 @@ func _process_tail(delta: float) -> void:
 	tail.points = tail_points
 
 # Body Visuals (TEMPORARY?)
-@onready var body: Sprite2D = $Model/Body
-@onready var center: Sprite2D = $Model/Center
+@onready var _body: Sprite2D = $Model/Body
+@onready var _center: Sprite2D = $Model/Center
 func _process_visuals(delta: float) -> void: 
 	var angle := get_angle_to(get_global_mouse_position())
-	body.rotation = LerpHelper.la(body.rotation, angle, 16.0, delta)
-	center.rotation = LerpHelper.la(center.rotation, angle, 4.0, delta)
+	_body.rotation = LerpHelper.la(_body.rotation, angle, 16.0, delta)
+	_center.rotation = LerpHelper.la(_center.rotation, angle, 4.0, delta)
 
 
 # Grabber
@@ -120,12 +126,12 @@ func _process_grapple_controls() -> void:
 			#grappled_object = null
 
 func hit_grapple(node: Node2D) -> void:
-	print("Grappled " + node.name + "!")
+	#print("Grappled " + node.name + "!")
 	grappled_object = node
 	attempting_to_grapple = false
 
 func release_grapple() -> void:
-	print("Released grappled object!")
+	#print("Released grappled object!")
 	grappled_object = null
 
 func passed_grapple_object() -> void:

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b8f2vxq8e2wo1"]
 
-[ext_resource type="Script" uid="uid://b2e7j2n0j4kpj" path="res://UI/Buttons/ui_button.gd" id="1_k47w0"]
+[ext_resource type="Script" uid="uid://b2e7j2n0j4kpj" path="res://UI/Buttons/UIButton/ui_button.gd" id="1_k47w0"]
 
 [node name="UIButton" type="RichTextLabel" unique_id=1301211313]
 clip_contents = false

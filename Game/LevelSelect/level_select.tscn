@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://behlas1qvvn6n"]
 
 [ext_resource type="Script" uid="uid://cm2cu6c3ds62w" path="res://Game/LevelSelect/level_select.gd" id="1_kh25d"]
-[ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/ui_button.tscn" id="2_eeebr"]
+[ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/UIButton/ui_button.tscn" id="2_eeebr"]
+[ext_resource type="PackedScene" uid="uid://tsffeia6kcry" path="res://UI/Buttons/LevelButton/level_button.tscn" id="3_eeebr"]
 
 [node name="LevelSelect" type="Control" unique_id=1723362477]
 layout_mode = 3
@@ -14,9 +15,19 @@ script = ExtResource("1_kh25d")
 
 [node name="BtnMainMenu" parent="." unique_id=1301211313 instance=ExtResource("2_eeebr")]
 layout_mode = 0
-offset_left = 230.0
-offset_top = 332.0
-offset_right = 410.0
-offset_bottom = 356.0
-theme_override_colors/default_color = Color(0.5, 0.5, 0.5, 1)
-text = "Back to Main Menu"
+offset_left = 24.0
+offset_top = 285.0
+offset_right = 114.0
+offset_bottom = 342.0
+text = "Back to 
+Main Menu"
+
+[node name="Btn0_TEST_REMOVE_LATER" parent="." unique_id=636891361 instance=ExtResource("3_eeebr")]
+layout_mode = 0
+offset_left = 614.0
+offset_top = 327.0
+offset_right = 638.0
+offset_bottom = 357.0
+theme_override_colors/default_color = Color(0.3019608, 0.39607844, 0.7058824, 1)
+
+[connection signal="pressed" from="BtnMainMenu" to="." method="_on_btn_main_menu_pressed"]
