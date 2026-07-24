@@ -2,8 +2,27 @@
 
 [ext_resource type="Script" uid="uid://psqqhskqcq2t" path="res://Game/MainMenu/main_menu.gd" id="1_2lp7i"]
 [ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/UIButton/ui_button.tscn" id="1_38cx4"]
+[ext_resource type="Texture2D" uid="uid://baodxxg4uk2ig" path="res://Game/MainMenu/background.png" id="3_5g5lb"]
 [ext_resource type="Shader" uid="uid://bxqrghscsqtx0" path="res://Assets/Shaders/obscur.gdshader" id="3_052h3"]
 [ext_resource type="AudioStream" uid="uid://d4a7d10skgb0n" path="res://Assets/Sounds/clair.wav" id="3_57bh4"]
+[ext_resource type="Texture2D" uid="uid://bj4ao8f456njj" path="res://Game/MainMenu/logo.png" id="5_052h3"]
+[ext_resource type="Shader" uid="uid://chwkgj0slhnlv" path="res://Assets/Shaders/wavy.gdshader" id="5_trxfs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2gy78"]
+shader = ExtResource("5_trxfs")
+shader_parameter/on_canvas_group = true
+shader_parameter/wave_x = -100.0
+shader_parameter/wave_y = 0.0
+shader_parameter/ferocity = 0.03
+shader_parameter/speed = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8uv83"]
+shader = ExtResource("5_trxfs")
+shader_parameter/on_canvas_group = true
+shader_parameter/wave_x = 50.0
+shader_parameter/wave_y = 50.0
+shader_parameter/ferocity = 0.02
+shader_parameter/speed = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c6smh"]
 shader = ExtResource("3_052h3")
@@ -15,6 +34,24 @@ offset_right = 640.0
 offset_bottom = 360.0
 script = ExtResource("1_2lp7i")
 
+[node name="MainMenu" type="Node" parent="." unique_id=364565104]
+
+[node name="Background" type="CanvasGroup" parent="MainMenu" unique_id=249693910]
+z_index = -1
+material = SubResource("ShaderMaterial_2gy78")
+
+[node name="Background" type="Sprite2D" parent="MainMenu/Background" unique_id=2021198614]
+position = Vector2(320, 180)
+scale = Vector2(1.1, 1)
+texture = ExtResource("3_5g5lb")
+
+[node name="Logo" type="CanvasGroup" parent="MainMenu" unique_id=1432294507]
+material = SubResource("ShaderMaterial_8uv83")
+
+[node name="Logo" type="Sprite2D" parent="MainMenu/Logo" unique_id=459210881]
+position = Vector2(320, 132)
+texture = ExtResource("5_052h3")
+
 [node name="BtnStart" parent="." unique_id=1301211313 instance=ExtResource("1_38cx4")]
 layout_mode = 0
 offset_left = 288.0
@@ -22,7 +59,6 @@ offset_top = 279.0
 offset_right = 320.0
 offset_bottom = 311.0
 scale = Vector2(2, 2)
-theme_override_colors/default_color = Color(0.3019608, 0.39607844, 0.7058824, 1)
 text = "GO!"
 hover_size = Vector2(2.5, 2.5)
 
@@ -33,7 +69,6 @@ offset_top = 295.0
 offset_right = 192.0
 offset_bottom = 327.0
 scale = Vector2(2, 2)
-theme_override_colors/default_color = Color(0.3019608, 0.39607844, 0.7058824, 1)
 text = "WHO"
 
 [node name="BtnQuit" parent="." unique_id=1688920916 instance=ExtResource("1_38cx4")]
@@ -43,7 +78,6 @@ offset_top = 295.0
 offset_right = 448.0
 offset_bottom = 327.0
 scale = Vector2(2, 2)
-theme_override_colors/default_color = Color(0.3019608, 0.39607844, 0.7058824, 1)
 text = "DIE"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="BtnQuit" unique_id=1274562216]

@@ -1,6 +1,9 @@
 extends Control
 
 
+func _ready() -> void:
+	pass
+
 func _on_btn_start_pressed() -> void:
 	Scenes.swap_scene("Level Select")
 
