@@ -24,7 +24,8 @@ offset_right = 270.0
 offset_bottom = 151.5
 scale = Vector2(2, 2)
 theme_override_colors/default_color = Color(0.043137256, 0.36862746, 0.39607844, 1)
-text = "bnhrl[font_size=8] (Benjamin Haroldsen)"
+bbcode_enabled = true
+text = "[img]uid://cxsfj2ud8ou1d[/img] bnhrl[font_size=8] (Benjamin Haroldsen)"
 default_color = Color(0.043137256, 0.36862746, 0.39607844, 1)
 hover_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 hover_size = Vector2(1.25, 2)
@@ -36,7 +37,8 @@ offset_right = 270.0
 offset_bottom = 206.5
 scale = Vector2(2, 2)
 theme_override_colors/default_color = Color(0.11764706, 0.7372549, 0.4509804, 1)
-text = "Cat Jug[font_size=8] (Eris)"
+bbcode_enabled = true
+text = "[img]uid://cnmn256wehj7b[/img] Cat Jug[font_size=8] (Eris)"
 default_color = Color(0.11764706, 0.7372549, 0.4509804, 1)
 hover_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 hover_size = Vector2(1.25, 2)
@@ -48,7 +50,8 @@ offset_right = 270.0
 offset_bottom = 261.5
 scale = Vector2(2, 2)
 theme_override_colors/default_color = Color(0.68235296, 0.13725491, 0.20392157, 1)
-text = "ChiefCuptain[font_size=8] (Jack Nolan)"
+bbcode_enabled = true
+text = "[img]uid://mu38c2ikqdnk[/img] ChiefCuptain[font_size=8] (Jack Nolan)"
 default_color = Color(0.68235296, 0.13725491, 0.20392157, 1)
 hover_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 hover_size = Vector2(1.25, 2)
