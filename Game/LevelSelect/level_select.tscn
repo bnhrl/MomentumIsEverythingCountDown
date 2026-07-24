@@ -31,7 +31,6 @@ offset_left = 24.0
 offset_top = 285.0
 offset_right = 114.0
 offset_bottom = 342.0
-theme_override_colors/default_color = Color(0.28235295, 0.2901961, 0.46666667, 1)
 theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 text = "Back to 
 Main Menu"

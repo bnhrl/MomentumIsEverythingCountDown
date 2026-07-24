@@ -54,35 +54,32 @@ texture = ExtResource("5_052h3")
 
 [node name="BtnStart" parent="." unique_id=1301211313 instance=ExtResource("1_38cx4")]
 layout_mode = 0
-offset_left = 288.0
-offset_top = 279.0
-offset_right = 320.0
-offset_bottom = 311.0
-scale = Vector2(2, 2)
-theme_override_colors/default_color = Color(0.28235295, 0.2901961, 0.46666667, 1)
+offset_left = 241.0
+offset_top = 191.0
+offset_right = 287.0
+offset_bottom = 223.0
+scale = Vector2(3, 3)
 theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
-text = "GO!"
-hover_size = Vector2(2.5, 2.5)
+text = "[font_size=11] [/font_size]GO!"
+hover_size = Vector2(2, 2)
 
 [node name="BtnCredits" parent="." unique_id=1026356157 instance=ExtResource("1_38cx4")]
 layout_mode = 0
 offset_left = 160.0
-offset_top = 295.0
+offset_top = 247.0
 offset_right = 192.0
-offset_bottom = 327.0
+offset_bottom = 279.0
 scale = Vector2(2, 2)
-theme_override_colors/default_color = Color(0.28235295, 0.2901961, 0.46666667, 1)
 theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 text = "WHO"
 
 [node name="BtnQuit" parent="." unique_id=1688920916 instance=ExtResource("1_38cx4")]
 layout_mode = 0
 offset_left = 416.0
-offset_top = 295.0
+offset_top = 247.0
 offset_right = 448.0
-offset_bottom = 327.0
+offset_bottom = 279.0
 scale = Vector2(2, 2)
-theme_override_colors/default_color = Color(0.28235295, 0.2901961, 0.46666667, 1)
 theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 text = "DIE"
 
