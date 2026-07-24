@@ -9,7 +9,7 @@ script = ExtResource("1_ltw8t")
 
 [node name="Visual1" type="Polygon2D" parent="CursorObject" unique_id=1885440409]
 color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(0, -6, -6, 0, 0, 6, 6, 0)
+polygon = PackedVector2Array(0, 0, 0, 8, 8, 0)
 
 [node name="Visual0" type="Polygon2D" parent="CursorObject" unique_id=1949847239]
-polygon = PackedVector2Array(0, -4, -4, 0, 0, 4, 4, 0)
+polygon = PackedVector2Array(1, 1, 1, 5, 5, 1)

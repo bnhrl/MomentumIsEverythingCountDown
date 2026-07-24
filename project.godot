@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 Delays="*uid://b4yfch5nbpepm"
 Cursor="*uid://b2yt7evteq6qx"
 Camera="*uid://i6e8vkirx2w3"
+GameTime="*uid://do5at2mhoc1xd"
 
 [debug]
 
@@ -87,3 +88,6 @@ grapple={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+anti_aliasing/screen_space_roughness_limiter/enabled=false
+textures/decals/filter=0
+textures/light_projectors/filter=0

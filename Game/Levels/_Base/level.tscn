@@ -13,10 +13,20 @@ offset_bottom = 360.0
 
 [node name="temp" type="Node" parent="." unique_id=1293760514]
 
+[node name="Collisions" type="StaticBody2D" parent="temp" unique_id=1946216247]
+position = Vector2(-262, -103)
+scale = Vector2(1.5, 1.5)
+
+[node name="Polygon2D" type="Polygon2D" parent="temp/Collisions" unique_id=1806525439]
+polygon = PackedVector2Array(44, -111, -89, 76, -86, 339, 28, 446, 397, 463, 706, 439, 782, 274, 780, -15, 666, -100, 283, -116, 22, -78, 114, -188, 417, -187, 747, -194, 865, -94, 912, 114, 877, 446, 727, 524, 40, 517, -152, 476, -231, 230, -164, -15, -85, -111)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="temp/Collisions" unique_id=704112373]
+polygon = PackedVector2Array(44, -111, -89, 76, -86, 339, 28, 446, 397, 463, 706, 439, 782, 274, 780, -15, 666, -100, 283, -116, 22, -78, 114, -188, 417, -187, 747, -194, 865, -94, 912, 114, 877, 446, 727, 524, 40, 517, -152, 476, -231, 230, -164, -15, -85, -111)
+
 [node name="Player" parent="temp" unique_id=2013412106 instance=ExtResource("1_ag3y2")]
 
 [node name="GrapplePoint0" parent="temp" unique_id=907286068 instance=ExtResource("2_1kmpi")]
-position = Vector2(65, 246)
+position = Vector2(151, 205)
 
 [node name="GrapplePoint1" parent="temp" unique_id=255816644 instance=ExtResource("2_1kmpi")]
 position = Vector2(261, 100)
