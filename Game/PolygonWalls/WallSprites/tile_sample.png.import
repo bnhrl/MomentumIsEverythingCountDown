@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mqn0w60a17mn"
-path="res://.godot/imported/tile_sample.png-d3d5372eab2f2d5f30b17cce659cd94a.ctex"
+path="res://.godot/imported/tile_sample.png-c23f71ba0e7cb949e701cd761b07ce01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/PolygonWalls/tile_sample.png"
-dest_files=["res://.godot/imported/tile_sample.png-d3d5372eab2f2d5f30b17cce659cd94a.ctex"]
+source_file="res://Game/PolygonWalls/WallSprites/tile_sample.png"
+dest_files=["res://.godot/imported/tile_sample.png-c23f71ba0e7cb949e701cd761b07ce01.ctex"]
 
 [params]
 
