@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://og05ddis16cd"]
+
+[ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/UIButton/ui_button.tscn" id="1_fixii"]
+[ext_resource type="Script" uid="uid://o2gmqwsx58wo" path="res://Game/MainMenu/Credits/credits.gd" id="1_n060q"]
+
+[node name="Credits" type="Control" unique_id=986538535]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 50.0
+offset_right = 590.0
+offset_bottom = 320.0
+script = ExtResource("1_n060q")
+
+[node name="Background" type="ColorRect" parent="." unique_id=877641017]
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 320.0
+color = Color(0.91775256, 0.67851543, 0.92947316, 0.5)
+
+[node name="BtnBnhrl" parent="." unique_id=1301211313 instance=ExtResource("1_fixii")]
+layout_mode = 0
+offset_top = 124.0
+offset_right = 270.0
+offset_bottom = 151.5
+scale = Vector2(2, 2)
+theme_override_colors/default_color = Color(0.043137256, 0.36862746, 0.39607844, 1)
+text = "bnhrl[font_size=8] (Benjamin Haroldsen)"
+default_color = Color(0.043137256, 0.36862746, 0.39607844, 1)
+hover_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+hover_size = Vector2(1.25, 2)
+
+[node name="BtnCatJug" parent="." unique_id=1360234817 instance=ExtResource("1_fixii")]
+layout_mode = 0
+offset_top = 179.0
+offset_right = 270.0
+offset_bottom = 206.5
+scale = Vector2(2, 2)
+theme_override_colors/default_color = Color(0.11764706, 0.7372549, 0.4509804, 1)
+text = "Cat Jug[font_size=8] (Eris)"
+default_color = Color(0.11764706, 0.7372549, 0.4509804, 1)
+hover_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+hover_size = Vector2(1.25, 2)
+
+[node name="BtnCuptain" parent="." unique_id=1438333758 instance=ExtResource("1_fixii")]
+layout_mode = 0
+offset_top = 234.0
+offset_right = 270.0
+offset_bottom = 261.5
+scale = Vector2(2, 2)
+theme_override_colors/default_color = Color(0.68235296, 0.13725491, 0.20392157, 1)
+text = "ChiefCuptain[font_size=8] (Jack Nolan)"
+default_color = Color(0.68235296, 0.13725491, 0.20392157, 1)
+hover_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+hover_size = Vector2(1.25, 2)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=387886005]
+layout_mode = 0
+offset_right = 135.0
+offset_bottom = 31.5
+scale = Vector2(4, 4)
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
