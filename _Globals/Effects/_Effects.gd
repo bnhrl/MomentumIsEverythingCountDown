@@ -17,7 +17,7 @@ func _process_screen_effects(delta: float) -> void:
 	$Brighten.material.set_shader_parameter("mult", _brighten)
 	
 	if intensifying:
-		i = LerpHelper.lf(i, 0.15, 12.0, delta)
+		i = LerpHelper.lf(i, 0.15, 5.0, delta)
 		$Intensify.material.set_shader_parameter("rounding", i)
 
 var _brighten := 0.0
