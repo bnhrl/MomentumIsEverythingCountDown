@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://boabyoymc6yd2"]
+
+[ext_resource type="PackedScene" uid="uid://co1sgdv2x4nyr" path="res://Game/Levels/_Base/level.tscn" id="1_7f8el"]
+[ext_resource type="Shader" uid="uid://wu085sklw13i" path="res://Assets/Shaders/world_tiling_2d.gdshader" id="2_sckt2"]
+[ext_resource type="Texture2D" uid="uid://ba7lcy4dmafoi" path="res://Assets/Textures/background_1.png" id="3_obnpv"]
+[ext_resource type="Texture2D" uid="uid://c584u8i8fb7y0" path="res://Game/PolygonWalls/WallSprites/green_tile2.png" id="4_oqxu2"]
+[ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="4_sckt2"]
+[ext_resource type="Texture2D" uid="uid://dn5hwiqgbilfv" path="res://Game/PolygonWalls/WallSprites/blue_tile2.png" id="5_5kaek"]
+[ext_resource type="PackedScene" uid="uid://d3xhd06mdlv8l" path="res://Game/Enemies/WhiteBloodCell/white_blood_cell.tscn" id="5_obnpv"]
+[ext_resource type="Texture2D" uid="uid://bbuqimppwtfs1" path="res://Game/PolygonWalls/WallSprites/red_tile2.png" id="6_0lnb6"]
+[ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="6_b5xo0"]
+[ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="7_n0odl"]
+[ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="8_2wxy5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p51bn"]
+shader = ExtResource("2_sckt2")
+shader_parameter/tile_texture = ExtResource("4_oqxu2")
+shader_parameter/tile_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o31rp"]
+shader = ExtResource("2_sckt2")
+shader_parameter/tile_texture = ExtResource("5_5kaek")
+shader_parameter/tile_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2e57j"]
+shader = ExtResource("2_sckt2")
+shader_parameter/tile_texture = ExtResource("4_oqxu2")
+shader_parameter/tile_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rifrr"]
+shader = ExtResource("2_sckt2")
+shader_parameter/tile_texture = ExtResource("5_5kaek")
+shader_parameter/tile_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sk6u5"]
+shader = ExtResource("2_sckt2")
+shader_parameter/tile_texture = ExtResource("6_0lnb6")
+shader_parameter/tile_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ndkpr"]
+shader = ExtResource("2_sckt2")
+shader_parameter/tile_texture = ExtResource("5_5kaek")
+shader_parameter/tile_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b5xo0"]
+shader = ExtResource("2_sckt2")
+shader_parameter/tile_texture = ExtResource("3_obnpv")
+shader_parameter/tile_size = Vector2(720, 1280)
+
+[node name="Level5" unique_id=1414133645 instance=ExtResource("1_7f8el")]
+
+[node name="Bounds" parent="." index="0" unique_id=1811867841]
+offset_left = -1463.0
+offset_top = -109.0
+offset_right = 740.0
+offset_bottom = 2614.0
+
+[node name="CountDownTimer" parent="." index="3" unique_id=102296066]
+time = 16.0
+
+[node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("6_b5xo0")]
+material = SubResource("ShaderMaterial_p51bn")
+position = Vector2(-942, 641)
+polygon = PackedVector2Array(432, 357, 727, 536, 1429, 345, 1451, -54, 1220, -290, 828, -56, 614, 176, 233, -121, 4, -231, -242, -209, -334, -163, -336.38, -104.928085, -330, -37, -315.51117, 293.68622, -339, 590, -333, 899, -322, 1040, -287, 1061, -185, 1054, -24, 1028, 8, 832, 12, 455, 106, 350)
+
+[node name="PolygonWall1" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="1" unique_id=1150265236 instance=ExtResource("6_b5xo0")]
+material = SubResource("ShaderMaterial_o31rp")
+position = Vector2(171, 48)
+polygon = PackedVector2Array(617, 422, 723, -23, 73, -196, -191, -183, -972, -186, -1547, -148, -1676, 67, -1677, 459, -1659, 552, -1573, 500, -1585, 420, -1584, 324, -1585, 170, -1461, 125, -1118, 78, -731, 181, -621, 333, -552, 500, -541, 576, -435, 479, -263, 379, -123, 255, 32.138733, 52.12628, 274, 69, 328, 243, 246, 283, 106, 304, 18, 439, 321, 550)
+
+[node name="PolygonWall2" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="2" unique_id=1788149450 instance=ExtResource("6_b5xo0")]
+material = SubResource("ShaderMaterial_2e57j")
+position = Vector2(-1385, 1888)
+polygon = PackedVector2Array(-85, 609, 37, 801, 484, 794, 1079, 787, 1104, 646, 904, 653, 739, 621, 622, 569, 521, 507, 440, 376, 429, 129, 440, -104, 392, -93, 304, -85, 153, -73, 17, -98, -33, -217, -45, -979, -17, -1341, -111, -1311, -102, -777, -153, -333, -96, 83)
+
+[node name="PolygonWall3" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="3" unique_id=665937818 instance=ExtResource("6_b5xo0")]
+material = SubResource("ShaderMaterial_rifrr")
+position = Vector2(-116, 1692)
+polygon = PackedVector2Array(217, -92, 2, -121, -100, -20, -57, 65, -45, 206, -72, 542, -136.46268, 807.0132, -232, 871, -366, 954, -130, 990, 99, 965, 136, 806, 164, 575, 231, 271)
+
+[node name="PolygonWall4" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="4" unique_id=1706157588 instance=ExtResource("6_b5xo0")]
+material = SubResource("ShaderMaterial_sk6u5")
+position = Vector2(-528, 1892.5244)
+scale = Vector2(1, 0.99593496)
+polygon = PackedVector2Array(145, 35.620483, 137, -69.808105, 56, -99.93054, -51, -109.971436, -141, -61.775513, -125, 147, -100, 377.00818, -57, 498.50208, 57, 528.6244, 115, 499.50623, 126, 385.0409, 132, 208.32239)
+
+[node name="PolygonWall0" parent="WallLayer" parent_id_path=PackedInt32Array(332655601) index="2" unique_id=363588895 instance=ExtResource("6_b5xo0")]
+material = SubResource("ShaderMaterial_ndkpr")
+position = Vector2(-438, 1259)
+polygon = PackedVector2Array(334, 106, 119, -348, -179, -370, -301, -350, -196, -152, -177, 227, -194, 414, 32, 422, 335, 450)
+
+[node name="Background" parent="." index="5" unique_id=675105712]
+material = SubResource("ShaderMaterial_b5xo0")
+
+[node name="GrapplePoint3" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=2056699830 instance=ExtResource("4_sckt2")]
+position = Vector2(-1359, 428)
+
+[node name="GrapplePoint9" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="1" unique_id=1897525821 instance=ExtResource("4_sckt2")]
+position = Vector2(127, 318)
+
+[node name="GrapplePoint10" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="2" unique_id=1944491187 instance=ExtResource("4_sckt2")]
+position = Vector2(-176, 536)
+
+[node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="3" unique_id=907286068 instance=ExtResource("4_sckt2")]
+position = Vector2(-1325, 789)
+
+[node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="4" unique_id=387350139 instance=ExtResource("4_sckt2")]
+position = Vector2(-1329, 1125)
+
+[node name="GrapplePoint2" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="5" unique_id=1974867096 instance=ExtResource("4_sckt2")]
+position = Vector2(-1336, 1484)
+
+[node name="GrapplePoint4" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="6" unique_id=1969635622 instance=ExtResource("4_sckt2")]
+position = Vector2(-1061, 1751)
+
+[node name="GrapplePoint5" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="7" unique_id=688757345 instance=ExtResource("4_sckt2")]
+position = Vector2(-565, 1758)
+
+[node name="GrapplePoint6" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="8" unique_id=975237818 instance=ExtResource("4_sckt2")]
+position = Vector2(-269, 1869)
+
+[node name="GrapplePoint7" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="9" unique_id=1181732359 instance=ExtResource("4_sckt2")]
+position = Vector2(-281, 2348)
+
+[node name="GrapplePoint8" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="10" unique_id=1412753360 instance=ExtResource("4_sckt2")]
+position = Vector2(-474, 2476)
+
+[node name="DeathPit" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("7_n0odl")]
+position = Vector2(-789.15424, 1635)
+scale = Vector2(1.7885715, 1)
+polygon = PackedVector2Array(179, -41, 177, 27, -171, 27, -162, -46)
+momentum_required = 200.0
+
+[node name="WhiteBloodCell" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="0" unique_id=613541596 instance=ExtResource("5_obnpv")]
+position = Vector2(-850, 1841)
+max_dist_from_origin = 25
+
+[node name="WhiteBloodCell2" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="1" unique_id=1746143589 instance=ExtResource("5_obnpv")]
+position = Vector2(-796, 1425)
+max_dist_from_origin = 25
+
+[node name="WhiteBloodCell3" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="2" unique_id=1766318316 instance=ExtResource("5_obnpv")]
+position = Vector2(-777, 2272)
+max_dist_from_origin = 25
+
+[node name="WhiteBloodCell4" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="3" unique_id=219338273 instance=ExtResource("5_obnpv")]
+position = Vector2(-471, 557)
+max_dist_from_origin = 30
+
+[node name="WhiteBloodCell5" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="4" unique_id=314483506 instance=ExtResource("5_obnpv")]
+position = Vector2(-725, 339)
+max_dist_from_origin = 30
+
+[node name="WhiteBloodCell6" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="5" unique_id=1161027357 instance=ExtResource("5_obnpv")]
+position = Vector2(-1138, 283)
+max_dist_from_origin = 30
+
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("8_2wxy5")]
+position = Vector2(-799, 1044)
+
+[connection signal="level_completed" from="CompletionZones/CompletionZone0" to="." method="level_completed"]

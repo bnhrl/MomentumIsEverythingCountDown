@@ -55,7 +55,7 @@ time = 20.0
 [node name="PolygonWall2" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=1078133837 instance=ExtResource("2_0kfcg")]
 material = SubResource("ShaderMaterial_es5la")
 position = Vector2(2081, 1776)
-polygon = PackedVector2Array(256, 170, 476, 156, 571, 116, 722, 39, 824, -164, 901, -790, 632, -1072, 502, -1036, 468, -982, 486.6449, -937.59973, 480, -612, 526.29443, -354.20023, 354, -111, 274, -37, 127, -23, 57, -46, -426, -244, -310, 91)
+polygon = PackedVector2Array(256, 170, 476, 156, 571, 116, 722, 39, 824, -164, 901, -790, 632, -1072, 502, -1036, 468, -982, 486.6449, -937.59973, 480, -612, 526.29443, -354.20023, 354, -111, 274, -37, 127, -23, 57, -46, -603, -337, -796, 107)
 
 [node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="1" unique_id=293361938 instance=ExtResource("2_0kfcg")]
 material = SubResource("ShaderMaterial_q5ng6")
