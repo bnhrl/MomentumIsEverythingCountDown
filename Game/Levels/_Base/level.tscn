@@ -61,4 +61,6 @@ navigation_polygon = SubResource("NavigationPolygon_4nsif")
 
 [node name="Enemies" type="Node" parent="." unique_id=1295879779]
 
+[node name="CompletionZones" type="Node" parent="." unique_id=1863227345]
+
 [connection signal="expired" from="CountDownTimer" to="." method="_on_count_down_timer_expired"]

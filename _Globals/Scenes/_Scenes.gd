@@ -4,6 +4,7 @@ func _ready() -> void:
 	_fade_out()
 
 
+
 const SCENES: Dictionary[String, PackedScene] = {
 	"Main Menu":preload("uid://bd8qt04xi4h20"),
 	"Level Select":preload("uid://behlas1qvvn6n"),
@@ -21,6 +22,7 @@ func swap_scene(scene_name: String) -> void:
 	get_tree().change_scene_to_packed(scene)
 	await _fade_out()
 
+@onready var fade: ColorRect = $Fade
 func _fade_in(time := 0.5) -> Signal:
 	var tween := create_tween()
 	fade.show()
@@ -32,4 +34,10 @@ func _fade_out(time := 0.5) -> Signal:
 	tween.tween_property(fade, "modulate:a", 0.0, time).from(1.0)
 	tween.tween_property(fade, "visible", false, 0.0)
 	return tween.finished
-@onready var fade: ColorRect = $Fade
+
+
+
+var current_level := 1
+func level_completed(level: int) -> void:
+	if level >= current_level:
+		current_level += 1
