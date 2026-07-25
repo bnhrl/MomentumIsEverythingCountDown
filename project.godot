@@ -54,6 +54,7 @@ folder_colors={
 "res://Game/LevelSelect/": "blue",
 "res://Game/Levels/": "blue",
 "res://Game/MainMenu/": "pink",
+"res://Game/Objects/": "yellow",
 "res://Game/Player/": "green",
 "res://Game/PolygonWalls/": "yellow",
 "res://_Globals/": "gray"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2pyrpnbyvv0l"
-path="res://.godot/imported/computer_view_flamy3.png-42418b004662cba2558599a0630cc2bb.ctex"
+uid="uid://cgkx5qd5yaan"
+path="res://.godot/imported/computer_view_flamy.png-7003f9f7cbe1c4de185127b950e162e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/EndingCutscene/computer_view_flamy3.png"
-dest_files=["res://.godot/imported/computer_view_flamy3.png-42418b004662cba2558599a0630cc2bb.ctex"]
+source_file="res://Game/EndingCutscene/computer_view_flamy.png"
+dest_files=["res://.godot/imported/computer_view_flamy.png-7003f9f7cbe1c4de185127b950e162e6.ctex"]
 
 [params]
 

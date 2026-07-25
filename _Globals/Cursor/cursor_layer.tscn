@@ -4,11 +4,40 @@
 [ext_resource type="Material" uid="uid://behb1ngel53g" path="res://Assets/Materials/outline_2d.tres" id="2_tslkf"]
 [ext_resource type="Texture2D" uid="uid://cqbr57cb13n7b" path="res://_Globals/Cursor/cursor.png" id="2_u8h05"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tslkf"]
+atlas = ExtResource("2_u8h05")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4tas"]
+atlas = ExtResource("2_u8h05")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6smh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tslkf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4tas")
+}],
+"loop": 1,
+"name": &"hover",
+"speed": 5.0
+}]
+
 [node name="Cursor" type="CanvasLayer" unique_id=607214282]
 script = ExtResource("1_8fpq0")
 
 [node name="CursorObject" type="Node2D" parent="." unique_id=724732679]
 
-[node name="Sprite" type="Sprite2D" parent="CursorObject" unique_id=1869862200]
+[node name="Sprite" type="AnimatedSprite2D" parent="CursorObject" unique_id=1660044308]
+unique_name_in_owner = true
 material = ExtResource("2_tslkf")
-texture = ExtResource("2_u8h05")
+sprite_frames = SubResource("SpriteFrames_c6smh")
+autoplay = "default"

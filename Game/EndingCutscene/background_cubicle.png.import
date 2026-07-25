@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1pqth67p51mp"
-path="res://.godot/imported/computer_view_flamy1.png-dd391c70651586f9ff73e60637f720ec.ctex"
+uid="uid://bixj1l3qofkqx"
+path="res://.godot/imported/background_cubicle.png-b7819f30e51db48e0aeeb5ff0915095d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/EndingCutscene/computer_view_flamy1.png"
-dest_files=["res://.godot/imported/computer_view_flamy1.png-dd391c70651586f9ff73e60637f720ec.ctex"]
+source_file="res://Game/EndingCutscene/background_cubicle.png"
+dest_files=["res://.godot/imported/background_cubicle.png-b7819f30e51db48e0aeeb5ff0915095d.ctex"]
 
 [params]
 

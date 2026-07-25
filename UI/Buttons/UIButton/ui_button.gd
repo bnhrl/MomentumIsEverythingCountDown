@@ -23,12 +23,14 @@ var hovered := false
 
 func hover() -> void:
 	hovered = true
+	Cursor.set_animation("hover")
 	$AudioPlayer.volume_db = -15.0
 	$AudioPlayer.stream = preload("uid://cfl330np7shdc")
 	$AudioPlayer.play()
 
 func unhover() -> void:
 	hovered = false
+	Cursor.set_animation()
 
 func _process_hovering(delta: float) -> void:
 	if !hovered:

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drmhpsh13uqsm"
-path="res://.godot/imported/background2.png-0b1029fd1c3a385885f6820bad86030d.ctex"
+path="res://.godot/imported/background_cubicle_flamy.png-c7def6fe25e9e8151875ccdfbe8f3750.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/EndingCutscene/background2.png"
-dest_files=["res://.godot/imported/background2.png-0b1029fd1c3a385885f6820bad86030d.ctex"]
+source_file="res://Game/EndingCutscene/background_cubicle_flamy.png"
+dest_files=["res://.godot/imported/background_cubicle_flamy.png-c7def6fe25e9e8151875ccdfbe8f3750.ctex"]
 
 [params]
 

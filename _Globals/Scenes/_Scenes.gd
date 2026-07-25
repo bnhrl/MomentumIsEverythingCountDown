@@ -9,7 +9,17 @@ const SCENES: Dictionary[String, PackedScene] = {
 	"Level 0":preload("uid://co1sgdv2x4nyr"), # Base level!! Do not use outside of testing!!
 	"Level 1":preload("uid://dhwaorb401jhg"),
 	"Level 2":preload("uid://bs0xsclp1lodr"),
+	#"Level 3":preload(""),
+	#"Level 4":preload(""),
 	"Level 5":preload("uid://boabyoymc6yd2"),
+	#"Level 6":preload(""),
+	#"Level 7":preload(""),
+	#"Level 8":preload(""),
+	#"Level 9":preload(""),
+	#"Level 10":preload(""),
+	#"Level 11":preload(""),
+	#"Level 12":preload(""),
+	"Ending Cutscene":preload("uid://b4kooggapxsep"),
 }
 
 func swap_scene(scene_name: String) -> void:

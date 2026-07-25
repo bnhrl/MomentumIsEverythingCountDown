@@ -1,3 +1,117 @@
 [gd_scene format=3 uid="uid://b4kooggapxsep"]
 
-[node name="EndingCutscene" type="Node2D" unique_id=1708839400]
+[ext_resource type="Script" uid="uid://0w874njvcic4" path="res://Game/EndingCutscene/ending_cutscene.gd" id="1_3n54p"]
+[ext_resource type="Shader" uid="uid://c3ukd6b6syls1" path="res://Assets/Shaders/squigglevision.gdshader" id="1_glr10"]
+[ext_resource type="Texture2D" uid="uid://bixj1l3qofkqx" path="res://Game/EndingCutscene/background_cubicle.png" id="1_kt0og"]
+[ext_resource type="Texture2D" uid="uid://b56dtp08keky7" path="res://Game/EndingCutscene/computer_view.png" id="2_ad62h"]
+[ext_resource type="Texture2D" uid="uid://ccwngyu1w43nk" path="res://Game/EndingCutscene/guy_side_view.png" id="3_3n54p"]
+[ext_resource type="Texture2D" uid="uid://covrrcjyvxel0" path="res://Game/EndingCutscene/background.png" id="3_ljtxm"]
+[ext_resource type="Texture2D" uid="uid://drmhpsh13uqsm" path="res://Game/EndingCutscene/background_cubicle_flamy.png" id="4_6cxgb"]
+[ext_resource type="Texture2D" uid="uid://qpr4pgsf4rmu" path="res://Game/EndingCutscene/background_flamy.png" id="4_msjau"]
+[ext_resource type="Texture2D" uid="uid://dt3y254cieo38" path="res://Game/EndingCutscene/man.png" id="5_lbcwi"]
+[ext_resource type="Texture2D" uid="uid://cgkx5qd5yaan" path="res://Game/EndingCutscene/computer_view_flamy.png" id="7_ysm7e"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lbcwi"]
+noise_type = 5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_glr10"]
+width = 640
+height = 360
+noise = SubResource("FastNoiseLite_lbcwi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_glr10"]
+shader = ExtResource("1_glr10")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.2
+shader_parameter/fps = 5.0
+shader_parameter/squiggle_noise = SubResource("NoiseTexture2D_glr10")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cxgb"]
+atlas = ExtResource("7_ysm7e")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljtxm"]
+atlas = ExtResource("7_ysm7e")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msjau"]
+atlas = ExtResource("7_ysm7e")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6smh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cxgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljtxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msjau")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="EndingCutscene" type="Node2D" unique_id=1925279064]
+script = ExtResource("1_3n54p")
+
+[node name="CameraAnchor" type="Node2D" parent="." unique_id=1022561233]
+position = Vector2(320, -180)
+
+[node name="Effect" type="ColorRect" parent="CameraAnchor" unique_id=1182298153]
+z_index = 10
+material = SubResource("ShaderMaterial_glr10")
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=410399491]
+z_index = -5
+scroll_scale = Vector2(0.67, 0.67)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground" unique_id=2049857597]
+position = Vector2(320, -180)
+texture = ExtResource("3_ljtxm")
+
+[node name="BackgroundFlames" type="Sprite2D" parent="ParallaxBackground/Background" unique_id=1217300055]
+texture = ExtResource("4_msjau")
+
+[node name="BackgroundCubicle" type="Sprite2D" parent="ParallaxBackground" unique_id=1962500754]
+z_index = -1
+position = Vector2(320, -180)
+texture = ExtResource("1_kt0og")
+
+[node name="BackgroundCubicleFlames" type="Sprite2D" parent="ParallaxBackground/BackgroundCubicle" unique_id=1722484921]
+texture = ExtResource("4_6cxgb")
+
+[node name="Guy" type="Sprite2D" parent="." unique_id=808112344]
+position = Vector2(324, 168)
+texture = ExtResource("3_3n54p")
+
+[node name="Man" type="Sprite2D" parent="." unique_id=1731544505]
+visible = false
+position = Vector2(305, 126.99999)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("5_lbcwi")
+
+[node name="Computer" type="Sprite2D" parent="." unique_id=651229388]
+visible = false
+position = Vector2(321, 180)
+texture = ExtResource("2_ad62h")
+
+[node name="ComputerFlames" type="AnimatedSprite2D" parent="Computer" unique_id=841594185]
+sprite_frames = SubResource("SpriteFrames_c6smh")
+autoplay = "default"
+frame_progress = 0.49610236
+
+[node name="Control" type="Control" parent="." unique_id=997960630]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 74.0
+offset_top = 23.0
+offset_right = 581.0
+offset_bottom = 257.0
