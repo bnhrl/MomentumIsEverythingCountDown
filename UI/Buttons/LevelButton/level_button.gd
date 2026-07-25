@@ -1,4 +1,4 @@
-@tool class_name LeveLButton extends UIButton
+@tool class_name LevelButton extends UIButton
 
 @export var level: int = 0
 
