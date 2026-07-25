@@ -81,8 +81,20 @@ func player_dead() -> void:
 	Effects.unintensify()
 	Scenes._fade_out(0.25)
 
+var completed := false
+@onready var complete_label: RichTextLabel = $UILayer/CompleteLabel
 func level_completed() -> void:
+	if completed: return
+	
+	completed = true
+	Effects.brighten(5)
+	complete_label.show()
+	var tween := create_tween()
+	tween.tween_property(complete_label, "offset_transform_scale:x", 1.0, 0.25).from(0.0)
+	tween.parallel().tween_property(complete_label, "offset_transform_scale:y", 1.0, 0.333).from(0.0)
 	PlayerManager.player.level_completed()
+	
+	await Delays.wait(0.5)
 	var lvl := name.replacen("Level","")
 	Scenes.level_completed(int(lvl))
 	Scenes.swap_scene("Level Select")

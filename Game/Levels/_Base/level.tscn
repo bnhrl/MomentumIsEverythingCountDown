@@ -49,6 +49,21 @@ bbcode_enabled = true
 text = "Exiting in 0.0"
 scroll_active = false
 
+[node name="CompleteLabel" type="RichTextLabel" parent="UILayer" unique_id=880060712]
+visible = false
+offset_right = 160.0
+offset_bottom = 90.0
+scale = Vector2(4, 4)
+offset_transform_enabled = true
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.9764706, 0.7607843, 0.16862746, 1)
+theme_override_colors/font_outline_color = Color(0.47843137, 0.1882353, 0.27058825, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "Level Completed!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CountDownTimer" parent="." unique_id=102296066 instance=ExtResource("2_mndar")]
 
 [node name="WallLayer" type="CanvasGroup" parent="." unique_id=332655601 groups=["navigation_group"]]

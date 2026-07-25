@@ -144,7 +144,9 @@ func _process_grappling(delta: float) -> void:
 				if area is GrapplePoint:
 					hit_grapple(area)
 		else:
-			if retracting_tail: target_tail_dist = RETRACTED_TAIL_DIST
+			if retracting_tail: 
+				target_tail_dist = RETRACTED_TAIL_DIST
+				tail_dist = RETRACTED_TAIL_DIST
 			else:               target_tail_dist = DEFAULT_TAIL_DIST
 		return
 	
