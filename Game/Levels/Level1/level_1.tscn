@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="5_13qiw"]
 [ext_resource type="PackedScene" uid="uid://bjng875ivkyon" path="res://Game/Enemies/BEAmoeba/b_e_amoeba.tscn" id="5_31qma"]
 [ext_resource type="PackedScene" uid="uid://d3xhd06mdlv8l" path="res://Game/Enemies/WhiteBloodCell/white_blood_cell.tscn" id="6_31qma"]
+[ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="7_ydpy7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_13qiw"]
 vertices = PackedVector2Array(92.52344, -29.273438, 92.046875, -28.117188, 36, -31.601563, 36, -32.890625, 248.60156, 6.359375, 249.3125, 2.2734375, 338.1875, -378.85938, 483.34375, -364.14844, 552.1406, -267.82813, 581.89844, -79.390625, 500.3672, 110.50781, 415.64063, 227.13281, 297.70313, 365.8828, 198.60156, 358.03125, 156.60938, -167.46875, 232.29688, -263.07813, 211.53906, -57.101563, 211.95313, -19.671875, 218.42188, -36.296875, 190.90625, 17.25, 79.39844, 317.64063, 63.960938, 266.4375, 52.039063, 129.32031, 180.4375, -17.242188, 100, -26.546875, 169.72656, -37.59375, 100, -31.601563, 171.79688, -40.578125, 188.14844, -38.539063, 192.25781, -42.648438)
@@ -64,3 +65,6 @@ position = Vector2(302, -114)
 
 [node name="WhiteBloodCell" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="1" unique_id=2037352091 instance=ExtResource("6_31qma")]
 position = Vector2(442, 39)
+
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("7_ydpy7")]
+position = Vector2(450, -309)

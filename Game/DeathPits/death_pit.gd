@@ -33,5 +33,5 @@ func shrink_polygon(array: PackedVector2Array, amount: float) -> PackedVector2Ar
 func _process_falling() -> void:
 	for body in fall_area.get_overlapping_bodies():
 		if body is Player:
-			if body.get_momentum() < momentum_required:
+			if body.get_momentum() < momentum_required and body.grappled_object == null:
 				body.die("Pit")

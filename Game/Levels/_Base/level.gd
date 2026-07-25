@@ -5,11 +5,13 @@
 func _ready() -> void:
 	if Engine.is_editor_hint(): return
 	
+	_ready_completion_zones()
+	exiting_label.add_theme_color_override("font_outline_color", outline_color)
+	
 	Camera.set_bounds($Bounds.position, $Bounds.size + $Bounds.position)
 	PlayerManager.add_player(self)
 	PlayerManager.player.died.connect(player_dead)
 	RenderingServer.global_shader_parameter_set("outline_color", outline_color)
-	exiting_label.add_theme_color_override("font_outline_color", outline_color)
 
 const EXITING := 1.0
 var exiting := EXITING
@@ -53,6 +55,10 @@ func _process_exiting(delta: float) -> void:
 func get_player_spawn_point() -> Vector2:
 	return $PlayerSpawnPoint.global_position
 
+func _ready_completion_zones() -> void:
+	for child: Node in $CompletionZones.get_children():
+		if child is CompletionZone: child.level_completed.connect(level_completed)
+
 func _on_count_down_timer_expired() -> void:
 	Effects.intensify()
 
@@ -60,3 +66,8 @@ func player_dead() -> void:
 	await Scenes._fade_in(0.25)
 	get_tree().reload_current_scene()
 	Scenes._fade_out(0.25)
+
+func level_completed() -> void:
+	var lvl := name.replacen("Level","")
+	Scenes.level_completed(int(lvl))
+	Scenes.swap_scene("Level Select")
