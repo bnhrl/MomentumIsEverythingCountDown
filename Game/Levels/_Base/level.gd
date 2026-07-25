@@ -66,6 +66,7 @@ func _on_count_down_timer_expired() -> void:
 	Effects.intensify()
 	var excitotoxicity := EXCITOTOXICITY.instantiate()
 	add_child(excitotoxicity)
+	await Delays.wait(0.2)
 	spawn_enzyme()
 
 func player_dead() -> void:

@@ -101,3 +101,35 @@ momentum_required = 200.0
 
 [node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("8_tlwvc")]
 position = Vector2(1534, 127)
+
+[node name="Tutorial0" type="RichTextLabel" parent="." index="12" unique_id=1358969739]
+clip_contents = false
+offset_left = 237.0
+offset_top = 636.0
+offset_right = 457.0
+offset_bottom = 744.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "Hold [LMB] to stretch your AXON and grapple onto GLAND CELLS."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tutorial1" type="RichTextLabel" parent="." index="13" unique_id=692343368]
+clip_contents = false
+offset_left = 835.0
+offset_top = 529.0
+offset_right = 1055.0
+offset_bottom = 637.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "You must be moving quickly to get over DEATH PITS."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

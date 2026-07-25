@@ -151,6 +151,8 @@ func _process_grapple_controls() -> void:
 			retracting_tail = false
 			grapple_direction = global_position.direction_to(get_global_mouse_position())
 			grapple_direction_indicator.hide()
+			$GrappleSoundPlayer.pitch_scale = randf_range(0.75, 1.25)
+			$GrappleSoundPlayer.play()
 			attempting_to_grapple = true
 			await Delays.wait(0.5)
 			attempting_to_grapple = false

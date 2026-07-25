@@ -3,7 +3,7 @@ extends Node
 func _process(delta: float) -> void:
 	time_scale = LerpHelper.lf(time_scale, _target_time_scale, 32.0, delta)
 	Engine.time_scale = time_scale
-
+	AudioServer.playback_speed_scale = time_scale
 
 var _target_time_scale := 1.0
 var time_scale := 1.0

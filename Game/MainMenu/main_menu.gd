@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready() -> void:
-	pass
+	RenderingServer.global_shader_parameter_set("outline_color", Color("9babb2"))
 
 func _on_btn_start_pressed() -> void:
 	Scenes.swap_scene("Level Select")

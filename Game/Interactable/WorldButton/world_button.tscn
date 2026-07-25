@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dj5qbrrdc5202" path="res://Game/Interactable/WorldButton/button.png" id="1_87fsa"]
 [ext_resource type="Script" uid="uid://dtdwwroehi63g" path="res://Game/Interactable/WorldButton/world_button.gd" id="1_r7rje"]
 [ext_resource type="PackedScene" uid="uid://legpy3ql7st2" path="res://Game/Interactable/_Base/interactable.tscn" id="1_wn0vo"]
+[ext_resource type="Material" uid="uid://behb1ngel53g" path="res://Assets/Materials/outline_2d.tres" id="2_6h5fk"]
 [ext_resource type="Texture2D" uid="uid://bft3v4m5kk5op" path="res://Game/Interactable/WorldButton/button_press_effect.png" id="4_jyhi0"]
 [ext_resource type="AudioStream" uid="uid://dgsxxymg84k6l" path="res://Assets/Sounds/button_press.mp3" id="5_kc8o7"]
 
@@ -90,6 +91,7 @@ animations = [{
 script = ExtResource("1_r7rje")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1340318460]
+material = ExtResource("2_6h5fk")
 sprite_frames = SubResource("SpriteFrames_c6smh")
 autoplay = "default"
 
