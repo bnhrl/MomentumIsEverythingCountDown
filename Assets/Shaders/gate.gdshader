@@ -11,5 +11,5 @@ void vertex() {
 
 void fragment() {
 	vec2 uv = SCREEN_UV + vec2(TIME)*0.01;
-	COLOR = texture(tex, uv)*modulate;
+	COLOR = texture(tex, uv) * modulate * COLOR;
 }

@@ -111,7 +111,7 @@ func die() -> void:
 		if child is GrapplePoint: child.queue_free()
 	
 	GameTime.set_temp_scale(0.01)
-	Effects.brighten(.75)
+	Effects.brighten()
 	Camera.add_shake()
 	$Collision.queue_free()
 	var tween := create_tween()

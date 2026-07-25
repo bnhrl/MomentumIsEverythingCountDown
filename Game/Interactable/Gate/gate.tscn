@@ -17,3 +17,17 @@ script = ExtResource("3_ou1td")
 [node name="StaticBody" type="StaticBody2D" parent="." unique_id=959720633]
 
 [node name="Collision" type="CollisionPolygon2D" parent="StaticBody" unique_id=637628481]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1356711791]
+
+[node name="Notification" type="RichTextLabel" parent="CanvasLayer" unique_id=864175571]
+offset_top = 321.0
+offset_right = 426.6667
+offset_bottom = 349.6667
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+text = "An obstacle is cleared..."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
