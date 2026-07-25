@@ -87,6 +87,7 @@ func _process_passing() -> void:
 				if collider.get_momentum() >= momentum_to_kill:
 					die()
 					collider.passed_grapple_object()
+					collider.play_kill_audio()
 				else: 
 					collider.die()
 				break

@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://bs2swopl87icu"]
+
+[ext_resource type="Texture2D" uid="uid://dj5qbrrdc5202" path="res://Game/Interactable/WorldButton/button.png" id="1_87fsa"]
+[ext_resource type="Script" uid="uid://dtdwwroehi63g" path="res://Game/Interactable/WorldButton/world_button.gd" id="1_r7rje"]
+[ext_resource type="PackedScene" uid="uid://legpy3ql7st2" path="res://Game/Interactable/_Base/interactable.tscn" id="1_wn0vo"]
+[ext_resource type="Texture2D" uid="uid://bft3v4m5kk5op" path="res://Game/Interactable/WorldButton/button_press_effect.png" id="4_jyhi0"]
+[ext_resource type="AudioStream" uid="uid://dgsxxymg84k6l" path="res://Assets/Sounds/button_press.mp3" id="5_kc8o7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7rje"]
+atlas = ExtResource("1_87fsa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyhi0"]
+atlas = ExtResource("1_87fsa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6smh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7rje")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyhi0")
+}],
+"loop": 1,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_reij5"]
+radius = 12.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kc8o7"]
+atlas = ExtResource("4_jyhi0")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h5fk"]
+atlas = ExtResource("4_jyhi0")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhysf"]
+atlas = ExtResource("4_jyhi0")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta5rq"]
+atlas = ExtResource("4_jyhi0")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7aufo"]
+atlas = ExtResource("4_jyhi0")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf4pc"]
+atlas = ExtResource("4_jyhi0")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_853w4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kc8o7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6h5fk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhysf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5rq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7aufo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf4pc")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="WorldButton" type="Node2D" unique_id=1576954058]
+script = ExtResource("1_r7rje")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1340318460]
+sprite_frames = SubResource("SpriteFrames_c6smh")
+autoplay = "default"
+
+[node name="ButtonInteractable" parent="." unique_id=1094644331 instance=ExtResource("1_wn0vo")]
+disable_on_interact = true
+
+[node name="Collision" type="CollisionShape2D" parent="ButtonInteractable" unique_id=1859848359]
+shape = SubResource("CircleShape2D_reij5")
+
+[node name="EffectSprite" type="AnimatedSprite2D" parent="." unique_id=1985954972]
+visible = false
+sprite_frames = SubResource("SpriteFrames_853w4")
+frame = 5
+frame_progress = 1.0
+
+[node name="SoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=224769377]
+stream = ExtResource("5_kc8o7")
+
+[connection signal="interacted" from="ButtonInteractable" to="." method="_on_button_interactable_interacted"]

@@ -82,7 +82,7 @@ func _process_tail(delta: float) -> void:
 	tail.points = tail_points
 
 
-# Body Visuals
+# Body Visuals & Audio
 @onready var _body: AnimatedSprite2D = $Model/Body
 @onready var _center: Sprite2D = $Model/Center
 func _process_visuals(delta: float) -> void: 
@@ -92,6 +92,12 @@ func _process_visuals(delta: float) -> void:
 	_body.rotation = LerpHelper.la(_body.rotation, angle, 16.0, delta)
 	_center.rotation = LerpHelper.la(_center.rotation, angle, 4.0, delta)
 
+const _KILL_AUDIOS := [preload("uid://cw51rnwwiauia"),preload("uid://ch76w0ku3btqh")]
+func play_kill_audio() -> void:
+	$KillSoundPlayer.stream = _KILL_AUDIOS[randi_range(0,1)]
+	$KillSoundPlayer.pitch_scale = randf_range(0.9, 1.1)
+	$KillSoundPlayer.play()
+
 
 # Grabber
 @onready var grabber: Area2D = $Model/Grabber
@@ -99,6 +105,8 @@ func _process_grabber() -> void: # Anchors and rotates the grabber based off of 
 	var last_point := tail_points[tail_points.size()-1]
 	grabber.position = last_point
 	grabber.rotation = last_point.angle()
+	for area in grabber.get_overlapping_areas():
+		if area is Interactable: area.interact()
 
 
 # Grappling

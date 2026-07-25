@@ -114,3 +114,5 @@ autoplay = "default"
 
 [node name="GrappleDirectionIndicator" type="Polygon2D" parent="." unique_id=1750413852]
 polygon = PackedVector2Array(12, -8, 24, 0, 12, 8, 18, 0)
+
+[node name="KillSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=224865394]

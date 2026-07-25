@@ -69,6 +69,8 @@ navigation_polygon = SubResource("NavigationPolygon_4nsif")
 
 [node name="GrapplePoints" type="Node" parent="." unique_id=882760734]
 
+[node name="Interactables" type="Node" parent="." unique_id=1223907740]
+
 [node name="DeathPits" type="Node" parent="." unique_id=1192831106 groups=["navigation_group"]]
 
 [node name="Enemies" type="Node" parent="." unique_id=1295879779]
