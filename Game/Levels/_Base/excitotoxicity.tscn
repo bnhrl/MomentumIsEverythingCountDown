@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://chwtaluiwow5n"]
+
+[ext_resource type="Script" uid="uid://hwqylap48emv" path="res://Game/Levels/_Base/excitotoxicity.gd" id="1_jbrb1"]
+
+[node name="EXCITOTOXICITY" type="CanvasLayer" unique_id=723664877]
+script = ExtResource("1_jbrb1")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1137971957]
+clip_contents = false
+offset_top = 80.0
+offset_right = 160.0
+offset_bottom = 114.5
+scale = Vector2(4, 4)
+offset_transform_enabled = true
+theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+theme_override_constants/outline_size = 4
+text = "EXCITOTOXICITY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="RichTextLabel" parent="." unique_id=24263830]
+clip_contents = false
+offset_top = 194.0
+offset_right = 320.0
+offset_bottom = 228.5
+scale = Vector2(2, 2)
+offset_transform_enabled = true
+theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+theme_override_constants/outline_size = 4
+text = "UNLEASH THE DIGESTIVE ENZYMES"
+horizontal_alignment = 1
