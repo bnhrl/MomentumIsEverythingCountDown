@@ -59,9 +59,9 @@ hover_size = Vector2(1.2, 1.2)
 [node name="LevelButtons" type="Node" parent="." unique_id=1856160715]
 
 [node name="BtnLevel1" parent="LevelButtons" unique_id=1780013496 instance=ExtResource("3_eeebr")]
-offset_left = 345.0
+offset_left = 340.0
 offset_top = 137.0
-offset_right = 369.0
+offset_right = 364.0
 offset_bottom = 167.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "1"
@@ -70,10 +70,10 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel2" parent="LevelButtons" unique_id=838363682 instance=ExtResource("3_eeebr")]
-offset_left = 307.0
-offset_top = 143.0
-offset_right = 331.0
-offset_bottom = 173.0
+offset_left = 286.0
+offset_top = 146.0
+offset_right = 310.0
+offset_bottom = 176.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "2"
 level = 2
@@ -81,10 +81,10 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel3" parent="LevelButtons" unique_id=1512173018 instance=ExtResource("3_eeebr")]
-offset_left = 276.0
-offset_top = 159.0
-offset_right = 300.0
-offset_bottom = 189.0
+offset_left = 248.0
+offset_top = 157.0
+offset_right = 272.0
+offset_bottom = 187.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "3"
 level = 3
@@ -92,10 +92,10 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel4" parent="LevelButtons" unique_id=1516766094 instance=ExtResource("3_eeebr")]
-offset_left = 249.0
-offset_top = 150.0
-offset_right = 273.0
-offset_bottom = 180.0
+offset_left = 223.0
+offset_top = 116.0
+offset_right = 247.0
+offset_bottom = 146.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "4"
 level = 4
@@ -103,10 +103,10 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel5" parent="LevelButtons" unique_id=1880270758 instance=ExtResource("3_eeebr")]
-offset_left = 224.0
-offset_top = 114.0
-offset_right = 248.0
-offset_bottom = 144.0
+offset_left = 243.0
+offset_top = 95.0
+offset_right = 267.0
+offset_bottom = 125.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "5"
 level = 5
@@ -114,10 +114,10 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel6" parent="LevelButtons" unique_id=1343485253 instance=ExtResource("3_eeebr")]
-offset_left = 241.0
-offset_top = 85.0
-offset_right = 265.0
-offset_bottom = 115.0
+offset_left = 267.0
+offset_top = 78.0
+offset_right = 291.0
+offset_bottom = 108.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "6"
 level = 6
@@ -125,10 +125,10 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel7" parent="LevelButtons" unique_id=258237501 instance=ExtResource("3_eeebr")]
-offset_left = 271.0
-offset_top = 105.0
-offset_right = 295.0
-offset_bottom = 135.0
+offset_left = 282.0
+offset_top = 106.0
+offset_right = 306.0
+offset_bottom = 136.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "7"
 level = 7
@@ -136,10 +136,10 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel8" parent="LevelButtons" unique_id=1225651890 instance=ExtResource("3_eeebr")]
-offset_left = 272.0
-offset_top = 73.0
-offset_right = 296.0
-offset_bottom = 103.0
+offset_left = 335.0
+offset_top = 66.0
+offset_right = 359.0
+offset_bottom = 96.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "8"
 level = 8
@@ -147,10 +147,10 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel9" parent="LevelButtons" unique_id=1100347139 instance=ExtResource("3_eeebr")]
-offset_left = 314.0
-offset_top = 67.0
-offset_right = 338.0
-offset_bottom = 97.0
+offset_left = 328.0
+offset_top = 98.0
+offset_right = 352.0
+offset_bottom = 128.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "9"
 level = 9
@@ -158,10 +158,10 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel10" parent="LevelButtons" unique_id=631110659 instance=ExtResource("3_eeebr")]
-offset_left = 330.0
-offset_top = 94.0
-offset_right = 354.0
-offset_bottom = 124.0
+offset_left = 365.0
+offset_top = 93.0
+offset_right = 389.0
+offset_bottom = 123.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "10"
 level = 10
@@ -169,10 +169,10 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel11" parent="LevelButtons" unique_id=1159681044 instance=ExtResource("3_eeebr")]
-offset_left = 351.0
-offset_top = 66.0
-offset_right = 375.0
-offset_bottom = 96.0
+offset_left = 400.0
+offset_top = 120.0
+offset_right = 424.0
+offset_bottom = 150.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "11"
 level = 11
@@ -180,46 +180,13 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel12" parent="LevelButtons" unique_id=2053102395 instance=ExtResource("3_eeebr")]
-offset_left = 371.0
-offset_top = 87.0
-offset_right = 395.0
-offset_bottom = 117.0
+offset_left = 380.0
+offset_top = 146.0
+offset_right = 404.0
+offset_bottom = 176.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "12"
 level = 12
-default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
-hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
-
-[node name="BtnLevel13" parent="LevelButtons" unique_id=348436725 instance=ExtResource("3_eeebr")]
-offset_left = 404.0
-offset_top = 108.0
-offset_right = 428.0
-offset_bottom = 138.0
-theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
-text = "13"
-level = 13
-default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
-hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
-
-[node name="BtnLevel14" parent="LevelButtons" unique_id=1189631648 instance=ExtResource("3_eeebr")]
-offset_left = 397.0
-offset_top = 130.0
-offset_right = 421.0
-offset_bottom = 160.0
-theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
-text = "14"
-level = 14
-default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
-hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
-
-[node name="BtnLevel15" parent="LevelButtons" unique_id=1979077655 instance=ExtResource("3_eeebr")]
-offset_left = 377.0
-offset_top = 147.0
-offset_right = 401.0
-offset_bottom = 177.0
-theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
-text = "15"
-level = 15
 default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 

@@ -7,6 +7,12 @@ func _ready() -> void:
 		if level_buttons[i] is LevelButton:
 			if level_buttons[i].level > Scenes.current_level:
 				level_buttons[i].hide()
+	if Scenes.current_level >= 11:
+		$Brain/Brain.texture = preload("uid://b6pf0e8m7bidm")
+	elif Scenes.current_level >= 9:
+		$Brain/Brain.texture = preload("uid://dhsdoswq62d2")
+	elif Scenes.current_level >= 4:
+		$Brain/Brain.texture = preload("uid://66tu2soentk")
 
 func _on_btn_main_menu_pressed() -> void:
 	Scenes.swap_scene("Main Menu")
