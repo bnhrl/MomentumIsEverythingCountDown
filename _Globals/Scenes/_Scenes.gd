@@ -17,10 +17,13 @@ func swap_scene(scene_name: String) -> void:
 		return
 	var scene: PackedScene = SCENES.get(scene_name)
 	await _fade_in()
+	faded.emit()
 	get_tree().change_scene_to_packed(scene)
 	await _fade_out()
+	faded.emit()
 
 @onready var fade: ColorRect = $Fade
+signal faded
 func _fade_in(time := 0.5) -> Signal:
 	var tween := create_tween()
 	fade.show()

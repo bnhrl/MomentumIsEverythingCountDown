@@ -27,8 +27,9 @@ func _process_exiting(delta: float) -> void:
 	if Input.is_action_pressed("escape"):
 		exiting -= delta
 		if exiting <= 0.0:
-			Effects.unintensify()
 			Scenes.swap_scene("Level Select")
+			await Scenes.faded
+			Effects.unintensify()
 		exiting_label.text = "Exiting... " + str(snappedf(exiting, 0.1))
 		exiting_label.show()
 	else:
@@ -68,16 +69,17 @@ func _on_count_down_timer_expired() -> void:
 	spawn_enzyme()
 
 func player_dead() -> void:
-	Effects.unintensify()
 	await Scenes._fade_in(0.25)
 	get_tree().reload_current_scene()
+	Effects.unintensify()
 	Scenes._fade_out(0.25)
 
 func level_completed() -> void:
-	Effects.unintensify()
 	var lvl := name.replacen("Level","")
 	Scenes.level_completed(int(lvl))
 	Scenes.swap_scene("Level Select")
+	await Scenes.faded
+	Effects.unintensify()
 
 func spawn_enzyme() -> void:
 	if $Enemies.get_children().size() < 300:
