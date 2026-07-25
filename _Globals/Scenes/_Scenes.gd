@@ -8,7 +8,7 @@ const SCENES: Dictionary[String, PackedScene] = {
 	"Level Select":preload("uid://behlas1qvvn6n"),
 	"Level 0":preload("uid://co1sgdv2x4nyr"), # Base level!! Do not use outside of testing!!
 	"Level 1":preload("uid://dhwaorb401jhg"),
-	#"Level 2":preload(""),
+	"Level 2":preload("uid://bs0xsclp1lodr"),
 }
 
 func swap_scene(scene_name: String) -> void:

@@ -52,6 +52,16 @@ offset_bottom = 167.0
 text = "1"
 level = 1
 
+[node name="BtnLevel2" parent="." unique_id=1254540977 instance=ExtResource("3_eeebr")]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 143.0
+offset_right = 330.0
+offset_bottom = 173.0
+text = "2
+"
+level = 2
+
 [node name="Background" type="CanvasGroup" parent="." unique_id=1425335490]
 z_index = -2
 material = SubResource("ShaderMaterial_2r30p")
