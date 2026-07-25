@@ -22,6 +22,7 @@ point_count = 2
 [node name="BEAmoeba0" unique_id=613541596 instance=ExtResource("1_uhq6v")]
 script = ExtResource("2_avk6h")
 speed = 10000.0
+blood_color = Color(0.9764706, 0.7607843, 0.16862746, 1)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Model" parent_id_path=PackedInt32Array(87698194) index="0" unique_id=903206068]
 sprite_frames = SubResource("SpriteFrames_c6smh")
