@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="6_b5xo0"]
 [ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="7_n0odl"]
 [ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="8_2wxy5"]
+[ext_resource type="PackedScene" uid="uid://bvoyf8gip103i" path="res://Game/Interactable/Gate/gate.tscn" id="9_0lnb6"]
+[ext_resource type="PackedScene" uid="uid://bs2swopl87icu" path="res://Game/Interactable/WorldButton/world_button.tscn" id="10_p51bn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p51bn"]
 shader = ExtResource("2_sckt2")
@@ -137,6 +139,13 @@ position = Vector2(-281, 2348)
 [node name="GrapplePoint8" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="10" unique_id=1412753360 instance=ExtResource("4_sckt2")]
 position = Vector2(-474, 2476)
 
+[node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="0" unique_id=1337174415 instance=ExtResource("9_0lnb6")]
+position = Vector2(-941, 1789)
+polygon = PackedVector2Array(274, 73, -6, 35, -4, -4, 272, 42)
+
+[node name="WorldButton0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="1" unique_id=1576954058 instance=ExtResource("10_p51bn")]
+position = Vector2(-278, 2076)
+
 [node name="DeathPit" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("7_n0odl")]
 position = Vector2(-789.15424, 1635)
 scale = Vector2(1.7885715, 1)
@@ -144,7 +153,7 @@ polygon = PackedVector2Array(179, -41, 177, 27, -171, 27, -162, -46)
 momentum_required = 200.0
 
 [node name="WhiteBloodCell" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="0" unique_id=613541596 instance=ExtResource("5_obnpv")]
-position = Vector2(-850, 1841)
+position = Vector2(-832, 1859)
 max_dist_from_origin = 25
 
 [node name="WhiteBloodCell2" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="1" unique_id=1746143589 instance=ExtResource("5_obnpv")]
@@ -170,4 +179,5 @@ max_dist_from_origin = 30
 [node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("8_2wxy5")]
 position = Vector2(-799, 1044)
 
+[connection signal="pressed" from="Interactables/WorldButton0" to="Interactables/Gate0" method="disable"]
 [connection signal="level_completed" from="CompletionZones/CompletionZone0" to="." method="level_completed"]
