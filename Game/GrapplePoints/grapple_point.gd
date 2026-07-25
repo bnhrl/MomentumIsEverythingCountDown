@@ -1,6 +1,10 @@
 class_name GrapplePoint extends Area2D
 
 
+func _process(_delta: float) -> void:
+	_process_passing()
+
+
 signal grappled
 signal released
 
@@ -11,6 +15,8 @@ func release() -> void:
 	released.emit()
 
 signal passed
-func _on_body_entered(body: Node2D) -> void:
-	if body is Player: body.passed_grapple_object()
-	passed.emit()
+func _process_passing() -> void:
+	for body in get_overlapping_bodies():
+		if body is Player and body.grappled_object == self: 
+			body.passed_grapple_object()
+			passed.emit()
