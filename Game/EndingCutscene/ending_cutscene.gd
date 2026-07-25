@@ -16,9 +16,11 @@ func _ready() -> void:
 	await step_0()
 	await step_1()
 	await step_2()
+	await step_3()
 
 const MIDDLE := Vector2(320,180)
 func step_0() -> Signal: # Pan down to Man
+	$CameraAnchor/FadeOut.hide()
 	await Delays.wait(0.5)
 	var tween := create_tween()
 	tween.tween_property(camera_anchor, "position", MIDDLE, 2).set_trans(Tween.TRANS_EXPO).from(MIDDLE*Vector2(1,-1))
@@ -52,3 +54,15 @@ func step_2() -> Signal: # Computer
 	tween.tween_property(computer_flames, "modulate:a", 0.0, 1.75)
 	await tween.finished
 	return Delays.wait(1.0)
+
+func step_3() -> void:
+	await Delays.wait(1.25)
+	$CameraAnchor/FadeOut.show()
+	var tween := create_tween()
+	tween.tween_property($CameraAnchor/FadeOut, "modulate:a", 1.0, 3.0).from(0.0)
+	await tween.finished
+	
+
+
+func _on_btn_main_menu_pressed() -> void:
+	Scenes.swap_scene("Main Menu")
