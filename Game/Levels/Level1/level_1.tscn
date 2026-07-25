@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cat2u7ayswtl" path="res://Game/PolygonWalls/WallSprites/yellow_tile.png" id="4_kv67y"]
 [ext_resource type="Texture2D" uid="uid://c81s1ubrggj8m" path="res://Game/PolygonWalls/WallSprites/green_tile.png" id="5_t2k4w"]
 [ext_resource type="Texture2D" uid="uid://pq46efnl0ptf" path="res://Game/PolygonWalls/WallSprites/red_tile.png" id="6_hujse"]
+[ext_resource type="Texture2D" uid="uid://bs8j4ds8qc7y4" path="res://Assets/Textures/background_3.png" id="7_3uww5"]
 [ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="7_86ce5"]
 [ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="8_8b55i"]
 [ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="8_tlwvc"]
@@ -24,6 +25,11 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader = ExtResource("3_3uww5")
 shader_parameter/tile_texture = ExtResource("6_hujse")
 shader_parameter/tile_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kv67y"]
+shader = ExtResource("3_3uww5")
+shader_parameter/tile_texture = ExtResource("7_3uww5")
+shader_parameter/tile_size = Vector2(720, 1280)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8b55i"]
 vertices = PackedVector2Array(1891, 1250, 1817.0938, 1250.0234, 1891, 978.5781, 981.4297, 934.2031, 924.2969, 827.7578, 1208.75, 709.78906, 1277.9688, 915.3906, 1045.3516, 999.3281, 1527.1406, 1003.1094, 1341.9063, 1042.9531, 1460.3281, 884.47656, 1626.7422, 965.03125, 1463.8672, 425.0625, 1434.8125, 92.4375, 1626.5391, 80.38281, 1676.9375, 399.8828, 1599.9609, 738.84375, 1426.0391, 605.1328, 293.64844, 252.03906, 507.9375, 643.7422, 523.97656, 975.3281, 222.92188, 988.89844, 153.02344, 829.22656, 120.828125, 620.64844, 110.03125, 350.77344, 1142.4219, 512.7578, 1178.8281, 620.90625, 882.9375, 750.71875, 879.34375, 744.0078, 749.39844, 283.15625, 617.8281, 543.09375, 114.50781, 613.6797, 914.71875, 822.6094, 915.8828, 824.7578, 806.39844, 870.1719, 852, 848.6328, 880.27344, 758.4375, 881.4219, 760.5781, 820.46875, 787.3281, 773.1172, 805.46094, 1230.6328, 607.3828, 1187.0391, 626.5, 1186.2578, 624.1875, 1273.7734, 585.8125, 1270.5391, 675.0469, 1316.6563, 658.53906, 1212.3906, 701.78125, 1211.6094, 699.46875)
@@ -58,6 +64,9 @@ polygon = PackedVector2Array(1280, 912, 1457, 882, 1423, 605, 1460.8356, 424.871
 material = SubResource("ShaderMaterial_cplqv")
 position = Vector2(708, 1124)
 polygon = PackedVector2Array(72, 101, 534, 80, 271, -188, 169, -378, -90, -577, -197, -479, -171, 58)
+
+[node name="Background" parent="." index="5" unique_id=675105712]
+material = SubResource("ShaderMaterial_kv67y")
 
 [node name="NavigationRegion" parent="." index="6" unique_id=517625210]
 visible = false
