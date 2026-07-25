@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bb3eohron17vo"]
+
+[ext_resource type="PackedScene" uid="uid://bqmxs5dira51m" path="res://Game/Objects/_Base/base_object.tscn" id="1_s088g"]
+[ext_resource type="Texture2D" uid="uid://5pt2th8vvhvy" path="res://Game/Objects/Sprites/smallBox.png" id="2_ouhnd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30em6"]
+size = Vector2(25, 19)
+
+[node name="SmallBox" unique_id=1695913543 instance=ExtResource("1_s088g")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=654628111]
+texture = ExtResource("2_ouhnd")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1405642443]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_30em6")

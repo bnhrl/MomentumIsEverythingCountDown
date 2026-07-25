@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://8f0iofd1efob"]
+
+[ext_resource type="PackedScene" uid="uid://bqmxs5dira51m" path="res://Game/Objects/_Base/base_object.tscn" id="1_lcllc"]
+[ext_resource type="Texture2D" uid="uid://drmxk4q2w1cds" path="res://Game/Objects/Sprites/monitor.png" id="2_e28rq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1yhm"]
+size = Vector2(54, 27)
+
+[node name="Monitor" unique_id=1695913543 instance=ExtResource("1_lcllc")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=654628111]
+texture = ExtResource("2_e28rq")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1405642443]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_x1yhm")

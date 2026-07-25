@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dawp8km7nx1j3"]
+
+[ext_resource type="Texture2D" uid="uid://qfl2wnbwt0pk" path="res://Game/Objects/Sprites/desk.png" id="1_x1yhm"]
+[ext_resource type="PackedScene" uid="uid://bqmxs5dira51m" path="res://Game/Objects/_Base/base_object.tscn" id="1_ycdnf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvxlv"]
+size = Vector2(85, 42)
+
+[node name="Desk" unique_id=1695913543 instance=ExtResource("1_ycdnf")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=654628111]
+texture = ExtResource("1_x1yhm")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1405642443]
+position = Vector2(1.5000019, 3)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_yvxlv")

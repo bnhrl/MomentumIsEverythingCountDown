@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c5efma3oa0u0x"]
+
+[ext_resource type="PackedScene" uid="uid://bqmxs5dira51m" path="res://Game/Objects/_Base/base_object.tscn" id="1_xrybu"]
+[ext_resource type="Texture2D" uid="uid://d1uxajjumeteg" path="res://Game/Objects/Sprites/computer.png" id="2_0x7lo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxjya"]
+size = Vector2(15, 28)
+
+[node name="Computer" unique_id=1695913543 instance=ExtResource("1_xrybu")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=654628111]
+texture = ExtResource("2_0x7lo")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1405642443]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_uxjya")

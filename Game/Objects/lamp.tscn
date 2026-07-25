@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://comwvn22x7xfy"]
+
+[ext_resource type="PackedScene" uid="uid://bqmxs5dira51m" path="res://Game/Objects/_Base/base_object.tscn" id="1_x1l2o"]
+[ext_resource type="Texture2D" uid="uid://ng15lwjv6n2a" path="res://Game/Objects/Sprites/lamp.png" id="2_w7e0i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycdnf"]
+size = Vector2(14, 61)
+
+[node name="Lamp" unique_id=1695913543 instance=ExtResource("1_x1l2o")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=654628111]
+texture = ExtResource("2_w7e0i")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1405642443]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_ycdnf")

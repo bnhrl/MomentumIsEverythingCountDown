@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://lnswmlbjllhy"]
+
+[ext_resource type="PackedScene" uid="uid://bqmxs5dira51m" path="res://Game/Objects/_Base/base_object.tscn" id="1_is8dv"]
+[ext_resource type="Texture2D" uid="uid://cp05t1x0sqdbp" path="res://Game/Objects/Sprites/soda.png" id="2_36v4j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00jxp"]
+size = Vector2(18, 61)
+
+[node name="Soda" unique_id=1695913543 instance=ExtResource("1_is8dv")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=654628111]
+texture = ExtResource("2_36v4j")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1405642443]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_00jxp")

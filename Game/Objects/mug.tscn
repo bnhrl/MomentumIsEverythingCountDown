@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b8huyx6lrvrb1"]
+
+[ext_resource type="PackedScene" uid="uid://bqmxs5dira51m" path="res://Game/Objects/_Base/base_object.tscn" id="1_47oip"]
+[ext_resource type="Texture2D" uid="uid://cywqt3bf0mfgj" path="res://Game/Objects/Sprites/mug.png" id="2_e8c2v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tigpr"]
+size = Vector2(24, 22)
+
+[node name="Mug" unique_id=1695913543 instance=ExtResource("1_47oip")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=654628111]
+texture = ExtResource("2_e8c2v")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1405642443]
+position = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_tigpr")

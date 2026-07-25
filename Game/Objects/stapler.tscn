@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dwlck6ltphhov"]
+
+[ext_resource type="PackedScene" uid="uid://bqmxs5dira51m" path="res://Game/Objects/_Base/base_object.tscn" id="1_s5i0s"]
+[ext_resource type="Texture2D" uid="uid://bewg36ftbuih" path="res://Game/Objects/Sprites/stapler.png" id="2_ug17l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wfjmt"]
+size = Vector2(49, 20)
+
+[node name="Stapler" unique_id=1695913543 instance=ExtResource("1_s5i0s")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=654628111]
+texture = ExtResource("2_ug17l")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1405642443]
+position = Vector2(0.5, 6)
+shape = SubResource("RectangleShape2D_wfjmt")
