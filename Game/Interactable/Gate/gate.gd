@@ -10,5 +10,5 @@ func _process(delta: float) -> void:
 
 func disable() -> void:
 	var tween := create_tween()
-	tween.tween_property(self, "modulate:a", 0.0, 0.333).set_trans(Tween.TRANS_EXPO)
+	tween.tween_property(self, "modulate:a", 0.0, 0.5).set_trans(Tween.TRANS_EXPO)
 	tween.tween_callback(queue_free)
