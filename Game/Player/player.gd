@@ -148,6 +148,8 @@ func _process_grapple_controls() -> void:
 
 func hit_grapple(node: Node2D) -> void:
 	#print("Grappled " + node.name + "!")
+	momentum = Vector2.ZERO
+	velocity = Vector2.ZERO
 	grappled_object = node
 	attempting_to_grapple = false
 

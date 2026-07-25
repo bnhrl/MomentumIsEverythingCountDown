@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dhwaorb401jhg"]
+
+[ext_resource type="PackedScene" uid="uid://co1sgdv2x4nyr" path="res://Game/Levels/_Base/level.tscn" id="1_cv676"]
+[ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="2_s2qlr"]
+[ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="3_3fy72"]
+
+[node name="Level1-1" unique_id=1414133645 instance=ExtResource("1_cv676")]
+
+[node name="Bounds" parent="." index="0" unique_id=1811867841]
+visible = false
+offset_right = 3549.0
+offset_bottom = 2274.0
+
+[node name="PlayerSpawnPoint" parent="." index="1" unique_id=1452407390]
+position = Vector2(355, 926)
+
+[node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("2_s2qlr")]
+polygon = PackedVector2Array(635, 3, 635, -2, -2, -2, -2, 500, 91, 630, 107, 349, 156.29735, 108.54074)
+
+[node name="GrapplePoint0" parent="." index="9" unique_id=907286068 instance=ExtResource("3_3fy72")]
+position = Vector2(354, 749)
+
+[node name="GrapplePoint1" parent="." index="10" unique_id=485349368 instance=ExtResource("3_3fy72")]
+position = Vector2(530, 418)
+
+[node name="GrapplePoint2" parent="." index="11" unique_id=1359973139 instance=ExtResource("3_3fy72")]
+position = Vector2(802, 458)
