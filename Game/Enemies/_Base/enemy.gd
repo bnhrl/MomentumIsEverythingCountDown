@@ -2,11 +2,14 @@ class_name Enemy extends CharacterBody2D
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent
 
+@export_group("Movement")
 @export var speed := 3000.0
 @export var momentum_to_kill := 333.0
 @export var direction_smoothed := true
 @export var idle_movement := true
 @export var max_dist_from_origin := 150
+@export_group("Visuals")
+@export var blood_color := Color.WHITE
 
 var target: Node2D
 
@@ -90,9 +93,11 @@ func _process_passing() -> void:
 			if collider is Player:
 				if collider.get_momentum() >= momentum_to_kill:
 					die()
+					$NotBloodParticles.rotation = collider._body.global_rotation
 					collider.passed_grapple_object()
 					collider.play_kill_audio()
 				else: 
+					collider.bleed(model.rotation)
 					collider.die()
 				break
 
@@ -102,6 +107,9 @@ var dead := false
 func die() -> void:
 	if dead: return
 	
+	for child in get_children():
+		if child is GrapplePoint: child.queue_free()
+	
 	GameTime.set_temp_scale(0.01)
 	Effects.brighten(.75)
 	Camera.add_shake()
@@ -109,7 +117,10 @@ func die() -> void:
 	var tween := create_tween()
 	tween.tween_property($Model, "scale:y", 0.001, 0.33).set_trans(Tween.TRANS_EXPO)
 	tween.parallel().tween_property($Model, "scale:x", 0.001, 0.5).set_trans(Tween.TRANS_EXPO)
-	tween.tween_callback(queue_free)
+	$NotBloodParticles.modulate = blood_color
+	$NotBloodParticles.restart()
+	await $NotBloodParticles.finished
+	queue_free()
 
 # Visuals
 @onready var model: CanvasGroup = $Model

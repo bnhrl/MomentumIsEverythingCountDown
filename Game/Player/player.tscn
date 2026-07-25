@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bscgw8po1fa0a" path="res://Assets/Sounds/death.mp3" id="7_ch4ko"]
 [ext_resource type="AudioStream" uid="uid://c0xfowxnk65ro" path="res://Assets/Sounds/ricochet_0.wav" id="8_vh1aq"]
 [ext_resource type="AudioStream" uid="uid://csv6ew2i6t7tl" path="res://Assets/Sounds/grapple_shoot.wav" id="9_4ddeg"]
+[ext_resource type="Texture2D" uid="uid://cgerxyyy2gsoi" path="res://Game/Enemies/_Base/not_blood.png" id="10_db2hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6smh"]
 
@@ -72,6 +73,27 @@ animations = [{
 "speed": 3.5
 }]
 
+[sub_resource type="Curve" id="Curve_q0m6d"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_853w4"]
+curve = SubResource("Curve_q0m6d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qwver"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 10.0
+spread = 20.0
+initial_velocity_min = -2.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -100.0
+linear_accel_max = -25.000002
+radial_accel_min = -50.0
+radial_accel_max = 49.999996
+alpha_curve = SubResource("CurveTexture_853w4")
+
 [node name="Player" type="CharacterBody2D" unique_id=2013412106]
 z_index = 1
 collision_layer = 3
@@ -130,3 +152,18 @@ max_polyphony = 2
 
 [node name="GrappleSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=537767284]
 stream = ExtResource("9_4ddeg")
+
+[node name="NotBloodParticles" type="GPUParticles2D" parent="." unique_id=1229972151]
+modulate = Color(0.3019608, 0.60784316, 0.9019608, 1)
+z_index = -1
+scale = Vector2(0.99999994, 0.99999994)
+emitting = false
+amount = 128
+texture = ExtResource("10_db2hk")
+lifetime = 2.0
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.95
+randomness = 0.5
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_qwver")

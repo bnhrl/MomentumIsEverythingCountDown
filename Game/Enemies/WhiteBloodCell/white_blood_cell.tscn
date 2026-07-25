@@ -38,6 +38,7 @@ speed = 2000.0
 momentum_to_kill = 250.0
 direction_smoothed = false
 max_dist_from_origin = 100
+blood_color = Color(0.4509804, 0.53333336, 0.56078434, 1)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Model" parent_id_path=PackedInt32Array(87698194) index="0" unique_id=871299225]
 sprite_frames = SubResource("SpriteFrames_uhq6v")

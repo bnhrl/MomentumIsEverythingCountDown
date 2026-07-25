@@ -36,8 +36,13 @@ func _process_movement(delta: float) -> void:
 		for i in get_slide_collision_count():
 			var collision := get_slide_collision(i)
 			if collision:
-				momentum = momentum.bounce(collision.get_normal())*0.8
-				velocity = velocity.bounce(collision.get_normal())*0.8
+				var collider := collision.get_collider()
+				if collider is BouncyObject:
+					momentum = momentum.bounce(collision.get_normal()) * collider.ricochet_speed_mult
+					velocity = velocity.bounce(collision.get_normal()) * collider.ricochet_speed_mult
+				else:
+					momentum = momentum.bounce(collision.get_normal())*0.8
+					velocity = velocity.bounce(collision.get_normal())*0.8
 				Camera.add_shake(clampf(get_momentum()*0.005, 0.0, 2.5))
 				$RicochetSoundPlayer.stream = _RICOCHET_AUDIOS[randi_range(0, 2)]
 				$RicochetSoundPlayer.pitch_scale = randf_range(0.9, 1.1)
@@ -86,6 +91,7 @@ func _process_tail(delta: float) -> void:
 
 
 # Body Visuals & Audio
+@onready var model: CanvasGroup = $Model
 @onready var _body: AnimatedSprite2D = $Model/Body
 @onready var _center: Sprite2D = $Model/Center
 func _process_visuals(delta: float) -> void: 
@@ -106,8 +112,8 @@ func level_completed() -> void:
 	velocity = Vector2.ZERO
 	momentum = Vector2.ZERO
 	var tween := create_tween()
-	tween.tween_property($Model, "scale", Vector2.ZERO, 0.5).set_trans(Tween.TRANS_EXPO)
-	tween.parallel().tween_property($Model, "position:y", $Model.position.y - 33, 0.35).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tween.tween_property(model, "scale", Vector2.ZERO, 0.5).set_trans(Tween.TRANS_EXPO)
+	tween.parallel().tween_property(model, "position:y", model.position.y - 33, 0.35).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 
 
 # Grabber
@@ -191,15 +197,21 @@ func die(reason := "") -> void:
 	dead = true
 	if reason == "Pit":
 		var tween := create_tween()
-		tween.tween_property($Model, "scale", Vector2(.001, .001), 0.385).set_trans(Tween.TRANS_EXPO)
+		tween.tween_property(model, "scale", Vector2(.001, .001), 0.385).set_trans(Tween.TRANS_EXPO)
 		tween.tween_callback(died.emit)
 		$DeathSoundPlayer.pitch_scale = randf_range(0.8, 1.2)
 		$DeathSoundPlayer.stream = preload("uid://prsawxmrh7wt")
 		$DeathSoundPlayer.play()
 	else:
 		var tween := create_tween()
-		tween.tween_property($Model, "scale:y", 0.001, 0.33).set_trans(Tween.TRANS_EXPO)
-		tween.parallel().tween_property($Model, "scale:x", 0.001, 0.5).set_trans(Tween.TRANS_EXPO)
+		tween.tween_property(model, "scale:y", 0.001, 0.33).set_trans(Tween.TRANS_EXPO)
+		tween.parallel().tween_property(model, "scale:x", 0.001, 0.5).set_trans(Tween.TRANS_EXPO)
 		$DeathSoundPlayer.pitch_scale = randf_range(0.8, 1.2)
 		$DeathSoundPlayer.play()
 		died.emit()
+
+func bleed(angle: float) -> void:
+	if dead: return
+	
+	$NotBloodParticles.rotation = angle
+	$NotBloodParticles.restart()

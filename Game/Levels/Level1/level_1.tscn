@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="7_86ce5"]
 [ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="8_8b55i"]
 [ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="8_tlwvc"]
+[ext_resource type="PackedScene" uid="uid://cfu4xtwobtoj8" path="res://Game/Objects/coffee_maker.tscn" id="11_kv67y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4721b"]
 shader = ExtResource("3_3uww5")
@@ -133,3 +134,6 @@ text = "You must have SUFFICIENT MOMENTUM to cross DEATH PITS."
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CoffeeMaker" parent="." index="14" unique_id=1695913543 instance=ExtResource("11_kv67y")]
+position = Vector2(1445, 947)

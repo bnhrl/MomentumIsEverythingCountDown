@@ -32,6 +32,7 @@ script = ExtResource("2_xkb1b")
 speed = 17500.0
 momentum_to_kill = 400.0
 idle_movement = false
+blood_color = Color(0.92156863, 0.30588236, 0.21176471, 0.6666667)
 
 [node name="NavigationAgent" parent="." index="1" unique_id=584362966]
 process_mode = 4
@@ -44,5 +45,5 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_c6smh")
 frame_progress = 0.81931776
 
-[node name="IdleTimer" parent="." index="4" unique_id=205446577]
+[node name="IdleTimer" parent="." index="5" unique_id=205446577]
 process_mode = 4
