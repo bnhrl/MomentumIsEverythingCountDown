@@ -15,32 +15,36 @@ fill_to = Vector2(0.49658704, 1)
 [node name="CompletionZone0" type="Node2D" unique_id=241888325]
 script = ExtResource("1_7myse")
 
-[node name="DetectionZone" type="Area2D" parent="." unique_id=1234830432]
+[node name="BeamAnchor" type="Node2D" parent="." unique_id=273163847]
 
-[node name="Collision" type="CollisionPolygon2D" parent="DetectionZone" unique_id=2009298898]
-scale = Vector2(2, 2)
-polygon = PackedVector2Array(-11, 0, -8, -3, 0, -5, 9, -3, 12, 0, 9, 3, 0, 5, -8, 3)
-
-[node name="Beam" type="Polygon2D" parent="." unique_id=2021886485]
+[node name="Beam" type="Polygon2D" parent="BeamAnchor" unique_id=2021886485]
 z_index = 2
 position = Vector2(-51, -70)
 scale = Vector2(1.5, 1)
 texture = SubResource("GradientTexture2D_c6smh")
 polygon = PackedVector2Array(14, 60, 22, 68.826, 34, 72.826, 46, 68.826, 54, 61, 37, -1, 34, -2, 31, -1)
 
-[node name="Pad0" type="Polygon2D" parent="." unique_id=159621876]
+[node name="PadAnchor" type="Node2D" parent="." unique_id=1758765422]
+
+[node name="Pad0" type="Polygon2D" parent="PadAnchor" unique_id=159621876]
 scale = Vector2(2, 1.5)
 color = Color(1, 1, 1, 0.5)
 polygon = PackedVector2Array(-11, 0, -8, -3, 0, -5, 9, -3, 12, 0, 9, 3, 0, 5, -8, 3)
 
-[node name="Pad1" type="Polygon2D" parent="." unique_id=990602762]
+[node name="Pad1" type="Polygon2D" parent="PadAnchor" unique_id=990602762]
 scale = Vector2(1.5, 1.125)
 color = Color(1, 1, 1, 0.5)
 polygon = PackedVector2Array(-11, 0, -8, -3, 0, -5, 9, -3, 12, 0, 9, 3, 0, 5, -8, 3)
 
-[node name="Pad2" type="Polygon2D" parent="." unique_id=1580957078]
+[node name="Pad2" type="Polygon2D" parent="PadAnchor" unique_id=1580957078]
 scale = Vector2(1, 0.75)
 color = Color(1, 1, 1, 0.5)
+polygon = PackedVector2Array(-11, 0, -8, -3, 0, -5, 9, -3, 12, 0, 9, 3, 0, 5, -8, 3)
+
+[node name="DetectionZone" type="Area2D" parent="." unique_id=1234830432]
+
+[node name="Collision" type="CollisionPolygon2D" parent="DetectionZone" unique_id=2009298898]
+scale = Vector2(2, 2)
 polygon = PackedVector2Array(-11, 0, -8, -3, 0, -5, 9, -3, 12, 0, 9, 3, 0, 5, -8, 3)
 
 [connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]

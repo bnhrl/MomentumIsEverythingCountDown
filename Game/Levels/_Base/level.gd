@@ -34,7 +34,7 @@ func _process_exiting(delta: float) -> void:
 			Scenes.swap_scene("Level Select")
 			await Scenes.faded
 			Effects.unintensify()
-		exiting_label.text = "Exiting... " + str(snappedf(exiting, 0.1))
+		exiting_label.text = "Exiting in " + str(snappedf(exiting, 0.1))
 		exiting_label.show()
 	else:
 		exiting = EXITING
@@ -82,6 +82,7 @@ func player_dead() -> void:
 	Scenes._fade_out(0.25)
 
 func level_completed() -> void:
+	PlayerManager.player.level_completed()
 	var lvl := name.replacen("Level","")
 	Scenes.level_completed(int(lvl))
 	Scenes.swap_scene("Level Select")

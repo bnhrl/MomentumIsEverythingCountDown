@@ -44,5 +44,5 @@ sprite_frames = SubResource("SpriteFrames_uhq6v")
 autoplay = "default"
 frame_progress = 0.09712265
 
-[node name="GrapplePoint" parent="." index="4" unique_id=907286068 instance=ExtResource("2_k2oa1")]
+[node name="GrapplePoint" parent="." index="5" unique_id=907286068 instance=ExtResource("2_k2oa1")]
 visible = false

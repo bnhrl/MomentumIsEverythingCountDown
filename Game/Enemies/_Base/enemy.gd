@@ -20,6 +20,8 @@ func _physics_process(delta: float) -> void:
 # Movement
 @onready var origin_point := global_position
 func _process_movement(delta: float) -> void:
+	if dead: return
+	
 	if target:
 		navigation_agent.target_position = target.global_position
 		if direction_smoothed:
@@ -60,7 +62,7 @@ func _process_idle_movement(delta: float) -> void:
 @onready var detection_area: Area2D = $DetectionArea
 @onready var detection_ray: RayCast2D = $DetectionArea/DetectionRay
 func _process_detection() -> void:
-	if target: return
+	if target or dead: return
 	
 	for b in detection_area.get_overlapping_bodies():
 		if b is Player:
@@ -79,6 +81,8 @@ func can_see_object(object: Node2D) -> bool:
 
 # Passing
 func _process_passing() -> void:
+	if dead: return
+	
 	for i in get_slide_collision_count():
 		var collision := get_slide_collision(i)
 		if collision:
@@ -94,11 +98,18 @@ func _process_passing() -> void:
 
 
 # Death
+var dead := false
 func die() -> void:
+	if dead: return
+	
 	GameTime.set_temp_scale(0.01)
 	Effects.brighten(.75)
 	Camera.add_shake()
-	queue_free()
+	$Collision.queue_free()
+	var tween := create_tween()
+	tween.tween_property($Model, "scale:y", 0.001, 0.33).set_trans(Tween.TRANS_EXPO)
+	tween.parallel().tween_property($Model, "scale:x", 0.001, 0.5).set_trans(Tween.TRANS_EXPO)
+	tween.tween_callback(queue_free)
 
 # Visuals
 @onready var model: CanvasGroup = $Model

@@ -102,6 +102,13 @@ func play_kill_audio() -> void:
 	$KillSoundPlayer.pitch_scale = randf_range(0.9, 1.1)
 	$KillSoundPlayer.play()
 
+func level_completed() -> void:
+	velocity = Vector2.ZERO
+	momentum = Vector2.ZERO
+	var tween := create_tween()
+	tween.tween_property($Model, "scale", Vector2.ZERO, 0.5).set_trans(Tween.TRANS_EXPO)
+	tween.parallel().tween_property($Model, "position:y", $Model.position.y - 33, 0.35).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+
 
 # Grabber
 @onready var grabber: Area2D = $Model/Grabber
@@ -156,9 +163,6 @@ func _process_grapple_controls() -> void:
 			attempting_to_grapple = true
 			await Delays.wait(0.5)
 			attempting_to_grapple = false
-	#else: # Grapple cancelling
-		#if Input.is_action_just_pressed("grapple"):
-			#grappled_object = null
 
 func hit_grapple(node: Node2D) -> void:
 	#print("Grappled " + node.name + "!")
@@ -193,6 +197,9 @@ func die(reason := "") -> void:
 		$DeathSoundPlayer.stream = preload("uid://prsawxmrh7wt")
 		$DeathSoundPlayer.play()
 	else:
+		var tween := create_tween()
+		tween.tween_property($Model, "scale:y", 0.001, 0.33).set_trans(Tween.TRANS_EXPO)
+		tween.parallel().tween_property($Model, "scale:x", 0.001, 0.5).set_trans(Tween.TRANS_EXPO)
 		$DeathSoundPlayer.pitch_scale = randf_range(0.8, 1.2)
 		$DeathSoundPlayer.play()
 		died.emit()

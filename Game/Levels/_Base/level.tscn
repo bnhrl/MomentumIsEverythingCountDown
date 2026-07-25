@@ -46,7 +46,7 @@ offset_bottom = 28.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 theme_override_constants/outline_size = 4
 bbcode_enabled = true
-text = "Exiting... 0.0"
+text = "Exiting in 0.0"
 scroll_active = false
 
 [node name="CountDownTimer" parent="." unique_id=102296066 instance=ExtResource("2_mndar")]
