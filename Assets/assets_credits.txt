@@ -7,7 +7,8 @@ button press sfx: https://pixabay.com/sound-effects/film-special-effects-metal-h
 grapple shoot:    https://pixabay.com/sound-effects/film-special-effects-swish-85737/
 player death:     https://pixabay.com/sound-effects/film-special-effects-cartoon-splat-310479/
 fall:             https://pixabay.com/sound-effects/film-special-effects-whoosh-short-realistic-379079/
-ricochet:         https://pixabay.com/sound-effects/film-special-effects-2-liter-sprite-bottle-hitting-the-top-and-side-of-my-head-32460/
+old ricochet:     https://pixabay.com/sound-effects/film-special-effects-2-liter-sprite-bottle-hitting-the-top-and-side-of-my-head-32460/
+ricochet:         https://pixabay.com/sound-effects/film-special-effects-basketball-99685/
 squigglevision:   https://godotshaders.com/shader/squigglevision/ by tentabrobpy 
 enemy killed sfx:
 	https://pixabay.com/sound-effects/film-special-effects-metal-hit-10-193281/

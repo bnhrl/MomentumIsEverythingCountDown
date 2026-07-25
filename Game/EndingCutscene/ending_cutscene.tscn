@@ -64,11 +64,10 @@ script = ExtResource("1_3n54p")
 position = Vector2(320, -180)
 
 [node name="FadeOut" type="ColorRect" parent="CameraAnchor" unique_id=328718945]
-visible = false
 z_index = 11
 offset_left = -320.0
 offset_top = -180.0
-offset_right = 319.0
+offset_right = 320.0
 offset_bottom = 180.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
