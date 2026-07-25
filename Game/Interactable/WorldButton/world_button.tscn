@@ -86,7 +86,7 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="WorldButton" type="Node2D" unique_id=1576954058]
+[node name="WorldButton0" type="Node2D" unique_id=1576954058]
 script = ExtResource("1_r7rje")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1340318460]

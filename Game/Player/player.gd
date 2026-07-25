@@ -39,6 +39,9 @@ func _process_movement(delta: float) -> void:
 				momentum = momentum.bounce(collision.get_normal())*0.8
 				velocity = velocity.bounce(collision.get_normal())*0.8
 				Camera.add_shake(clampf(get_momentum()*0.005, 0.0, 2.5))
+				$RicochetSoundPlayer.stream = _RICOCHET_AUDIOS[randi_range(0, 2)]
+				$RicochetSoundPlayer.pitch_scale = randf_range(0.9, 1.1)
+				$RicochetSoundPlayer.play()
 				break
 
 func get_momentum() -> float:
@@ -92,6 +95,7 @@ func _process_visuals(delta: float) -> void:
 	_body.rotation = LerpHelper.la(_body.rotation, angle, 16.0, delta)
 	_center.rotation = LerpHelper.la(_center.rotation, angle, 4.0, delta)
 
+const _RICOCHET_AUDIOS := [preload("uid://c0xfowxnk65ro"), preload("uid://cgev1lhy8m65c"), preload("uid://d2i8mrtm6x368")]
 const _KILL_AUDIOS := [preload("uid://cw51rnwwiauia"),preload("uid://ch76w0ku3btqh")]
 func play_kill_audio() -> void:
 	$KillSoundPlayer.stream = _KILL_AUDIOS[randi_range(0,1)]
@@ -183,6 +187,9 @@ func die(reason := "") -> void:
 		var tween := create_tween()
 		tween.tween_property($Model, "scale", Vector2(.001, .001), 0.385).set_trans(Tween.TRANS_EXPO)
 		tween.tween_callback(died.emit)
+		$DeathSoundPlayer.pitch_scale = randf_range(0.8, 1.2)
+		$DeathSoundPlayer.stream = preload("uid://prsawxmrh7wt")
+		$DeathSoundPlayer.play()
 	else:
 		$DeathSoundPlayer.pitch_scale = randf_range(0.8, 1.2)
 		$DeathSoundPlayer.play()

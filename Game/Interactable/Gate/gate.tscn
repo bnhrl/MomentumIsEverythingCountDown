@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bvoyf8gip103i"]
+
+[ext_resource type="Shader" uid="uid://ccnop7npf2r62" path="res://Assets/Shaders/gate.gdshader" id="1_ge6cv"]
+[ext_resource type="Texture2D" uid="uid://tk4itcoe7jap" path="res://Game/Interactable/Gate/obstacle.png" id="2_kdkso"]
+[ext_resource type="Script" uid="uid://bgkh8m5osit1l" path="res://Game/Interactable/Gate/gate.gd" id="3_ou1td"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nocks"]
+shader = ExtResource("1_ge6cv")
+shader_parameter/tex = ExtResource("2_kdkso")
+
+[node name="Gate0" type="Polygon2D" unique_id=1337174415]
+material = SubResource("ShaderMaterial_nocks")
+color = Color(0.9098039, 0.23137255, 0.23137255, 1)
+polygon = PackedVector2Array(5, 5, -5, 5, -5, -5, 5, -5)
+script = ExtResource("3_ou1td")
+
+[node name="StaticBody" type="StaticBody2D" parent="." unique_id=959720633]
+
+[node name="Collision" type="CollisionPolygon2D" parent="StaticBody" unique_id=637628481]
