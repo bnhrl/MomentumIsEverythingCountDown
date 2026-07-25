@@ -184,4 +184,6 @@ func die(reason := "") -> void:
 		tween.tween_property($Model, "scale", Vector2(.001, .001), 0.385).set_trans(Tween.TRANS_EXPO)
 		tween.tween_callback(died.emit)
 	else:
+		$DeathSoundPlayer.pitch_scale = randf_range(0.8, 1.2)
+		$DeathSoundPlayer.play()
 		died.emit()

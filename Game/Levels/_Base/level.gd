@@ -69,7 +69,7 @@ func _on_count_down_timer_expired() -> void:
 	spawn_enzyme()
 
 func player_dead() -> void:
-	await Scenes._fade_in(0.25)
+	await Scenes._fade_in(0.333)
 	get_tree().reload_current_scene()
 	Effects.unintensify()
 	Scenes._fade_out(0.25)

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ca8cvbmay8xv3" path="res://Game/Player/body.png" id="4_vytja"]
 [ext_resource type="Texture2D" uid="uid://cssfj3ctnv83q" path="res://Game/Player/center.png" id="5_p2hw7"]
 [ext_resource type="Texture2D" uid="uid://bb4dfknaejnqo" path="res://Game/Player/grabber.png" id="5_segth"]
+[ext_resource type="AudioStream" uid="uid://bscgw8po1fa0a" path="res://Assets/Sounds/death.mp3" id="7_ch4ko"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6smh"]
 
@@ -116,3 +117,6 @@ autoplay = "default"
 polygon = PackedVector2Array(12, -8, 24, 0, 12, 8, 18, 0)
 
 [node name="KillSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=224865394]
+
+[node name="DeathSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=416051244]
+stream = ExtResource("7_ch4ko")

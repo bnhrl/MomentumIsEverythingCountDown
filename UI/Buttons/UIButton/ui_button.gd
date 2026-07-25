@@ -23,6 +23,9 @@ var hovered := false
 
 func hover() -> void:
 	hovered = true
+	$AudioPlayer.volume_db = -15.0
+	$AudioPlayer.stream = preload("uid://cfl330np7shdc")
+	$AudioPlayer.play()
 
 func unhover() -> void:
 	hovered = false
@@ -49,3 +52,6 @@ func _process_pressing() -> void:
 func press() -> void:
 	pressed.emit()
 	pressed_self.emit(self)
+	$AudioPlayer.volume_db = -2.0
+	$AudioPlayer.stream = preload("uid://m57n16ernvl")
+	$AudioPlayer.play()

@@ -17,5 +17,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_k47w0")
 
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="." unique_id=2104038854]
+volume_db = -1.0
+
 [connection signal="mouse_entered" from="." to="." method="hover"]
 [connection signal="mouse_exited" from="." to="." method="unhover"]
