@@ -8,6 +8,9 @@ func _ready() -> void:
 	_ready_completion_zones()
 	exiting_label.add_theme_color_override("font_outline_color", outline_color)
 	
+	if $NavigationRegion.navigation_polygon == null or $NavigationRegion.navigation_polygon.get_polygon_count() <= 0:
+		push_error("Navigation is not baked on " + name + "! Fix that!!")
+	
 	Camera.set_bounds($Bounds.position, $Bounds.size + $Bounds.position)
 	PlayerManager.add_player(self)
 	PlayerManager.player.died.connect(player_dead)
@@ -59,7 +62,9 @@ func get_player_spawn_point() -> Vector2:
 
 func _ready_completion_zones() -> void:
 	for child: Node in $CompletionZones.get_children():
-		if child is CompletionZone: child.level_completed.connect(level_completed)
+		if child is CompletionZone: 
+			if !child.level_completed.is_connected(level_completed):
+				child.level_completed.connect(level_completed)
 
 const EXCITOTOXICITY = preload("uid://chwtaluiwow5n")
 func _on_count_down_timer_expired() -> void:

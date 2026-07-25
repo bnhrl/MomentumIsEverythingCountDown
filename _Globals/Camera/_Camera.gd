@@ -25,6 +25,7 @@ func _process_following() -> void:
 		target_position = target.global_position
 	else:
 		target_position = get_viewport_rect().size/2.0
+		limit_enabled = false
 	global_position = target_position
 
 
@@ -64,6 +65,7 @@ func add_shake(s := 5.0) -> void:
 
 # Bounds
 func set_bounds(left_top: Vector2i, right_bottom: Vector2i) -> void:
+	limit_enabled = true
 	limit_left = left_top.x
 	limit_top = left_top.y
 	limit_right = right_bottom.x
