@@ -60,8 +60,12 @@ func _ready_completion_zones() -> void:
 	for child: Node in $CompletionZones.get_children():
 		if child is CompletionZone: child.level_completed.connect(level_completed)
 
+const EXCITOTOXICITY = preload("uid://chwtaluiwow5n")
 func _on_count_down_timer_expired() -> void:
 	Effects.intensify()
+	var excitotoxicity := EXCITOTOXICITY.instantiate()
+	add_child(excitotoxicity)
+	spawn_enzyme()
 
 func player_dead() -> void:
 	Effects.unintensify()
@@ -74,3 +78,14 @@ func level_completed() -> void:
 	var lvl := name.replacen("Level","")
 	Scenes.level_completed(int(lvl))
 	Scenes.swap_scene("Level Select")
+
+func spawn_enzyme() -> void:
+	if $Enemies.get_children().size() < 300:
+		var enzyme := preload("uid://d1wd5lnv3285q").instantiate()
+		$Enemies.add_child(enzyme)
+		var theta := randf_range(-PI, PI)
+		var pos_x := 380 * cos(theta) + PlayerManager.player.global_position.x
+		var pos_y := 380 * sin(theta) + PlayerManager.player.global_position.y
+		enzyme.global_position = Vector2(pos_x, pos_y)
+	await Delays.wait(0.125)
+	spawn_enzyme()

@@ -20,9 +20,6 @@ func _physics_process(delta: float) -> void:
 # Movement
 @onready var origin_point := global_position
 func _process_movement(delta: float) -> void:
-	# TODO more complex movement:
-		# Maybe they slide if they miss you? Idk I'm not reading the document as I'm 
-		# typing this so maybe that has the enemy movement stuff
 	if target:
 		navigation_agent.target_position = target.global_position
 		if direction_smoothed:
