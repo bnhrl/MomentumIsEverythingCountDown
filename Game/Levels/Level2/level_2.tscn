@@ -12,14 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://pq46efnl0ptf" path="res://Game/PolygonWalls/WallSprites/red_tile.png" id="6_r5umv"]
 [ext_resource type="Texture2D" uid="uid://c81s1ubrggj8m" path="res://Game/PolygonWalls/WallSprites/green_tile.png" id="8_ydvg4"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_es5la"]
-shader = ExtResource("3_q5nqv")
-shader_parameter/tile_texture = ExtResource("4_i5pyl")
-shader_parameter/tile_size = Vector2(16, 16)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q5ng6"]
 shader = ExtResource("3_q5nqv")
 shader_parameter/tile_texture = ExtResource("5_jrkfm")
+shader_parameter/tile_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_es5la"]
+shader = ExtResource("3_q5nqv")
+shader_parameter/tile_texture = ExtResource("4_i5pyl")
 shader_parameter/tile_size = Vector2(16, 16)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ddrey"]
@@ -37,6 +37,14 @@ shader = ExtResource("3_q5nqv")
 shader_parameter/tile_texture = ExtResource("4_i5pyl")
 shader_parameter/tile_size = Vector2(16, 16)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_q5nqv"]
+vertices = PackedVector2Array(1243.5703, 1508.7266, 1424.5391, 1554.4531, 1309.5469, 1819, 2, 1819, 893.1875, 1203.5313, 2, 692.60156, 388.64844, 676.02344, 833.89844, 796.96875, 3371, 1819, 2801.7578, 1819, 2805.2422, 1817.2266, 2907.9063, 1612.8828, 3371, 976.10156, 2981.6328, 1013.46875, 2155.1406, 629.15625, 2255.039, 560.90625, 2339.75, 553.21094, 2356.789, 616.64844, 2324.4922, 679.3125, 2023.1563, 1029.7031, 2002.1875, 848.10156, 1821.1797, 1144.2188, 1842, 970.0078, 1982.8828, 1300.5938, 1850.9297, 1269.3516, 2706.289, 701.9219, 2706.2031, 702.75, 2581.0781, 737.4219, 569.09375, 340.9922, 118.46094, 365.89844, 51.320313, 273.28125, 133.39844, 138.14063, 654.7578, 184.99219, 866.5469, 376.28125, 1238.2969, 228.09375, 1091.3438, 342.77344, 1139.1797, 407.25, 1285.2813, 258.79688, 1305.9531, 371.03125, 1282.9531, 514.0781, 1158.8594, 811.8906, 1116.0313, 537.03125, 1352.3906, 835.1094, 1356.9609, 1116.5234, 1570.3906, 1194.9375, 1646.3438, 967.9922, 1694.4063, 1182.0391, 1876.8438, 1393.9063, 2130.4297, 1558.5469, 1984.5781, 1573.4688, 2139.0234, 1727.1719, 2052.3438, 1688.9531, 2189.711, 1651.5625, 2208.3281, 1749.9531, 2353.711, 1736.1016, 2274.5313, 1624.6563, 2432.7266, 1663, 2330.75, 1573.5625, 2604.1172, 1421.0938, 2360.0469, 1428.0703, 2557.9922, 1164.2422, 2545.6328, 793.71875, 2564.6328, 838.97656, 2314.0078, 1130.8984, 2327.9688, 957.3906, 2366.7578, 729.25, 2468.8828, 646.65625, 2721.3984, 599.96875, 2713.9375, 700.6328, 2708.9766, 701.9922, 2994.0469, 581, 3281.9297, 683.0078, 3262.2188, 707.4219, 3220.5781, 720.97656, 2715.461, 702.22656, 3184.7813, 582.9922, 3260.9531, 594.8594, 3277.8125, 604.75, 2290.8516, 384.3672, 2301.3984, 401.4375, 1652.7266, 50.976563, 3371, 26, 3371, 400.10938, 3160.4297, 324.96875, 2720.7969, 353.0078, 1411.7969, 56.023438, 1385.1328, 80.71094, 1075.2578, 85.99219, 776.39844, 26)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10), PackedInt32Array(8, 10, 11, 12), PackedInt32Array(12, 11, 13), PackedInt32Array(14, 15, 16, 17, 18, 19, 20), PackedInt32Array(21, 22, 20, 19, 23, 24), PackedInt32Array(25, 26, 27), PackedInt32Array(28, 29, 30, 31, 32), PackedInt32Array(33, 28, 32, 34, 35), PackedInt32Array(36, 35, 34, 37, 38, 39), PackedInt32Array(40, 41, 36, 39, 42, 43), PackedInt32Array(44, 43, 42, 45, 46), PackedInt32Array(46, 45, 22, 21), PackedInt32Array(47, 24, 23, 48, 49), PackedInt32Array(50, 51, 49, 48, 52, 53), PackedInt32Array(54, 53, 52, 55, 56), PackedInt32Array(56, 55, 57, 58), PackedInt32Array(58, 57, 59, 60), PackedInt32Array(61, 62, 60, 59, 63, 64, 65, 66), PackedInt32Array(27, 61, 66), PackedInt32Array(27, 66, 67, 25), PackedInt32Array(68, 69, 25, 67, 70), PackedInt32Array(71, 72, 73, 74, 68, 70, 75, 76, 77), PackedInt32Array(78, 79, 80), PackedInt32Array(81, 82, 83), PackedInt32Array(81, 83, 84, 80), PackedInt32Array(85, 86, 87, 88), PackedInt32Array(84, 78, 80), PackedInt32Array(88, 81, 80), PackedInt32Array(88, 80, 85)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1, 23, 3374, 23, 3374, 1822, -1, 1822)])
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation_group"
+agent_radius = 3.0
+
 [node name="Level2" unique_id=1414133645 instance=ExtResource("1_u0koj")]
 
 [node name="Bounds" parent="." index="0" unique_id=1811867841]
@@ -52,34 +60,34 @@ position = Vector2(130, 292)
 [node name="CountDownTimer" parent="." index="3" unique_id=102296066]
 time = 20.0
 
-[node name="PolygonWall2" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=1078133837 instance=ExtResource("2_0kfcg")]
-material = SubResource("ShaderMaterial_es5la")
-position = Vector2(2081, 1776)
-polygon = PackedVector2Array(256, 170, 476, 156, 571, 116, 722, 39, 824, -164, 901, -790, 632, -1072, 502, -1036, 468, -982, 486.6449, -937.59973, 480, -612, 526.29443, -354.20023, 354, -111, 274, -37, 127, -23, 57, -46, -603, -337, -796, 107)
-
-[node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="1" unique_id=293361938 instance=ExtResource("2_0kfcg")]
+[node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("2_0kfcg")]
 material = SubResource("ShaderMaterial_q5ng6")
 position = Vector2(1415, 61)
 polygon = PackedVector2Array(-60, 772, 232, 904, 426, 906, 585, 785, 738, 566, 839, 497, 927, 489, 945, 556, 912, 620, 611, 970, 571, 1239, 718, 1496, 776, 1587, 858, 1561, 913, 1511, 942, 1367, 896, 1070, 910, 896, 948.99994, 666.64343, 1113, 534, 994, 402, 237, -7, -2, -2, -179, 162, -127, 196, -106, 310, -129, 453)
+
+[node name="PolygonWall2" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="1" unique_id=1078133837 instance=ExtResource("2_0kfcg")]
+material = SubResource("ShaderMaterial_es5la")
+position = Vector2(2081, 1776)
+polygon = PackedVector2Array(256, 170, 476, 156, 571, 116, 722, 39, 824, -164, 901, -790, 632, -1072, 502, -1036, 468, -982, 486.6449, -937.59973, 480, -612, 526.29443, -354.20023, 354, -111, 274, -37, 127, -23, 57, -46, -603, -337, -796, 107)
 
 [node name="PolygonWall1" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="2" unique_id=1877925797 instance=ExtResource("2_0kfcg")]
 material = SubResource("ShaderMaterial_ddrey")
 position = Vector2(1713, 1265)
 polygon = PackedVector2Array(-88, 337, 144, 368, 340, 431, 269, 310, 161, 130, 135, 5, 106, -117, -18, -80, -143, -67, -358, -146, -557, -452, -600, -728, -577, -857, -623, -919, -851, -885, -880, -495, -817, -63, -468, 241)
 
-[node name="Gate0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="3" unique_id=1337174415 instance=ExtResource("3_anfux")]
-position = Vector2(1880, 1143)
-polygon = PackedVector2Array(182, 6, -76, 48, -71, 11, 168, -47)
-
-[node name="PolygonWall3" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="4" unique_id=71753666 instance=ExtResource("2_0kfcg")]
+[node name="PolygonWall3" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="3" unique_id=71753666 instance=ExtResource("2_0kfcg")]
 material = SubResource("ShaderMaterial_nwxd3")
 position = Vector2(2637, 548)
 polygon = PackedVector2Array(357, 30, 548, 32, 625, 44, 643.7284, 54.98706, 648, 136, 627, 162, 584, 176, 72, 157, 67, 258, 339, 463, 860, 413, 890, -89, 523, -220, 84, -192, -341, -161, -181, 98, 84, 49)
 
-[node name="PolygonWall0" parent="WallLayer" parent_id_path=PackedInt32Array(332655601) index="2" unique_id=1305510081 instance=ExtResource("2_0kfcg")]
+[node name="PolygonWall4" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="4" unique_id=1305510081 instance=ExtResource("2_0kfcg")]
 material = SubResource("ShaderMaterial_x0ejf")
 position = Vector2(647, 416)
 polygon = PackedVector2Array(261, 398, 217, -37, -78, -72, -530, -47, -599.2707, -142.56796, -515.1852, -281.0091, 8, -234, 712, -182, 840, -334, 428, -327, -110, -435, -920, -431, -978, -237, -934, 286, -258, 257)
+
+[node name="NavigationRegion" parent="." index="6" unique_id=517625210]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_q5nqv")
 
 [node name="GrapplePoint14" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("2_1qvvv")]
 position = Vector2(2728, 643)
@@ -132,7 +140,11 @@ position = Vector2(2475, 751)
 [node name="WorldButton0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="0" unique_id=1576954058 instance=ExtResource("3_qngjo")]
 position = Vector2(2167, 788)
 
+[node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="1" unique_id=1337174415 instance=ExtResource("3_anfux")]
+position = Vector2(1880, 1143)
+polygon = PackedVector2Array(182, 6, -76, 48, -71, 11, 168, -47)
+
 [node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("4_c2w21")]
 position = Vector2(3236, 664)
 
-[connection signal="pressed" from="Interactables/WorldButton0" to="WallLayer/PolygonWalls/Gate0" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton0" to="Interactables/Gate0" method="disable"]

@@ -9,6 +9,7 @@ func _ready() -> void:
 	exiting_label.add_theme_color_override("font_outline_color", outline_color)
 	
 	if $NavigationRegion.navigation_polygon == null or $NavigationRegion.navigation_polygon.get_polygon_count() <= 0:
+		rebake.call()
 		push_error("Navigation is not baked on " + name + "! Fix that!!")
 	
 	Camera.set_bounds($Bounds.position, $Bounds.size + $Bounds.position)
