@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="MomentumIsEverythingCountDown"
+config/name="Excitoxicity"
 run/main_scene="uid://bd8qt04xi4h20"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0.18039216, 0.13333334, 0.18431373, 1)
