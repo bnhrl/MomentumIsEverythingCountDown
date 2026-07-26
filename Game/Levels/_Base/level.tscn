@@ -6,17 +6,17 @@
 [ext_resource type="Shader" uid="uid://wu085sklw13i" path="res://Assets/Shaders/world_tiling_2d.gdshader" id="4_vgjax"]
 [ext_resource type="Texture2D" uid="uid://clg2nupt156li" path="res://Assets/Textures/background_0.png" id="5_x38k5"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dno0g"]
+shader = ExtResource("4_vgjax")
+shader_parameter/tile_texture = ExtResource("5_x38k5")
+shader_parameter/tile_size = Vector2(720, 1280)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mndar"]
 shader = ExtResource("3_4nsif")
 shader_parameter/on_canvas_group = true
 shader_parameter/outline_thickness = 1.0
 
 [sub_resource type="TileSet" id="TileSet_4nsif"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dno0g"]
-shader = ExtResource("4_vgjax")
-shader_parameter/tile_texture = ExtResource("5_x38k5")
-shader_parameter/tile_size = Vector2(720, 1280)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4nsif"]
 source_geometry_mode = 1
@@ -66,6 +66,11 @@ vertical_alignment = 1
 
 [node name="CountDownTimer" parent="." unique_id=102296066 instance=ExtResource("2_mndar")]
 
+[node name="Background" type="Polygon2D" parent="." unique_id=675105712]
+z_index = -10
+material = SubResource("ShaderMaterial_dno0g")
+polygon = PackedVector2Array(-5120, -5120, -5120, 5120, 5120, 5120, 5120, -5120)
+
 [node name="WallLayer" type="CanvasGroup" parent="." unique_id=332655601 groups=["navigation_group"]]
 material = SubResource("ShaderMaterial_mndar")
 
@@ -73,11 +78,6 @@ material = SubResource("ShaderMaterial_mndar")
 tile_set = SubResource("TileSet_4nsif")
 
 [node name="PolygonWalls" type="Node2D" parent="WallLayer" unique_id=576414089]
-
-[node name="Background" type="Polygon2D" parent="." unique_id=675105712]
-z_index = -10
-material = SubResource("ShaderMaterial_dno0g")
-polygon = PackedVector2Array(-5120, -5120, -5120, 5120, 5120, 5120, 5120, -5120)
 
 [node name="NavigationRegion" type="NavigationRegion2D" parent="." unique_id=517625210]
 navigation_polygon = SubResource("NavigationPolygon_4nsif")

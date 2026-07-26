@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	
 	_process_exiting(delta)
-	if Input.is_action_just_pressed("restart"):
+	if Input.is_action_just_pressed("restart") and !completed:
 		player_dead()
 
 func _process_exiting(delta: float) -> void:
@@ -71,6 +71,8 @@ func _ready_completion_zones() -> void:
 
 const EXCITOTOXICITY = preload("uid://chwtaluiwow5n")
 func _on_count_down_timer_expired() -> void:
+	if completed: return
+	
 	Effects.intensify()
 	var excitotoxicity := EXCITOTOXICITY.instantiate()
 	add_child(excitotoxicity)
@@ -78,6 +80,8 @@ func _on_count_down_timer_expired() -> void:
 	spawn_enzyme()
 
 func player_dead() -> void:
+	if completed: return
+	
 	await Scenes._fade_in(0.333)
 	get_tree().reload_current_scene()
 	Effects.unintensify()
