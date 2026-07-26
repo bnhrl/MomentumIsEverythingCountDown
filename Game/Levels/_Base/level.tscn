@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://crkrc2q1qfpns" path="res://Game/CountDownTimer/count_down_timer.tscn" id="2_mndar"]
 [ext_resource type="Shader" uid="uid://y6t5gm6jds58" path="res://Assets/Shaders/outline_2d.gdshader" id="3_4nsif"]
 [ext_resource type="Shader" uid="uid://wu085sklw13i" path="res://Assets/Shaders/world_tiling_2d.gdshader" id="4_vgjax"]
-[ext_resource type="Texture2D" path="res://Assets/Textures/background_0.png" id="5_x38k5"]
+[ext_resource type="Texture2D" uid="uid://irh7x835h0bd" path="res://Assets/Textures/background_0.png" id="5_x38k5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dno0g"]
 shader = ExtResource("4_vgjax")
