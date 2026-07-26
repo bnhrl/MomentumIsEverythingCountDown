@@ -42,7 +42,7 @@ offset_top = 277.0
 offset_right = 609.0
 offset_bottom = 334.0
 theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
-text = "Swap to easy mode"
+text = "Swap to Easy Mode"
 
 [node name="LevelButtons" type="Node" parent="." unique_id=1856160715]
 
