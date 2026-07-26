@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://oixxon1n3jb3"]
+
+[ext_resource type="PackedScene" uid="uid://co1sgdv2x4nyr" path="res://Game/Levels/_Base/level.tscn" id="1_owcvh"]
+[ext_resource type="Shader" uid="uid://wu085sklw13i" path="res://Assets/Shaders/world_tiling_2d.gdshader" id="2_5nvu3"]
+[ext_resource type="Texture2D" uid="uid://bs8j4ds8qc7y4" path="res://Assets/Textures/background_3.png" id="3_1rxkp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ki36i"]
+shader = ExtResource("2_5nvu3")
+shader_parameter/tile_texture = ExtResource("3_1rxkp")
+shader_parameter/tile_size = Vector2(720, 1280)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_iye8a"]
+vertices = PackedVector2Array(637, 357, 3, 357, 3, 3, 637, 3)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 640, 0, 640, 360, 0, 360)])
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation_group"
+agent_radius = 3.0
+
+[node name="Level11" unique_id=1414133645 instance=ExtResource("1_owcvh")]
+
+[node name="Background" parent="." index="4" unique_id=675105712]
+material = SubResource("ShaderMaterial_ki36i")
+
+[node name="NavigationRegion" parent="." index="6" unique_id=517625210]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_iye8a")

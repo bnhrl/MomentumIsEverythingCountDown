@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cat2u7ayswtl" path="res://Game/PolygonWalls/WallSprites/yellow_tile.png" id="4_kv67y"]
 [ext_resource type="Texture2D" uid="uid://c81s1ubrggj8m" path="res://Game/PolygonWalls/WallSprites/green_tile.png" id="5_t2k4w"]
 [ext_resource type="Texture2D" uid="uid://pq46efnl0ptf" path="res://Game/PolygonWalls/WallSprites/red_tile.png" id="6_hujse"]
-[ext_resource type="Texture2D" path="res://Assets/Textures/background_0.png" id="7_3uww5"]
+[ext_resource type="Texture2D" uid="uid://irh7x835h0bd" path="res://Assets/Textures/background_0.png" id="7_3uww5"]
 [ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="7_86ce5"]
 [ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="8_8b55i"]
 [ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="8_tlwvc"]

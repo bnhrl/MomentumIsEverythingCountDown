@@ -92,7 +92,7 @@ func player_dead() -> void:
 
 var completed := false
 @onready var complete_label: RichTextLabel = $UILayer/CompleteLabel
-func level_completed() -> void:
+func level_completed(game_completed := false) -> void:
 	if completed: return
 	
 	completed = true
@@ -104,12 +104,16 @@ func level_completed() -> void:
 	PlayerManager.player.level_completed()
 	$CountDownTimer.process_mode = Node.PROCESS_MODE_DISABLED
 	
-	await Delays.wait(0.5)
-	var lvl := name.replacen("Level","")
-	Scenes.level_completed(int(lvl))
-	Scenes.swap_scene("Level Select")
-	await Scenes.faded
-	Effects.unintensify()
+	if !game_completed:
+		await Delays.wait(0.5)
+		var lvl := name.replacen("Level","")
+		Scenes.level_completed(int(lvl))
+		Scenes.swap_scene("Level Select")
+		await Scenes.faded
+		Effects.unintensify()
+	else:
+		await Delays.wait(1.0)
+		Scenes.swap_scene("Ending Cutscene")
 
 func spawn_enzyme() -> void:
 	if $Enemies.get_children().size() < 300:

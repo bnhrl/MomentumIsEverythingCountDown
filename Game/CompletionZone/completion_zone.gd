@@ -1,6 +1,8 @@
 class_name CompletionZone extends Node2D
 
 
+@export var game_completion := false
+
 func _ready() -> void:
 	var beam_tween := create_tween()
 	beam_tween.set_loops()
@@ -13,10 +15,10 @@ func _ready() -> void:
 
 
 var completed := false
-signal level_completed
+signal level_completed(game: bool)
 func _on_detection_zone_body_entered(body: Node2D) -> void:
 	if completed: return
 	
 	if body is Player: 
-		level_completed.emit()
+		level_completed.emit(game_completion)
 		completed = true
