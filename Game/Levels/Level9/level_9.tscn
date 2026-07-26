@@ -5,13 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://ogmg54ge4mqi" path="res://Assets/Textures/background_2.png" id="3_01v83"]
 [ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="4_igeap"]
 [ext_resource type="Texture2D" uid="uid://bes50qe7b47g3" path="res://Game/PolygonWalls/WallSprites/space_tile2.png" id="5_leq20"]
+[ext_resource type="Texture2D" uid="uid://0kehtus6qmol" path="res://Game/PolygonWalls/WallSprites/space_tile.png" id="6_2comv"]
 [ext_resource type="PackedScene" uid="uid://da77ss23u811t" path="res://Game/BoostPads/boost_pad.tscn" id="6_4u6db"]
 [ext_resource type="Texture2D" uid="uid://b1500w4u1lkct" path="res://Game/BoostPads/boost_pad.png" id="7_fr3p4"]
 [ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="8_leq20"]
 [ext_resource type="PackedScene" uid="uid://bjng875ivkyon" path="res://Game/Enemies/BEAmoeba/b_e_amoeba.tscn" id="9_4u6db"]
 [ext_resource type="PackedScene" uid="uid://c5efma3oa0u0x" path="res://Game/Objects/computer.tscn" id="9_fr3p4"]
 [ext_resource type="PackedScene" uid="uid://bb3eohron17vo" path="res://Game/Objects/small_box.tscn" id="10_lrou5"]
+[ext_resource type="PackedScene" uid="uid://d3xhd06mdlv8l" path="res://Game/Enemies/WhiteBloodCell/white_blood_cell.tscn" id="11_0maof"]
 [ext_resource type="PackedScene" uid="uid://8f0iofd1efob" path="res://Game/Objects/monitor.tscn" id="11_foi73"]
+[ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="11_ykqav"]
 [ext_resource type="PackedScene" uid="uid://cfu4xtwobtoj8" path="res://Game/Objects/coffee_maker.tscn" id="12_ibyvd"]
 [ext_resource type="PackedScene" uid="uid://b8huyx6lrvrb1" path="res://Game/Objects/mug.tscn" id="13_71741"]
 
@@ -29,15 +32,22 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = false
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_ibyvd"]
-vertices = PackedVector2Array(-12.703125, 90, -183, 90, -183, 4.8515625, 1007.8828, 43, -0.3125, 43, -90.03906, 0, -0.3125, -43, 903, -43, 1020.9922, 31.632813, 1400.6875, -316.8203, 1605, -458.9922, 1605, -326.4375, 1399.0938, -163.10156, 1019.9922, -203.34375, 1000.6094, -390.02344, 903, -396.78125, -183, -461, 879.71094, -461, 854.71094, -453.4375, -0.7109375, -96, -183, -4.8515625, 835, -400.53906, 835, -96)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(9, 12, 13, 14), PackedInt32Array(7, 15, 14, 13, 8), PackedInt32Array(16, 17, 18), PackedInt32Array(19, 20, 16), PackedInt32Array(19, 16, 18, 21), PackedInt32Array(19, 21, 22)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-186, -464, 1608, -464, 1608, 93, -186, 93)])
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxyy3"]
+shader = ExtResource("2_voq3k")
+shader_parameter/tile_texture = ExtResource("6_2comv")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_887xa"]
+vertices = PackedVector2Array(-12.703125, 90, -183, 90, -183, 4.8515625, 1127.8125, 90, 1046.7969, 90, 1075.5234, 67.85156, 1422.6563, -40.851563, 1913, -358.47656, 1913, 90, 1503.7266, 27.328125, 1132.9609, -88.63281, 1166.8203, 22.773438, 1230.1875, -11.9765625, 1329.3125, -15.0078125, 1552.3672, 90, 1007.8828, 43, -0.3125, 43, -90.03906, 0, -0.3125, -43, 903, -43, 1020.9922, 31.632813, 1588.1094, -441.1328, 1370.2109, -782.6797, 1365.6484, -899.3125, 1478.0938, -848.27344, 1810.5625, -372.10156, 903, -396.78125, 1000.6094, -390.02344, 1019.9922, -223.52344, 1399.5078, -163.10938, 1400.6484, -316.82813, 317.09375, -897.89844, -160.07813, -952, 676.3281, -952, 543.25, -740.09375, 711.78906, -876.64844, -183, -4.8515625, -183, -255.28906, -84.890625, -205.09375, -0.7109375, -96, 134.03906, -177.96875, 746.75, -96, 460.15625, -227.14063, 657.0469, -367.4922, 835.14844, -400.9375, 1218.7813, -952, 1319.2266, -952, 1265.9531, -783.2969, 1158.1875, -811.5078, 650.96875, -558.8672, 854.8906, -453.9375, 994.84375, -764.84375, 1146.3438, -462.97656, 1293.7813, -525.8906, 1547.7813, -918.72656, 1357.5703, -952, 1913, -952, 1913, -373.85938)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(3, 5, 10, 11), PackedInt32Array(12, 11, 10), PackedInt32Array(12, 10, 6, 13), PackedInt32Array(9, 13, 6), PackedInt32Array(9, 8, 14), PackedInt32Array(15, 16, 17, 18, 19, 20), PackedInt32Array(21, 22, 23, 24, 25), PackedInt32Array(19, 26, 27, 28, 20), PackedInt32Array(21, 25, 29, 30), PackedInt32Array(30, 29, 28, 27), PackedInt32Array(31, 32, 33), PackedInt32Array(34, 31, 33, 35), PackedInt32Array(36, 37, 38, 39), PackedInt32Array(39, 38, 40, 41), PackedInt32Array(41, 40, 42), PackedInt32Array(41, 42, 43, 44), PackedInt32Array(45, 46, 47, 48), PackedInt32Array(44, 43, 49, 50), PackedInt32Array(50, 49, 34, 35, 51, 52), PackedInt32Array(53, 52, 51, 48, 47), PackedInt32Array(54, 55, 56), PackedInt32Array(56, 57, 54)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-186, -955, 1916, -955, 1916, 93, -186, 93)])
 source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
 agent_radius = 3.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ibyvd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgbcd"]
 resource_local_to_scene = true
 shader = ExtResource("2_voq3k")
 shader_parameter/tile_texture = ExtResource("7_fr3p4")
@@ -45,7 +55,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = -0.5039987280984027
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_leq20"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8jvnf"]
 resource_local_to_scene = true
 shader = ExtResource("2_voq3k")
 shader_parameter/tile_texture = ExtResource("7_fr3p4")
@@ -53,7 +63,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fr3p4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kim44"]
 resource_local_to_scene = true
 shader = ExtResource("2_voq3k")
 shader_parameter/tile_texture = ExtResource("7_fr3p4")
@@ -65,12 +75,15 @@ shader_parameter/autoscroll = true
 
 [node name="Bounds" parent="." index="0" unique_id=1811867841]
 offset_left = -186.0
-offset_top = -917.0
-offset_right = 1932.0
+offset_top = -955.0
+offset_right = 1916.0
 offset_bottom = 93.0
 
 [node name="PlayerSpawnPoint" parent="." index="1" unique_id=1452407390]
 position = Vector2(0, 0)
+
+[node name="CountDownTimer" parent="." index="3" unique_id=102296066]
+time = 6.0
 
 [node name="Background" parent="." index="4" unique_id=675105712]
 material = SubResource("ShaderMaterial_4u6db")
@@ -87,37 +100,55 @@ polygon = PackedVector2Array(-97, 0, -1, 46, 900, 46, 900, 93, 0, 93, -186, 0)
 [node name="PolygonWall2" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="2" unique_id=1161192354 instance=ExtResource("4_igeap")]
 material = SubResource("ShaderMaterial_8a5cg")
 scale = Vector2(1, -1)
-polygon = PackedVector2Array(900, -46, 1009, -46, 1024, -33, 1023, 220, 1400, 160, 1815, 371, 1424, 931, 1820, 917, 1947, 917, 1943, -97, 900, -93)
+polygon = PackedVector2Array(900, -46, 1009, -46, 1024, -33, 1023, 220, 1400, 160, 1815, 371, 1480.0894, 850.6671, 1356, 907, 1323, 955, 1546, 916, 1916, 364, 1422, 44, 1131, 92, 1073, -66, 1038, -93, 900, -93)
 
 [node name="PolygonWall3" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="3" unique_id=1262639304 instance=ExtResource("4_igeap")]
 material = SubResource("ShaderMaterial_8a5cg")
-polygon = PackedVector2Array(838, -400, 838, -93, 900, -93, 900, -400)
+polygon = PackedVector2Array(838, -400, 749, -93, 900, -93, 900, -400)
 
 [node name="PolygonWall4" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="4" unique_id=1767958673 instance=ExtResource("4_igeap")]
+material = SubResource("ShaderMaterial_nxyy3")
+position = Vector2(128, 24)
+polygon = PackedVector2Array(-212, -232, 6, -205, 331, -254, 526, -393, 520, -582, 413, -762, 188, -919, -394, -985, -425, -341)
+
+[node name="PolygonWall5" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="5" unique_id=1734219469 instance=ExtResource("4_igeap")]
 material = SubResource("ShaderMaterial_8a5cg")
-polygon = PackedVector2Array(838, -400, 857, -451, 900, -464, 1617, -471, 1400, -320, 1001, -393, 900, -400)
+polygon = PackedVector2Array(838, -400, 857, -451, 1147, -460, 1297, -524, 1269, -783, 1323, -954, 1362, -916, 1367.2467, -781.755, 1584, -442, 1400, -320, 1001, -393, 900, -400)
+
+[node name="PolygonWall6" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="6" unique_id=1469467802 instance=ExtResource("4_igeap")]
+material = SubResource("ShaderMaterial_nxyy3")
+position = Vector2(128, 24)
+polygon = PackedVector2Array(976, 113, 1041, 1, 1103, -33, 1201, -36, 1374, 6, 1478, 140, 1431, 223, 1185, 277, 1049, 254, 997, 213)
+
+[node name="PolygonWall7" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="7" unique_id=1334586874 instance=ExtResource("4_igeap")]
+material = SubResource("ShaderMaterial_nxyy3")
+position = Vector2(128, 24)
+polygon = PackedVector2Array(1119, -1049, 1028, -838, 867, -792, 586, -903, 490, -1107)
 
 [node name="NavigationRegion" parent="." index="6" unique_id=517625210]
 visible = false
-navigation_polygon = SubResource("NavigationPolygon_ibyvd")
+navigation_polygon = SubResource("NavigationPolygon_887xa")
 
 [node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("8_leq20")]
-position = Vector2(1114, -287)
+position = Vector2(1174, -269)
+
+[node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="1" unique_id=1756419611 instance=ExtResource("8_leq20")]
+position = Vector2(1513, -679)
 
 [node name="BoostPad2" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="0" unique_id=816347687 instance=ExtResource("6_4u6db")]
-material = SubResource("ShaderMaterial_ibyvd")
+material = SubResource("ShaderMaterial_hgbcd")
 polygon = PackedVector2Array(1399, -321, 1325, -168, 1398, -152, 1518, -217, 1410, -341)
 direction = -28.87700000000001
 
 [node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="1" unique_id=1491510217 instance=ExtResource("6_4u6db")]
-material = SubResource("ShaderMaterial_leq20")
+material = SubResource("ShaderMaterial_8jvnf")
 position = Vector2(378.5, 1)
 scale = Vector2(9.366667, 3.1333334)
 polygon = PackedVector2Array(-15, -15, 0, -15, 0, 15, -15, 15)
 speed = 200.0
 
 [node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="2" unique_id=1636313232 instance=ExtResource("6_4u6db")]
-material = SubResource("ShaderMaterial_fr3p4")
+material = SubResource("ShaderMaterial_kim44")
 position = Vector2(1024, 1)
 scale = Vector2(9.366667, 3.1333334)
 polygon = PackedVector2Array(-13.238434, -15, -0.10675812, -27.765957, 0, 15)
@@ -135,8 +166,23 @@ max_dist_from_origin = 20
 position = Vector2(777, 1)
 max_dist_from_origin = 20
 
+[node name="WhiteBloodCell0" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="2" unique_id=1451945749 instance=ExtResource("11_0maof")]
+position = Vector2(1515, -302)
+max_dist_from_origin = 10
+
+[node name="WhiteBloodCell1" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="3" unique_id=871647679 instance=ExtResource("11_0maof")]
+position = Vector2(1481, -313)
+max_dist_from_origin = 10
+
+[node name="WhiteBloodCell2" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="4" unique_id=643296221 instance=ExtResource("11_0maof")]
+position = Vector2(1520, -270)
+max_dist_from_origin = 10
+
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("11_ykqav")]
+position = Vector2(1414, -821)
+
 [node name="SmallBox" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="0" unique_id=1695913543 instance=ExtResource("10_lrou5")]
-position = Vector2(1720.0001, -347)
+position = Vector2(1742.0001, -354)
 rotation = -0.33188143
 
 [node name="Computer" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="1" unique_id=589243546 instance=ExtResource("9_fr3p4")]
@@ -144,8 +190,8 @@ position = Vector2(920.99994, -380)
 rotation = 0.5343101
 
 [node name="Monitor" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="2" unique_id=1153507537 instance=ExtResource("11_foi73")]
-position = Vector2(976.99994, -358.00006)
-rotation = -0.2617994
+position = Vector2(973.99994, -352.99997)
+rotation = -0.5235988
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="CoffeeMaker" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="3" unique_id=1924321984 instance=ExtResource("12_ibyvd")]
@@ -154,5 +200,5 @@ rotation = 0.16410583
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Mug" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="4" unique_id=514308791 instance=ExtResource("13_71741")]
-position = Vector2(1755.9999, -380.99997)
+position = Vector2(1760, -399)
 rotation = 0.2617994

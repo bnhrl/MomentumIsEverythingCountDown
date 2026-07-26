@@ -33,7 +33,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="WhiteBloodCell" unique_id=613541596 instance=ExtResource("1_d1ykc")]
+[node name="WhiteBloodCell0" unique_id=613541596 instance=ExtResource("1_d1ykc")]
 speed = 2000.0
 momentum_to_kill = 250.0
 direction_smoothed = false
