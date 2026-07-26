@@ -15,12 +15,14 @@ var target: Node2D
 
 func _physics_process(delta: float) -> void:
 	_process_movement(delta)
+	momentum = LerpHelper.lv2(momentum, Vector2.ZERO, 3.0, delta)
 	_process_detection()
 	_process_passing()
 	_process_visuals(delta)
 
 
 # Movement
+var momentum := Vector2.ZERO
 @onready var origin_point := global_position
 func _process_movement(delta: float) -> void:
 	if dead: return
@@ -30,7 +32,7 @@ func _process_movement(delta: float) -> void:
 		if direction_smoothed:
 			_process_direction_smoothed_movement(delta)
 		else:
-			velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * speed * delta
+			velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * speed * delta + momentum * delta
 	else:
 		if idle_movement:
 			_process_idle_movement(delta)
@@ -44,7 +46,7 @@ func _process_direction_smoothed_movement(delta: float) -> void:
 	var target_direction := global_position.direction_to(navigation_agent.get_next_path_position())
 	direction = LerpHelper.lv2(direction, target_direction, 8.0, delta)
 	var target_velocity := direction * speed * delta
-	velocity = LerpHelper.lv2(velocity, target_velocity, 8.0, delta)
+	velocity = LerpHelper.lv2(velocity, target_velocity, 8.0, delta) + momentum * delta
 
 @onready var idle_timer: Timer = $IdleTimer
 func _process_idle_movement(delta: float) -> void:
