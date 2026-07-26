@@ -3,7 +3,9 @@
 @export var outline_color := Color("3e3546")
 
 func _ready() -> void:
-	if Engine.is_editor_hint(): return
+	if Engine.is_editor_hint(): 
+		rebake.call()
+		return
 	
 	_ready_completion_zones()
 	exiting_label.add_theme_color_override("font_outline_color", outline_color)
@@ -16,6 +18,7 @@ func _ready() -> void:
 	PlayerManager.add_player(self)
 	PlayerManager.player.died.connect(player_dead)
 	RenderingServer.global_shader_parameter_set("outline_color", outline_color)
+	$CountDownTimer.show()
 
 const EXITING := 1.0
 var exiting := EXITING

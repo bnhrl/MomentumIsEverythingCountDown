@@ -11,6 +11,7 @@ shader = ExtResource("4_vgjax")
 shader_parameter/tile_texture = ExtResource("5_x38k5")
 shader_parameter/tile_size = Vector2(720, 1280)
 shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mndar"]
 shader = ExtResource("3_4nsif")
@@ -39,6 +40,7 @@ position = Vector2(320, 180)
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=3946053]
 
 [node name="ExitingLabel" type="RichTextLabel" parent="UILayer" unique_id=482272356]
+visible = false
 clip_contents = false
 offset_left = 5.0
 offset_top = -4.0
@@ -66,6 +68,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CountDownTimer" parent="." unique_id=102296066 instance=ExtResource("2_mndar")]
+visible = false
 
 [node name="Background" type="Polygon2D" parent="." unique_id=675105712]
 z_index = -10

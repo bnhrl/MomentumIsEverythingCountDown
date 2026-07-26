@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://bpinayf33n7m" path="res://Game/Enemies/BEAmoeba/b_e_amoeba.gd" id="2_avk6h"]
 [ext_resource type="Texture2D" uid="uid://cfgo17hod55k1" path="res://Game/Enemies/BEAmoeba/b_e_amoeba.png" id="2_msuof"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_msuof"]
+radius = 150.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_c6smh"]
 animations = [{
 "frames": [{
@@ -22,7 +25,10 @@ point_count = 2
 [node name="BEAmoeba0" unique_id=613541596 instance=ExtResource("1_uhq6v")]
 script = ExtResource("2_avk6h")
 speed = 10000.0
-blood_color = Color(0.9764706, 0.7607843, 0.16862746, 1)
+blood_color = Color(0.9098039, 0.23137255, 0.23137255, 1)
+
+[node name="Collision" parent="DetectionArea" parent_id_path=PackedInt32Array(2072933801) index="1" unique_id=1541580241]
+shape = SubResource("CircleShape2D_msuof")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Model" parent_id_path=PackedInt32Array(87698194) index="0" unique_id=903206068]
 sprite_frames = SubResource("SpriteFrames_c6smh")
