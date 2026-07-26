@@ -9,12 +9,36 @@ shader = ExtResource("2_k4ofb")
 shader_parameter/on_canvas_group = false
 shader_parameter/outline_thickness = 1.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4ofb"]
+atlas = ExtResource("2_o8gs3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrik5"]
+atlas = ExtResource("2_o8gs3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6smh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4ofb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrik5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
+
 [node name="GrapplePoint0" type="Area2D" unique_id=907286068]
 script = ExtResource("1_3tkon")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=364388009]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=327535967]
 material = SubResource("ShaderMaterial_yrik5")
-texture = ExtResource("2_o8gs3")
+sprite_frames = SubResource("SpriteFrames_c6smh")
+autoplay = "default"
+frame_progress = 0.08608861
 
 [node name="Collision" type="CollisionPolygon2D" parent="." unique_id=1981361459]
 polygon = PackedVector2Array(0, -8, -8, 0, 0, 8, 8, 0)

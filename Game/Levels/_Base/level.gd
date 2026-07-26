@@ -99,6 +99,7 @@ func level_completed() -> void:
 	tween.tween_property(complete_label, "offset_transform_scale:x", 1.0, 0.25).from(0.0)
 	tween.parallel().tween_property(complete_label, "offset_transform_scale:y", 1.0, 0.333).from(0.0)
 	PlayerManager.player.level_completed()
+	$CountDownTimer.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	await Delays.wait(0.5)
 	var lvl := name.replacen("Level","")

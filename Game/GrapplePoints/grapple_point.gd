@@ -1,6 +1,10 @@
 class_name GrapplePoint extends Area2D
 
 
+func _ready() -> void:
+	$Sprite.frame = randi_range(0,1)
+	$Sprite.frame_progress = randf_range(0.0, 1.0)
+
 func _process(_delta: float) -> void:
 	_process_passing()
 
