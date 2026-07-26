@@ -111,6 +111,9 @@ func play_kill_audio() -> void:
 func level_completed() -> void:
 	velocity = Vector2.ZERO
 	momentum = Vector2.ZERO
+	set_collision_layer_value(2, false)
+	set_collision_layer_value(1, false)
+	set_collision_mask_value(1, false)
 	var tween := create_tween()
 	tween.tween_property(model, "scale", Vector2.ZERO, 0.5).set_trans(Tween.TRANS_EXPO)
 	tween.parallel().tween_property(model, "position:y", model.position.y - 33, 0.35).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)

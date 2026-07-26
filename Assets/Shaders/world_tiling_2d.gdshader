@@ -2,6 +2,8 @@ shader_type canvas_item;
 
 uniform sampler2D tile_texture: source_color, repeat_enable, filter_nearest; 
 uniform vec2 tile_size = vec2(16, 16);
+uniform float rotation = 0.0;
+uniform bool autoscroll = false;
 
 varying vec2 world_position;
 varying vec4 modulate;
@@ -11,13 +13,19 @@ void vertex() {
 	modulate = COLOR;
 }
 
+vec2 rotate(vec2 uv, float angle) {
+    mat2 rot = mat2(
+        vec2(sin(angle), -cos(angle)),
+        vec2(cos(angle), sin(angle))
+    );
+    uv = uv * rot;
+    return uv;
+}
+
 void fragment() {
 	vec2 world_uv = world_position / tile_size;
+	world_uv = rotate(world_uv, rotation+PI*0.5);
+	if (autoscroll) { world_uv.x -= TIME; }
 	
 	COLOR = texture(tile_texture, world_uv) * modulate;
 }
-
-//void light() {
-//	// Called for every pixel for every light affecting the CanvasItem.
-//	// Uncomment to replace the default light processing function with this one.
-//}

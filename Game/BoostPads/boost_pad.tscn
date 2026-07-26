@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://da77ss23u811t"]
+
+[ext_resource type="Shader" uid="uid://wu085sklw13i" path="res://Assets/Shaders/world_tiling_2d.gdshader" id="1_pp4oi"]
+[ext_resource type="Script" uid="uid://bctxfp0ltj6qs" path="res://Game/BoostPads/boost_pad.gd" id="1_t07jp"]
+[ext_resource type="Texture2D" uid="uid://b1500w4u1lkct" path="res://Game/BoostPads/boost_pad.png" id="2_gh5d4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ex37j"]
+resource_local_to_scene = true
+shader = ExtResource("1_pp4oi")
+shader_parameter/tile_texture = ExtResource("2_gh5d4")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = true
+
+[node name="BoostPad" type="Polygon2D" unique_id=816347687]
+material = SubResource("ShaderMaterial_ex37j")
+polygon = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
+script = ExtResource("1_t07jp")
+
+[node name="Area" type="Area2D" parent="." unique_id=1763253854]
+
+[node name="Collision" type="CollisionPolygon2D" parent="Area" unique_id=1481995982]
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]

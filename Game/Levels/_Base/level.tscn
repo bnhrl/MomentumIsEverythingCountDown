@@ -10,6 +10,7 @@
 shader = ExtResource("4_vgjax")
 shader_parameter/tile_texture = ExtResource("5_x38k5")
 shader_parameter/tile_size = Vector2(720, 1280)
+shader_parameter/rotation = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mndar"]
 shader = ExtResource("3_4nsif")
@@ -84,12 +85,16 @@ navigation_polygon = SubResource("NavigationPolygon_4nsif")
 
 [node name="GrapplePoints" type="Node" parent="." unique_id=882760734]
 
-[node name="Interactables" type="Node" parent="." unique_id=1223907740]
+[node name="BoostPads" type="Node" parent="." unique_id=839747053]
 
-[node name="DeathPits" type="Node" parent="." unique_id=1192831106 groups=["navigation_group"]]
+[node name="Interactables" type="Node" parent="." unique_id=1223907740]
 
 [node name="Enemies" type="Node" parent="." unique_id=1295879779]
 
+[node name="DeathPits" type="Node" parent="." unique_id=1192831106 groups=["navigation_group"]]
+
 [node name="CompletionZones" type="Node" parent="." unique_id=1863227345]
+
+[node name="Objects" type="Node" parent="." unique_id=438333042]
 
 [connection signal="expired" from="CountDownTimer" to="." method="_on_count_down_timer_expired"]

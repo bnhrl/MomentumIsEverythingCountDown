@@ -10,12 +10,12 @@ radius = 8.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_853w4"]
 radius = 125.0
 
-[sub_resource type="Curve" id="Curve_oshqu"]
+[sub_resource type="Curve" id="Curve_7ltll"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_7ltll"]
-curve = SubResource("Curve_oshqu")
+[sub_resource type="CurveTexture" id="CurveTexture_obnpv"]
+curve = SubResource("Curve_7ltll")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c6smh"]
 particle_flag_disable_z = true
@@ -27,7 +27,7 @@ linear_accel_min = -100.0
 linear_accel_max = -25.000002
 radial_accel_min = -50.0
 radial_accel_max = 49.999996
-alpha_curve = SubResource("CurveTexture_7ltll")
+scale_curve = SubResource("CurveTexture_obnpv")
 
 [node name="Enemy" type="CharacterBody2D" unique_id=613541596]
 z_index = 1

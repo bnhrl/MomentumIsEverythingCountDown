@@ -18,21 +18,29 @@
 shader = ExtResource("3_tvcw1")
 shader_parameter/tile_texture = ExtResource("4_uud4o")
 shader_parameter/tile_size = Vector2(720, 1280)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p51bn"]
 shader = ExtResource("3_tvcw1")
 shader_parameter/tile_texture = ExtResource("4_4llw4")
 shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o31rp"]
 shader = ExtResource("3_tvcw1")
 shader_parameter/tile_texture = ExtResource("5_3bwwb")
 shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sk6u5"]
 shader = ExtResource("3_tvcw1")
 shader_parameter/tile_texture = ExtResource("6_kmiko")
 shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7njhx"]
 vertices = PackedVector2Array(-201.86719, 3360.0313, -234.22656, 3542.4531, -239.54688, 3540.4766, -283.40625, 3283.6016, -174.82813, 3020.4688, -142.36719, 3031.0313, -28.453125, 3135.289, -130.39063, 3222.1016, -54.148438, 54.492188, 63.140625, -47.671875, 146.14844, 30.492188, 88.0625, 123.03125, -79.96094, 274.84375, 68.96094, 374.39063, -20.171875, 542.8828, 65.140625, 686.7422, 148.64063, 605.3594, 178, 746.1406, 349.3203, 674.9375, 660.8906, 842.52344, 638.1797, 709.03906, 706.03906, 692.59375, 747.97656, 744.0469, 745.0078, 926.9922, 661.10156, 847.21875, 260.84375, 964.5781, 669.2969, 1030.2266, 304.32813, 1090.2266, 202.4375, 1047.1563, 101.17969, 1036.9297, 210.54688, 1214.2734, 130.17969, 1099.2031, -1131.4375, 523.3125, -1171.5469, 427.45313, -1095.5313, 329.42188, -1011.28125, 368.2422, -954.4531, 495.8828, -992.59375, 668.1797, -931.8125, 772.5, -857.96094, 574.2578, -633.53906, 782.6719, -577.1094, 921.1094, -383.78125, 858.89844, -199.25781, 989.35156, -171.00781, 907.84375, -195.61719, 988.9375, -51.820313, 1043.2422, 48.796875, 1091.0625, 131.46094, 1102.7578, 58.671875, 1176.5625, 116.97656, 1357.1328, 8, 1361.3672, 9.9921875, 1553.6484, 121.00781, 1576.4688, 58.742188, 1764.5391, 167.53125, 1729.1797, 232.92188, 1952.6563, 292.5625, 1785.0938, 463.03125, 2095.7266, 335.6797, 1778.9922, 539.77344, 1940.0469, 784.8281, 2300.6797, 624.35156, 2299.3984, 527.7031, 2596.3906, 756.1172, 2470, 612.6328, 2731.0781, 378.10156, 2799.211, 228.54688, 3062.2813, 50, 3016.9297, -284.0703, 3284.3594, -321.07813, 3529.7734, -382.39844, 3690.6016, -219.85938, 3707.3438, -71.02344, 3975.8281, -128.5625, 4244.6797, -332.7578, 4311.758, -524.3203, 4215.9766, -563.9375, 4003.9922, -537.2031, 3859.3906, -83.86719, 3850.3203, 463.0078, 3803.2734, 462.53125, 3803.6172, 413.7422, 3785.3281, 827, 657.0781, 734.2031, 679.59375, 827, 636.1875)
@@ -273,6 +281,10 @@ position = Vector2(-179, 4102)
 [node name="WorldButton45" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="40" unique_id=521567953 instance=ExtResource("9_g4df7")]
 position = Vector2(-179, 4150)
 
+[node name="WhiteBloodCell" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="0" unique_id=613541596 instance=ExtResource("11_kmiko")]
+position = Vector2(-232, 4101)
+idle_movement = false
+
 [node name="DeathPit" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("11_g4df7")]
 position = Vector2(545, 2123)
 polygon = PackedVector2Array(-199, 59, 136, -110, 197, -39, -98, 127)
@@ -282,10 +294,6 @@ momentum_required = 200.0
 position = Vector2(-151, 3149)
 polygon = PackedVector2Array(-142.82352, -117.861595, 48.176476, 171.1384, 151.17648, 120.138405, -62.823524, -205.8616)
 momentum_required = 200.0
-
-[node name="WhiteBloodCell" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="0" unique_id=613541596 instance=ExtResource("11_kmiko")]
-position = Vector2(-232, 4101)
-idle_movement = false
 
 [node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("12_7njhx")]
 position = Vector2(-1071, 483)

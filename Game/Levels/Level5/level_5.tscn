@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://wu085sklw13i" path="res://Assets/Shaders/world_tiling_2d.gdshader" id="2_sckt2"]
 [ext_resource type="Texture2D" uid="uid://ba7lcy4dmafoi" path="res://Assets/Textures/background_1.png" id="3_obnpv"]
 [ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="6_b5xo0"]
+[ext_resource type="PackedScene" uid="uid://bvoyf8gip103i" path="res://Game/Interactable/Gate/gate.tscn" id="9_0lnb6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b5xo0"]
 shader = ExtResource("2_sckt2")
@@ -17,3 +18,7 @@ material = SubResource("ShaderMaterial_b5xo0")
 
 [node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("6_b5xo0")]
 polygon = PackedVector2Array(-5, -162, -187, -106, -223, 1, -247, 182, -220, 341, -121, 441, 0, 496, 338, 473, 663, 413, 799, 275, 822, 189, 846, 111, 866, 177, 872, 285, 684, 468, 346, 527, -3, 553, -139, 508, -262, 380, -297, 177, -278, -4, -237, -128, -5, -206, 183, -220, 389, -209, 600, -198, 740, -145, 850, -84, 860, -12, 846, 77, 821, 2, 797, -66, 725, -113, 587, -160, 386, -173, 184, -176)
+
+[node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="0" unique_id=1337174415 instance=ExtResource("9_0lnb6")]
+position = Vector2(846, 75)
+polygon = PackedVector2Array(13, 94, -14, 98, -7, 13, -17, -79, 10, -79, 6, 13)
