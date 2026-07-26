@@ -1,6 +1,6 @@
 extends Polygon2D
 
-
+@export var displays_notification := true
 @onready var notif: RichTextLabel = $CanvasLayer/Notification
 
 func _ready() -> void:
@@ -15,6 +15,8 @@ func _process(delta: float) -> void:
 const DISABLED_TEXTS := ["An obstacle is cleared...", "Somewhere, a gate opens.", "An obstacle has been removed!"]
 func disable() -> void:
 	$StaticBody.queue_free()
+	if !displays_notification: return
+	
 	notif.text = DISABLED_TEXTS[randi_range(0,2)]
 	notif.show()
 	var tween := create_tween()

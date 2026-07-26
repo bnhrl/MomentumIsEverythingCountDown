@@ -21,6 +21,7 @@ script = ExtResource("3_ou1td")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1356711791]
 
 [node name="Notification" type="RichTextLabel" parent="CanvasLayer" unique_id=864175571]
+visible = false
 offset_top = 321.0
 offset_right = 426.6667
 offset_bottom = 349.6667

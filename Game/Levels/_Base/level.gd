@@ -24,6 +24,8 @@ func _process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	
 	_process_exiting(delta)
+	if Input.is_action_just_pressed("restart"):
+		player_dead()
 
 func _process_exiting(delta: float) -> void:
 	if exiting <= 0: return
