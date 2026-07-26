@@ -105,6 +105,7 @@ func level_completed(game_completed := false) -> void:
 	tween.parallel().tween_property(complete_label, "offset_transform_scale:y", 1.0, 0.333).from(0.0)
 	PlayerManager.player.level_completed()
 	$CountDownTimer.process_mode = Node.PROCESS_MODE_DISABLED
+	Data.save()
 	
 	if !game_completed:
 		await Delays.wait(0.5)

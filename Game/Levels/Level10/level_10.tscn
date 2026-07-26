@@ -100,7 +100,7 @@ source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
 agent_radius = 3.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2r2k6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fehv0"]
 resource_local_to_scene = true
 shader = ExtResource("2_pb6pf")
 shader_parameter/tile_texture = ExtResource("6_7h0fi")
@@ -108,7 +108,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_blrw1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2r2k6"]
 resource_local_to_scene = true
 shader = ExtResource("2_pb6pf")
 shader_parameter/tile_texture = ExtResource("6_7h0fi")
@@ -116,7 +116,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 1.5707963267948966
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8xf8r"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_blrw1"]
 resource_local_to_scene = true
 shader = ExtResource("2_pb6pf")
 shader_parameter/tile_texture = ExtResource("6_7h0fi")
@@ -124,7 +124,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = -1.5707963267948966
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ykvr"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8xf8r"]
 resource_local_to_scene = true
 shader = ExtResource("2_pb6pf")
 shader_parameter/tile_texture = ExtResource("6_7h0fi")
@@ -144,7 +144,7 @@ offset_bottom = -1305.0
 position = Vector2(-3787, -4107)
 
 [node name="CountDownTimer" parent="." index="3" unique_id=102296066]
-time = 20.0
+time = 24.0
 
 [node name="Background" parent="." index="4" unique_id=675105712]
 material = SubResource("ShaderMaterial_eeg0u")
@@ -203,8 +203,95 @@ scale = Vector2(17.5, 8.25)
 polygon = PackedVector2Array(2, 2, 23.02858, 7.57576, 26.514297, 16.181808, 28.857147, 36.42424, 30.057144, 56.303024, 36.800003, 62.363632, 36.685715, 55.939392, 34.057144, 20.787872, 31.428574, -2, 18.742859, -5.515152, 9.142868, -6.3636475, 1.2571564, -4.545456, -2, -2, -2, 2)
 
 [node name="NavigationRegion" parent="." index="6" unique_id=517625210]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_fehv0")
+
+[node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="0" unique_id=816347687 instance=ExtResource("5_dbao8")]
+material = SubResource("ShaderMaterial_fehv0")
+position = Vector2(-3350.5, -3950)
+scale = Vector2(11.366667, 2.4666626)
+polygon = PackedVector2Array(-15, -15, 15, -15, 14.999992, -0.5039978, 15, 15, -15, 15)
+spin_speed = 0.0
+
+[node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="1" unique_id=1963710962 instance=ExtResource("5_dbao8")]
+material = SubResource("ShaderMaterial_2r2k6")
+position = Vector2(-3504, -3614)
+scale = Vector2(1, 5.6)
+polygon = PackedVector2Array(1, -15.357117, 45, -17.5, 32, 3.75, 4, 67.32147, -34, 67.32147)
+spin_speed = 0.0
+direction = 90.0
+
+[node name="BoostPad2" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="2" unique_id=597891133 instance=ExtResource("5_dbao8")]
+material = SubResource("ShaderMaterial_blrw1")
+position = Vector2(-3369, -1919.5)
+scale = Vector2(7.5333433, 1.9666688)
+polygon = PackedVector2Array(-15, -15, 8.230072, -19.576294, 16.858398, -25.677979, 15.398224, 5.847412, -15, 15)
+spin_speed = 0.0
+direction = -90.0
+speed = 50.0
+
+[node name="BoostPad3" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="3" unique_id=1448805751 instance=ExtResource("5_dbao8")]
+material = SubResource("ShaderMaterial_8xf8r")
+position = Vector2(-2193, -1550)
+scale = Vector2(16.466663, 3.6666648)
+polygon = PackedVector2Array(-16.518234, -14.181824, 15, -15, 15, 15, -15, 15)
+spin_speed = 0.0
+
+[node name="WorldButton0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="0" unique_id=1576954058 instance=ExtResource("14_13ymo")]
+position = Vector2(-3362, -1591)
+
+[node name="DeathPit" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("18_4sare")]
+position = Vector2(-1232, -1727.9999)
+scale = Vector2(87.56599, 45.7)
+polygon = PackedVector2Array(5.538681, 8.643326, -0.49105835, 9.452953, -5.447321, 9.343544, -8.873308, 9.212254, -8.56497, 5.9080963, -8.679171, -0.39387512, -5.493, -3.588623, -3.8256874, -9.737419, 2.0441732, -14.814007, 3.9170465, -16.236324, 8.416512, -14.398251, 10.060986, -10.809631, 8.188112, -5.7330437)
+
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("11_xboev")]
+position = Vector2(-258, -2546)
+
+[node name="Mug" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="0" unique_id=1695913543 instance=ExtResource("7_7h0fi")]
+position = Vector2(-3013, -3410)
+rotation = -0.33094445
+ricochet_speed_mult = 2.25
+
+[node name="SmallBox" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="1" unique_id=804334930 instance=ExtResource("8_n0ov8")]
+position = Vector2(-2973.9998, -3435)
+rotation = 2.3252158
+ricochet_speed_mult = 2.25
+
+[node name="Monitor" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="2" unique_id=65858842 instance=ExtResource("10_m1ht6")]
+position = Vector2(-3074, -3396)
+
+[node name="Lamp" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="3" unique_id=1179039035 instance=ExtResource("11_pcah2")]
+position = Vector2(-3543.9998, -3150)
+rotation = -0.9375436
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Stapler" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="4" unique_id=1945818512 instance=ExtResource("12_skf0p")]
+position = Vector2(-3303.0002, -3279.0002)
+rotation = 0.0039859037
+scale = Vector2(1.615854, 1.615854)
+
+[node name="LargeBox" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="5" unique_id=268375106 instance=ExtResource("13_36mb3")]
+position = Vector2(-3010, -3143)
+rotation = -0.28057522
+
+[node name="LargeBox2" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="6" unique_id=1257770372 instance=ExtResource("13_36mb3")]
+position = Vector2(-2994, -3064.9998)
+rotation = -0.09474789
+
+[node name="LargeBox3" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="7" unique_id=1993752727 instance=ExtResource("13_36mb3")]
+position = Vector2(-2989, -2986)
+
+[node name="LargeBox4" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="8" unique_id=1265938839 instance=ExtResource("13_36mb3")]
+position = Vector2(-3061.0005, -3215.0005)
+rotation = -0.9593991
+
+[node name="CoffeeMaker" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="9" unique_id=1050649546 instance=ExtResource("16_fvc8g")]
+position = Vector2(-2369.0002, -2100)
+rotation = -0.675251
+
+[node name="Desk" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="10" unique_id=2108897107 instance=ExtResource("17_uf7ek")]
+position = Vector2(-2323, -2059)
+rotation = 0.8671907
 
 [node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("4_eeg0u")]
 position = Vector2(-3609, -4026)
@@ -268,88 +355,5 @@ position = Vector2(-569, -2345)
 
 [node name="GrapplePoint20" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="20" unique_id=433665621 instance=ExtResource("4_eeg0u")]
 position = Vector2(-440, -2562)
-
-[node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="0" unique_id=816347687 instance=ExtResource("5_dbao8")]
-material = SubResource("ShaderMaterial_2r2k6")
-position = Vector2(-3350.5, -3950)
-scale = Vector2(11.366667, 2.4666626)
-polygon = PackedVector2Array(-15, -15, 15, -15, 14.999992, -0.5039978, 15, 15, -15, 15)
-
-[node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="1" unique_id=1963710962 instance=ExtResource("5_dbao8")]
-material = SubResource("ShaderMaterial_blrw1")
-position = Vector2(-3504, -3614)
-scale = Vector2(1, 5.6)
-polygon = PackedVector2Array(1, -15.357117, 45, -17.5, 32, 3.75, 4, 67.32147, -34, 67.32147)
-direction = 90.0
-
-[node name="BoostPad2" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="2" unique_id=597891133 instance=ExtResource("5_dbao8")]
-material = SubResource("ShaderMaterial_8xf8r")
-position = Vector2(-3369, -1919.5)
-scale = Vector2(7.5333433, 1.9666688)
-polygon = PackedVector2Array(-15, -15, 8.230072, -19.576294, 16.858398, -25.677979, 15.398224, 5.847412, -15, 15)
-direction = -90.0
-speed = 50.0
-
-[node name="BoostPad3" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="3" unique_id=1448805751 instance=ExtResource("5_dbao8")]
-material = SubResource("ShaderMaterial_3ykvr")
-position = Vector2(-2193, -1550)
-scale = Vector2(16.466663, 3.6666648)
-
-[node name="WorldButton0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="0" unique_id=1576954058 instance=ExtResource("14_13ymo")]
-position = Vector2(-3362, -1591)
-
-[node name="DeathPit" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("18_4sare")]
-position = Vector2(-1232, -1727.9999)
-scale = Vector2(87.56599, 45.7)
-polygon = PackedVector2Array(5.538681, 8.643326, -0.49105835, 9.452953, -5.447321, 9.343544, -8.873308, 9.212254, -8.56497, 5.9080963, -8.679171, -0.39387512, -5.493, -3.588623, -3.8256874, -9.737419, 2.0441732, -14.814007, 3.9170465, -16.236324, 8.416512, -14.398251, 10.060986, -10.809631, 8.188112, -5.7330437)
-
-[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("11_xboev")]
-position = Vector2(-258, -2546)
-
-[node name="Mug" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="0" unique_id=1695913543 instance=ExtResource("7_7h0fi")]
-position = Vector2(-3013, -3410)
-rotation = -0.33094445
-ricochet_speed_mult = 2.25
-
-[node name="SmallBox" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="1" unique_id=804334930 instance=ExtResource("8_n0ov8")]
-position = Vector2(-2973.9998, -3435)
-rotation = 2.3252158
-ricochet_speed_mult = 2.25
-
-[node name="Monitor" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="2" unique_id=65858842 instance=ExtResource("10_m1ht6")]
-position = Vector2(-3074, -3396)
-
-[node name="Lamp" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="3" unique_id=1179039035 instance=ExtResource("11_pcah2")]
-position = Vector2(-3543.9998, -3150)
-rotation = -0.9375436
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Stapler" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="4" unique_id=1945818512 instance=ExtResource("12_skf0p")]
-position = Vector2(-3303.0002, -3279.0002)
-rotation = 0.0039859037
-scale = Vector2(1.615854, 1.615854)
-
-[node name="LargeBox" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="5" unique_id=268375106 instance=ExtResource("13_36mb3")]
-position = Vector2(-3010, -3143)
-rotation = -0.28057522
-
-[node name="LargeBox2" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="6" unique_id=1257770372 instance=ExtResource("13_36mb3")]
-position = Vector2(-2994, -3064.9998)
-rotation = -0.09474789
-
-[node name="LargeBox3" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="7" unique_id=1993752727 instance=ExtResource("13_36mb3")]
-position = Vector2(-2989, -2986)
-
-[node name="LargeBox4" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="8" unique_id=1265938839 instance=ExtResource("13_36mb3")]
-position = Vector2(-3061.0005, -3215.0005)
-rotation = -0.9593991
-
-[node name="CoffeeMaker" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="9" unique_id=1050649546 instance=ExtResource("16_fvc8g")]
-position = Vector2(-2369.0002, -2100)
-rotation = -0.675251
-
-[node name="Desk" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="10" unique_id=2108897107 instance=ExtResource("17_uf7ek")]
-position = Vector2(-2323, -2059)
-rotation = 0.8671907
 
 [connection signal="pressed" from="Interactables/WorldButton0" to="WallLayer/PolygonWalls/Gate0" method="disable"]

@@ -1,6 +1,7 @@
 class_name LevelSelect extends Control
 
 func _ready() -> void:
+	Data.save()
 	RenderingServer.global_shader_parameter_set("outline_color", Color("9babb2"))
 	var level_buttons := $LevelButtons.get_children()
 	for i in range(level_buttons.size()):
@@ -32,3 +33,4 @@ func _on_btn_mode_pressed() -> void:
 	else:
 		PlayerManager.easy_mode = true
 		$BtnMode.text = "Swap to Normal Mode"
+	Data.save()
