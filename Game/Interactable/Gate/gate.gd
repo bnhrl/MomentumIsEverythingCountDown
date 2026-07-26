@@ -15,12 +15,11 @@ func _process(delta: float) -> void:
 const DISABLED_TEXTS := ["An obstacle is cleared...", "Somewhere, a gate opens.", "An obstacle has been removed!"]
 func disable() -> void:
 	$StaticBody.queue_free()
-	if !displays_notification: return
-	
-	notif.text = DISABLED_TEXTS[randi_range(0,2)]
-	notif.show()
 	var tween := create_tween()
 	tween.tween_property(self, "modulate:a", 0.0, 0.5).set_trans(Tween.TRANS_EXPO)
-	tween.parallel().tween_property(notif, "position:y", 310, .75).set_trans(Tween.TRANS_EXPO).from(360)
-	tween.parallel().tween_property(notif, "modulate:a", 0.0, 2.5).set_trans(Tween.TRANS_EXPO)
+	if displays_notification:
+		notif.text = DISABLED_TEXTS[randi_range(0,2)]
+		notif.show()
+		tween.parallel().tween_property(notif, "position:y", 310, .75).set_trans(Tween.TRANS_EXPO).from(360)
+		tween.parallel().tween_property(notif, "modulate:a", 0.0, 2.5).set_trans(Tween.TRANS_EXPO)
 	tween.tween_callback(queue_free)
