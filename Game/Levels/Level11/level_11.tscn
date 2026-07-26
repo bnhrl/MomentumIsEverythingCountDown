@@ -68,7 +68,7 @@ source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
 agent_radius = 3.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nke46"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_amiia"]
 resource_local_to_scene = true
 shader = ExtResource("2_5nvu3")
 shader_parameter/tile_texture = ExtResource("7_jyjmu")
@@ -76,7 +76,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 1.5707963267948966
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_amiia"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0826x"]
 resource_local_to_scene = true
 shader = ExtResource("2_5nvu3")
 shader_parameter/tile_texture = ExtResource("7_jyjmu")
@@ -84,7 +84,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 2.792526803190927
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0826x"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_if42b"]
 resource_local_to_scene = true
 shader = ExtResource("2_5nvu3")
 shader_parameter/tile_texture = ExtResource("7_jyjmu")
@@ -92,7 +92,15 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 3.5297538792333323
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_if42b"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1056p"]
+resource_local_to_scene = true
+shader = ExtResource("2_5nvu3")
+shader_parameter/tile_texture = ExtResource("7_jyjmu")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 1.5707963267948966
+shader_parameter/autoscroll = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_874yx"]
 resource_local_to_scene = true
 shader = ExtResource("2_5nvu3")
 shader_parameter/tile_texture = ExtResource("7_jyjmu")
@@ -245,7 +253,7 @@ position = Vector2(-1463, -524)
 position = Vector2(-1175, -454)
 
 [node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="0" unique_id=816347687 instance=ExtResource("6_iye8a")]
-material = SubResource("ShaderMaterial_nke46")
+material = SubResource("ShaderMaterial_amiia")
 position = Vector2(0, 72)
 polygon = PackedVector2Array(-200, -30, 0, 0, 200, -30, 0, 30)
 spin_speed = 0.0
@@ -253,25 +261,32 @@ direction = 90.0
 speed = 300.0
 
 [node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="1" unique_id=882045416 instance=ExtResource("6_iye8a")]
-material = SubResource("ShaderMaterial_amiia")
+material = SubResource("ShaderMaterial_0826x")
 position = Vector2(0, 449)
 polygon = PackedVector2Array(-452, -134, 204, -121, 200, 30, -476, 30, -483, 1)
 spin_speed = 0.0
 direction = 160.0
 
 [node name="BoostPad2" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="2" unique_id=1580167797 instance=ExtResource("6_iye8a")]
-material = SubResource("ShaderMaterial_0826x")
+material = SubResource("ShaderMaterial_if42b")
 position = Vector2(0, 449)
 polygon = PackedVector2Array(-773, -829, -788, -815, -793, -789, -791, -762, -776, -745, -734, -768, -741, -795, -760, -810, -762, -816)
 spin_speed = 0.0
 direction = 202.24
 
 [node name="BoostPad3" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="3" unique_id=964371779 instance=ExtResource("6_iye8a")]
-material = SubResource("ShaderMaterial_if42b")
+material = SubResource("ShaderMaterial_1056p")
 polygon = PackedVector2Array(-1564, -600, -1685, -631, -1784, -610, -1790, -667, -1772, -798, -1621, -821, -1540, -769, -1559, -645)
 spin_speed = 0.0
 direction = 90.0
 speed = 2400.0
+
+[node name="BoostPad4" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="4" unique_id=1088703168 instance=ExtResource("6_iye8a")]
+material = SubResource("ShaderMaterial_874yx")
+polygon = PackedVector2Array(-1802, 240, -1710, 222, -1613, 248, -1613, 199, -1708, 174, -1797, 194)
+spin_speed = 0.0
+direction = 90.0
+speed = 200.0
 
 [node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="0" unique_id=1337174415 instance=ExtResource("9_sx567")]
 position = Vector2(-465.52637, -877.2602)
