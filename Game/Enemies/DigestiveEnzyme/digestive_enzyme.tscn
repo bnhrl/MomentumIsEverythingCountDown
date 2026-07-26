@@ -45,5 +45,8 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_c6smh")
 frame_progress = 0.81931776
 
+[node name="NotBloodParticles" parent="." index="4" unique_id=150136777]
+amount = 64
+
 [node name="IdleTimer" parent="." index="5" unique_id=205446577]
 process_mode = 4

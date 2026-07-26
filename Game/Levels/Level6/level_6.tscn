@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="8_3bwwb"]
 [ext_resource type="PackedScene" uid="uid://bvoyf8gip103i" path="res://Game/Interactable/Gate/gate.tscn" id="8_7njhx"]
 [ext_resource type="PackedScene" uid="uid://bs2swopl87icu" path="res://Game/Interactable/WorldButton/world_button.tscn" id="9_g4df7"]
+[ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="11_g4df7"]
 [ext_resource type="PackedScene" uid="uid://d3xhd06mdlv8l" path="res://Game/Enemies/WhiteBloodCell/white_blood_cell.tscn" id="11_kmiko"]
 [ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="12_7njhx"]
 
@@ -274,6 +275,16 @@ position = Vector2(-179, 4102)
 
 [node name="WorldButton45" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="40" unique_id=521567953 instance=ExtResource("9_g4df7")]
 position = Vector2(-179, 4150)
+
+[node name="DeathPit" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("11_g4df7")]
+position = Vector2(545, 2123)
+polygon = PackedVector2Array(-199, 59, 136, -110, 197, -39, -98, 127)
+momentum_required = 200.0
+
+[node name="DeathPit2" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="1" unique_id=2022160928 instance=ExtResource("11_g4df7")]
+position = Vector2(-151, 3149)
+polygon = PackedVector2Array(-142.82352, -117.861595, 48.176476, 171.1384, 151.17648, 120.138405, -62.823524, -205.8616)
+momentum_required = 200.0
 
 [node name="WhiteBloodCell" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="0" unique_id=613541596 instance=ExtResource("11_kmiko")]
 position = Vector2(-232, 4101)

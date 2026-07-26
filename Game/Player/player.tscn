@@ -129,7 +129,7 @@ collision_mask = 3
 
 [node name="Collision" type="CollisionShape2D" parent="Model/Grabber" unique_id=344104193]
 z_index = -1
-position = Vector2(15, 0)
+position = Vector2(13, 0)
 shape = SubResource("CircleShape2D_letr6")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Model/Grabber" unique_id=41229790]
@@ -167,3 +167,9 @@ explosiveness = 0.95
 randomness = 0.5
 trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_qwver")
+
+[node name="GrappleTimer" type="Timer" parent="." unique_id=1453170140]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="GrappleTimer" to="." method="_on_grapple_timer_timeout"]

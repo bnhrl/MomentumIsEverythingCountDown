@@ -169,8 +169,7 @@ func _process_grapple_controls() -> void:
 			$GrappleSoundPlayer.pitch_scale = randf_range(0.75, 1.25)
 			$GrappleSoundPlayer.play()
 			attempting_to_grapple = true
-			await Delays.wait(0.5)
-			attempting_to_grapple = false
+			$GrappleTimer.start(0.5)
 
 func hit_grapple(node: Node2D) -> void:
 	#print("Grappled " + node.name + "!")
@@ -187,6 +186,11 @@ func passed_grapple_object() -> void:
 	if !grappled_object: return
 	grappled_object = null
 	momentum *= 2
+
+
+func _on_grapple_timer_timeout() -> void:
+	if grappled_object: return
+	attempting_to_grapple = false
 
 
 # Death
