@@ -148,7 +148,7 @@ source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
 agent_radius = 3.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bt2wu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mau5g"]
 resource_local_to_scene = true
 shader = ExtResource("2_lhlo1")
 shader_parameter/tile_texture = ExtResource("7_mt5cr")
@@ -156,15 +156,15 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 3.141592653589793
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jfxwc"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qs011"]
 resource_local_to_scene = true
 shader = ExtResource("2_lhlo1")
 shader_parameter/tile_texture = ExtResource("7_mt5cr")
 shader_parameter/tile_size = Vector2(16, 16)
-shader_parameter/rotation = 3.746488865745988
+shader_parameter/rotation = 3.7464888657459876
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qiv7r"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fmmgw"]
 resource_local_to_scene = true
 shader = ExtResource("2_lhlo1")
 shader_parameter/tile_texture = ExtResource("7_mt5cr")
@@ -290,22 +290,22 @@ polygon = PackedVector2Array(3.90477, 3.6307678, 5, -1.1692314, 7.3333282, -9.66
 navigation_polygon = SubResource("NavigationPolygon_mau5g")
 
 [node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="0" unique_id=816347687 instance=ExtResource("6_fpxds")]
-material = SubResource("ShaderMaterial_bt2wu")
+material = SubResource("ShaderMaterial_mau5g")
 position = Vector2(-1248, 581)
 scale = Vector2(15.86667, 2.1666665)
 spin_speed = 0.0
 direction = 180.0
 
 [node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="1" unique_id=409973565 instance=ExtResource("6_fpxds")]
-material = SubResource("ShaderMaterial_jfxwc")
+material = SubResource("ShaderMaterial_qs011")
 position = Vector2(-4258, 1122)
 scale = Vector2(16.3, 3.1666667)
 polygon = PackedVector2Array(-25.889557, -52.736816, 14.202438, -3.6315918, 13.128845, 23.684235, -28.098145, -22.736816)
 spin_speed = 0.0
-direction = 214.65800000000002
+direction = 214.658
 
 [node name="BoostPad2" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="2" unique_id=988241145 instance=ExtResource("6_fpxds")]
-material = SubResource("ShaderMaterial_qiv7r")
+material = SubResource("ShaderMaterial_fmmgw")
 position = Vector2(-8702, 839)
 scale = Vector2(89.8, 2.4000015)
 spin_speed = 0.0
@@ -353,6 +353,7 @@ max_dist_from_origin = 5
 [node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("3_5d1uy")]
 position = Vector2(-10047, 837)
 scale = Vector2(1, 5.4)
+game_completion = true
 
 [node name="SmallBox" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="0" unique_id=1695913543 instance=ExtResource("7_qiv7r")]
 position = Vector2(-3215, 1054.0001)
