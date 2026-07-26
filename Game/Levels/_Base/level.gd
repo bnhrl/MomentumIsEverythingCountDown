@@ -115,6 +115,7 @@ func level_completed(game_completed := false) -> void:
 		Effects.unintensify()
 	else:
 		await Delays.wait(1.0)
+		Effects.unintensify()
 		Scenes.swap_scene("Ending Cutscene")
 
 func spawn_enzyme() -> void:
