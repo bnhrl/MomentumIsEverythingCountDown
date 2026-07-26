@@ -339,11 +339,11 @@ position = Vector2(-2143, 466)
 max_dist_from_origin = 15
 
 [node name="WhiteBloodCell3" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="6" unique_id=1708083819 instance=ExtResource("8_fg7ra")]
-position = Vector2(-2427, 374)
+position = Vector2(-2425, 399)
 max_dist_from_origin = 15
 
 [node name="WhiteBloodCell4" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="7" unique_id=615774627 instance=ExtResource("8_fg7ra")]
-position = Vector2(-2613, 445)
+position = Vector2(-2576, 426)
 max_dist_from_origin = 15
 
 [node name="WhiteBloodCell5" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="8" unique_id=1226545201 instance=ExtResource("8_fg7ra")]
@@ -443,7 +443,7 @@ position = Vector2(-2687, 592)
 position = Vector2(-2949, 665)
 
 [node name="GrapplePoint14" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="11" unique_id=783241120 instance=ExtResource("2_trggm")]
-position = Vector2(-2672, 513)
+position = Vector2(-2737, 469)
 
 [node name="GrapplePoint15" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="12" unique_id=1232307590 instance=ExtResource("2_trggm")]
 position = Vector2(-3286, 664)
