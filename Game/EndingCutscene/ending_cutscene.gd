@@ -22,6 +22,7 @@ func _ready() -> void:
 const MIDDLE := Vector2(320,180)
 func step_0() -> Signal: # Pan down to Man
 	$CameraAnchor/FadeOut.hide()
+	Camera.limit_enabled = false
 	await Delays.wait(0.5)
 	var tween := create_tween()
 	tween.tween_property(camera_anchor, "position", MIDDLE, 2).set_trans(Tween.TRANS_EXPO).from(MIDDLE*Vector2(1,-1))

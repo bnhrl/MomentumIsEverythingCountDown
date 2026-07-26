@@ -4,27 +4,30 @@
 [ext_resource type="Shader" uid="uid://jbfxqqvwcrlx" path="res://Assets/Shaders/effect_intensify.gdshader" id="2_ubn7f"]
 [ext_resource type="Shader" uid="uid://dhtqxbym460ta" path="res://Assets/Shaders/effect_brighten.gdshader" id="3_2inh8"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ystob"]
-shader = ExtResource("3_2inh8")
-shader_parameter/mult = 0.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c6smh"]
 shader = ExtResource("2_ubn7f")
 shader_parameter/rounding = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ystob"]
+shader = ExtResource("3_2inh8")
+shader_parameter/mult = 0.0
 
 [node name="EffectsLayer" type="CanvasLayer" unique_id=1427142918]
 layer = 9
 script = ExtResource("1_btiq3")
 
-[node name="Brighten" type="ColorRect" parent="." unique_id=543014607]
-material = SubResource("ShaderMaterial_ystob")
+[node name="EffectLayer1" type="CanvasLayer" parent="." unique_id=646894591]
+
+[node name="Intensify" type="ColorRect" parent="EffectLayer1" unique_id=307774675]
+material = SubResource("ShaderMaterial_c6smh")
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
 
-[node name="Intensify" type="ColorRect" parent="." unique_id=307774675]
-visible = false
-material = SubResource("ShaderMaterial_c6smh")
+[node name="EffectLayer0" type="CanvasLayer" parent="." unique_id=1792592247]
+
+[node name="Brighten" type="ColorRect" parent="EffectLayer0" unique_id=543014607]
+material = SubResource("ShaderMaterial_ystob")
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2

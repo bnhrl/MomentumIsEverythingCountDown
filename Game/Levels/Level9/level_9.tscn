@@ -47,7 +47,7 @@ source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
 agent_radius = 3.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_887xa"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0maof"]
 resource_local_to_scene = true
 shader = ExtResource("2_voq3k")
 shader_parameter/tile_texture = ExtResource("7_fr3p4")
@@ -55,7 +55,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = -0.5039987280984027
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgbcd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_887xa"]
 resource_local_to_scene = true
 shader = ExtResource("2_voq3k")
 shader_parameter/tile_texture = ExtResource("7_fr3p4")
@@ -63,7 +63,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8jvnf"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgbcd"]
 resource_local_to_scene = true
 shader = ExtResource("2_voq3k")
 shader_parameter/tile_texture = ExtResource("7_fr3p4")
@@ -126,32 +126,28 @@ position = Vector2(128, 24)
 polygon = PackedVector2Array(1119, -1049, 1028, -838, 867, -792, 586, -903, 490, -1107)
 
 [node name="NavigationRegion" parent="." index="6" unique_id=517625210]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_0maof")
 
-[node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("8_leq20")]
-position = Vector2(1174, -269)
-
-[node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="1" unique_id=1756419611 instance=ExtResource("8_leq20")]
-position = Vector2(1513, -679)
-
 [node name="BoostPad2" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="0" unique_id=816347687 instance=ExtResource("6_4u6db")]
-material = SubResource("ShaderMaterial_887xa")
+material = SubResource("ShaderMaterial_0maof")
 polygon = PackedVector2Array(1399, -321, 1325, -168, 1398, -152, 1518, -217, 1410, -341)
+spin_speed = 0.0
 direction = -28.87700000000001
 
 [node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="1" unique_id=1491510217 instance=ExtResource("6_4u6db")]
-material = SubResource("ShaderMaterial_hgbcd")
+material = SubResource("ShaderMaterial_887xa")
 position = Vector2(378.5, 1)
 scale = Vector2(9.366667, 3.1333334)
 polygon = PackedVector2Array(-15, -15, 0, -15, 0, 15, -15, 15)
+spin_speed = 0.0
 speed = 200.0
 
 [node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="2" unique_id=1636313232 instance=ExtResource("6_4u6db")]
-material = SubResource("ShaderMaterial_8jvnf")
+material = SubResource("ShaderMaterial_hgbcd")
 position = Vector2(1024, 1)
 scale = Vector2(9.366667, 3.1333334)
 polygon = PackedVector2Array(-13.238434, -15, -0.10675812, -27.765957, 0, 15)
+spin_speed = 0.0
 direction = -85.0
 speed = 150.0
 
@@ -202,3 +198,25 @@ scale = Vector2(0.99999994, 0.99999994)
 [node name="Mug" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="4" unique_id=514308791 instance=ExtResource("13_71741")]
 position = Vector2(1760, -399)
 rotation = 0.2617994
+
+[node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("8_leq20")]
+position = Vector2(1174, -269)
+
+[node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="1" unique_id=1756419611 instance=ExtResource("8_leq20")]
+position = Vector2(1513, -679)
+
+[node name="Tutorial0" type="RichTextLabel" parent="." index="14" unique_id=951256283]
+clip_contents = false
+offset_left = 455.0
+offset_top = -54.0
+offset_right = 697.0
+offset_bottom = 54.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "BOOST PADS rapidly move you in the direction they are facing."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -211,6 +211,7 @@ offset_right = 638.0
 offset_bottom = 357.0
 
 [node name="BtnShowLevelButtons" parent="." unique_id=1614675331 instance=ExtResource("2_eeebr")]
+visible = false
 layout_mode = 0
 offset_left = 460.0
 offset_top = 7.0
