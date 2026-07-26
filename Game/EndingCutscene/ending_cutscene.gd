@@ -17,6 +17,7 @@ func _ready() -> void:
 	await step_1()
 	await step_2()
 	await step_3()
+	await step_4()
 
 const MIDDLE := Vector2(320,180)
 func step_0() -> Signal: # Pan down to Man
@@ -55,12 +56,33 @@ func step_2() -> Signal: # Computer
 	await tween.finished
 	return Delays.wait(1.0)
 
-func step_3() -> void:
+func step_3() -> Signal: # Detailed Credits
 	await Delays.wait(1.25)
 	$CameraAnchor/FadeOut.show()
 	var tween := create_tween()
 	tween.tween_property($CameraAnchor/FadeOut, "modulate:a", 1.0, 3.0).from(0.0)
 	await tween.finished
+	await Delays.wait(0.5)
+	$CameraAnchor/FadeOut/Bnhrl.show()
+	await Delays.wait(6.0)
+	$CameraAnchor/FadeOut/Bnhrl.hide()
+	$CameraAnchor/FadeOut/CatJug.show()
+	await Delays.wait(6.0)
+	$CameraAnchor/FadeOut/CatJug.hide()
+	$CameraAnchor/FadeOut/Cuptain.show()
+	await Delays.wait(6.0)
+	$CameraAnchor/FadeOut/Cuptain.hide()
+	return Delays.wait(1.0)
+
+func step_4() -> void: # The End
+	await Delays.wait(1.0)
+	var tween := create_tween()
+	tween.tween_property($CameraAnchor/FadeOut/TheEnd, "modulate:a", 1.0, 3.0).from(0.0)
+	await tween.finished
+	tween = create_tween()
+	tween.tween_property($CameraAnchor/FadeOut/BtnMainMenu, "modulate:a", 1.0, 3.0).from(0.0)
+	await tween.finished
+	return Delays.wait(1.0)
 	
 
 

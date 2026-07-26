@@ -73,6 +73,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="BtnMainMenu" parent="CameraAnchor/FadeOut" unique_id=1301211313 instance=ExtResource("2_lclin")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_top = 279.0
 offset_right = 638.0
@@ -80,8 +81,107 @@ offset_bottom = 303.0
 text = "Back to Main Menu"
 
 [node name="TheEnd" type="Sprite2D" parent="CameraAnchor/FadeOut" unique_id=1944190795]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(320, 164)
 texture = ExtResource("2_w377y")
+
+[node name="Bnhrl" type="RichTextLabel" parent="CameraAnchor/FadeOut" unique_id=4299151]
+visible = false
+layout_mode = 0
+offset_top = 60.0
+offset_right = 640.0
+offset_bottom = 331.0
+theme_override_colors/default_color = Color(0.043137256, 0.36862746, 0.39607844, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "[img]uid://cxsfj2ud8ou1d[/img] bnhrl[font_size=8] (Benjamin Haroldsen)"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="BnhrlCredits" type="RichTextLabel" parent="CameraAnchor/FadeOut/Bnhrl" unique_id=557471680]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 276.0
+theme_override_colors/default_color = Color(0.043137256, 0.36862746, 0.39607844, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "	Main Programmer (aka All* Of It)
+	Seriously they're magic I really don't
+	Ideas
+	Levels 5, 6, 8, 9, 11 Design
+	itch.io Page Design
+	Creator of [img]uid://bpta5g7b4fb26[/img]
+	Ending Cutscene Final Render"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="CatJug" type="RichTextLabel" parent="CameraAnchor/FadeOut" unique_id=1199778083]
+visible = false
+layout_mode = 0
+offset_top = 60.0
+offset_right = 640.0
+offset_bottom = 300.0
+theme_override_colors/default_color = Color(0.11764706, 0.7372549, 0.4509804, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "[img]uid://cnmn256wehj7b[/img] Cat Jug[font_size=8] (Eris)"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="CatJugCredits" type="RichTextLabel" parent="CameraAnchor/FadeOut/CatJug" unique_id=51974287]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 244.0
+theme_override_colors/default_color = Color(0.11764706, 0.7372549, 0.4509804, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "	\"Panic Attack\" Concept
+	Ideas
+	Levels 1, 2, 4, 7, 10, 12 Design
+	Environmental Design
+	Enemy Design
+"
+scroll_active = false
+
+[node name="Cuptain" type="RichTextLabel" parent="CameraAnchor/FadeOut" unique_id=2041524337]
+visible = false
+layout_mode = 0
+offset_top = 60.0
+offset_right = 640.0
+offset_bottom = 300.0
+theme_override_colors/default_color = Color(0.68235296, 0.13725491, 0.20392157, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "[img]uid://mu38c2ikqdnk[/img] ChiefCuptain[font_size=8] (Jack Nolan)"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="CuptainCredits" type="RichTextLabel" parent="CameraAnchor/FadeOut/Cuptain" unique_id=344114669]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 244.0
+theme_override_colors/default_color = Color(0.68235296, 0.13725491, 0.20392157, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "	Ideas
+	UI Design
+	Level 3 Design
+	Ending Cutscene Sprites
+	Detailed Credits
+	Inducer of Bugs"
+scroll_active = false
 
 [node name="Effect" type="ColorRect" parent="CameraAnchor" unique_id=1182298153]
 z_index = 10
@@ -123,7 +223,7 @@ texture = ExtResource("5_lbcwi")
 
 [node name="Computer" type="Sprite2D" parent="." unique_id=651229388]
 visible = false
-position = Vector2(321, 180)
+position = Vector2(320, 180)
 texture = ExtResource("2_ad62h")
 
 [node name="ComputerFlames" type="AnimatedSprite2D" parent="Computer" unique_id=841594185]
