@@ -1,5 +1,19 @@
 [gd_scene format=3 uid="uid://bccx6wix5f4si"]
 
 [ext_resource type="PackedScene" uid="uid://co1sgdv2x4nyr" path="res://Game/Levels/_Base/level.tscn" id="1_7f8el"]
+[ext_resource type="Shader" uid="uid://wu085sklw13i" path="res://Assets/Shaders/world_tiling_2d.gdshader" id="2_sckt2"]
+[ext_resource type="Texture2D" uid="uid://ba7lcy4dmafoi" path="res://Assets/Textures/background_1.png" id="3_obnpv"]
+[ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="6_b5xo0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b5xo0"]
+shader = ExtResource("2_sckt2")
+shader_parameter/tile_texture = ExtResource("3_obnpv")
+shader_parameter/tile_size = Vector2(720, 1280)
 
 [node name="Level5" unique_id=1414133645 instance=ExtResource("1_7f8el")]
+
+[node name="Background" parent="." index="4" unique_id=675105712]
+material = SubResource("ShaderMaterial_b5xo0")
+
+[node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("6_b5xo0")]
+polygon = PackedVector2Array(-5, -162, -187, -106, -223, 1, -247, 182, -220, 341, -121, 441, 0, 496, 338, 473, 663, 413, 799, 275, 822, 189, 846, 111, 866, 177, 872, 285, 684, 468, 346, 527, -3, 553, -139, 508, -262, 380, -297, 177, -278, -4, -237, -128, -5, -206, 183, -220, 389, -209, 600, -198, 740, -145, 850, -84, 860, -12, 846, 77, 821, 2, 797, -66, 725, -113, 587, -160, 386, -173, 184, -176)
