@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cxb3fkjkqk0yf" path="res://Game/DeathPits/death_pit.gd" id="1_oo0c1"]
 
-[node name="DeathPit" type="Polygon2D" unique_id=1582885165]
+[node name="DeathPit0" type="Polygon2D" unique_id=1582885165]
 color = Color(0, 0, 0, 0.6)
 polygon = PackedVector2Array(5, 0, 0, 5, -5, 0, 0, -5)
 script = ExtResource("1_oo0c1")
-momentum_required = null
 
 [node name="FallArea" type="Area2D" parent="." unique_id=252475237]
 
