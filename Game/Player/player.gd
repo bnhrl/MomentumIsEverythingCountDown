@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody2D
 
 
-const SPEED = 250.0
+const SPEED = 100.0
 
 var momentum := Vector2.ZERO
 
