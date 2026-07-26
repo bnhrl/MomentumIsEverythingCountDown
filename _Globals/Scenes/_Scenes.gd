@@ -13,7 +13,7 @@ const SCENES: Dictionary[String, PackedScene] = {
 	"Level 4":preload("uid://boabyoymc6yd2"),
 	"Level 5":preload("uid://bccx6wix5f4si"),
 	"Level 6":preload("uid://cxvriwd1raqxy"),
-	#"Level 7":preload(""),
+	"Level 7":preload("uid://cfga04bf50nus"),
 	"Level 8":preload("uid://dqqupmkumb3s0"),
 	#"Level 9":preload(""),
 	#"Level 10":preload(""),
