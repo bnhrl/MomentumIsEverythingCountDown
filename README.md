@@ -1,3 +1,5 @@
+EXCITOXICITY
+
 Created in 72 hours for the Neumont Summer Game Jam 2026 and the GMTK Jam 2026, combining both themes!
 
   << NEURON ACTIVATION >>
