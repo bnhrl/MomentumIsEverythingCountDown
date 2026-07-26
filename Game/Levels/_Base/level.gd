@@ -118,7 +118,7 @@ func level_completed(game_completed := false) -> void:
 		Scenes.swap_scene("Ending Cutscene")
 
 func spawn_enzyme() -> void:
-	if $Enemies.get_children().size() < 300:
+	if $Enemies.get_children().size() < 50:
 		var enzyme := preload("uid://d1wd5lnv3285q").instantiate()
 		$Enemies.add_child(enzyme)
 		var theta := randf_range(-PI, PI)
