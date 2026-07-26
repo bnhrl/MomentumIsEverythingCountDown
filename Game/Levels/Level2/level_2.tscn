@@ -142,9 +142,25 @@ position = Vector2(2167, 788)
 
 [node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="1" unique_id=1337174415 instance=ExtResource("3_anfux")]
 position = Vector2(1880, 1143)
-polygon = PackedVector2Array(182, 6, -76, 48, -71, 11, 168, -47)
+polygon = PackedVector2Array(182, 6, 51, 29, -65, 82, -81, 34, 31, -14, 168, -47)
 
 [node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("4_c2w21")]
 position = Vector2(3236, 664)
+
+[node name="Tutorial0" type="RichTextLabel" parent="." index="12" unique_id=1789180879]
+clip_contents = false
+offset_left = 1762.0
+offset_top = 999.0
+offset_right = 1953.0
+offset_bottom = 1107.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "OBSTACLES require TERMINALS to be pressed."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Interactables/WorldButton0" to="Interactables/Gate0" method="disable"]

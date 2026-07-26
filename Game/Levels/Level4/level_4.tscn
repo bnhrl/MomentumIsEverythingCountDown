@@ -14,6 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://d3xhd06mdlv8l" path="res://Game/Enemies/WhiteBloodCell/white_blood_cell.tscn" id="12_kt7sb"]
 [ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="13_u2x10"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b5xo0"]
+shader = ExtResource("3_phe42")
+shader_parameter/tile_texture = ExtResource("7_c72gb")
+shader_parameter/tile_size = Vector2(720, 1280)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p51bn"]
 shader = ExtResource("3_phe42")
 shader_parameter/tile_texture = ExtResource("4_5nthq")
@@ -44,11 +49,6 @@ shader = ExtResource("3_phe42")
 shader_parameter/tile_texture = ExtResource("5_k0vog")
 shader_parameter/tile_size = Vector2(16, 16)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b5xo0"]
-shader = ExtResource("3_phe42")
-shader_parameter/tile_texture = ExtResource("7_c72gb")
-shader_parameter/tile_size = Vector2(720, 1280)
-
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_oqxu2"]
 vertices = PackedVector2Array(-1401.1172, 2611, -1460, 2611, -1460, 2518.3281, 511.6797, 592.7422, 737, 495.3125, 737, 2611, 489.8828, 988.3281, -101, 1364.3203, -191.28125, 1173.6484, 223.54688, 1488.75, 291.75, 2611, 277, 2372.1016, 333.04688, 1946.8438, -100.99219, 1366.3438, -1037.4297, 1659, -1091.2734, 1659, -1076.5, 1592.0078, -1023.3594, 1595.1797, -956.6172, 1593, -957.0625, 1595.7109, -529.8672, 1599.2266, -622.2031, 1598.4609, -621.96094, 1595.7266, -472.15625, 1596.9688, -475.4297, 1659, -533.0078, 1659, -618.0078, 1485.9531, -627.4297, 1589.7031, -949.5703, 1587.0469, -931, 1473.2578, -636.96094, 1107.8125, -927.0078, 1097.1563, -834.6797, 994.02344, -695.71094, 997.0078, -1460, -106, -1330.6797, -106, -1377.7578, -102.890625, -1460, 34.171875, 737, -19.882813, 413.46875, -106, 737, -106, -1081.2734, 1800.0078, -1081.2578, 1800.0078, -1231.8438, 1811.9688, -175.9375, 1757.8281, -164.00781, 1898, -190.96094, 2233.4766, -379.9922, 1928, -388.14844, 1820.8516, -203.82031, 1702.6875, -393, 2100.0938, -393, 2100.1016, -399, 2276.2031, -255.10156, 2497.1797, -410.17188, 2391.9375, -306.95313, 2531.8984, -480.75, 2537.9766, -470.67188, 2422.1875, -1278.9219, 476.10938, -1398.6797, 542.9297, -1399.6719, 543.21094, -1410.9922, 467.7578, -1410, 372.0078, -587.2969, 2391.5, -645.1094, 2506.1094, -761.5703, 2454.3516, -963.3906, 1671.6172, -962.3125, 1665, -634.28125, 1665, -635.27344, 1675.8906, -672.1406, 1829.2813, -941.8203, 1780.1875, -406.21094, 1683.9922, -471.32813, 1790.0469, -579.6172, 1779.9297, -630.9375, 2268.6719, -861.8203, 2392.8125, -942.03125, 2263.0938, -655.9922, 2039.2109, -952.9922, 2017, -1126.6563, 1697.9766, -993.4219, 1792.0234, -1229.7422, 1705.0625, -1365.8516, 1787.3438, -1266.8672, 1682.7813, -1415, 1670.3594, -1278, 1540.1484, -1426.9922, 909.0703, -1284, 1230.9063, -1274.9922, 604.28125, -1260.5078, 934.65625, -1399.2031, 549.78125, -1398.75, 549.5, -1281.3906, 536.14844, -1399.0313, 547.53906, 204.53125, 103.22656, 442.72656, 119.84375, 495.35938, 289.42188, 416.07813, 328.10156, 279.78125, 348.53125, 278.47656, 347.21875, 50.210938, 305.04688, -115.90625, 582.64844, -90.22656, 429.4375, -262.20313, 529.4219, -328.32813, 812.9297, -369.3125, 627.4297, -707.40625, 517.4375, -372.71094, 626.21875, -947.1875, 129.04688, -561.7969, 231.61719, -452.6328, 382.46875, -383.90625, 548.78906, -937.4531, 406.9375, -1289.2734, 175.92188, -1410.9766, 220.09375, -1184.8281, 429.0625)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(7, 8, 6, 9), PackedInt32Array(6, 5, 10, 11, 12), PackedInt32Array(6, 12, 9), PackedInt32Array(7, 9, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(17, 16, 18, 19), PackedInt32Array(20, 21, 22, 23), PackedInt32Array(20, 23, 24, 25), PackedInt32Array(26, 27, 28, 29, 30), PackedInt32Array(30, 29, 31, 32, 33), PackedInt32Array(34, 35, 36), PackedInt32Array(34, 36, 37), PackedInt32Array(38, 39, 40), PackedInt32Array(41, 42, 43), PackedInt32Array(44, 45, 46, 47, 48, 49), PackedInt32Array(50, 47, 46, 51), PackedInt32Array(52, 51, 46, 53), PackedInt32Array(54, 52, 53, 55), PackedInt32Array(54, 55, 56, 57), PackedInt32Array(58, 59, 60, 61, 62), PackedInt32Array(63, 57, 56, 64, 65), PackedInt32Array(66, 67, 68, 69, 70, 71), PackedInt32Array(72, 49, 48, 73, 69), PackedInt32Array(69, 73, 74), PackedInt32Array(69, 74, 70), PackedInt32Array(75, 63, 65, 76, 77), PackedInt32Array(78, 75, 77, 79), PackedInt32Array(70, 78, 79, 71), PackedInt32Array(80, 66, 71, 81, 41, 43), PackedInt32Array(82, 80, 43, 83), PackedInt32Array(84, 82, 83, 85), PackedInt32Array(86, 84, 85, 87), PackedInt32Array(88, 86, 87), PackedInt32Array(89, 90, 88, 87, 91, 92, 93), PackedInt32Array(93, 92, 94, 59, 58), PackedInt32Array(95, 96, 97, 98, 99, 100), PackedInt32Array(101, 95, 100, 102), PackedInt32Array(103, 101, 102), PackedInt32Array(104, 103, 102, 105, 106), PackedInt32Array(106, 105, 107, 108), PackedInt32Array(109, 110, 111, 112, 108, 107, 113, 114), PackedInt32Array(115, 114, 113, 116, 62), PackedInt32Array(62, 116, 58)])
@@ -67,6 +67,9 @@ offset_bottom = 2614.0
 
 [node name="CountDownTimer" parent="." index="3" unique_id=102296066]
 time = 16.0
+
+[node name="Background" parent="." index="4" unique_id=675105712]
+material = SubResource("ShaderMaterial_b5xo0")
 
 [node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("2_6vi2e")]
 material = SubResource("ShaderMaterial_p51bn")
@@ -98,9 +101,6 @@ polygon = PackedVector2Array(145, 35.620483, 137, -69.808105, 56, -99.93054, -51
 material = SubResource("ShaderMaterial_ndkpr")
 position = Vector2(-438, 1259)
 polygon = PackedVector2Array(334, 106, 119, -348, -179, -370, -301, -350, -196, -152, -177, 227, -194, 414, 32, 422, 335, 450)
-
-[node name="Background" parent="." index="5" unique_id=675105712]
-material = SubResource("ShaderMaterial_b5xo0")
 
 [node name="NavigationRegion" parent="." index="6" unique_id=517625210]
 visible = false
@@ -141,7 +141,7 @@ position = Vector2(-474, 2476)
 
 [node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="0" unique_id=1337174415 instance=ExtResource("9_gjb20")]
 position = Vector2(-941, 1789)
-polygon = PackedVector2Array(274, 73, -6, 35, -4, -4, 272, 42)
+polygon = PackedVector2Array(274, 73, 128, 40, -19, 63, -27, 30, 127, 11, 272, 42)
 
 [node name="WorldButton0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="1" unique_id=1576954058 instance=ExtResource("10_vy2vm")]
 position = Vector2(-278, 2076)
@@ -178,6 +178,38 @@ max_dist_from_origin = 30
 
 [node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("13_u2x10")]
 position = Vector2(-799, 1044)
+
+[node name="Tutorial0" type="RichTextLabel" parent="." index="12" unique_id=547506324]
+clip_contents = false
+offset_left = -468.0
+offset_top = 627.0
+offset_right = -248.0
+offset_bottom = 735.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "WHITE BLOOD CELLS can be grappled onto."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tutorial1" type="RichTextLabel" parent="." index="13" unique_id=1582454692]
+clip_contents = false
+offset_left = -1030.0
+offset_top = 210.0
+offset_right = -810.0
+offset_bottom = 318.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "They will ELIMINATE you if you do not have enough MOMENTUM."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Interactables/WorldButton0" to="Interactables/Gate0" method="disable"]
 [connection signal="level_completed" from="CompletionZones/CompletionZone0" to="." method="level_completed"]
