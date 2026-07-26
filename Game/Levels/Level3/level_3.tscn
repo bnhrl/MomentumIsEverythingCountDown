@@ -33,6 +33,14 @@ shader = ExtResource("3_d6bjp")
 shader_parameter/tile_texture = ExtResource("7_gpk2k")
 shader_parameter/tile_size = Vector2(16, 16)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_lve6t"]
+vertices = PackedVector2Array(1376.2578, 484.89844, 1361.0313, 534.1797, 1348.1094, 529.89844, 1363.3281, 480.70313, 1362.5703, 480.25, 1362.5078, 480.42188, 1197.3281, 479.90625, 1186.0781, 476.1875, 1207.6172, 427.71094, 1218.7734, 431.6797, 1224.8828, 433.5625, 1224.8125, 433.71875, 1395.5781, 278.0703, 1363.1172, 461, 1358.9219, 472.6797, 1232.7891, 429.89844, 1252.1719, 381.34375, 1333.25, 258.53125, 528.96875, 119.71875, 470.0703, 234.85156, 460.57813, 226.5, 500.0703, 100, 291.4297, 100.99219, 352.5078, 218.96094, 272.53906, 251.77344, 143.03125, 145.24219, 82.52344, 459.78906, 65.078125, 348.32813, 231.25, 389.72656, 192.27344, 451.1172, 510.65625, 324.5625, 526.72656, 292.64844, 528.3281, 294.04688, 502.72656, 344.82813, 438.97656, 308.79688, 471.89844, 244.4375, 473.14844, 245.53906, 450.21875, 290.39844, 631.0078, 90.24219, 596.5781, 158.57031, 594.8828, 157.40625, 618.1875, 111.14844, 558.53125, 78.6875, 538.0703, 118.64844, 536.71875, 117.72656, 568.2578, 56.101563, 834.5469, 304, 835.8672, 423, 810.4297, 496.2422, 676.0703, 611.96875, 673.8828, 611.6406, 564.34375, 585.8203, 561.3828, 583.47656, 581.35156, 463.20313, 619.64844, 366.34375, 777.3125, 231.70313, 535.7578, 292.60156, 598.85156, 167.38281, 653.6328, 204.77344, 1208.8203, 490.03125, 1333.3906, 531.34375, 1246.2109, 712.8828, 1168.7109, 632.4297, 1120.4609, 690.1172, 1222.5, 785.96875, 1144.6406, 830.7422, 1046.3672, 800.27344, 633.1328, 746.34375, 538.6328, 700.9922, 303.96875, 949.1094, 318.78125, 818.97656, 222.07031, 821.09375, 203.46094, 963.8906, 158.95313, 942.6094, 108.84375, 874.8125, 244.47656, 737.39844, 92.22656, 769.0781, 92, 713.22656, 137.64844, 667.5781, 196.17188, 645.77344, 1071.0625, 652.53125, 983.84375, 753.3828, 971.9922, 637.8672, 1062.0391, 431.1172, 970.9922, 469.1797, 1001.84375, 358.3203, 882.7422, 423, 881.3672, 304)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(9, 8, 10, 11), PackedInt32Array(12, 13, 14, 15, 16, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(22, 21, 20, 23), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(26, 27, 25, 24, 28, 29), PackedInt32Array(30, 31, 32, 33), PackedInt32Array(34, 35, 36, 37), PackedInt32Array(30, 33, 34, 37), PackedInt32Array(38, 39, 40, 41), PackedInt32Array(42, 43, 44, 45), PackedInt32Array(42, 45, 38, 41), PackedInt32Array(46, 47, 48, 49, 50, 51, 52, 53, 54, 55), PackedInt32Array(56, 57, 58, 54), PackedInt32Array(59, 60, 61, 62), PackedInt32Array(63, 62, 61, 64, 65, 66), PackedInt32Array(51, 50, 67, 68), PackedInt32Array(68, 67, 69, 70), PackedInt32Array(71, 70, 69, 72, 73, 74), PackedInt32Array(75, 71, 74, 76, 77, 78, 79), PackedInt32Array(80, 63, 66, 81, 82), PackedInt32Array(83, 80, 82, 84, 85), PackedInt32Array(85, 84, 86, 87), PackedInt32Array(75, 79, 53, 52), PackedInt32Array(87, 86, 47, 46), PackedInt32Array(54, 58, 55)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1434, 0, 1434, 999, 0, 999)])
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation_group"
+agent_radius = 3.0
+
 [node name="Level3" unique_id=1414133645 instance=ExtResource("1_bqqoq")]
 
 [node name="Bounds" parent="." index="0" unique_id=1811867841]
@@ -44,6 +52,9 @@ position = Vector2(122, 427)
 
 [node name="CountDownTimer" parent="." index="3" unique_id=102296066]
 time = 15.0
+
+[node name="Background" parent="." index="4" unique_id=675105712]
+position = Vector2(2, -15)
 
 [node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("2_2s28f")]
 material = SubResource("ShaderMaterial_ddrey")
@@ -65,8 +76,9 @@ material = SubResource("ShaderMaterial_nwxd3")
 position = Vector2(1045, 430)
 polygon = PackedVector2Array(29, 221, 75, 256, 121, 201, 161, 59, 204.49268, -50.021698, 287, -175, 354, -154, 321, 32, 707, 192, 740, -439, 72, -463, -11, -196, -42, -75, 20, 0)
 
-[node name="Background" parent="." index="5" unique_id=675105712]
-position = Vector2(2, -15)
+[node name="NavigationRegion" parent="." index="6" unique_id=517625210]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_lve6t")
 
 [node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("3_mnl2m")]
 position = Vector2(182, 283)
