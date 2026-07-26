@@ -12,6 +12,14 @@ func _process(delta: float) -> void:
 
 # Screen Effects
 func _process_screen_effects(delta: float) -> void:
+	if obscuring:
+		$EffectLayer2/Obscur.modulate.a = LerpHelper.lf($EffectLayer2/Obscur.modulate.a, 1.0, 9.0, delta)
+		$EffectLayer2/Obscur.mouse_filter = Control.MOUSE_FILTER_STOP
+	else:
+		$EffectLayer2/Obscur.modulate.a = LerpHelper.lf($EffectLayer2/Obscur.modulate.a, 0.0, 9.0, delta)
+		$EffectLayer2/Obscur.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	if get_tree().paused: return
+	
 	_brighten = LerpHelper.lf(_brighten, 0.0, 12.0, delta)
 	
 	$EffectLayer0/Brighten.material.set_shader_parameter("mult", _brighten)
@@ -36,3 +44,10 @@ func intensify() -> void:
 func unintensify() -> void:
 	intensifying = false
 	$EffectLayer1/Intensify.hide()
+
+var obscuring := false
+func obscure() -> void:
+	obscuring = true
+
+func unobscure() -> void:
+	obscuring = false

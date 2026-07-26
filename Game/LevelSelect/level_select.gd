@@ -1,5 +1,6 @@
 class_name LevelSelect extends Control
 
+
 func _ready() -> void:
 	Data.save()
 	RenderingServer.global_shader_parameter_set("outline_color", Color("9babb2"))
@@ -17,6 +18,9 @@ func _ready() -> void:
 	
 	if PlayerManager.easy_mode:
 		$BtnMode.text = "Swap to Normal Mode"
+	
+	if Scenes.current_level >= 13:
+		$BtnRewatch.show()
 
 func _on_btn_main_menu_pressed() -> void:
 	Scenes.swap_scene("Main Menu")
@@ -24,7 +28,6 @@ func _on_btn_main_menu_pressed() -> void:
 func _on_btn_show_level_buttons_pressed() -> void:
 	for child in $LevelButtons.get_children():
 		child.show()
-
 
 func _on_btn_mode_pressed() -> void:
 	if PlayerManager.easy_mode:
@@ -34,3 +37,6 @@ func _on_btn_mode_pressed() -> void:
 		PlayerManager.easy_mode = true
 		$BtnMode.text = "Swap to Normal Mode"
 	Data.save()
+
+func _on_btn_rewatch_pressed() -> void:
+	Scenes.swap_scene("Ending Cutscene")

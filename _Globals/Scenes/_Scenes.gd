@@ -1,7 +1,17 @@
 extends CanvasLayer
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	_fade_out()
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		if get_tree().paused:
+			get_tree().paused = false
+			Effects.unobscure()
+		else:
+			get_tree().paused = true
+			Effects.obscure()
 
 const SCENES: Dictionary[String, PackedScene] = {
 	"Main Menu":preload("uid://bd8qt04xi4h20"),

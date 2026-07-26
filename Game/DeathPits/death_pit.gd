@@ -9,6 +9,8 @@ func _ready() -> void:
 	refresh.call()
 	
 	if Engine.is_editor_hint(): return
+	
+	if PlayerManager.easy_mode: momentum_required *= 0.667
 	$FallArea/Collision.polygon = shrink_polygon(polygon, collider)
 
 func _process(_delta: float) -> void:

@@ -44,6 +44,16 @@ offset_bottom = 334.0
 theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 text = "Swap to Easy Mode"
 
+[node name="BtnRewatch" parent="." unique_id=798336002 instance=ExtResource("2_eeebr")]
+visible = false
+layout_mode = 0
+offset_left = 199.0
+offset_top = 16.0
+offset_right = 442.0
+offset_bottom = 40.0
+theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+text = "Rewatch Ending Cutscene"
+
 [node name="LevelButtons" type="Node" parent="." unique_id=1856160715]
 
 [node name="BtnLevel1" parent="LevelButtons" unique_id=1780013496 instance=ExtResource("3_eeebr")]
@@ -226,4 +236,5 @@ hover_size = Vector2(1.2, 1.2)
 
 [connection signal="pressed" from="BtnMainMenu" to="." method="_on_btn_main_menu_pressed"]
 [connection signal="pressed" from="BtnMode" to="." method="_on_btn_mode_pressed"]
+[connection signal="pressed" from="BtnRewatch" to="." method="_on_btn_rewatch_pressed"]
 [connection signal="pressed" from="BtnShowLevelButtons" to="." method="_on_btn_show_level_buttons_pressed"]

@@ -2,9 +2,9 @@ class_name Enemy extends CharacterBody2D
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent
 
+@export var momentum_to_kill := 333.0
 @export_group("Movement")
 @export var speed := 3000.0
-@export var momentum_to_kill := 333.0
 @export var direction_smoothed := true
 @export var idle_movement := true
 @export var max_dist_from_origin := 150
@@ -12,6 +12,12 @@ class_name Enemy extends CharacterBody2D
 @export var blood_color := Color.WHITE
 
 var target: Node2D
+
+
+func _ready() -> void:
+	if PlayerManager.easy_mode: 
+		speed *= 0.667
+		momentum_to_kill *= 0.667
 
 func _physics_process(delta: float) -> void:
 	_process_movement(delta)

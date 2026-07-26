@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://c15b4fbsq0j5v" path="res://_Globals/Effects/_Effects.gd" id="1_btiq3"]
 [ext_resource type="Shader" uid="uid://jbfxqqvwcrlx" path="res://Assets/Shaders/effect_intensify.gdshader" id="2_ubn7f"]
 [ext_resource type="Shader" uid="uid://dhtqxbym460ta" path="res://Assets/Shaders/effect_brighten.gdshader" id="3_2inh8"]
+[ext_resource type="Shader" uid="uid://bxqrghscsqtx0" path="res://Assets/Shaders/obscur.gdshader" id="4_2inh8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_esxch"]
+shader = ExtResource("4_2inh8")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c6smh"]
 shader = ExtResource("2_ubn7f")
@@ -13,8 +17,18 @@ shader = ExtResource("3_2inh8")
 shader_parameter/mult = 0.0
 
 [node name="EffectsLayer" type="CanvasLayer" unique_id=1427142918]
+process_mode = 3
 layer = 9
 script = ExtResource("1_btiq3")
+
+[node name="EffectLayer2" type="CanvasLayer" parent="." unique_id=1129677132]
+layer = 100
+
+[node name="Obscur" type="ColorRect" parent="EffectLayer2" unique_id=1321264766]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_esxch")
+offset_right = 640.0
+offset_bottom = 360.0
 
 [node name="EffectLayer1" type="CanvasLayer" parent="." unique_id=646894591]
 

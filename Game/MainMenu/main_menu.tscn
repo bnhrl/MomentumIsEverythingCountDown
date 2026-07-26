@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://psqqhskqcq2t" path="res://Game/MainMenu/main_menu.gd" id="1_2lp7i"]
 [ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/UIButton/ui_button.tscn" id="1_38cx4"]
 [ext_resource type="Texture2D" uid="uid://baodxxg4uk2ig" path="res://Game/MainMenu/background.png" id="3_5g5lb"]
-[ext_resource type="Shader" uid="uid://bxqrghscsqtx0" path="res://Assets/Shaders/obscur.gdshader" id="3_052h3"]
 [ext_resource type="AudioStream" uid="uid://d4a7d10skgb0n" path="res://Assets/Sounds/clair.wav" id="3_57bh4"]
 [ext_resource type="Texture2D" uid="uid://bj4ao8f456njj" path="res://Game/MainMenu/logo.png" id="5_052h3"]
 [ext_resource type="Shader" uid="uid://chwkgj0slhnlv" path="res://Assets/Shaders/wavy.gdshader" id="5_trxfs"]
@@ -23,9 +22,6 @@ shader_parameter/wave_x = 50.0
 shader_parameter/wave_y = 50.0
 shader_parameter/ferocity = 0.02
 shader_parameter/speed = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6smh"]
-shader = ExtResource("3_052h3")
 
 [node name="MainMenu" type="Control" unique_id=1635845586]
 layout_mode = 3
@@ -88,12 +84,6 @@ layer = 11
 
 [node name="Clair" type="AudioStreamPlayer" parent="BtnQuit/CanvasLayer" unique_id=113390594]
 stream = ExtResource("3_57bh4")
-
-[node name="Obscur" type="ColorRect" parent="BtnQuit/CanvasLayer" unique_id=85738700]
-visible = false
-material = SubResource("ShaderMaterial_c6smh")
-offset_right = 640.0
-offset_bottom = 360.0
 
 [node name="FullscreenLabel" type="RichTextLabel" parent="." unique_id=1258388438]
 layout_mode = 0

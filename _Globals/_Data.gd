@@ -9,8 +9,6 @@ var save_data: Dictionary = {
 
 func _ready() -> void:
 	load_save()
-	Scenes.current_level = save_data.get("current_level", 1)
-	if save_data.get("fullscreen"): DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func load_save() -> void:
 	var save_file := FileAccess.open("user://save.exitoxicity", FileAccess.READ)
@@ -23,6 +21,9 @@ func load_save() -> void:
 		return
 	save_data = data
 	save_file.close()
+	Scenes.current_level = save_data.get("current_level", 1)
+	if save_data.get("fullscreen"): DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	PlayerManager.easy_mode = save_data.get("easy_mode")
 
 func save() -> void:
 	var fullscreen := false

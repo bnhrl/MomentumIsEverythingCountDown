@@ -284,7 +284,7 @@ polygon = PackedVector2Array(2, 2, 13.172424, 41, 33.448242, 96, 96.758606, 229,
 material = SubResource("ShaderMaterial_agtbp")
 position = Vector2(-4210, 959)
 scale = Vector2(21, 16.25)
-polygon = PackedVector2Array(3.90477, 3.6307678, 5, -1.1692314, 7.3333282, -9.661537, 13.238098, -20.8, 4.142853, -23.815384, 2.1904755, -18.76923, -0.7142792, -8.738461, -4.6666718, 0.79999924, -23.047623, -0.79999924, -10.809525, 3.5384598, 1.9523773, 7.4153824)
+polygon = PackedVector2Array(3.90477, 3.6307678, 5, -1.1692314, 7.3333282, -9.661537, 13.238098, -20.8, 4.142853, -23.815384, 2.1904755, -18.76923, -0.7142792, -8.738461, -4.6666718, 0.79999924, -23.047623, -0.79999924, -10.809525, 3.5384598, 0.5714264, 6.8923073)
 
 [node name="NavigationRegion" parent="." index="6" unique_id=517625210]
 navigation_polygon = SubResource("NavigationPolygon_mau5g")
@@ -300,7 +300,7 @@ direction = 180.0
 material = SubResource("ShaderMaterial_qs011")
 position = Vector2(-4258, 1122)
 scale = Vector2(16.3, 3.1666667)
-polygon = PackedVector2Array(-25.889557, -52.736816, 14.202438, -3.6315918, 13.128845, 23.684235, -28.098145, -22.736816)
+polygon = PackedVector2Array(-25.889557, -52.736816, 16.932526, 0, 14.233139, 26.21054, -28.098145, -22.736816)
 spin_speed = 0.0
 direction = 214.658
 
