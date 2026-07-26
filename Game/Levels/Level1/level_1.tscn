@@ -6,34 +6,42 @@
 [ext_resource type="Texture2D" uid="uid://cat2u7ayswtl" path="res://Game/PolygonWalls/WallSprites/yellow_tile.png" id="4_kv67y"]
 [ext_resource type="Texture2D" uid="uid://c81s1ubrggj8m" path="res://Game/PolygonWalls/WallSprites/green_tile.png" id="5_t2k4w"]
 [ext_resource type="Texture2D" uid="uid://pq46efnl0ptf" path="res://Game/PolygonWalls/WallSprites/red_tile.png" id="6_hujse"]
-[ext_resource type="Texture2D" uid="uid://clg2nupt156li" path="res://Assets/Textures/background_0.png" id="7_3uww5"]
+[ext_resource type="Texture2D" path="res://Assets/Textures/background_0.png" id="7_3uww5"]
 [ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="7_86ce5"]
 [ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="8_8b55i"]
 [ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="8_tlwvc"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4721b"]
-shader = ExtResource("3_3uww5")
-shader_parameter/tile_texture = ExtResource("4_kv67y")
-shader_parameter/tile_size = Vector2(16, 16)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wf557"]
-shader = ExtResource("3_3uww5")
-shader_parameter/tile_texture = ExtResource("5_t2k4w")
-shader_parameter/tile_size = Vector2(16, 16)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cplqv"]
-shader = ExtResource("3_3uww5")
-shader_parameter/tile_texture = ExtResource("6_hujse")
-shader_parameter/tile_size = Vector2(16, 16)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kv67y"]
 shader = ExtResource("3_3uww5")
 shader_parameter/tile_texture = ExtResource("7_3uww5")
 shader_parameter/tile_size = Vector2(720, 1280)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_8b55i"]
-vertices = PackedVector2Array(1891, 1250, 1817.0938, 1250.0234, 1891, 978.5781, 981.4297, 934.2031, 924.2969, 827.7578, 1208.75, 709.78906, 1277.9688, 915.3906, 1045.3516, 999.3281, 1527.1406, 1003.1094, 1341.9063, 1042.9531, 1460.3281, 884.47656, 1626.7422, 965.03125, 1463.8672, 425.0625, 1434.8125, 92.4375, 1626.5391, 80.38281, 1676.9375, 399.8828, 1599.9609, 738.84375, 1426.0391, 605.1328, 293.64844, 252.03906, 507.9375, 643.7422, 523.97656, 975.3281, 222.92188, 988.89844, 153.02344, 829.22656, 120.828125, 620.64844, 110.03125, 350.77344, 1142.4219, 512.7578, 1178.8281, 620.90625, 882.9375, 750.71875, 879.34375, 744.0078, 749.39844, 283.15625, 617.8281, 543.09375, 114.50781, 613.6797, 914.71875, 822.6094, 915.8828, 824.7578, 806.39844, 870.1719, 852, 848.6328, 880.27344, 758.4375, 881.4219, 760.5781, 820.46875, 787.3281, 773.1172, 805.46094, 1230.6328, 607.3828, 1187.0391, 626.5, 1186.2578, 624.1875, 1273.7734, 585.8125, 1270.5391, 675.0469, 1316.6563, 658.53906, 1212.3906, 701.78125, 1211.6094, 699.46875)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(8, 9, 7, 6, 10, 11), PackedInt32Array(12, 13, 14, 15, 16), PackedInt32Array(10, 17, 12, 16, 11), PackedInt32Array(18, 19, 20, 21, 22, 23, 24), PackedInt32Array(25, 26, 27, 28, 29), PackedInt32Array(29, 28, 30, 18), PackedInt32Array(18, 30, 19), PackedInt32Array(24, 23, 31), PackedInt32Array(32, 33, 34, 35), PackedInt32Array(36, 37, 38, 39), PackedInt32Array(34, 39, 38, 35), PackedInt32Array(40, 41, 42, 43), PackedInt32Array(44, 40, 43, 45), PackedInt32Array(44, 45, 46, 47)])
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4721b"]
+shader = ExtResource("3_3uww5")
+shader_parameter/tile_texture = ExtResource("4_kv67y")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wf557"]
+shader = ExtResource("3_3uww5")
+shader_parameter/tile_texture = ExtResource("5_t2k4w")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cplqv"]
+shader = ExtResource("3_3uww5")
+shader_parameter/tile_texture = ExtResource("6_hujse")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3uww5"]
+vertices = PackedVector2Array(1891, 1250, 1817.0938, 1250.0234, 1891, 978.5781, 1463.8672, 425.0625, 1434.8984, 93.42969, 1609.5703, 101.88281, 1676.9219, 399.9922, 1599.9609, 738.84375, 1460.3281, 884.47656, 1426.0391, 605.1328, 1626.7422, 965.03125, 1527.1406, 1003.1094, 1277.9688, 915.3906, 1341.9063, 1042.9531, 1045.3516, 999.3281, 981.4297, 934.2031, 924.2969, 827.7578, 1208.75, 709.78906, 293.64844, 252.03906, 507.9375, 643.7422, 523.97656, 975.3281, 222.92188, 988.89844, 153.02344, 829.22656, 120.828125, 620.64844, 110.03125, 350.77344, 1142.4219, 512.7578, 1178.8281, 620.90625, 882.9375, 750.71875, 879.34375, 744.0078, 749.39844, 283.15625, 617.8281, 543.09375, 114.50781, 613.6797, 914.71875, 822.6094, 915.8828, 824.7578, 806.39844, 870.1719, 852, 848.6328, 880.27344, 758.4375, 881.4219, 760.5781, 820.46875, 787.3281, 773.1172, 805.46094, 1230.6328, 607.3828, 1187.0391, 626.5, 1186.2578, 624.1875, 1273.7734, 585.8125, 1270.5391, 675.0469, 1316.6563, 658.53906, 1212.3906, 701.78125, 1211.6094, 699.46875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(8, 9, 3, 7, 10, 11), PackedInt32Array(12, 8, 11, 13, 14), PackedInt32Array(15, 16, 17, 12, 14), PackedInt32Array(18, 19, 20, 21, 22, 23, 24), PackedInt32Array(25, 26, 27, 28, 29), PackedInt32Array(29, 28, 30, 18), PackedInt32Array(18, 30, 19), PackedInt32Array(24, 23, 31), PackedInt32Array(32, 33, 34, 35), PackedInt32Array(36, 37, 38, 39), PackedInt32Array(34, 39, 38, 35), PackedInt32Array(40, 41, 42, 43), PackedInt32Array(44, 40, 43, 45), PackedInt32Array(44, 45, 46, 47)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 1894, 0, 1894, 1253, 0, 1253)])
 source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
@@ -51,6 +59,9 @@ position = Vector2(335, 926)
 [node name="CountDownTimer" parent="." index="3" unique_id=102296066]
 time = 10.0
 
+[node name="Background" parent="." index="4" unique_id=675105712]
+material = SubResource("ShaderMaterial_kv67y")
+
 [node name="PolygonWall1" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("2_8b55i")]
 material = SubResource("ShaderMaterial_4721b")
 position = Vector2(1688, 9)
@@ -65,12 +76,9 @@ material = SubResource("ShaderMaterial_cplqv")
 position = Vector2(708, 1124)
 polygon = PackedVector2Array(72, 101, 534, 80, 271, -188, 169, -378, -90, -577, -197, -479, -171, 58)
 
-[node name="Background" parent="." index="5" unique_id=675105712]
-material = SubResource("ShaderMaterial_kv67y")
-
 [node name="NavigationRegion" parent="." index="6" unique_id=517625210]
 visible = false
-navigation_polygon = SubResource("NavigationPolygon_8b55i")
+navigation_polygon = SubResource("NavigationPolygon_3uww5")
 
 [node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=485349368 instance=ExtResource("7_86ce5")]
 position = Vector2(538, 433)
@@ -99,10 +107,23 @@ polygon = PackedVector2Array(274, -68, -242, 146, -278, 76, 228, -146)
 uv = PackedVector2Array(322, -36, 6, 14, -22, -37, 292, -125)
 momentum_required = 200.0
 
-[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("8_tlwvc")]
-position = Vector2(1534, 127)
+[node name="TutorialUnnecessary" type="RichTextLabel" parent="." index="12" unique_id=1850468276]
+clip_contents = false
+offset_left = 199.0
+offset_top = 939.0
+offset_right = 531.0
+offset_bottom = 987.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "[WASD] / [ARROW KEYS] to MOVE."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Tutorial0" type="RichTextLabel" parent="." index="12" unique_id=1358969739]
+[node name="Tutorial0" type="RichTextLabel" parent="." index="13" unique_id=1358969739]
 clip_contents = false
 offset_left = 244.0
 offset_top = 745.0
@@ -118,7 +139,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Tutorial1" type="RichTextLabel" parent="." index="13" unique_id=692343368]
+[node name="Tutorial1" type="RichTextLabel" parent="." index="14" unique_id=692343368]
 clip_contents = false
 offset_left = 826.0
 offset_top = 528.0
@@ -133,3 +154,6 @@ text = "You must have SUFFICIENT MOMENTUM to cross DEATH PITS."
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("8_tlwvc")]
+position = Vector2(1534, 127)
