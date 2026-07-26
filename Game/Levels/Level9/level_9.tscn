@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://nl28j8l8m3p7"]
+
+[ext_resource type="PackedScene" uid="uid://co1sgdv2x4nyr" path="res://Game/Levels/_Base/level.tscn" id="1_50bsj"]
+[ext_resource type="Shader" uid="uid://wu085sklw13i" path="res://Assets/Shaders/world_tiling_2d.gdshader" id="2_voq3k"]
+[ext_resource type="Texture2D" uid="uid://ogmg54ge4mqi" path="res://Assets/Textures/background_2.png" id="3_01v83"]
+[ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="4_igeap"]
+[ext_resource type="Texture2D" uid="uid://bes50qe7b47g3" path="res://Game/PolygonWalls/WallSprites/space_tile2.png" id="5_leq20"]
+[ext_resource type="PackedScene" uid="uid://da77ss23u811t" path="res://Game/BoostPads/boost_pad.tscn" id="6_4u6db"]
+[ext_resource type="Texture2D" uid="uid://b1500w4u1lkct" path="res://Game/BoostPads/boost_pad.png" id="7_fr3p4"]
+[ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="8_leq20"]
+[ext_resource type="PackedScene" uid="uid://bjng875ivkyon" path="res://Game/Enemies/BEAmoeba/b_e_amoeba.tscn" id="9_4u6db"]
+[ext_resource type="PackedScene" uid="uid://c5efma3oa0u0x" path="res://Game/Objects/computer.tscn" id="9_fr3p4"]
+[ext_resource type="PackedScene" uid="uid://8f0iofd1efob" path="res://Game/Objects/monitor.tscn" id="11_foi73"]
+[ext_resource type="PackedScene" uid="uid://cfu4xtwobtoj8" path="res://Game/Objects/coffee_maker.tscn" id="12_ibyvd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4u6db"]
+shader = ExtResource("2_voq3k")
+shader_parameter/tile_texture = ExtResource("3_01v83")
+shader_parameter/tile_size = Vector2(720, 1280)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8a5cg"]
+shader = ExtResource("2_voq3k")
+shader_parameter/tile_texture = ExtResource("5_leq20")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ibyvd"]
+vertices = PackedVector2Array(-12.703125, 90, -183, 90, -183, 4.8515625, 1403, -370.47656, 931.5625, -461, 1415, -461, 1415, 90, 1403, -316.39844, 1007.8828, 43, -0.3125, 43, -90.03906, 0, -0.3125, -43, 903, -43, 1020.9922, 31.632813, 903, -396.78125, 1000.6094, -390.02344, 1019.9922, -203.34375, 1403, 90, 1403, -162.70313, -183, -461, 879.71094, -461, 854.71094, -453.4375, -0.7109375, -96, -183, -4.8515625, 835, -400.53906, 835, -96)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(3, 5, 6, 7), PackedInt32Array(8, 9, 10, 11, 12, 13), PackedInt32Array(12, 14, 15, 16, 13), PackedInt32Array(6, 17, 18), PackedInt32Array(7, 6, 18), PackedInt32Array(7, 18, 16, 15), PackedInt32Array(19, 20, 21), PackedInt32Array(22, 23, 19), PackedInt32Array(22, 19, 21, 24), PackedInt32Array(22, 24, 25)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-186, -464, 1418, -464, 1418, 93, -186, 93)])
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation_group"
+agent_radius = 3.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_leq20"]
+resource_local_to_scene = true
+shader = ExtResource("2_voq3k")
+shader_parameter/tile_texture = ExtResource("7_fr3p4")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fr3p4"]
+resource_local_to_scene = true
+shader = ExtResource("2_voq3k")
+shader_parameter/tile_texture = ExtResource("7_fr3p4")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = -1.4835298641951802
+shader_parameter/autoscroll = true
+
+[node name="Level9" unique_id=1414133645 instance=ExtResource("1_50bsj")]
+
+[node name="Bounds" parent="." index="0" unique_id=1811867841]
+offset_left = -186.0
+offset_top = -464.0
+offset_right = 1418.0
+offset_bottom = 93.0
+
+[node name="PlayerSpawnPoint" parent="." index="1" unique_id=1452407390]
+position = Vector2(0, 0)
+
+[node name="Background" parent="." index="4" unique_id=675105712]
+material = SubResource("ShaderMaterial_4u6db")
+
+[node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("4_igeap")]
+material = SubResource("ShaderMaterial_8a5cg")
+polygon = PackedVector2Array(-97, 0, -1, 46, 900, 46, 900, 93, 0, 93, -186, 0)
+
+[node name="PolygonWall1" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="1" unique_id=1469958175 instance=ExtResource("4_igeap")]
+material = SubResource("ShaderMaterial_8a5cg")
+scale = Vector2(1, -1)
+polygon = PackedVector2Array(-97, 0, -1, 46, 900, 46, 900, 93, 0, 93, -186, 0)
+
+[node name="PolygonWall2" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="2" unique_id=1161192354 instance=ExtResource("4_igeap")]
+material = SubResource("ShaderMaterial_8a5cg")
+scale = Vector2(1, -1)
+polygon = PackedVector2Array(900, -46, 1009, -46, 1024, -33, 1023, 200, 1400, 160, 1400, -93, 900, -93)
+
+[node name="PolygonWall3" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="3" unique_id=1262639304 instance=ExtResource("4_igeap")]
+material = SubResource("ShaderMaterial_8a5cg")
+polygon = PackedVector2Array(838, -400, 838, -93, 900, -93, 900, -400)
+
+[node name="PolygonWall4" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="4" unique_id=1767958673 instance=ExtResource("4_igeap")]
+material = SubResource("ShaderMaterial_8a5cg")
+polygon = PackedVector2Array(838, -400, 857, -451, 900, -464, 1400, -368, 1400, -320, 1001, -393, 900, -400)
+
+[node name="NavigationRegion" parent="." index="6" unique_id=517625210]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_ibyvd")
+
+[node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("8_leq20")]
+position = Vector2(1111, -276)
+
+[node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="0" unique_id=816347687 instance=ExtResource("6_4u6db")]
+material = SubResource("ShaderMaterial_leq20")
+position = Vector2(378.5, 1)
+scale = Vector2(9.366667, 3.1333334)
+polygon = PackedVector2Array(-15, -15, 0, -15, 0, 15, -15, 15)
+speed = 200.0
+
+[node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="1" unique_id=1636313232 instance=ExtResource("6_4u6db")]
+material = SubResource("ShaderMaterial_fr3p4")
+position = Vector2(1024, 1)
+scale = Vector2(9.366667, 3.1333334)
+polygon = PackedVector2Array(-13.238434, -15, -0.10675812, -27.765957, 0, 15)
+direction = -85.0
+speed = 150.0
+
+[node name="GrapplePoint0" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="2" unique_id=389238612 instance=ExtResource("8_leq20")]
+position = Vector2(187, 0)
+
+[node name="BEAmoeba0" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="0" unique_id=613541596 instance=ExtResource("9_4u6db")]
+position = Vector2(848, -2)
+max_dist_from_origin = 20
+
+[node name="BEAmoeba1" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="1" unique_id=1496762571 instance=ExtResource("9_4u6db")]
+position = Vector2(777, 1)
+max_dist_from_origin = 20
+
+[node name="Computer" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="0" unique_id=1695913543 instance=ExtResource("9_fr3p4")]
+position = Vector2(920.99994, -380)
+rotation = 0.5343101
+
+[node name="Monitor" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="1" unique_id=1153507537 instance=ExtResource("11_foi73")]
+position = Vector2(976.99994, -358.00006)
+rotation = -0.2617994
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CoffeeMaker" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="2" unique_id=1924321984 instance=ExtResource("12_ibyvd")]
+position = Vector2(919, -306)
+rotation = 0.16410583
+scale = Vector2(0.99999994, 0.99999994)

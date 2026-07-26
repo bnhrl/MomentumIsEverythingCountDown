@@ -12,7 +12,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = true
 
-[node name="BoostPad" type="Polygon2D" unique_id=816347687]
+[node name="BoostPad0" type="Polygon2D" unique_id=816347687]
 material = SubResource("ShaderMaterial_ex37j")
 polygon = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
 script = ExtResource("1_t07jp")
@@ -20,5 +20,3 @@ script = ExtResource("1_t07jp")
 [node name="Area" type="Area2D" parent="." unique_id=1763253854]
 
 [node name="Collision" type="CollisionPolygon2D" parent="Area" unique_id=1481995982]
-
-[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
