@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://bu8b38axswlfi"]
+
+[ext_resource type="PackedScene" uid="uid://co1sgdv2x4nyr" path="res://Game/Levels/_Base/level.tscn" id="1_bqqoq"]
+[ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="2_2s28f"]
+[ext_resource type="Shader" uid="uid://wu085sklw13i" path="res://Assets/Shaders/world_tiling_2d.gdshader" id="3_d6bjp"]
+[ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="3_mnl2m"]
+[ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="3_wevdh"]
+[ext_resource type="PackedScene" uid="uid://bvoyf8gip103i" path="res://Game/Interactable/Gate/gate.tscn" id="4_2hpdo"]
+[ext_resource type="Texture2D" uid="uid://pq46efnl0ptf" path="res://Game/PolygonWalls/WallSprites/red_tile.png" id="4_11hit"]
+[ext_resource type="PackedScene" uid="uid://bs2swopl87icu" path="res://Game/Interactable/WorldButton/world_button.tscn" id="5_3orho"]
+[ext_resource type="Texture2D" uid="uid://c5uuhdduni3e7" path="res://Game/PolygonWalls/WallSprites/blue_tile.png" id="5_lve6t"]
+[ext_resource type="Texture2D" uid="uid://cat2u7ayswtl" path="res://Game/PolygonWalls/WallSprites/yellow_tile.png" id="6_q0tsu"]
+[ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="7_3orho"]
+[ext_resource type="Texture2D" uid="uid://c81s1ubrggj8m" path="res://Game/PolygonWalls/WallSprites/green_tile.png" id="7_gpk2k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddrey"]
+shader = ExtResource("3_d6bjp")
+shader_parameter/tile_texture = ExtResource("4_11hit")
+shader_parameter/tile_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x0ejf"]
+shader = ExtResource("3_d6bjp")
+shader_parameter/tile_texture = ExtResource("5_lve6t")
+shader_parameter/tile_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q5ng6"]
+shader = ExtResource("3_d6bjp")
+shader_parameter/tile_texture = ExtResource("6_q0tsu")
+shader_parameter/tile_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nwxd3"]
+shader = ExtResource("3_d6bjp")
+shader_parameter/tile_texture = ExtResource("7_gpk2k")
+shader_parameter/tile_size = Vector2(16, 16)
+
+[node name="Level3" unique_id=1414133645 instance=ExtResource("1_bqqoq")]
+
+[node name="Bounds" parent="." index="0" unique_id=1811867841]
+offset_right = 1434.0
+offset_bottom = 999.0
+
+[node name="PlayerSpawnPoint" parent="." index="1" unique_id=1452407390]
+position = Vector2(122, 427)
+
+[node name="CountDownTimer" parent="." index="3" unique_id=102296066]
+time = 15.0
+
+[node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("2_2s28f")]
+material = SubResource("ShaderMaterial_ddrey")
+scale = Vector2(2.04, 2.04)
+polygon = PackedVector2Array(554, -26, 24, -29, -73, 8, -58, 190, -16.176472, 518.13727, 67.15687, 569.60785, 349.50983, 551.9608, 394.60788, 311.27454, 331.37256, 301.4706, 311.6083, 366.81256, 149.50981, 466.6667, 99.50981, 474.01962, 76.96079, 463.23532, 51.96079, 429.4118, 43.747463, 377.1127, 43.627453, 349.01962, 66.66667, 325.9804, 95.58824, 315.1961, 283.82355, 225.98041, 302, 180, 225.17645, 112.46279, 173.03923, 108.82354, 134.80392, 124.50981, 114.70589, 191.66667, 95.098045, 222.54903, 39.21569, 226.9608, 30.392159, 170.58824, 69, 70, 142.64706, 48.03922, 245.58826, 47.549023, 321, 99, 381.86276, 112.254906, 409.80396, 147.54903, 432.35297, 147.54903, 492.1569, 174.50981)
+
+[node name="PolygonWall1" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="1" unique_id=1824824268 instance=ExtResource("2_2s28f")]
+material = SubResource("ShaderMaterial_x0ejf")
+position = Vector2(195, 761)
+polygon = PackedVector2Array(341, -62, 366, -174, 52.02664, -21.498657, 31, 57, 123, 55)
+
+[node name="PolygonWall2" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="2" unique_id=1426166111 instance=ExtResource("2_2s28f")]
+material = SubResource("ShaderMaterial_q5ng6")
+position = Vector2(811, 500)
+polygon = PackedVector2Array(157, -29, 71, -74, 27, -74, 2, -2, -135, 116, -129, 596, 867, 616, 951, 122, 587, -127, 542.822, -4.2686462, 438, 214, 414, 288, 334, 334, 234, 303, 170, 255, 158, 138)
+
+[node name="PolygonWall3" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="3" unique_id=77296680 instance=ExtResource("2_2s28f")]
+material = SubResource("ShaderMaterial_nwxd3")
+position = Vector2(1045, 430)
+polygon = PackedVector2Array(29, 221, 75, 256, 121, 201, 161, 59, 204.49268, -50.021698, 287, -175, 354, -154, 321, 32, 707, 192, 740, -439, 72, -463, -11, -196, -42, -75, 20, 0)
+
+[node name="Background" parent="." index="5" unique_id=675105712]
+position = Vector2(2, -15)
+
+[node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("3_mnl2m")]
+position = Vector2(182, 283)
+
+[node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="1" unique_id=1440728027 instance=ExtResource("3_mnl2m")]
+position = Vector2(602, 261)
+
+[node name="GrapplePoint2" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="2" unique_id=1554648896 instance=ExtResource("3_mnl2m")]
+position = Vector2(695, 469)
+
+[node name="GrapplePoint3" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="3" unique_id=611284656 instance=ExtResource("3_mnl2m")]
+position = Vector2(344, 638)
+
+[node name="GrapplePoint4" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="4" unique_id=800003026 instance=ExtResource("3_mnl2m")]
+position = Vector2(169, 837)
+
+[node name="GrapplePoint5" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="5" unique_id=954813327 instance=ExtResource("3_mnl2m")]
+position = Vector2(366, 863)
+
+[node name="GrapplePoint6" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="6" unique_id=1495168493 instance=ExtResource("3_mnl2m")]
+position = Vector2(933, 384)
+
+[node name="GrapplePoint7" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="7" unique_id=632804140 instance=ExtResource("3_mnl2m")]
+position = Vector2(1027, 577)
+
+[node name="GrapplePoint8" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="8" unique_id=1138150716 instance=ExtResource("3_mnl2m")]
+position = Vector2(1130, 743)
+
+[node name="GrapplePoint9" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="9" unique_id=1355025329 instance=ExtResource("3_mnl2m")]
+position = Vector2(1313, 412)
+
+[node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="0" unique_id=1337174415 instance=ExtResource("4_2hpdo")]
+position = Vector2(835, 289)
+polygon = PackedVector2Array(47, 146, 3, 145, 1, -4, 47, -5)
+
+[node name="Gate1" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="1" unique_id=1626271136 instance=ExtResource("4_2hpdo")]
+position = Vector2(559, 640)
+polygon = PackedVector2Array(92, 88, -35, 56, 2, -53, 117, -24)
+displays_notification = false
+
+[node name="WorldButton0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="2" unique_id=1576954058 instance=ExtResource("5_3orho")]
+position = Vector2(515, 764)
+
+[node name="DeathPit" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("3_wevdh")]
+position = Vector2(531, 206)
+polygon = PackedVector2Array(104, -117, -27, 143, -96, 104, 36, -154)
+momentum_required = 200.0
+
+[node name="DeathPit2" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="1" unique_id=1280049519 instance=ExtResource("3_wevdh")]
+position = Vector2(1278, 481)
+polygon = PackedVector2Array(102, 2, 85, 57, -96, -3, -72, -57)
+momentum_required = 200.0
+
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("7_3orho")]
+position = Vector2(1358, 294)
+
+[connection signal="pressed" from="Interactables/WorldButton0" to="Interactables/Gate0" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton0" to="Interactables/Gate1" method="disable"]
