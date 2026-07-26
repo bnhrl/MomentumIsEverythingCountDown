@@ -19,11 +19,15 @@
 shader = ExtResource("2_yvxlv")
 shader_parameter/tile_texture = ExtResource("3_xxn27")
 shader_parameter/tile_size = Vector2(720, 1280)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nxyy3"]
 shader = ExtResource("2_yvxlv")
 shader_parameter/tile_texture = ExtResource("4_3v1fi")
 shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="Shader" id="Shader_m585n"]
 code = "shader_type canvas_item;
@@ -60,16 +64,22 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader = ExtResource("2_yvxlv")
 shader_parameter/tile_texture = ExtResource("5_nxyy3")
 shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8a5cg"]
 shader = ExtResource("2_yvxlv")
 shader_parameter/tile_texture = ExtResource("5_nxyy3")
 shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a6rk0"]
 shader = ExtResource("2_yvxlv")
 shader_parameter/tile_texture = ExtResource("5_nxyy3")
 shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nxyy3"]
 vertices = PackedVector2Array(1873.5234, 1932.9688, 2046.1406, 2044, 98, 2044, 98, 588.8672, 194.4375, 680.64844, 1707.0781, 1471.75, 406.29688, 746.9219, 879.84375, 828.02344, 1565.8672, 783.77344, 1635.0703, 1018.7031, 4072, 2044, 2317.3828, 2044, 2383.539, 1949.6016, 3792, 1966.3203, 2843.8984, 1128.7969, 3461.1875, 1372.4063, 3535.1172, 1654.8594, 3611.5703, 1881.1719, 4029.1016, 1650.1563, 4005.6797, 1539.6719, 4072, 1479.75, 3951.461, 1891.1563, 1343.5781, 682.97656, 855.89844, 468.78906, 789.6172, 389.89063, 707.28906, 141.53125, 692.3828, 49.15625, 1127.2969, -73.74219, 1278.5313, -100.89844, 1385.4219, 24.28125, 1385.4219, 24.289063, 874.7422, 670.0703, 1716.0313, 407.0078, 2011.25, 430.3672, 2042.0391, 859.78125, 1847.1328, 664.97656, 671.3828, 581.90625, 463.40625, 571.5703, 271.02344, 455.71094, 174.21875, 329.28906, 236.24219, 48.117188, 611.8828, 72.921875, 703.78906, 143.61719, 3837.461, 628.1094, 3940.1563, 782.14844, 3987.9531, 1038.0391, 3949.5078, 1293.0703, 3948.2578, 1293.1484, 3604.0469, 1105.3594, 3370.0078, 661.0078, 1516.0469, 326.72656, 1525.2969, 424.2578, 1523.9063, 627.8906, 1682.3516, 665.9922, 1827.0078, 1135.6719, 2120.039, 1371.5, 1972.8516, 1683.0391, 2061.4531, 1901.8672, 2171.4688, 1650.8203, 2218.3594, 1987.0391, 2326.1797, 1901.0391, 2176.0781, 1651.1719, 2422.0938, 1512.2813, 2270.9922, 1377.5469, 2524.1797, 1101.9297, 2284, 900.0078, 2588.0469, 980.25, 2282.6172, 841.28906, 2310.5703, 692.52344, 2490.5781, 654.9375, 2707.4766, 625.52344, 2741.1094, 957.9531, 2838.9375, 625.9922, 2874.3828, 987.22656, 2909.2578, 1017.1328, 3636.5625, 1725.4766, 3599.3906, 1348.8516, 3899.5, 1802.0234, 3800.2578, 1845.9609, 3680.75, 1811.4609, 4072, -117, 4072, 856.5078, 3984.7031, 545.5078, 3887.25, 437.90625, 1556.5469, -117, 3679.039, 452.0625, 3595.1094, 505.0078, 3148.0078, 510.9922, 2496.3984, 498.47656, 2147.6328, 291.45313, 1817.6016, 223.96875, 1610.9297, 126.421875, 1987.6016, 216.96875, 2270.789, 395.15625, 98, -117, 868.71094, -117, 636.75, -66.00781, 110.86719, -100.078125, 98, -87.640625)
@@ -88,7 +98,7 @@ offset_right = 4075.0
 offset_bottom = 2047.0
 
 [node name="CountDownTimer" parent="." index="3" unique_id=102296066]
-time = 20.0
+time = 22.5
 
 [node name="Background" parent="." index="4" unique_id=675105712]
 material = SubResource("ShaderMaterial_4u6db")

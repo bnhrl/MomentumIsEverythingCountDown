@@ -39,7 +39,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = false
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_887xa"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0maof"]
 vertices = PackedVector2Array(-12.703125, 90, -183, 90, -183, 4.8515625, 1127.8125, 90, 1046.7969, 90, 1075.5234, 67.85156, 1422.6563, -40.851563, 1913, -358.47656, 1913, 90, 1503.7266, 27.328125, 1132.9609, -88.63281, 1166.8203, 22.773438, 1230.1875, -11.9765625, 1329.3125, -15.0078125, 1552.3672, 90, 1007.8828, 43, -0.3125, 43, -90.03906, 0, -0.3125, -43, 903, -43, 1020.9922, 31.632813, 1588.1094, -441.1328, 1370.2109, -782.6797, 1365.6484, -899.3125, 1478.0938, -848.27344, 1810.5625, -372.10156, 903, -396.78125, 1000.6094, -390.02344, 1019.9922, -223.52344, 1399.5078, -163.10938, 1400.6484, -316.82813, 317.09375, -897.89844, -160.07813, -952, 676.3281, -952, 543.25, -740.09375, 711.78906, -876.64844, -183, -4.8515625, -183, -255.28906, -84.890625, -205.09375, -0.7109375, -96, 134.03906, -177.96875, 746.75, -96, 460.15625, -227.14063, 657.0469, -367.4922, 835.14844, -400.9375, 1218.7813, -952, 1319.2266, -952, 1265.9531, -783.2969, 1158.1875, -811.5078, 650.96875, -558.8672, 854.8906, -453.9375, 994.84375, -764.84375, 1146.3438, -462.97656, 1293.7813, -525.8906, 1547.7813, -918.72656, 1357.5703, -952, 1913, -952, 1913, -373.85938)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(3, 5, 10, 11), PackedInt32Array(12, 11, 10), PackedInt32Array(12, 10, 6, 13), PackedInt32Array(9, 13, 6), PackedInt32Array(9, 8, 14), PackedInt32Array(15, 16, 17, 18, 19, 20), PackedInt32Array(21, 22, 23, 24, 25), PackedInt32Array(19, 26, 27, 28, 20), PackedInt32Array(21, 25, 29, 30), PackedInt32Array(30, 29, 28, 27), PackedInt32Array(31, 32, 33), PackedInt32Array(34, 31, 33, 35), PackedInt32Array(36, 37, 38, 39), PackedInt32Array(39, 38, 40, 41), PackedInt32Array(41, 40, 42), PackedInt32Array(41, 42, 43, 44), PackedInt32Array(45, 46, 47, 48), PackedInt32Array(44, 43, 49, 50), PackedInt32Array(50, 49, 34, 35, 51, 52), PackedInt32Array(53, 52, 51, 48, 47), PackedInt32Array(54, 55, 56), PackedInt32Array(56, 57, 54)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-186, -955, 1916, -955, 1916, 93, -186, 93)])
@@ -47,7 +47,7 @@ source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
 agent_radius = 3.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgbcd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_887xa"]
 resource_local_to_scene = true
 shader = ExtResource("2_voq3k")
 shader_parameter/tile_texture = ExtResource("7_fr3p4")
@@ -55,7 +55,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = -0.5039987280984027
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8jvnf"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgbcd"]
 resource_local_to_scene = true
 shader = ExtResource("2_voq3k")
 shader_parameter/tile_texture = ExtResource("7_fr3p4")
@@ -63,7 +63,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kim44"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8jvnf"]
 resource_local_to_scene = true
 shader = ExtResource("2_voq3k")
 shader_parameter/tile_texture = ExtResource("7_fr3p4")
@@ -83,7 +83,7 @@ offset_bottom = 93.0
 position = Vector2(0, 0)
 
 [node name="CountDownTimer" parent="." index="3" unique_id=102296066]
-time = 6.0
+time = 5.0
 
 [node name="Background" parent="." index="4" unique_id=675105712]
 material = SubResource("ShaderMaterial_4u6db")
@@ -127,7 +127,7 @@ polygon = PackedVector2Array(1119, -1049, 1028, -838, 867, -792, 586, -903, 490,
 
 [node name="NavigationRegion" parent="." index="6" unique_id=517625210]
 visible = false
-navigation_polygon = SubResource("NavigationPolygon_887xa")
+navigation_polygon = SubResource("NavigationPolygon_0maof")
 
 [node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("8_leq20")]
 position = Vector2(1174, -269)
@@ -136,19 +136,19 @@ position = Vector2(1174, -269)
 position = Vector2(1513, -679)
 
 [node name="BoostPad2" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="0" unique_id=816347687 instance=ExtResource("6_4u6db")]
-material = SubResource("ShaderMaterial_hgbcd")
+material = SubResource("ShaderMaterial_887xa")
 polygon = PackedVector2Array(1399, -321, 1325, -168, 1398, -152, 1518, -217, 1410, -341)
 direction = -28.87700000000001
 
 [node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="1" unique_id=1491510217 instance=ExtResource("6_4u6db")]
-material = SubResource("ShaderMaterial_8jvnf")
+material = SubResource("ShaderMaterial_hgbcd")
 position = Vector2(378.5, 1)
 scale = Vector2(9.366667, 3.1333334)
 polygon = PackedVector2Array(-15, -15, 0, -15, 0, 15, -15, 15)
 speed = 200.0
 
 [node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="2" unique_id=1636313232 instance=ExtResource("6_4u6db")]
-material = SubResource("ShaderMaterial_kim44")
+material = SubResource("ShaderMaterial_8jvnf")
 position = Vector2(1024, 1)
 scale = Vector2(9.366667, 3.1333334)
 polygon = PackedVector2Array(-13.238434, -15, -0.10675812, -27.765957, 0, 15)

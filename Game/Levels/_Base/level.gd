@@ -4,7 +4,7 @@
 
 func _ready() -> void:
 	if Engine.is_editor_hint(): 
-		rebake.call()
+		print_rich("[rainbow][font_size=32]Make sure to rebake your Navigation when necessary!")
 		return
 	
 	_ready_completion_zones()
@@ -19,6 +19,8 @@ func _ready() -> void:
 	PlayerManager.player.died.connect(player_dead)
 	RenderingServer.global_shader_parameter_set("outline_color", outline_color)
 	$CountDownTimer.show()
+	if PlayerManager.easy_mode:
+		$CountDownTimer.time *= 1.5
 
 const EXITING := 1.0
 var exiting := EXITING

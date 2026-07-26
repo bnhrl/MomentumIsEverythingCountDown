@@ -35,26 +35,14 @@ theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803
 text = "Back to 
 Main Menu"
 
-[node name="Btn0_TEST_REMOVE_LATER" parent="." unique_id=636891361 instance=ExtResource("3_eeebr")]
-visible = false
+[node name="BtnMode" parent="." unique_id=110476273 instance=ExtResource("2_eeebr")]
 layout_mode = 0
-offset_left = 614.0
-offset_top = 327.0
-offset_right = 638.0
-offset_bottom = 357.0
-
-[node name="BtnShowLevelButtons" parent="." unique_id=1614675331 instance=ExtResource("2_eeebr")]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 185.0
-offset_right = 616.0
-offset_bottom = 344.0
-theme_override_colors/default_color = Color(0.9098039, 0.23137255, 0.23137255, 1)
-text = "show all buttons 
-(FOR TESTING ONLY REMOVE THIS LATER)"
-default_color = Color(0.9098039, 0.23137255, 0.23137255, 1)
-hover_color = Color(0.11764706, 0.7372549, 0.4509804, 1)
-hover_size = Vector2(1.2, 1.2)
+offset_left = 485.0
+offset_top = 277.0
+offset_right = 609.0
+offset_bottom = 334.0
+theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+text = "Swap to easy mode"
 
 [node name="LevelButtons" type="Node" parent="." unique_id=1856160715]
 
@@ -214,5 +202,27 @@ position = Vector2(320, 230)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("7_jddyg")
 
+[node name="Btn0_TEST_REMOVE_LATER" parent="." unique_id=636891361 instance=ExtResource("3_eeebr")]
+visible = false
+layout_mode = 0
+offset_left = 614.0
+offset_top = 327.0
+offset_right = 638.0
+offset_bottom = 357.0
+
+[node name="BtnShowLevelButtons" parent="." unique_id=1614675331 instance=ExtResource("2_eeebr")]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 7.0
+offset_right = 628.0
+offset_bottom = 166.0
+theme_override_colors/default_color = Color(0.9098039, 0.23137255, 0.23137255, 1)
+text = "show all buttons 
+(FOR TESTING ONLY REMOVE THIS LATER)"
+default_color = Color(0.9098039, 0.23137255, 0.23137255, 1)
+hover_color = Color(0.11764706, 0.7372549, 0.4509804, 1)
+hover_size = Vector2(1.2, 1.2)
+
 [connection signal="pressed" from="BtnMainMenu" to="." method="_on_btn_main_menu_pressed"]
+[connection signal="pressed" from="BtnMode" to="." method="_on_btn_mode_pressed"]
 [connection signal="pressed" from="BtnShowLevelButtons" to="." method="_on_btn_show_level_buttons_pressed"]

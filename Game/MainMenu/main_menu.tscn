@@ -95,6 +95,16 @@ material = SubResource("ShaderMaterial_c6smh")
 offset_right = 640.0
 offset_bottom = 360.0
 
+[node name="FullscreenLabel" type="RichTextLabel" parent="." unique_id=1258388438]
+layout_mode = 0
+offset_right = 366.0
+offset_bottom = 32.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+text = "Press F11 to fullscreen at any time."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="BtnStart" to="." method="_on_btn_start_pressed"]
 [connection signal="pressed" from="BtnCredits" to="." method="_on_btn_credits_pressed"]
 [connection signal="pressed" from="BtnQuit" to="." method="_on_btn_quit_pressed"]

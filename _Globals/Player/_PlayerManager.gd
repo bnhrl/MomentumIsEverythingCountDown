@@ -1,6 +1,7 @@
 extends Node
 
 
+var easy_mode := false
 var player: Player
 func add_player(parent: Node = get_tree().get_root()) -> void:
 	if player: player.queue_free()

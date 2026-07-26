@@ -13,6 +13,9 @@ func _ready() -> void:
 		$Brain/Brain.texture = preload("uid://dhsdoswq62d2")
 	elif Scenes.current_level >= 4:
 		$Brain/Brain.texture = preload("uid://66tu2soentk")
+	
+	if PlayerManager.easy_mode:
+		$BtnMode.text = "Swap to Normal Mode"
 
 func _on_btn_main_menu_pressed() -> void:
 	Scenes.swap_scene("Main Menu")
@@ -20,3 +23,12 @@ func _on_btn_main_menu_pressed() -> void:
 func _on_btn_show_level_buttons_pressed() -> void:
 	for child in $LevelButtons.get_children():
 		child.show()
+
+
+func _on_btn_mode_pressed() -> void:
+	if PlayerManager.easy_mode:
+		PlayerManager.easy_mode = false
+		$BtnMode.text = "Swap to easy mode"
+	else:
+		PlayerManager.easy_mode = true
+		$BtnMode.text = "Swap to Normal Mode"
