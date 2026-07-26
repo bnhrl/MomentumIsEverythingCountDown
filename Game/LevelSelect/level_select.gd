@@ -28,7 +28,7 @@ func _on_btn_show_level_buttons_pressed() -> void:
 func _on_btn_mode_pressed() -> void:
 	if PlayerManager.easy_mode:
 		PlayerManager.easy_mode = false
-		$BtnMode.text = "Swap to easy mode"
+		$BtnMode.text = "Swap to Easy Mode"
 	else:
 		PlayerManager.easy_mode = true
 		$BtnMode.text = "Swap to Normal Mode"
