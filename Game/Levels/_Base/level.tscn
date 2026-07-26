@@ -20,7 +20,10 @@ shader_parameter/outline_thickness = 1.0
 
 [sub_resource type="TileSet" id="TileSet_4nsif"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_4nsif"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vgjax"]
+vertices = PackedVector2Array(637, 357, 3, 357, 3, 3, 637, 3)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 640, 0, 640, 360, 0, 360)])
 source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
 agent_radius = 3.0
@@ -84,9 +87,8 @@ tile_set = SubResource("TileSet_4nsif")
 [node name="PolygonWalls" type="Node2D" parent="WallLayer" unique_id=576414089]
 
 [node name="NavigationRegion" type="NavigationRegion2D" parent="." unique_id=517625210]
-navigation_polygon = SubResource("NavigationPolygon_4nsif")
-
-[node name="GrapplePoints" type="Node" parent="." unique_id=882760734]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_vgjax")
 
 [node name="BoostPads" type="Node" parent="." unique_id=839747053]
 
@@ -99,5 +101,7 @@ navigation_polygon = SubResource("NavigationPolygon_4nsif")
 [node name="CompletionZones" type="Node" parent="." unique_id=1863227345]
 
 [node name="Objects" type="Node" parent="." unique_id=438333042]
+
+[node name="GrapplePoints" type="Node" parent="." unique_id=882760734]
 
 [connection signal="expired" from="CountDownTimer" to="." method="_on_count_down_timer_expired"]
