@@ -3,6 +3,27 @@
 [ext_resource type="PackedScene" uid="uid://co1sgdv2x4nyr" path="res://Game/Levels/_Base/level.tscn" id="1_owcvh"]
 [ext_resource type="Shader" uid="uid://wu085sklw13i" path="res://Assets/Shaders/world_tiling_2d.gdshader" id="2_5nvu3"]
 [ext_resource type="Texture2D" uid="uid://bs8j4ds8qc7y4" path="res://Assets/Textures/background_3.png" id="3_1rxkp"]
+[ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="4_5nvu3"]
+[ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="5_1rxkp"]
+[ext_resource type="Texture2D" uid="uid://c81s1ubrggj8m" path="res://Game/PolygonWalls/WallSprites/green_tile.png" id="5_d2162"]
+[ext_resource type="Texture2D" uid="uid://0kehtus6qmol" path="res://Game/PolygonWalls/WallSprites/space_tile.png" id="6_7jqyv"]
+[ext_resource type="PackedScene" uid="uid://da77ss23u811t" path="res://Game/BoostPads/boost_pad.tscn" id="6_iye8a"]
+[ext_resource type="Texture2D" uid="uid://cat2u7ayswtl" path="res://Game/PolygonWalls/WallSprites/yellow_tile.png" id="7_efny2"]
+[ext_resource type="Texture2D" uid="uid://b1500w4u1lkct" path="res://Game/BoostPads/boost_pad.png" id="7_jyjmu"]
+[ext_resource type="PackedScene" uid="uid://dwlck6ltphhov" path="res://Game/Objects/stapler.tscn" id="8_jyjmu"]
+[ext_resource type="Texture2D" uid="uid://bbuqimppwtfs1" path="res://Game/PolygonWalls/WallSprites/red_tile2.png" id="8_nke46"]
+[ext_resource type="PackedScene" uid="uid://d3xhd06mdlv8l" path="res://Game/Enemies/WhiteBloodCell/white_blood_cell.tscn" id="8_xfkoj"]
+[ext_resource type="PackedScene" uid="uid://bjng875ivkyon" path="res://Game/Enemies/BEAmoeba/b_e_amoeba.tscn" id="9_ed1sm"]
+[ext_resource type="PackedScene" uid="uid://bvoyf8gip103i" path="res://Game/Interactable/Gate/gate.tscn" id="9_sx567"]
+[ext_resource type="PackedScene" uid="uid://bs2swopl87icu" path="res://Game/Interactable/WorldButton/world_button.tscn" id="11_211l1"]
+[ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="15_a2ar6"]
+[ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="17_2whu7"]
+[ext_resource type="PackedScene" uid="uid://cwtxwjgpcpoa" path="res://Game/Objects/large_box.tscn" id="17_2wkdb"]
+[ext_resource type="PackedScene" uid="uid://8f0iofd1efob" path="res://Game/Objects/monitor.tscn" id="18_nke46"]
+[ext_resource type="PackedScene" uid="uid://dawp8km7nx1j3" path="res://Game/Objects/desk.tscn" id="19_2whu7"]
+[ext_resource type="PackedScene" uid="uid://comwvn22x7xfy" path="res://Game/Objects/lamp.tscn" id="20_amiia"]
+[ext_resource type="PackedScene" uid="uid://b8huyx6lrvrb1" path="res://Game/Objects/mug.tscn" id="21_0826x"]
+[ext_resource type="PackedScene" uid="uid://bb3eohron17vo" path="res://Game/Objects/small_box.tscn" id="22_if42b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ki36i"]
 shader = ExtResource("2_5nvu3")
@@ -11,19 +32,493 @@ shader_parameter/tile_size = Vector2(720, 1280)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = false
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_iye8a"]
-vertices = PackedVector2Array(637, 357, 3, 357, 3, 3, 637, 3)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 640, 0, 640, 360, 0, 360)])
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_htowl"]
+shader = ExtResource("2_5nvu3")
+shader_parameter/tile_texture = ExtResource("5_d2162")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efny2"]
+shader = ExtResource("2_5nvu3")
+shader_parameter/tile_texture = ExtResource("6_7jqyv")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_euvej"]
+shader = ExtResource("2_5nvu3")
+shader_parameter/tile_texture = ExtResource("7_efny2")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2whu7"]
+shader = ExtResource("2_5nvu3")
+shader_parameter/tile_texture = ExtResource("8_nke46")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2wkdb"]
+vertices = PackedVector2Array(-727.52344, 491.71094, -679.02344, 541, -1892, 541, -802.6094, -149.02344, -613.1875, -189.03906, -693.8672, 42.117188, -781.1719, 370.25, -654.8281, -851.59375, -777.53906, -682.96875, -903.21875, -817.4922, -1531.4922, -577.6875, -1491.2109, -561.1172, -1512.9688, -518.15625, -1586.8203, -541.0078, -1576.3438, -596.1328, -997.0625, -138.99219, -1197.5, -158.03125, -1352.1797, -196.20313, -1482.7813, -277.5703, -1558.5313, -342.21094, -1892, -906, -1592.0313, -429.5078, -1556.75, -718.8281, -1358.1563, -840.8125, -1095.7109, -903.14844, -494.5703, -898.96094, -420.15625, -906, 473, 541, 302.07813, 541, 473, 424, 473, -906, 473, 394.85938, 330.72656, -282.60938, -52.703125, -861.28906, -159.70313, -906.03125, 145.07813, -442.02344, 6.96875, -716.6719, 12.0078125, -616.9297, -4.7890625, -441.89844, 0.7109375, -439.0078, -1510.7266, -509.3203, -1509.9063, -510.9297, -1496.5469, -506.8125, -1538.1406, -399.29688, -1553.3516, -399.09375, -1387.2578, -281.42188, -1375.5703, -284.1172, -1096.2813, -229.60156, -1097.1797, -234.54688, -807.0625, -246.96094, -793.5781, -242.53906, -741.1875, -300.89063, -732.65625, -292.40625, -744.89844, -309.14844, -745.6719, -308.75, -805.78125, -481.71875, -802.9922, -498.92188, -759.0703, -393.5703, -770.47656, -397.02344, -762.2578, -367.1797, -773.03906, -375.70313, -27, -617.0469, -44.757813, -448.4297, -145.1875, -441.9297, -180.24219, -464.14063, -196.96875, -515.39844, -192.96094, -610.7969, -32.953125, -704.28125, -239.9375, -443.14063, -330.72656, -282.60938, -297.28906, -366.10156, -167.02344, 386.96875, -159.02344, 0.0390625, 0, -207.07031, 159.02344, 0.046875, 167.97656, 418.29688, 145.90625, 461.47656, 95.578125, 475.9922, -702.0469, -345.90625, -738.2422, -321.4922, -747.27344, -337.2578, -755.5469, -357.96094, -718.9219, -379.95313, -560.65625, -472.78125, -472.95313, 475, -472.95313, 474.85156, -191.42969, 422, -171.6875, -859.02344, -80.32031, -817.7578, -230.97656, -671.4219, -347.85156, -867.97656, -325.46094, -709.0078, -444.54688, -705.9922, -489.32813, -843.0703, -630.1406, -804.39844, -536.3125, -673.3594, -721.15625, -671.8281, -577.10156, -566.2969, -761.84375, -453.53906, -478.95313, 474.9922, -478.95313, 475.1328, -642.9922, 482.9375, -609.84375, -355.03125, -536, -339.64844, -491.17188, -447.22656, -408.3125, -406.78125, -387.34375, -357.85156, -502.53125, -276.95313, -503.5078, -277.8125, -337.60156, -331.39063, -478.70313, 422, -475.9922, 474.9922, -663.3906, 466.25, -689.8828, 379.89844, -612.09375, 57.757813, -260.97656, -510.4922, -379.27344, -438.4922, -474.5, -486.60156, -518.8203, -514.53906, -514.0469, -562.27344, -486.72656, -626.6719, -438.35938, -646.0078, -333.64063, -649.96875, -264.9297, -616.10156, -324.0078, -387.25)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 2), PackedInt32Array(6, 0, 2), PackedInt32Array(7, 8, 9), PackedInt32Array(10, 11, 12, 13, 14), PackedInt32Array(5, 6, 2), PackedInt32Array(15, 3, 2), PackedInt32Array(16, 15, 2), PackedInt32Array(17, 16, 2), PackedInt32Array(18, 17, 2), PackedInt32Array(19, 18, 2), PackedInt32Array(19, 2, 20, 21), PackedInt32Array(13, 21, 20), PackedInt32Array(14, 13, 20, 22), PackedInt32Array(23, 22, 20), PackedInt32Array(7, 9, 24, 25), PackedInt32Array(24, 23, 20), PackedInt32Array(24, 20, 26), PackedInt32Array(26, 25, 24), PackedInt32Array(27, 28, 29), PackedInt32Array(30, 31, 32), PackedInt32Array(33, 34, 30), PackedInt32Array(33, 30, 32, 35, 36), PackedInt32Array(37, 36, 35), PackedInt32Array(38, 37, 35, 39), PackedInt32Array(40, 41, 42, 43, 44), PackedInt32Array(45, 44, 43, 46), PackedInt32Array(47, 45, 46, 48), PackedInt32Array(47, 48, 49, 50), PackedInt32Array(50, 49, 51, 52), PackedInt32Array(53, 52, 51, 54), PackedInt32Array(55, 56, 57, 58), PackedInt32Array(57, 59, 60, 58), PackedInt32Array(61, 62, 63, 64, 65, 66, 67), PackedInt32Array(68, 64, 63, 69, 70), PackedInt32Array(71, 72, 73, 74, 75, 76, 77), PackedInt32Array(78, 79, 80, 81, 82, 83), PackedInt32Array(77, 84, 85, 86), PackedInt32Array(87, 88, 67, 66, 89, 90), PackedInt32Array(90, 89, 91), PackedInt32Array(90, 91, 92, 93), PackedInt32Array(94, 93, 92, 95, 96), PackedInt32Array(96, 95, 97, 98), PackedInt32Array(98, 97, 83, 82), PackedInt32Array(99, 100, 101), PackedInt32Array(102, 78, 83), PackedInt32Array(103, 102, 83, 104, 105, 106), PackedInt32Array(107, 108, 103, 106, 109, 69), PackedInt32Array(86, 71, 77), PackedInt32Array(110, 86, 85, 111, 99), PackedInt32Array(110, 99, 101, 112, 113, 114), PackedInt32Array(115, 116, 117, 118, 119, 120, 121, 122, 123), PackedInt32Array(69, 110, 114, 107), PackedInt32Array(124, 116, 115, 68, 70), PackedInt32Array(69, 109, 70)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1895, -909, 476, -909, 476, 544, -1895, 544)])
 source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
 agent_radius = 3.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nke46"]
+resource_local_to_scene = true
+shader = ExtResource("2_5nvu3")
+shader_parameter/tile_texture = ExtResource("7_jyjmu")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 1.5707963267948966
+shader_parameter/autoscroll = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_amiia"]
+resource_local_to_scene = true
+shader = ExtResource("2_5nvu3")
+shader_parameter/tile_texture = ExtResource("7_jyjmu")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 2.792526803190927
+shader_parameter/autoscroll = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0826x"]
+resource_local_to_scene = true
+shader = ExtResource("2_5nvu3")
+shader_parameter/tile_texture = ExtResource("7_jyjmu")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 3.5297538792333323
+shader_parameter/autoscroll = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_if42b"]
+resource_local_to_scene = true
+shader = ExtResource("2_5nvu3")
+shader_parameter/tile_texture = ExtResource("7_jyjmu")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 1.5707963267948966
+shader_parameter/autoscroll = true
+
 [node name="Level11" unique_id=1414133645 instance=ExtResource("1_owcvh")]
+
+[node name="Bounds" parent="." index="0" unique_id=1811867841]
+offset_left = -1895.0
+offset_top = -909.0
+offset_right = 476.0
+offset_bottom = 544.0
+
+[node name="PlayerSpawnPoint" parent="." index="1" unique_id=1452407390]
+position = Vector2(0, -132)
 
 [node name="Background" parent="." index="4" unique_id=675105712]
 material = SubResource("ShaderMaterial_ki36i")
 
+[node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("4_5nvu3")]
+polygon = PackedVector2Array(0, -212, -162, -1, -170, 386, -193, 419, -475, 419, -328, -281, -144, -439, -21, -447, 0, -436)
+
+[node name="PolygonWall1" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="1" unique_id=1229595911 instance=ExtResource("4_5nvu3")]
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(0, -212, -162, -1, -171, 419, -475, 419, -328, -281, -144, -439, 0, -436)
+
+[node name="PolygonWall2" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="2" unique_id=705145413 instance=ExtResource("4_5nvu3")]
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(-171, 419, -148, 464, -96, 479, 476, 478, 477, 543, -288, 547, -475, 419)
+
+[node name="PolygonWall3" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="3" unique_id=1409620647 instance=ExtResource("4_5nvu3")]
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(477, 542, 663, 553, 725, 490, 778, 370, 691, 43, 572, -298, 531, -298, 506, -276, 615, 57, 693, 380, 666, 468, 644, 486, 476, 478)
+
+[node name="PolygonWall4" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="4" unique_id=556778617 instance=ExtResource("4_5nvu3")]
+material = SubResource("ShaderMaterial_htowl")
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(507, -278, 531, -298, 572, -297, 592, -240, 658, -247, 724, -286, 744, -314, 701, -343, 610, -352, 538, -337)
+
+[node name="PolygonWall5" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="5" unique_id=2122946026 instance=ExtResource("4_5nvu3")]
+material = SubResource("ShaderMaterial_efny2")
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(444, -703, 534, -671, 574, -566, 558, -475, 490, -450, 406, -409, 385, -360, 338, -335, 302, -366, 326, -385, 381, -436, 476, -484, 522, -513, 517, -563, 489, -629, 439, -649, 333, -653, 262, -618, 258, -511, 238, -447, 184, -466, 200, -515, 196, -610, 233, -669, 326, -706)
+
+[node name="PolygonWall6" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="6" unique_id=701071090 instance=ExtResource("4_5nvu3")]
+material = SubResource("ShaderMaterial_htowl")
+rotation = 3.1415927
+scale = Vector2(1, -1)
+polygon = PackedVector2Array(777.00006, -374.99994, 814, -452, 776, -680, 653, -849, 494, -896, 346, -910, 165, -905, 55, -859, -4, -716, -9, -617, 8, -440, 21, -447, 42, -446, 24, -617, 30, -705, 78, -820, 171, -862, 348, -871, 490, -846, 632, -807, 724, -673, 765, -453, 723, -381, 758.00006, -359.99994)
+
+[node name="PolygonWall7" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="7" unique_id=1868759697 instance=ExtResource("4_5nvu3")]
+material = SubResource("ShaderMaterial_euvej")
+rotation = 3.1415927
+scale = Vector2(1, -1)
+polygon = PackedVector2Array(813.00006, -455.99994, 777.00006, -677.99994, 905.00006, -814.99994, 1096.0001, -899.9999, 1357.0001, -837.9999, 1554.0001, -716.9999, 1573, -597.9999, 1530.3545, -580.4633, 1466, -553.9999, 1307, -660.9999, 1176, -632.9999, 1009.00006, -576.99994, 902.00006, -507.9999)
+
+[node name="PolygonWall8" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="8" unique_id=780090973 instance=ExtResource("4_5nvu3")]
+material = SubResource("ShaderMaterial_euvej")
+rotation = 3.1415927
+scale = Vector2(1, -1)
+polygon = PackedVector2Array(1584, -536.9999, 1487, -506.99988, 1504, -436.99988, 1456, -362.99988, 1320, -306.99988, 1173, -280.9999, 978, -269.9999, 814, -276.99994, 744, -312.99994, 725, -286.99994, 660, -247.99994, 593, -239.99995, 609, -192.99995, 803, -151.99992, 997, -141.99991, 1197, -160.9999, 1351, -198.99988, 1481, -279.99988, 1556, -343.99988, 1589, -429.99985)
+
+[node name="PolygonWall9" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="9" unique_id=2093787313 instance=ExtResource("4_5nvu3")]
+material = SubResource("ShaderMaterial_2whu7")
+rotation = 3.1415927
+scale = Vector2(1, -1)
+polygon = PackedVector2Array(1584, -536.9999, 1589, -431.99985, 1562, -360.99988, 1508, -304.99988, 1541, 484.00012, 1710, 522.0001, 1707, 411.00015, 1631, 389.00015, 1622, -533.9999)
+
+[node name="PolygonWall10" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="10" unique_id=1401286621 instance=ExtResource("4_5nvu3")]
+material = SubResource("ShaderMaterial_2whu7")
+position = Vector2(-3412, -2)
+rotation = 3.1415927
+scale = Vector2(-1, -1)
+polygon = PackedVector2Array(1534, -537.0001, 1541, 484.00012, 1710, 522.0001, 1705, 413.00015, 1631, 389.00015, 1622, -533.9999)
+
+[node name="PolygonWall11" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="11" unique_id=991424314 instance=ExtResource("4_5nvu3")]
+material = SubResource("ShaderMaterial_2whu7")
+polygon = PackedVector2Array(-1790, -536, -1775, -735, -1702, -798, -1625, -806, -1567, -762, -1554, -717, -1515, -741, -1464, -772, -1563, -880, -1636, -890, -1738, -888, -1805, -837, -1879, -771, -1875, -671, -1878, -539)
+
 [node name="NavigationRegion" parent="." index="6" unique_id=517625210]
 visible = false
-navigation_polygon = SubResource("NavigationPolygon_iye8a")
+navigation_polygon = SubResource("NavigationPolygon_2wkdb")
+
+[node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("5_1rxkp")]
+position = Vector2(0, -24)
+
+[node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="1" unique_id=898931748 instance=ExtResource("5_1rxkp")]
+position = Vector2(-561, 290)
+
+[node name="GrapplePoint2" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="2" unique_id=1055405145 instance=ExtResource("5_1rxkp")]
+position = Vector2(-488, -27)
+
+[node name="GrapplePoint3" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="3" unique_id=139246114 instance=ExtResource("5_1rxkp")]
+position = Vector2(-424, -253)
+
+[node name="GrapplePoint4" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="4" unique_id=859746947 instance=ExtResource("5_1rxkp")]
+position = Vector2(-600, -416)
+
+[node name="GrapplePoint18" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="5" unique_id=1155941022 instance=ExtResource("5_1rxkp")]
+position = Vector2(-764, -333)
+
+[node name="GrapplePoint5" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="6" unique_id=564945045 instance=ExtResource("5_1rxkp")]
+position = Vector2(-650, -599)
+
+[node name="GrapplePoint6" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="7" unique_id=1887329187 instance=ExtResource("5_1rxkp")]
+position = Vector2(-383, -786)
+
+[node name="GrapplePoint7" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="8" unique_id=423087188 instance=ExtResource("5_1rxkp")]
+position = Vector2(-128, -653)
+
+[node name="GrapplePoint8" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="9" unique_id=843741428 instance=ExtResource("5_1rxkp")]
+position = Vector2(-248, -384)
+
+[node name="GrapplePoint9" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="10" unique_id=266178122 instance=ExtResource("5_1rxkp")]
+position = Vector2(-908, -407)
+
+[node name="GrapplePoint10" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="11" unique_id=752273147 instance=ExtResource("5_1rxkp")]
+position = Vector2(-908, -407)
+
+[node name="GrapplePoint11" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="12" unique_id=345724744 instance=ExtResource("5_1rxkp")]
+position = Vector2(-1066, -512)
+
+[node name="GrapplePoint12" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="13" unique_id=851397042 instance=ExtResource("5_1rxkp")]
+position = Vector2(-1229, -545)
+
+[node name="GrapplePoint13" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="14" unique_id=557525842 instance=ExtResource("5_1rxkp")]
+position = Vector2(-1348, -529)
+
+[node name="GrapplePoint14" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="15" unique_id=1070139875 instance=ExtResource("5_1rxkp")]
+position = Vector2(-1399, -447)
+
+[node name="GrapplePoint15" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="16" unique_id=590429686 instance=ExtResource("5_1rxkp")]
+position = Vector2(-1287, -389)
+
+[node name="GrapplePoint16" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="17" unique_id=1287449479 instance=ExtResource("5_1rxkp")]
+position = Vector2(-1145, -352)
+
+[node name="GrapplePoint17" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="18" unique_id=1140204883 instance=ExtResource("5_1rxkp")]
+position = Vector2(-1007, -344)
+
+[node name="GrapplePoint19" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="19" unique_id=1825450367 instance=ExtResource("5_1rxkp")]
+position = Vector2(-1572, -566)
+
+[node name="GrapplePoint20" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="20" unique_id=1224553730 instance=ExtResource("5_1rxkp")]
+position = Vector2(-1463, -524)
+
+[node name="GrapplePoint21" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="21" unique_id=1098877587 instance=ExtResource("5_1rxkp")]
+position = Vector2(-1175, -454)
+
+[node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="0" unique_id=816347687 instance=ExtResource("6_iye8a")]
+material = SubResource("ShaderMaterial_nke46")
+position = Vector2(0, 72)
+polygon = PackedVector2Array(-200, -30, 0, 0, 200, -30, 0, 30)
+spin_speed = 0.0
+direction = 90.0
+speed = 300.0
+
+[node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="1" unique_id=882045416 instance=ExtResource("6_iye8a")]
+material = SubResource("ShaderMaterial_amiia")
+position = Vector2(0, 449)
+polygon = PackedVector2Array(-452, -134, 204, -121, 200, 30, -476, 30, -483, 1)
+spin_speed = 0.0
+direction = 160.0
+
+[node name="BoostPad2" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="2" unique_id=1580167797 instance=ExtResource("6_iye8a")]
+material = SubResource("ShaderMaterial_0826x")
+position = Vector2(0, 449)
+polygon = PackedVector2Array(-773, -829, -788, -815, -793, -789, -791, -762, -776, -745, -734, -768, -741, -795, -760, -810, -762, -816)
+spin_speed = 0.0
+direction = 202.24
+
+[node name="BoostPad3" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="3" unique_id=964371779 instance=ExtResource("6_iye8a")]
+material = SubResource("ShaderMaterial_if42b")
+polygon = PackedVector2Array(-1564, -600, -1685, -631, -1784, -610, -1790, -667, -1772, -798, -1621, -821, -1540, -769, -1559, -645)
+spin_speed = 0.0
+direction = 90.0
+speed = 2400.0
+
+[node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="0" unique_id=1337174415 instance=ExtResource("9_sx567")]
+position = Vector2(-465.52637, -877.2602)
+polygon = PackedVector2Array(-309.47363, 504.2602, -275.47363, 531.2602, -267.47363, 561.2602, -230.47363, 541.2602, -265.47363, 525.2602, -273.47363, 483.2602)
+
+[node name="Gate1" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="1" unique_id=2069885565 instance=ExtResource("9_sx567")]
+position = Vector2(-465.52637, -877.2602)
+polygon = PackedVector2Array(230.52637, 428.2602, 263.52637, 449.2602, 273.52637, 488.2602, 314.52637, 458.2602, 277.52637, 442.2602, 270.52637, 411.2602)
+displays_notification = false
+
+[node name="Gate2" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="2" unique_id=1452078228 instance=ExtResource("9_sx567")]
+position = Vector2(-465.52637, -877.2602)
+polygon = PackedVector2Array(115.52637, 531.2602, 155.52637, 554.2602, 163.52637, 589.2602, 207.52637, 554.2602, 166.52637, 543.2602, 159.52637, 514.2602)
+displays_notification = false
+
+[node name="Gate3" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="3" unique_id=198413990 instance=ExtResource("9_sx567")]
+position = Vector2(-457.05273, -873.5204)
+polygon = PackedVector2Array(-1042.4736, 286.2602, -1076.4736, 378.2602, -1059.4736, 379.2602, -1028.4736, 289.2602)
+
+[node name="Gate4" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="4" unique_id=972973371 instance=ExtResource("9_sx567")]
+position = Vector2(-479.52637, -882.2602)
+polygon = PackedVector2Array(-1042.4736, 286.2602, -1076.4736, 378.2602, -1059.4736, 379.2602, -1028.4736, 289.2602)
+
+[node name="Gate5" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="5" unique_id=1457580352 instance=ExtResource("9_sx567")]
+position = Vector2(-500.52637, -892.2602)
+polygon = PackedVector2Array(-1042.4736, 286.2602, -1076.4736, 378.2602, -1059.4736, 379.2602, -1028.4736, 289.2602)
+
+[node name="WorldButton0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="6" unique_id=1576954058 instance=ExtResource("11_211l1")]
+position = Vector2(-109, -483)
+
+[node name="WorldButton1" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="7" unique_id=967623149 instance=ExtResource("11_211l1")]
+position = Vector2(-1136, -560)
+
+[node name="WorldButton2" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="8" unique_id=1765768919 instance=ExtResource("11_211l1")]
+position = Vector2(-1222, -358)
+
+[node name="WorldButton3" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="9" unique_id=1924278173 instance=ExtResource("11_211l1")]
+position = Vector2(-1390, -493)
+
+[node name="WhiteBloodCell0" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="0" unique_id=613541596 instance=ExtResource("8_xfkoj")]
+position = Vector2(-528, 125)
+max_dist_from_origin = 50
+
+[node name="WhiteBloodCell1" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="1" unique_id=134678594 instance=ExtResource("8_xfkoj")]
+position = Vector2(-488, -368)
+max_dist_from_origin = 50
+
+[node name="WhiteBloodCell2" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="2" unique_id=1445085051 instance=ExtResource("8_xfkoj")]
+position = Vector2(-654, -544)
+max_dist_from_origin = 50
+
+[node name="WhiteBloodCell3" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="3" unique_id=68846319 instance=ExtResource("8_xfkoj")]
+position = Vector2(-586, -727)
+max_dist_from_origin = 50
+
+[node name="WhiteBloodCell4" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="4" unique_id=270488596 instance=ExtResource("8_xfkoj")]
+position = Vector2(-336, -787)
+max_dist_from_origin = 50
+
+[node name="WhiteBloodCell5" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="5" unique_id=1306852258 instance=ExtResource("8_xfkoj")]
+position = Vector2(-139, -704)
+max_dist_from_origin = 50
+
+[node name="WhiteBloodCell6" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="6" unique_id=346544981 instance=ExtResource("8_xfkoj")]
+position = Vector2(-111, -554)
+max_dist_from_origin = 50
+
+[node name="BEAmoeba1" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="7" unique_id=264345771 instance=ExtResource("9_ed1sm")]
+position = Vector2(-457, -133)
+speed = 20000.0
+max_dist_from_origin = 100
+
+[node name="BEAmoeba2" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="8" unique_id=787658793 instance=ExtResource("9_ed1sm")]
+position = Vector2(-663, -444)
+
+[node name="BEAmoeba3" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="9" unique_id=95793932 instance=ExtResource("9_ed1sm")]
+position = Vector2(-488, -760)
+
+[node name="BEAmoeba4" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="10" unique_id=684224002 instance=ExtResource("9_ed1sm")]
+position = Vector2(-112, -483)
+max_dist_from_origin = 10
+
+[node name="BEAmoeba0" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="11" unique_id=1500396249 instance=ExtResource("9_ed1sm")]
+position = Vector2(-1746, 302)
+speed = 40000.0
+idle_movement = false
+
+[node name="BEAmoeba5" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="12" unique_id=2096957650 instance=ExtResource("9_ed1sm")]
+position = Vector2(-1701, 302)
+speed = 40000.0
+idle_movement = false
+
+[node name="BEAmoeba6" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="13" unique_id=529986796 instance=ExtResource("9_ed1sm")]
+position = Vector2(-1661, 302)
+speed = 40000.0
+idle_movement = false
+
+[node name="BEAmoeba7" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="14" unique_id=517841678 instance=ExtResource("9_ed1sm")]
+position = Vector2(-1746, 326)
+speed = 40000.0
+idle_movement = false
+
+[node name="BEAmoeba8" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="15" unique_id=1299140856 instance=ExtResource("9_ed1sm")]
+position = Vector2(-1701, 326)
+speed = 40000.0
+idle_movement = false
+
+[node name="BEAmoeba9" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="16" unique_id=198949825 instance=ExtResource("9_ed1sm")]
+position = Vector2(-1661, 326)
+speed = 40000.0
+idle_movement = false
+
+[node name="BEAmoeba10" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="17" unique_id=1158446139 instance=ExtResource("9_ed1sm")]
+position = Vector2(-1747, 351)
+speed = 40000.0
+idle_movement = false
+
+[node name="BEAmoeba11" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="18" unique_id=906263991 instance=ExtResource("9_ed1sm")]
+position = Vector2(-1702, 351)
+speed = 40000.0
+idle_movement = false
+
+[node name="BEAmoeba12" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="19" unique_id=580026422 instance=ExtResource("9_ed1sm")]
+position = Vector2(-1662, 351)
+speed = 40000.0
+idle_movement = false
+
+[node name="DeathPit0" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("15_a2ar6")]
+position = Vector2(-1107, -446)
+polygon = PackedVector2Array(-171, -126, -244, -26, -283, 58, -291, 169, -10, 231, 314.54138, 206.41101, 381, 152, 357, 110, 347, 85, 351, 52, 271.54138, -138.58899, -13, -251)
+outer = 0.95
+inner = 0.9
+collider = 0.7
+
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("17_2whu7")]
+position = Vector2(-1710, 389)
+
+[node name="Stapler" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="0" unique_id=1695913543 instance=ExtResource("8_jyjmu")]
+position = Vector2(-631, 442.99997)
+rotation = 0.7853982
+
+[node name="LargeBox" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="1" unique_id=1163507042 instance=ExtResource("17_2wkdb")]
+position = Vector2(-1254.9999, -312)
+rotation = -1.282601
+scale = Vector2(0.5, 0.5)
+
+[node name="Monitor" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="2" unique_id=2026811551 instance=ExtResource("18_nke46")]
+position = Vector2(-1421, -369)
+rotation = 0.5499947
+scale = Vector2(0.5, 0.5)
+
+[node name="Desk" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="3" unique_id=1398311033 instance=ExtResource("19_2whu7")]
+position = Vector2(-1341, -341)
+rotation = 0.35885295
+scale = Vector2(0.5, 0.5)
+
+[node name="LargeBox4" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="4" unique_id=1307351725 instance=ExtResource("17_2wkdb")]
+position = Vector2(-848, -293)
+rotation = -1.6158489
+scale = Vector2(0.5, 0.5)
+
+[node name="Monitor4" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="5" unique_id=1344829732 instance=ExtResource("18_nke46")]
+position = Vector2(-977.00006, -287.99997)
+rotation = 0.0268453
+scale = Vector2(0.5, 0.5)
+
+[node name="Desk4" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="6" unique_id=1381186969 instance=ExtResource("19_2whu7")]
+position = Vector2(-911, -288.00003)
+rotation = -0.12867421
+scale = Vector2(0.5, 0.5)
+
+[node name="Lamp" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="7" unique_id=126478080 instance=ExtResource("20_amiia")]
+position = Vector2(-1188, -301)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="Mug" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="8" unique_id=1508774279 instance=ExtResource("21_0826x")]
+position = Vector2(-1137, -295.99997)
+rotation = 0.2617994
+scale = Vector2(0.49999997, 0.49999997)
+
+[node name="SmallBox" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="9" unique_id=1742461337 instance=ExtResource("22_if42b")]
+position = Vector2(-1096, -291)
+scale = Vector2(0.5, 0.5)
+
+[node name="Stapler2" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="10" unique_id=543087885 instance=ExtResource("8_jyjmu")]
+position = Vector2(-1044, -294)
+scale = Vector2(0.5, 0.5)
+
+[node name="Stapler4" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="11" unique_id=1833785992 instance=ExtResource("8_jyjmu")]
+position = Vector2(-1467.9999, -419.00003)
+rotation = 0.896585
+scale = Vector2(0.5, 0.5)
+
+[node name="LargeBox2" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="12" unique_id=687429231 instance=ExtResource("17_2wkdb")]
+position = Vector2(-1217, -619)
+rotation = -4.6204715
+scale = Vector2(0.5, 0.5)
+
+[node name="Monitor2" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="13" unique_id=57727710 instance=ExtResource("18_nke46")]
+position = Vector2(-1369, -592)
+rotation = -3.611303
+scale = Vector2(0.49999994, 0.49999994)
+
+[node name="Desk2" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="14" unique_id=1633016833 instance=ExtResource("19_2whu7")]
+position = Vector2(-1286.0001, -624)
+rotation = -3.2152069
+scale = Vector2(0.5, 0.5)
+
+[node name="LargeBox3" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="15" unique_id=1051506598 instance=ExtResource("17_2wkdb")]
+position = Vector2(-838, -440)
+rotation = -3.6293602
+scale = Vector2(0.5, 0.5)
+
+[node name="Monitor3" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="16" unique_id=333541633 instance=ExtResource("18_nke46")]
+position = Vector2(-958, -517)
+rotation = -2.6201918
+scale = Vector2(0.49999994, 0.49999994)
+
+[node name="Desk3" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="17" unique_id=1477254887 instance=ExtResource("19_2whu7")]
+position = Vector2(-896, -477)
+rotation = -2.5040092
+scale = Vector2(0.5, 0.5)
+
+[node name="Lamp2" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="18" unique_id=1026602222 instance=ExtResource("20_amiia")]
+position = Vector2(-1150, -603)
+rotation = -1.2180732
+scale = Vector2(0.5, 0.5)
+
+[node name="Mug2" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="19" unique_id=1723559802 instance=ExtResource("21_0826x")]
+position = Vector2(-1100, -583)
+rotation = -3.0496752
+scale = Vector2(0.4999999, 0.4999999)
+
+[node name="SmallBox2" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="20" unique_id=245889190 instance=ExtResource("22_if42b")]
+position = Vector2(-1059.0001, -571)
+rotation = -2.8462474
+scale = Vector2(0.5, 0.5)
+
+[node name="Stapler3" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="21" unique_id=323520528 instance=ExtResource("8_jyjmu")]
+position = Vector2(-1013, -551)
+rotation = -2.883057
+scale = Vector2(0.5, 0.5)
+
+[connection signal="pressed" from="Interactables/WorldButton0" to="Interactables/Gate0" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton0" to="Interactables/Gate1" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton0" to="Interactables/Gate2" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton1" to="Interactables/Gate3" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton2" to="Interactables/Gate4" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton3" to="Interactables/Gate5" method="disable"]

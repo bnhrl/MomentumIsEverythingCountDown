@@ -1,13 +1,15 @@
 @tool class_name DeathPit extends Polygon2D
 
-
+@export var outer := 0.8
+@export var inner := 0.6
+@export var collider := 0.5
 @export var momentum_required := 200.0
 
 func _ready() -> void:
 	refresh.call()
 	
 	if Engine.is_editor_hint(): return
-	$FallArea/Collision.polygon = shrink_polygon(polygon, 0.5)
+	$FallArea/Collision.polygon = shrink_polygon(polygon, collider)
 
 func _process(_delta: float) -> void:
 	_process_falling()
@@ -18,8 +20,8 @@ func _process(_delta: float) -> void:
 	update_visuals()
 
 func update_visuals() -> void:
-	$Dark.polygon = shrink_polygon(polygon, 0.8)
-	$Dark/Darker.polygon = shrink_polygon(polygon, 0.6)
+	$Dark.polygon = shrink_polygon(polygon, outer)
+	$Dark/Darker.polygon = shrink_polygon(polygon, inner)
 
 func shrink_polygon(array: PackedVector2Array, amount: float) -> PackedVector2Array:
 	var temp: Array[Vector2]
