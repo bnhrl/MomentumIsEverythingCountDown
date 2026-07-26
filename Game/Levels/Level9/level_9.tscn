@@ -207,16 +207,16 @@ position = Vector2(1513, -679)
 
 [node name="Tutorial0" type="RichTextLabel" parent="." index="14" unique_id=951256283]
 clip_contents = false
-offset_left = 455.0
-offset_top = -54.0
-offset_right = 697.0
-offset_bottom = 54.0
+offset_left = 72.0
+offset_top = -194.0
+offset_right = 314.0
+offset_bottom = -86.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 theme_override_constants/outline_size = 4
 bbcode_enabled = true
-text = "BOOST PADS rapidly move you in the direction they are facing."
+text = "BOOST PADS shoot you in the direction they face."
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1

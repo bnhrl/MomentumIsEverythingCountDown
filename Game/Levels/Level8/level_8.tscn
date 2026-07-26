@@ -215,16 +215,16 @@ position = Vector2(3789, 1421)
 
 [node name="Tutorial0" type="RichTextLabel" parent="." index="14" unique_id=540437513]
 clip_contents = false
-offset_left = 433.0
-offset_top = 279.0
-offset_right = 675.0
-offset_bottom = 387.0
+offset_left = 461.0
+offset_top = 353.0
+offset_right = 652.0
+offset_bottom = 461.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 theme_override_constants/outline_size = 4
 bbcode_enabled = true
-text = "Ricocheting off of BOUNCY OBJECTS increases your MOMENTUM."
+text = "Special OBJECTS can be ricocheted off of for a speed boost."
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
