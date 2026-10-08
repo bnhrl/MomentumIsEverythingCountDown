@@ -88,6 +88,7 @@ func player_dead() -> void:
 	if completed: return
 	
 	await Scenes._fade_in(0.333)
+	if !get_tree(): return
 	get_tree().reload_current_scene()
 	Effects.unintensify()
 	Scenes._fade_out(0.25)

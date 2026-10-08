@@ -45,8 +45,20 @@ texture = ExtResource("3_5g5lb")
 material = SubResource("ShaderMaterial_8uv83")
 
 [node name="Logo" type="Sprite2D" parent="MainMenu/Logo" unique_id=459210881]
+unique_name_in_owner = true
 position = Vector2(320, 132)
 texture = ExtResource("5_052h3")
+
+[node name="LabelBtnDescription" type="RichTextLabel" parent="." unique_id=1869460710]
+layout_mode = 0
+offset_top = 314.0
+offset_right = 640.0
+offset_bottom = 354.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+bbcode_enabled = true
+text = "[wave]Hover a button button hover theory"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BtnStart" parent="." unique_id=1301211313 instance=ExtResource("1_38cx4")]
 layout_mode = 0
@@ -95,6 +107,12 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="button_hovered" from="BtnStart" to="." method="button_hovered"]
+[connection signal="button_unhovered" from="BtnStart" to="." method="button_unhovered"]
 [connection signal="pressed" from="BtnStart" to="." method="_on_btn_start_pressed"]
+[connection signal="button_hovered" from="BtnCredits" to="." method="button_hovered"]
+[connection signal="button_unhovered" from="BtnCredits" to="." method="button_unhovered"]
 [connection signal="pressed" from="BtnCredits" to="." method="_on_btn_credits_pressed"]
+[connection signal="button_hovered" from="BtnQuit" to="." method="button_hovered"]
+[connection signal="button_unhovered" from="BtnQuit" to="." method="button_unhovered"]
 [connection signal="pressed" from="BtnQuit" to="." method="_on_btn_quit_pressed"]

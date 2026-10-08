@@ -20,6 +20,8 @@ func _process(delta: float) -> void:
 @export var hover_size := Vector2(1.5, 1.5)
 var hovered := false
 @onready var color := default_color
+signal button_hovered(button: UIButton)
+signal button_unhovered(button: UIButton)
 
 func hover() -> void:
 	hovered = true
@@ -27,10 +29,12 @@ func hover() -> void:
 	$AudioPlayer.volume_db = -15.0
 	$AudioPlayer.stream = preload("uid://cfl330np7shdc")
 	$AudioPlayer.play()
+	button_hovered.emit(self)
 
 func unhover() -> void:
 	hovered = false
 	Cursor.set_animation()
+	button_unhovered.emit(self)
 
 func _process_hovering(delta: float) -> void:
 	if !hovered:
