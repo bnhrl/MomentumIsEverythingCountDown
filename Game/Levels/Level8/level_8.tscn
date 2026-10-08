@@ -90,6 +90,7 @@ source_geometry_group_name = &"navigation_group"
 agent_radius = 3.0
 
 [node name="Level8" unique_id=1414133645 instance=ExtResource("1_50bsj")]
+outline_color = Color(0.49803922, 0.4392157, 0.5411765, 1)
 
 [node name="Bounds" parent="." index="0" unique_id=1811867841]
 offset_left = 95.0

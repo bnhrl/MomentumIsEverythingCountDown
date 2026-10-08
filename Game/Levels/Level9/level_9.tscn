@@ -72,6 +72,7 @@ shader_parameter/rotation = -1.4835298641951802
 shader_parameter/autoscroll = true
 
 [node name="Level9" unique_id=1414133645 instance=ExtResource("1_50bsj")]
+outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 
 [node name="Bounds" parent="." index="0" unique_id=1811867841]
 offset_left = -186.0

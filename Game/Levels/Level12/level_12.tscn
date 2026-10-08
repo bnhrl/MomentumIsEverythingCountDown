@@ -175,6 +175,7 @@ shader_parameter/autoscroll = true
 
 [node name="Level12" unique_id=1414133645 instance=ExtResource("1_7nrx8")]
 script = ExtResource("2_qs011")
+outline_color = Color(0.5137255, 0.10980392, 0.3647059, 1)
 
 [node name="Bounds" parent="." index="0" unique_id=1811867841]
 offset_left = -9998.0
