@@ -4,7 +4,7 @@ extends Control
 func _ready() -> void:
 	buttons.shuffle()
 	for i in range(buttons.size()):
-		buttons[i].position.y = 124.0 + 55*i
+		buttons[i].position.y = 92.0 + 55*i
 	var tween := create_tween()
 	tween.tween_property(self, "scale:y", 1.0, 0.5).set_trans(Tween.TRANS_ELASTIC).from(0)
 
@@ -32,3 +32,10 @@ func open_page(page: String) -> void:
 
 func _on_btn_close_pressed() -> void:
 	close()
+
+
+func _on_btn_source_pressed() -> void:
+	OS.shell_open("https://github.com/bnhrl/MomentumIsEverythingCountDown")
+
+func _on_btn_asset_credits_pressed() -> void:
+	OS.shell_open("https://github.com/bnhrl/MomentumIsEverythingCountDown/blob/main/Assets/assets_credits.txt")

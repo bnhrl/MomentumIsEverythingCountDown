@@ -20,25 +20,26 @@ color = Color(0.91775256, 0.67851543, 0.92947316, 0.75000006)
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=387886005]
 layout_mode = 0
+offset_top = -16.0
 offset_right = 135.0
-offset_bottom = 31.5
+offset_bottom = 10.0
 scale = Vector2(4, 4)
 mouse_filter = 2
 theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "Credits"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BtnBnhrl" parent="." unique_id=1301211313 instance=ExtResource("1_fixii")]
 layout_mode = 0
-offset_top = 124.0
+offset_top = 92.0
 offset_right = 270.0
-offset_bottom = 151.5
+offset_bottom = 119.5
 scale = Vector2(2, 2)
 theme_override_colors/default_color = Color(0.043137256, 0.36862746, 0.39607844, 1)
-bbcode_enabled = true
 text = "[img]uid://cxsfj2ud8ou1d[/img] bnhrl[font_size=8] (Benjamin Haroldsen)"
 default_color = Color(0.043137256, 0.36862746, 0.39607844, 1)
 hover_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
@@ -46,12 +47,11 @@ hover_size = Vector2(1.25, 2)
 
 [node name="BtnCatJug" parent="." unique_id=1360234817 instance=ExtResource("1_fixii")]
 layout_mode = 0
-offset_top = 179.0
+offset_top = 147.0
 offset_right = 270.0
-offset_bottom = 206.5
+offset_bottom = 174.5
 scale = Vector2(2, 2)
 theme_override_colors/default_color = Color(0.11764706, 0.7372549, 0.4509804, 1)
-bbcode_enabled = true
 text = "[img]uid://cnmn256wehj7b[/img] Cat Jug[font_size=8] (Eris)"
 default_color = Color(0.11764706, 0.7372549, 0.4509804, 1)
 hover_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
@@ -59,12 +59,11 @@ hover_size = Vector2(1.25, 2)
 
 [node name="BtnCuptain" parent="." unique_id=1438333758 instance=ExtResource("1_fixii")]
 layout_mode = 0
-offset_top = 234.0
+offset_top = 202.0
 offset_right = 270.0
-offset_bottom = 261.5
+offset_bottom = 229.5
 scale = Vector2(2, 2)
 theme_override_colors/default_color = Color(0.68235296, 0.13725491, 0.20392157, 1)
-bbcode_enabled = true
 text = "[img]uid://mu38c2ikqdnk[/img] ChiefCuptain[font_size=8] (Jack Nolan)"
 default_color = Color(0.68235296, 0.13725491, 0.20392157, 1)
 hover_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
@@ -80,7 +79,39 @@ text = "X"
 default_color = Color(0.91764706, 0.6784314, 0.92941177, 1)
 hover_size = Vector2(2, 2)
 
+[node name="BtnSource" parent="." unique_id=1543335770 instance=ExtResource("1_fixii")]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 266.0
+offset_right = 185.0
+offset_bottom = 308.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Source"
+vertical_alignment = 0
+default_color = Color(1, 1, 1, 1)
+hover_color = Color(0.706441, 0.5381466, 1, 1)
+hover_size = Vector2(1.25, 1.6)
+
+[node name="BtnAssetCredits" parent="." unique_id=1009396177 instance=ExtResource("1_fixii")]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 266.0
+offset_right = 477.0
+offset_bottom = 308.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Asset Credits"
+vertical_alignment = 0
+default_color = Color(1, 1, 1, 1)
+hover_color = Color(0.7456534, 1, 0.51885736, 1)
+hover_size = Vector2(1.25, 1.6)
+
 [connection signal="pressed" from="BtnBnhrl" to="." method="_on_btn_bnhrl_pressed"]
 [connection signal="pressed" from="BtnCatJug" to="." method="_on_btn_cat_jug_pressed"]
 [connection signal="pressed" from="BtnCuptain" to="." method="_on_btn_cuptain_pressed"]
 [connection signal="pressed" from="BtnClose" to="." method="_on_btn_close_pressed"]
+[connection signal="pressed" from="BtnSource" to="." method="_on_btn_source_pressed"]
+[connection signal="pressed" from="BtnAssetCredits" to="." method="_on_btn_asset_credits_pressed"]
