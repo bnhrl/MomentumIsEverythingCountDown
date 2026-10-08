@@ -3,15 +3,18 @@ extends CanvasLayer
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_fade_out()
+	_ready_pause_menu()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		if get_tree().paused:
 			get_tree().paused = false
 			Effects.unobscure()
+			pause_menu.close()
 		else:
 			get_tree().paused = true
 			Effects.obscure()
+			pause_menu.open()
 
 const SCENES: Dictionary[String, PackedScene] = {
 	"Main Menu":preload("uid://bd8qt04xi4h20"),
@@ -57,6 +60,11 @@ func _fade_out(time := 0.5) -> Signal:
 	tween.tween_property(fade, "visible", false, 0.0)
 	return tween.finished
 
+
+var pause_menu: CanvasLayer
+func _ready_pause_menu() -> void:
+	pause_menu = preload("uid://d8wmsmcmwfck").instantiate()
+	add_child(pause_menu)
 
 
 var current_level := 1

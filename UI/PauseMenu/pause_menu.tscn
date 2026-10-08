@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d8wmsmcmwfck"]
+
+[ext_resource type="Material" uid="uid://behb1ngel53g" path="res://Assets/Materials/outline_2d.tres" id="1_t3iro"]
+[ext_resource type="Script" uid="uid://bk7mfbw2ds6qi" path="res://UI/PauseMenu/pause_menu.gd" id="1_w5vkt"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1240024196]
+layer = 9
+script = ExtResource("1_w5vkt")
+
+[node name="Back" type="ColorRect" parent="." unique_id=350190489]
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1182622038]
+material = ExtResource("1_t3iro")
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+bbcode_enabled = true
+text = "[font_size=32]game paused[/font_size]
+Press [TAB] to unpause"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SideLeft" type="ColorRect" parent="." unique_id=1054860761]
+offset_left = -170.0
+offset_right = 70.0
+offset_bottom = 240.0
+rotation = -0.7853982
+mouse_filter = 2
+color = Color(0.78031605, 0.86290884, 0.815826, 0.67)
+
+[node name="SideRight" type="ColorRect" parent="." unique_id=386782155]
+offset_left = 470.0
+offset_top = 360.0
+offset_right = 710.0
+offset_bottom = 600.0
+rotation = -0.7853982
+mouse_filter = 2
+color = Color(0.78031605, 0.86290884, 0.815826, 0.67)

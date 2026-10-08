@@ -32,6 +32,7 @@ animations = [{
 }]
 
 [node name="Cursor" type="CanvasLayer" unique_id=607214282]
+layer = 10
 script = ExtResource("1_8fpq0")
 
 [node name="CursorObject" type="Node2D" parent="." unique_id=724732679]
