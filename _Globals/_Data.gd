@@ -35,4 +35,7 @@ func save() -> void:
 	var json_string := JSON.stringify(save_data)
 	save_file.store_line(json_string)
 	save_file.close()
-	
+
+func reset_save() -> void:
+	Scenes.current_level = 1
+	save()

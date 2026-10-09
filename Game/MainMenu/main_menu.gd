@@ -66,3 +66,16 @@ func button_hovered(button: UIButton) -> void:
 
 func button_unhovered(_button: UIButton) -> void:
 	lbd_hovered = false
+
+
+# Reset
+var warnings_till_reset := 4
+func _on_btn_reset_pressed() -> void:
+	warnings_till_reset -= 1
+	match warnings_till_reset:
+		3: $BtnReset.text = "you sure?"
+		2: $BtnReset.text = "really sure?"
+		1: $BtnReset.text = "last chance..."
+		0: 
+			$BtnReset.text = "save deleted"
+			Data.reset_save()
