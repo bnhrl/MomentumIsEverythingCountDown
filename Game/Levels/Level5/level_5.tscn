@@ -183,7 +183,7 @@ position = Vector2(577, -125)
 [node name="GrapplePoint7" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="7" unique_id=1092181018 instance=ExtResource("4_sckt2")]
 position = Vector2(649, 77)
 
-[node name="Tutorial0" type="RichTextLabel" parent="." index="14" unique_id=258906828]
+[node name="Tutorial0" type="RichTextLabel" parent="Tutorials" parent_id_path=PackedInt32Array(750995765) index="0" unique_id=258906828]
 clip_contents = false
 offset_left = -91.0
 offset_top = -78.0

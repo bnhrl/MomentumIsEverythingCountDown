@@ -3,7 +3,7 @@ extends Node
 
 var save_data: Dictionary = {
 	"fullscreen":false,
-	"easy_mode":false,
+	"easy_mode":true,
 	"current_level":1,
 }
 

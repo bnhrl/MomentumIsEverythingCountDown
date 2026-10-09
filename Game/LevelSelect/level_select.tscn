@@ -4,9 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/UIButton/ui_button.tscn" id="2_eeebr"]
 [ext_resource type="Texture2D" uid="uid://cmaseo76xk400" path="res://Game/LevelSelect/brain1.png" id="2_sxw8k"]
 [ext_resource type="PackedScene" uid="uid://tsffeia6kcry" path="res://UI/Buttons/LevelButton/level_button.tscn" id="3_eeebr"]
+[ext_resource type="Texture2D" uid="uid://dfvl5orqk0qef" path="res://Game/LevelSelect/mode_toggle.png" id="4_2r30p"]
 [ext_resource type="Shader" uid="uid://chwkgj0slhnlv" path="res://Assets/Shaders/wavy.gdshader" id="5_jddyg"]
 [ext_resource type="Texture2D" uid="uid://baodxxg4uk2ig" path="res://Game/MainMenu/background.png" id="6_cj7vv"]
 [ext_resource type="Texture2D" uid="uid://cnxx80ngtathh" path="res://Game/LevelSelect/brain_outline.png" id="7_jddyg"]
+[ext_resource type="Texture2D" uid="uid://cjppl8wxgbv3x" path="res://Game/LevelSelect/hud.png" id="8_cj7vv"]
+[ext_resource type="PackedScene" uid="uid://b7mfbj3bcvt8d" path="res://Game/LevelSelect/selector.tscn" id="10_fs4r2"]
+[ext_resource type="Texture2D" uid="uid://ym71ns7c4280" path="res://Game/LevelSelect/LevelThumbnails/1.png" id="11_0vdgd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2r30p"]
 shader = ExtResource("5_jddyg")
@@ -15,6 +19,57 @@ shader_parameter/wave_x = -100.0
 shader_parameter/wave_y = 100.0
 shader_parameter/ferocity = 0.03
 shader_parameter/speed = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs4r2"]
+atlas = ExtResource("4_2r30p")
+region = Rect2(0, 0, 160, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vdgd"]
+atlas = ExtResource("4_2r30p")
+region = Rect2(0, 40, 160, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so3nh"]
+atlas = ExtResource("4_2r30p")
+region = Rect2(160, 0, 160, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ag73"]
+atlas = ExtResource("4_2r30p")
+region = Rect2(160, 40, 160, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6smh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs4r2")
+}],
+"loop": 1,
+"name": &"easy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vdgd")
+}],
+"loop": 1,
+"name": &"easy_hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so3nh")
+}],
+"loop": 1,
+"name": &"hard",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ag73")
+}],
+"loop": 1,
+"name": &"hard_hover",
+"speed": 5.0
+}]
 
 [node name="LevelSelect" type="Control" unique_id=1723362477]
 layout_mode = 3
@@ -28,21 +83,12 @@ script = ExtResource("1_kh25d")
 [node name="BtnMainMenu" parent="." unique_id=1301211313 instance=ExtResource("2_eeebr")]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 277.0
+offset_top = 285.0
 offset_right = 122.0
-offset_bottom = 334.0
+offset_bottom = 342.0
 theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 text = "Back to 
 Main Menu"
-
-[node name="BtnMode" parent="." unique_id=110476273 instance=ExtResource("2_eeebr")]
-layout_mode = 0
-offset_left = 485.0
-offset_top = 277.0
-offset_right = 609.0
-offset_bottom = 334.0
-theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
-text = "Swap to Easy Mode"
 
 [node name="BtnRewatch" parent="." unique_id=798336002 instance=ExtResource("2_eeebr")]
 visible = false
@@ -57,9 +103,9 @@ text = "Rewatch Ending Cutscene"
 [node name="LevelButtons" type="Node" parent="." unique_id=1856160715]
 
 [node name="BtnLevel1" parent="LevelButtons" unique_id=1780013496 instance=ExtResource("3_eeebr")]
-offset_left = 340.0
+offset_left = 268.0
 offset_top = 137.0
-offset_right = 364.0
+offset_right = 292.0
 offset_bottom = 167.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "1"
@@ -68,9 +114,9 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel2" parent="LevelButtons" unique_id=838363682 instance=ExtResource("3_eeebr")]
-offset_left = 286.0
+offset_left = 214.0
 offset_top = 146.0
-offset_right = 310.0
+offset_right = 238.0
 offset_bottom = 176.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "2"
@@ -79,9 +125,9 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel3" parent="LevelButtons" unique_id=1512173018 instance=ExtResource("3_eeebr")]
-offset_left = 248.0
+offset_left = 176.0
 offset_top = 157.0
-offset_right = 272.0
+offset_right = 200.0
 offset_bottom = 187.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "3"
@@ -90,9 +136,9 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel4" parent="LevelButtons" unique_id=1516766094 instance=ExtResource("3_eeebr")]
-offset_left = 223.0
+offset_left = 151.0
 offset_top = 116.0
-offset_right = 247.0
+offset_right = 175.0
 offset_bottom = 146.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "4"
@@ -101,9 +147,9 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel5" parent="LevelButtons" unique_id=1880270758 instance=ExtResource("3_eeebr")]
-offset_left = 243.0
+offset_left = 171.0
 offset_top = 95.0
-offset_right = 267.0
+offset_right = 195.0
 offset_bottom = 125.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "5"
@@ -112,9 +158,9 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel6" parent="LevelButtons" unique_id=1343485253 instance=ExtResource("3_eeebr")]
-offset_left = 267.0
+offset_left = 195.0
 offset_top = 78.0
-offset_right = 291.0
+offset_right = 219.0
 offset_bottom = 108.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "6"
@@ -123,9 +169,9 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel7" parent="LevelButtons" unique_id=258237501 instance=ExtResource("3_eeebr")]
-offset_left = 282.0
+offset_left = 210.0
 offset_top = 106.0
-offset_right = 306.0
+offset_right = 234.0
 offset_bottom = 136.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "7"
@@ -134,9 +180,9 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel8" parent="LevelButtons" unique_id=1225651890 instance=ExtResource("3_eeebr")]
-offset_left = 335.0
+offset_left = 263.0
 offset_top = 66.0
-offset_right = 359.0
+offset_right = 287.0
 offset_bottom = 96.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "8"
@@ -145,9 +191,9 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel9" parent="LevelButtons" unique_id=1100347139 instance=ExtResource("3_eeebr")]
-offset_left = 328.0
+offset_left = 256.0
 offset_top = 98.0
-offset_right = 352.0
+offset_right = 280.0
 offset_bottom = 128.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "9"
@@ -156,9 +202,9 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel10" parent="LevelButtons" unique_id=631110659 instance=ExtResource("3_eeebr")]
-offset_left = 365.0
+offset_left = 293.0
 offset_top = 93.0
-offset_right = 389.0
+offset_right = 317.0
 offset_bottom = 123.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "10"
@@ -167,9 +213,9 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel11" parent="LevelButtons" unique_id=1159681044 instance=ExtResource("3_eeebr")]
-offset_left = 400.0
+offset_left = 328.0
 offset_top = 120.0
-offset_right = 424.0
+offset_right = 352.0
 offset_bottom = 150.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "11"
@@ -178,9 +224,9 @@ default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="BtnLevel12" parent="LevelButtons" unique_id=2053102395 instance=ExtResource("3_eeebr")]
-offset_left = 380.0
+offset_left = 308.0
 offset_top = 146.0
-offset_right = 404.0
+offset_right = 332.0
 offset_bottom = 176.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "12"
@@ -188,8 +234,12 @@ level = 12
 default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
+[node name="Selector" parent="." unique_id=564478042 node_paths=PackedStringArray("target") instance=ExtResource("10_fs4r2")]
+position = Vector2(510, 160)
+target = NodePath("../LevelButtons/BtnLevel1")
+
 [node name="Background" type="CanvasGroup" parent="." unique_id=1425335490]
-z_index = -2
+z_index = -3
 material = SubResource("ShaderMaterial_2r30p")
 
 [node name="Background" type="Sprite2D" parent="Background" unique_id=1758841412]
@@ -198,17 +248,18 @@ scale = Vector2(1.1, 1.15)
 texture = ExtResource("6_cj7vv")
 
 [node name="Brain" type="CanvasGroup" parent="." unique_id=394255663]
+z_index = -1
 
 [node name="Brain" type="Sprite2D" parent="Brain" unique_id=1135274877]
 z_index = -1
-position = Vector2(320, 130)
+position = Vector2(248, 130)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_sxw8k")
 
 [node name="Outline" type="Sprite2D" parent="Brain" unique_id=1472059363]
 modulate = Color(1, 1, 1, 0.74509805)
 z_index = -2
-position = Vector2(320, 230)
+position = Vector2(248, 230)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("7_jddyg")
 
@@ -234,7 +285,65 @@ default_color = Color(0.9098039, 0.23137255, 0.23137255, 1)
 hover_color = Color(0.11764706, 0.7372549, 0.4509804, 1)
 hover_size = Vector2(1.2, 1.2)
 
+[node name="Hud" type="Node2D" parent="." unique_id=1167156037]
+position = Vector2(511, 164)
+
+[node name="Background" type="Sprite2D" parent="Hud" unique_id=597359230]
+modulate = Color(1, 1, 1, 0.74500006)
+position = Vector2(0, 16)
+texture = ExtResource("8_cj7vv")
+
+[node name="BtnMode" parent="Hud" unique_id=110476273 instance=ExtResource("2_eeebr")]
+unique_name_in_owner = true
+offset_left = -80.0
+offset_top = 64.0
+offset_right = 80.0
+offset_bottom = 104.0
+theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+text = ""
+hover_size = Vector2(1, 1)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Hud/BtnMode" unique_id=1781604233]
+position = Vector2(80, 20)
+sprite_frames = SubResource("SpriteFrames_c6smh")
+animation = &"easy"
+autoplay = "easy"
+
+[node name="BtnGo" parent="Hud" unique_id=1282664279 instance=ExtResource("2_eeebr")]
+offset_left = -77.0
+offset_top = 94.0
+offset_right = 78.0
+offset_bottom = 134.0
+theme_override_font_sizes/normal_font_size = 24
+text = "GO!"
+vertical_alignment = 0
+hover_size = Vector2(1.75, 1.25)
+
+[node name="LevelLabel" type="RichTextLabel" parent="Hud" unique_id=478960658]
+clip_contents = false
+offset_left = -78.0
+offset_top = -102.0
+offset_right = 78.0
+offset_bottom = -62.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[tornado freq=5 radius=2.0]temporal a"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThumbnail" type="TextureRect" parent="Hud" unique_id=1459714798]
+offset_left = -70.0
+offset_top = -57.0
+offset_right = 70.0
+offset_bottom = 57.0
+texture = ExtResource("11_0vdgd")
+
 [connection signal="pressed" from="BtnMainMenu" to="." method="_on_btn_main_menu_pressed"]
-[connection signal="pressed" from="BtnMode" to="." method="_on_btn_mode_pressed"]
 [connection signal="pressed" from="BtnRewatch" to="." method="_on_btn_rewatch_pressed"]
 [connection signal="pressed" from="BtnShowLevelButtons" to="." method="_on_btn_show_level_buttons_pressed"]
+[connection signal="button_hovered" from="Hud/BtnMode" to="." method="_on_btn_mode_button_hovered"]
+[connection signal="button_unhovered" from="Hud/BtnMode" to="." method="_on_btn_mode_button_unhovered"]
+[connection signal="pressed" from="Hud/BtnMode" to="." method="_on_btn_mode_pressed"]
+[connection signal="pressed" from="Hud/BtnGo" to="." method="_on_btn_go_pressed"]

@@ -104,4 +104,6 @@ navigation_polygon = SubResource("NavigationPolygon_vgjax")
 
 [node name="GrapplePoints" type="Node" parent="." unique_id=882760734]
 
+[node name="Tutorials" type="Node" parent="." unique_id=750995765]
+
 [connection signal="expired" from="CountDownTimer" to="." method="_on_count_down_timer_expired"]

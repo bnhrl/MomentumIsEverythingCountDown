@@ -77,8 +77,15 @@ position = Vector2(708, 1124)
 polygon = PackedVector2Array(72, 101, 534, 80, 271, -188, 169, -378, -90, -577, -197, -479, -171, 58)
 
 [node name="NavigationRegion" parent="." index="6" unique_id=517625210]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_3uww5")
+
+[node name="DeathPit" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("8_8b55i")]
+position = Vector2(1047, 728)
+polygon = PackedVector2Array(274, -68, -242, 146, -278, 76, 228, -146)
+uv = PackedVector2Array(322, -36, 6, 14, -22, -37, 292, -125)
+
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("8_tlwvc")]
+position = Vector2(1534, 127)
 
 [node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=485349368 instance=ExtResource("7_86ce5")]
 position = Vector2(538, 433)
@@ -101,13 +108,7 @@ position = Vector2(1473, 659)
 [node name="GrapplePoint6" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="6" unique_id=102655272 instance=ExtResource("7_86ce5")]
 position = Vector2(1549, 324)
 
-[node name="DeathPit" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("8_8b55i")]
-position = Vector2(1047, 728)
-polygon = PackedVector2Array(274, -68, -242, 146, -278, 76, 228, -146)
-uv = PackedVector2Array(322, -36, 6, 14, -22, -37, 292, -125)
-momentum_required = 200.0
-
-[node name="TutorialUnnecessary" type="RichTextLabel" parent="." index="12" unique_id=1850468276]
+[node name="TutorialUnnecessary" type="RichTextLabel" parent="Tutorials" parent_id_path=PackedInt32Array(1911324034) index="0" unique_id=1850468276]
 clip_contents = false
 offset_left = 199.0
 offset_top = 939.0
@@ -123,7 +124,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Tutorial0" type="RichTextLabel" parent="." index="13" unique_id=1358969739]
+[node name="Tutorial0" type="RichTextLabel" parent="Tutorials" parent_id_path=PackedInt32Array(1911324034) index="1" unique_id=1358969739]
 clip_contents = false
 offset_left = 244.0
 offset_top = 745.0
@@ -139,7 +140,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Tutorial1" type="RichTextLabel" parent="." index="14" unique_id=692343368]
+[node name="Tutorial1" type="RichTextLabel" parent="Tutorials" parent_id_path=PackedInt32Array(1911324034) index="2" unique_id=692343368]
 clip_contents = false
 offset_left = 826.0
 offset_top = 528.0
@@ -154,6 +155,3 @@ text = "You must have SUFFICIENT MOMENTUM to cross DEATH PITS."
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("8_tlwvc")]
-position = Vector2(1534, 127)

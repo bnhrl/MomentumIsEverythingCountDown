@@ -18,7 +18,7 @@ shader_parameter/mult = 0.0
 
 [node name="EffectsLayer" type="CanvasLayer" unique_id=1427142918]
 process_mode = 3
-layer = 9
+layer = 99
 script = ExtResource("1_btiq3")
 
 [node name="EffectLayer2" type="CanvasLayer" parent="." unique_id=1129677132]

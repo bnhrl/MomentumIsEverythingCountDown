@@ -16,26 +16,36 @@
 shader = ExtResource("3_q5nqv")
 shader_parameter/tile_texture = ExtResource("5_jrkfm")
 shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_es5la"]
 shader = ExtResource("3_q5nqv")
 shader_parameter/tile_texture = ExtResource("4_i5pyl")
 shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ddrey"]
 shader = ExtResource("3_q5nqv")
 shader_parameter/tile_texture = ExtResource("6_r5umv")
 shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nwxd3"]
 shader = ExtResource("3_q5nqv")
 shader_parameter/tile_texture = ExtResource("8_ydvg4")
 shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x0ejf"]
 shader = ExtResource("3_q5nqv")
 shader_parameter/tile_texture = ExtResource("4_i5pyl")
 shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_q5nqv"]
 vertices = PackedVector2Array(1243.5703, 1508.7266, 1424.5391, 1554.4531, 1309.5469, 1819, 2, 1819, 893.1875, 1203.5313, 2, 692.60156, 388.64844, 676.02344, 833.89844, 796.96875, 3371, 1819, 2801.7578, 1819, 2805.2422, 1817.2266, 2907.9063, 1612.8828, 3371, 976.10156, 2981.6328, 1013.46875, 2155.1406, 629.15625, 2255.039, 560.90625, 2339.75, 553.21094, 2356.789, 616.64844, 2324.4922, 679.3125, 2023.1563, 1029.7031, 2002.1875, 848.10156, 1821.1797, 1144.2188, 1842, 970.0078, 1982.8828, 1300.5938, 1850.9297, 1269.3516, 2706.289, 701.9219, 2706.2031, 702.75, 2581.0781, 737.4219, 569.09375, 340.9922, 118.46094, 365.89844, 51.320313, 273.28125, 133.39844, 138.14063, 654.7578, 184.99219, 866.5469, 376.28125, 1238.2969, 228.09375, 1091.3438, 342.77344, 1139.1797, 407.25, 1285.2813, 258.79688, 1305.9531, 371.03125, 1282.9531, 514.0781, 1158.8594, 811.8906, 1116.0313, 537.03125, 1352.3906, 835.1094, 1356.9609, 1116.5234, 1570.3906, 1194.9375, 1646.3438, 967.9922, 1694.4063, 1182.0391, 1876.8438, 1393.9063, 2130.4297, 1558.5469, 1984.5781, 1573.4688, 2139.0234, 1727.1719, 2052.3438, 1688.9531, 2189.711, 1651.5625, 2208.3281, 1749.9531, 2353.711, 1736.1016, 2274.5313, 1624.6563, 2432.7266, 1663, 2330.75, 1573.5625, 2604.1172, 1421.0938, 2360.0469, 1428.0703, 2557.9922, 1164.2422, 2545.6328, 793.71875, 2564.6328, 838.97656, 2314.0078, 1130.8984, 2327.9688, 957.3906, 2366.7578, 729.25, 2468.8828, 646.65625, 2721.3984, 599.96875, 2713.9375, 700.6328, 2708.9766, 701.9922, 2994.0469, 581, 3281.9297, 683.0078, 3262.2188, 707.4219, 3220.5781, 720.97656, 2715.461, 702.22656, 3184.7813, 582.9922, 3260.9531, 594.8594, 3277.8125, 604.75, 2290.8516, 384.3672, 2301.3984, 401.4375, 1652.7266, 50.976563, 3371, 26, 3371, 400.10938, 3160.4297, 324.96875, 2720.7969, 353.0078, 1411.7969, 56.023438, 1385.1328, 80.71094, 1075.2578, 85.99219, 776.39844, 26)
@@ -86,8 +96,17 @@ position = Vector2(647, 416)
 polygon = PackedVector2Array(261, 398, 217, -37, -78, -72, -530, -47, -599.2707, -142.56796, -515.1852, -281.0091, 8, -234, 712, -182, 840, -334, 428, -327, -110, -435, -920, -431, -978, -237, -934, 286, -258, 257)
 
 [node name="NavigationRegion" parent="." index="6" unique_id=517625210]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_q5nqv")
+
+[node name="WorldButton0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="0" unique_id=1576954058 instance=ExtResource("3_qngjo")]
+position = Vector2(2167, 788)
+
+[node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="1" unique_id=1337174415 instance=ExtResource("3_anfux")]
+position = Vector2(1880, 1143)
+polygon = PackedVector2Array(182, 6, 51, 29, -65, 82, -81, 34, 31, -14, 168, -47)
+
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("4_c2w21")]
+position = Vector2(3236, 664)
 
 [node name="GrapplePoint14" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("2_1qvvv")]
 position = Vector2(2728, 643)
@@ -137,17 +156,7 @@ position = Vector2(2421, 1137)
 [node name="GrapplePoint13" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="15" unique_id=817112347 instance=ExtResource("2_1qvvv")]
 position = Vector2(2475, 751)
 
-[node name="WorldButton0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="0" unique_id=1576954058 instance=ExtResource("3_qngjo")]
-position = Vector2(2167, 788)
-
-[node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="1" unique_id=1337174415 instance=ExtResource("3_anfux")]
-position = Vector2(1880, 1143)
-polygon = PackedVector2Array(182, 6, 51, 29, -65, 82, -81, 34, 31, -14, 168, -47)
-
-[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("4_c2w21")]
-position = Vector2(3236, 664)
-
-[node name="Tutorial0" type="RichTextLabel" parent="." index="12" unique_id=1789180879]
+[node name="Tutorial0" type="RichTextLabel" parent="Tutorials" parent_id_path=PackedInt32Array(750995765) index="0" unique_id=1789180879]
 clip_contents = false
 offset_left = 1762.0
 offset_top = 999.0

@@ -214,7 +214,7 @@ position = Vector2(3781, 1090)
 [node name="GrapplePoint13" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="13" unique_id=282879064 instance=ExtResource("4_igeap")]
 position = Vector2(3789, 1421)
 
-[node name="Tutorial0" type="RichTextLabel" parent="." index="14" unique_id=540437513]
+[node name="Tutorial0" type="RichTextLabel" parent="Tutorials" parent_id_path=PackedInt32Array(750995765) index="0" unique_id=540437513]
 clip_contents = false
 offset_left = 461.0
 offset_top = 353.0

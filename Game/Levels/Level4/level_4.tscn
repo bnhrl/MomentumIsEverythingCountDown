@@ -159,38 +159,6 @@ polygon = PackedVector2Array(179, -41, 177, 27, -171, 27, -162, -46)
 [node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("13_u2x10")]
 position = Vector2(-799, 1044)
 
-[node name="Tutorial0" type="RichTextLabel" parent="." index="12" unique_id=547506324]
-clip_contents = false
-offset_left = -468.0
-offset_top = 627.0
-offset_right = -248.0
-offset_bottom = 735.0
-mouse_filter = 2
-theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
-theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
-theme_override_constants/outline_size = 4
-bbcode_enabled = true
-text = "WHITE BLOOD CELLS can be grappled onto."
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Tutorial1" type="RichTextLabel" parent="." index="13" unique_id=1582454692]
-clip_contents = false
-offset_left = -1030.0
-offset_top = 210.0
-offset_right = -810.0
-offset_bottom = 318.0
-mouse_filter = 2
-theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
-theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
-theme_override_constants/outline_size = 4
-bbcode_enabled = true
-text = "They will ELIMINATE you if you do not have enough MOMENTUM."
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="GrapplePoint3" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=2056699830 instance=ExtResource("8_5nyr7")]
 position = Vector2(-1359, 428)
 
@@ -223,6 +191,38 @@ position = Vector2(-281, 2348)
 
 [node name="GrapplePoint8" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="10" unique_id=1412753360 instance=ExtResource("8_5nyr7")]
 position = Vector2(-474, 2476)
+
+[node name="Tutorial0" type="RichTextLabel" parent="Tutorials" parent_id_path=PackedInt32Array(750995765) index="0" unique_id=547506324]
+clip_contents = false
+offset_left = -468.0
+offset_top = 627.0
+offset_right = -248.0
+offset_bottom = 735.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "WHITE BLOOD CELLS can be grappled onto."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tutorial1" type="RichTextLabel" parent="Tutorials" parent_id_path=PackedInt32Array(750995765) index="1" unique_id=1582454692]
+clip_contents = false
+offset_left = -1030.0
+offset_top = 210.0
+offset_right = -810.0
+offset_bottom = 318.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "They will ELIMINATE you if you do not have enough MOMENTUM."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Interactables/WorldButton0" to="Interactables/Gate0" method="disable"]
 [connection signal="level_completed" from="CompletionZones/CompletionZone0" to="." method="level_completed"]

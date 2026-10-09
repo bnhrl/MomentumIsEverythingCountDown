@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://b7mfbj3bcvt8d"]
+
+[ext_resource type="Shader" uid="uid://y6t5gm6jds58" path="res://Assets/Shaders/outline_2d.gdshader" id="1_cd2bq"]
+[ext_resource type="Script" uid="uid://bxbdm63adpqy0" path="res://Game/LevelSelect/selector.gd" id="1_ef07v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xklir"]
+shader = ExtResource("1_cd2bq")
+shader_parameter/on_canvas_group = true
+shader_parameter/outline_thickness = 1.0
+
+[node name="Selector" type="CanvasGroup" unique_id=2128607490]
+z_index = -1
+material = SubResource("ShaderMaterial_xklir")
+script = ExtResource("1_ef07v")
+
+[node name="Anchor1" type="Node2D" parent="." unique_id=277347427]
+
+[node name="SelectionColor" type="ColorRect" parent="Anchor1" unique_id=38551551]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+color = Color(0.9098039, 0.23137255, 0.23137255, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Anchor2" type="Node2D" parent="." unique_id=807115437]
+
+[node name="SelectionColor" type="ColorRect" parent="Anchor2" unique_id=1548243835]
+offset_top = -3.0000002
+offset_right = 4.0
+offset_bottom = 0.99999976
+rotation = 0.7853982
+color = Color(0.3019608, 0.39607844, 0.7058824, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Anchor3" type="Node2D" parent="." unique_id=139864208]
+
+[node name="SelectionColor" type="ColorRect" parent="Anchor3" unique_id=1312641796]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+color = Color(0.9098039, 0.23137255, 0.23137255, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Anchor4" type="Node2D" parent="." unique_id=916898867]
+
+[node name="SelectionColor" type="ColorRect" parent="Anchor4" unique_id=434409688]
+offset_top = -5.0
+offset_right = 7.0
+offset_bottom = 2.0
+rotation = 0.7853982
+color = Color(0.3019608, 0.39607844, 0.7058824, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Anchor5" type="Node2D" parent="." unique_id=249523198]
+
+[node name="SelectionColor" type="ColorRect" parent="Anchor5" unique_id=606225251]
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+color = Color(0.9098039, 0.23137255, 0.23137255, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Anchor6" type="Node2D" parent="." unique_id=78846658]
+
+[node name="SelectionColor" type="ColorRect" parent="Anchor6" unique_id=650335927]
+offset_top = -7.0
+offset_right = 10.0
+offset_bottom = 3.0
+rotation = 0.7853982
+color = Color(0.3019608, 0.39607844, 0.7058824, 1)
