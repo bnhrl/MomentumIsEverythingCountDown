@@ -22,7 +22,7 @@ func _ready() -> void:
 	for button in $LevelButtons.get_children():
 		button.level_button_pressed.connect(select_level)
 	if Data.save_data.get("current_level", 1) <= 12:
-		select_level(Data.save_data.get("current_level", 1), $LevelButtons/BtnLevel1)
+		select_level(Data.save_data.get("current_level", 1), level_buttons.get(Data.save_data.get("current_level", 1)-1))
 	else:
 		select_level(12, $LevelButtons/BtnLevel12)
 	
