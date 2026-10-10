@@ -6,6 +6,7 @@ global uniform vec4 outline_color : source_color = vec4(1); // Project -> Projec
 
 uniform bool on_canvas_group = true;
 uniform float outline_thickness : hint_range(0, 10) = 1.0;
+uniform vec4 addition : source_color = vec4(1.0, 1.0, 1.0, 0.0);
 
 void fragment() {
 	if (on_canvas_group) {
@@ -39,4 +40,6 @@ void fragment() {
 		vec4 color = texture(TEXTURE, UV);
 		COLOR = mix(color, outline_color, outline - color.a);
 	}
+	
+	COLOR.rgb = mix(COLOR.rgb, addition.rgb, addition.a);
 }

@@ -16,7 +16,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_853w4"]
 shader = ExtResource("2_p2hw7")
 shader_parameter/on_canvas_group = true
-shader_parameter/outline_thickness = 1.0
+shader_parameter/outline_thickness = 1.0000000475
+shader_parameter/addition = Color(1, 1, 1, 0)
 
 [sub_resource type="Curve" id="Curve_c6smh"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.39043823, 1), -1.6422175, -1.6422175, 0, 0, Vector2(1, 0.57024795), 0.0, 0.0, 0, 0]
@@ -46,6 +47,68 @@ animations = [{
 "loop": 1,
 "name": &"default",
 "speed": 3.5
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db2hk"]
+atlas = ExtResource("5_p2hw7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0m6d"]
+atlas = ExtResource("5_p2hw7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwver"]
+atlas = ExtResource("5_p2hw7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfw5o"]
+atlas = ExtResource("5_p2hw7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlpas"]
+atlas = ExtResource("5_p2hw7")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akrrf"]
+atlas = ExtResource("5_p2hw7")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqhgd"]
+atlas = ExtResource("5_p2hw7")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oshqu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db2hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0m6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwver")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfw5o")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlpas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akrrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqhgd")
+}],
+"loop": 1,
+"name": &"reserve_cooldown",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_letr6"]
@@ -120,8 +183,11 @@ sprite_frames = SubResource("SpriteFrames_c6smh")
 autoplay = "default"
 frame_progress = 0.15166096
 
-[node name="Center" type="Sprite2D" parent="Model" unique_id=2061725635]
-texture = ExtResource("5_p2hw7")
+[node name="Center" type="AnimatedSprite2D" parent="Model" unique_id=96553089]
+sprite_frames = SubResource("SpriteFrames_oshqu")
+animation = &"reserve_cooldown"
+autoplay = "default"
+frame_progress = 0.9284178
 
 [node name="Grabber" type="Area2D" parent="Model" unique_id=1042861233]
 position = Vector2(51, 0)
@@ -137,7 +203,7 @@ position = Vector2(5, 0)
 sprite_frames = SubResource("SpriteFrames_853w4")
 autoplay = "default"
 
-[node name="GrappleDirectionIndicator" type="Polygon2D" parent="." unique_id=1750413852]
+[node name="DirectionIndicator" type="Polygon2D" parent="." unique_id=1750413852]
 polygon = PackedVector2Array(12, -8, 24, 0, 12, 8, 18, 0)
 
 [node name="KillSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=224865394]
@@ -172,4 +238,9 @@ process_material = SubResource("ParticleProcessMaterial_qwver")
 wait_time = 0.5
 one_shot = true
 
+[node name="ReserveCooldown" type="Timer" parent="." unique_id=2138869592]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="timeout" from="GrappleTimer" to="." method="_on_grapple_timer_timeout"]
+[connection signal="timeout" from="ReserveCooldown" to="." method="_on_reserve_cooldown_timeout"]

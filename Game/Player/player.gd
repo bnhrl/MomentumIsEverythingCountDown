@@ -8,14 +8,16 @@ var momentum := Vector2.ZERO
 func _ready() -> void:
 	_ready_tail()
 	Camera.target = self
-	grapple_direction_indicator.hide()
 
 func _physics_process(delta: float) -> void:
 	_process_movement(delta)
 	_process_tail(delta)
 	_process_visuals(delta)
+	_process_direction_indicator()
 	_process_grabber()
+	_process_momentum_ability() 
 	_process_grappling(delta)
+	_process_flash()
 
 
 # Movement
@@ -93,13 +95,51 @@ func _process_tail(delta: float) -> void:
 # Body Visuals & Audio
 @onready var model: CanvasGroup = $Model
 @onready var _body: AnimatedSprite2D = $Model/Body
-@onready var _center: Sprite2D = $Model/Center
+@onready var _center: AnimatedSprite2D = $Model/Center
 func _process_visuals(delta: float) -> void: 
 	if dead: return
 	
 	var angle := get_angle_to(get_global_mouse_position())
 	_body.rotation = LerpHelper.la(_body.rotation, angle, 16.0, delta)
 	_center.rotation = LerpHelper.la(_center.rotation, angle, 4.0, delta)
+	model.material.set_shader_parameter("addition", flash_color)
+	if stored_momentum > 0.0:
+		model.material.set_shader_parameter("outline_thickness", (sin(Time.get_ticks_msec() * 0.01) + 2.0))
+	else:
+		model.material.set_shader_parameter("outline_thickness", 1.0)
+
+func _process_direction_indicator() -> void:
+	if retracting_tail or releasing_momentum:
+		direction_indicator.look_at(get_global_mouse_position())
+		direction_indicator.show()
+	else:
+		direction_indicator.hide()
+
+var flash_color := Color.TRANSPARENT
+var flash_tween: Tween
+func flash(time := 0.5, color := Color.WHITE) -> void:
+	flash_color = color
+	if flash_tween: flash_tween.kill()
+	flash_tween = create_tween()
+	flash_tween.tween_property(self, "flash_color", Color.TRANSPARENT, time)
+
+func _process_flash() -> void:
+	model.material.set_shader_parameter("addition", flash_color)
+
+func shoot_clone(time := 0.5, clone_movement := Vector2.ZERO) -> void:
+	var clone := model.duplicate()
+	get_tree().current_scene.add_child(clone)
+	clone.global_transform = model.global_transform
+	var tween := create_tween()
+	tween.tween_property(clone, "modulate:a", 0.0, time)
+	tween.parallel().tween_property(clone, "global_position", clone.global_position + clone_movement, time).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tween.tween_callback(clone.queue_free)
+
+func bleed(angle: float) -> void:
+	if dead: return
+	
+	$NotBloodParticles.rotation = angle
+	$NotBloodParticles.restart()
 
 const _RICOCHET_AUDIOS := [preload("uid://c0xfowxnk65ro"), preload("uid://cgev1lhy8m65c"), preload("uid://d2i8mrtm6x368")]
 const _KILL_AUDIOS := [preload("uid://cw51rnwwiauia"),preload("uid://ch76w0ku3btqh")]
@@ -134,7 +174,7 @@ var grapple_direction: Vector2
 var retracting_tail := false
 var attempting_to_grapple := false
 var grappled_object: Node2D
-@onready var grapple_direction_indicator: Polygon2D = $GrappleDirectionIndicator
+@onready var direction_indicator: Polygon2D = $DirectionIndicator
 func _process_grappling(delta: float) -> void:
 	if !dead: _process_grapple_controls()
 	if !grappled_object: 
@@ -159,16 +199,13 @@ func _process_grappling(delta: float) -> void:
 	momentum += global_position.direction_to(grappled_object.global_position) * 3000.0 * delta
 
 func _process_grapple_controls() -> void:
-	if !grappled_object:
+	if not grappled_object and not releasing_momentum:
 		if Input.is_action_pressed("grapple") and !attempting_to_grapple: # Grapple slow-down
 			retracting_tail = true
 			GameTime.set_temp_scale(0.1)
-			grapple_direction_indicator.look_at(get_global_mouse_position())
-			grapple_direction_indicator.show()
 		elif Input.is_action_just_released("grapple") and !attempting_to_grapple: # Grapple shoot
 			retracting_tail = false
 			grapple_direction = global_position.direction_to(get_global_mouse_position())
-			grapple_direction_indicator.hide()
 			$GrappleSoundPlayer.pitch_scale = randf_range(0.75, 1.25)
 			$GrappleSoundPlayer.play()
 			attempting_to_grapple = true
@@ -196,6 +233,49 @@ func _on_grapple_timer_timeout() -> void:
 	attempting_to_grapple = false
 
 
+# Ion Reserve/Release
+var stored_momentum := 0.0
+var holding_store_button := false
+var releasing_momentum := false
+@onready var reserve_cooldown: Timer = $ReserveCooldown
+func _process_momentum_ability() -> void:
+	if grappled_object or retracting_tail or not reserve_cooldown.is_stopped(): return
+	
+	if stored_momentum > 0.0 and not holding_store_button:
+		if Input.is_action_pressed("reserve_ion"): # Choosing direction
+			GameTime.set_temp_scale(0.1)
+			releasing_momentum = true
+		elif Input.is_action_just_released("reserve_ion"): # Release
+			momentum += global_position.direction_to(get_global_mouse_position()) * stored_momentum
+			stored_momentum = 0.0
+			releasing_momentum = false
+			flash(0.25, Color("8fd3ff"))
+			_center.play("reserve_cooldown")
+			reserve_cooldown.start(5.0)
+	else:
+		if not holding_store_button:
+			if Input.is_action_just_pressed("reserve_ion"): # Reserve
+				var clone_momentum := momentum
+				GameTime.set_temp_scale()
+				stored_momentum = momentum.length()
+				momentum = Vector2.ZERO
+				holding_store_button = true
+				flash(0.5, Color("f04f78"))
+				
+				shoot_clone(0.25, clone_momentum * 0.01)
+				await Delays.wait(0.05)
+				shoot_clone(0.5, clone_momentum * 0.05)
+				await Delays.wait(0.05)
+				shoot_clone(0.75, clone_momentum * 0.1)
+		else:
+			if Input.is_action_just_released("reserve_ion"): 
+				holding_store_button = false
+
+func _on_reserve_cooldown_timeout() -> void:
+	_center.play("default")
+	flash(0.1, Color("8fd3ff"))
+
+
 # Death
 signal died
 var dead := false
@@ -218,9 +298,3 @@ func die(reason := "") -> void:
 		$DeathSoundPlayer.pitch_scale = randf_range(0.8, 1.2)
 		$DeathSoundPlayer.play()
 		died.emit()
-
-func bleed(angle: float) -> void:
-	if dead: return
-	
-	$NotBloodParticles.rotation = angle
-	$NotBloodParticles.restart()
