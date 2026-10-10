@@ -1,8 +1,6 @@
-EXCITOXICITY
-
 Created in 72 hours for the Neumont Summer Game Jam 2026 and the GMTK Jam 2026, combining both themes!
+# EXCITOXICITY
 
-  << NEURON ACTIVATION >>
 
 Adventure through 12 LEVELS of winding paths as a NEURON.
 
