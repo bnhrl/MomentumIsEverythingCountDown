@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cc4ekuuqlnyow" path="res://Game/Enemies/_Base/enemy.gd" id="1_qsd2j"]
 [ext_resource type="Texture2D" uid="uid://cgerxyyy2gsoi" path="res://Game/Enemies/_Base/not_blood.png" id="2_7ltll"]
 [ext_resource type="Material" uid="uid://d2t4whxx1mrd8" path="res://Assets/Materials/outline_2d_canvas_group.tres" id="2_flhjw"]
+[ext_resource type="Script" uid="uid://4ln5ipaq3o7b" path="res://Assets/Scripts/dynamic_particles_2d.gd" id="4_uo0tl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6smh"]
 radius = 8.0
@@ -68,6 +69,7 @@ explosiveness = 0.95
 randomness = 0.5
 trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_c6smh")
+script = ExtResource("4_uo0tl")
 
 [node name="IdleTimer" type="Timer" parent="." unique_id=205446577]
 one_shot = true

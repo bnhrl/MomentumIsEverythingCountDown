@@ -140,7 +140,7 @@ func bleed(angle: float) -> void:
 	if dead: return
 	
 	$NotBloodParticles.rotation = angle
-	$NotBloodParticles.restart()
+	$NotBloodParticles.dp_restart()
 
 const _RICOCHET_AUDIOS := [preload("uid://c0xfowxnk65ro"), preload("uid://cgev1lhy8m65c"), preload("uid://d2i8mrtm6x368")]
 const _KILL_AUDIOS := [preload("uid://cw51rnwwiauia"),preload("uid://ch76w0ku3btqh")]

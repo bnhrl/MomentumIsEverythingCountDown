@@ -9,14 +9,10 @@ func _ready() -> void:
 const TRACKS_PATH := "res://Assets/Music/"
 var tracks: Dictionary[String, AudioStream] = {}
 func _load_tracks() -> void:
-	var directory := DirAccess.open(TRACKS_PATH)
-	for file in directory.get_files():
-		if file.contains(".import"): continue
+	for file in ResourceLoader.list_directory(TRACKS_PATH):
 		var resource := load(TRACKS_PATH + file)
 		if resource is not AudioStream: continue
 		tracks.set(file.get_file().get_basename(), resource)
-
-
 
 
 var current_music_player: AudioStreamPlayer
@@ -53,6 +49,8 @@ func stop(fadeout: float = 1.0) -> void:
 @onready var music_pitch: AudioEffectPitchShift = AudioServer.get_bus_effect(AudioServer.get_bus_index("Music"), 0)
 var pitch_tween: Tween
 func set_pitch(pitch := 1.0, time := 0.25) -> void:
+	if pitch_tween: return
+	
 	if pitch_tween: pitch_tween.kill()
 	pitch_tween = create_tween()
 	pitch_tween.set_ignore_time_scale()
@@ -61,6 +59,8 @@ func set_pitch(pitch := 1.0, time := 0.25) -> void:
 @onready var music_filter: AudioEffectFilter = AudioServer.get_bus_effect(AudioServer.get_bus_index("Music"), 1)
 var filter_tween: Tween
 func set_filter(cutoff_hz := 20500, time := 0.1) -> void:
+	if !music_filter: return
+	
 	if filter_tween: filter_tween.kill()
 	filter_tween = create_tween()
 	filter_tween.set_ignore_time_scale()

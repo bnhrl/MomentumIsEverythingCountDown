@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cssfj3ctnv83q" path="res://Game/Player/center.png" id="5_p2hw7"]
 [ext_resource type="Texture2D" uid="uid://bb4dfknaejnqo" path="res://Game/Player/grabber.png" id="5_segth"]
 [ext_resource type="AudioStream" uid="uid://bscgw8po1fa0a" path="res://Assets/Sounds/death.mp3" id="7_ch4ko"]
+[ext_resource type="Script" uid="uid://4ln5ipaq3o7b" path="res://Assets/Scripts/dynamic_particles_2d.gd" id="8_q0m6d"]
 [ext_resource type="AudioStream" uid="uid://c0xfowxnk65ro" path="res://Assets/Sounds/ricochet_0.wav" id="8_vh1aq"]
 [ext_resource type="AudioStream" uid="uid://csv6ew2i6t7tl" path="res://Assets/Sounds/grapple_shoot.wav" id="9_4ddeg"]
 [ext_resource type="Texture2D" uid="uid://cgerxyyy2gsoi" path="res://Game/Enemies/_Base/not_blood.png" id="10_db2hk"]
@@ -225,6 +226,7 @@ explosiveness = 0.95
 randomness = 0.5
 trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_qwver")
+script = ExtResource("8_q0m6d")
 
 [node name="KillSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=224865394]
 max_polyphony = 20

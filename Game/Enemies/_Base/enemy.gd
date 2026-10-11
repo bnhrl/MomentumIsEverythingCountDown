@@ -126,7 +126,7 @@ func die() -> void:
 	tween.tween_property($Model, "scale:y", 0.001, 0.33).set_trans(Tween.TRANS_EXPO)
 	tween.parallel().tween_property($Model, "scale:x", 0.001, 0.5).set_trans(Tween.TRANS_EXPO)
 	$NotBloodParticles.modulate = blood_color
-	$NotBloodParticles.restart()
+	$NotBloodParticles.dp_restart()
 	await $NotBloodParticles.finished
 	queue_free()
 

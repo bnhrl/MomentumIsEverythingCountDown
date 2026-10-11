@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d4a7d10skgb0n"
-path="res://.godot/imported/clair.wav-9c725e28c42186894a6d043749d2e0a2.sample"
+path="res://.godot/imported/Clair de Lune.wav-e8c8ecc5c3957e2ff995293478b04021.sample"
 
 [deps]
 
-source_file="res://Assets/Sounds/clair.wav"
-dest_files=["res://.godot/imported/clair.wav-9c725e28c42186894a6d043749d2e0a2.sample"]
+source_file="res://Assets/Music/Clair de Lune.wav"
+dest_files=["res://.godot/imported/Clair de Lune.wav-e8c8ecc5c3957e2ff995293478b04021.sample"]
 
 [params]
 

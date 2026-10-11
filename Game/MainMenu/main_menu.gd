@@ -44,8 +44,8 @@ func _on_btn_credits_pressed() -> void:
 
 func _on_btn_quit_pressed() -> void:
 	Effects.obscure()
-	$BtnQuit/CanvasLayer/Clair.play()
-	await $BtnQuit/CanvasLayer/Clair.finished
+	Music.play("Clair de Lune", 0.2, 0.2)
+	await Music.current_music_player.finished
 	get_tree().quit()
 
 
