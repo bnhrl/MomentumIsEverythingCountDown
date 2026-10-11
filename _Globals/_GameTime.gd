@@ -1,9 +1,12 @@
 extends Node
 
+
+@onready var sfx_pitch: AudioEffectPitchShift = AudioServer.get_bus_effect(AudioServer.get_bus_index("SoundEffects"), 0)
+
 func _process(delta: float) -> void:
 	time_scale = LerpHelper.lf(time_scale, _target_time_scale, 32.0, delta)
 	Engine.time_scale = time_scale
-	AudioServer.playback_speed_scale = time_scale
+	sfx_pitch.pitch_scale = time_scale
 
 var _target_time_scale := 1.0
 var time_scale := 1.0

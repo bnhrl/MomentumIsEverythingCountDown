@@ -6,7 +6,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	label.visible_characters = int(visible_characters)
-	if Input.is_action_just_pressed("escape"):
+	if Input.is_action_just_pressed("escape") and get_tree().paused:
 		Scenes.swap_scene("Level Select")
 		await Scenes.faded
 		close(0.0)

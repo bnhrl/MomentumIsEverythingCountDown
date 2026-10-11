@@ -43,19 +43,6 @@ position = Vector2(320, 180)
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=3946053]
 
-[node name="ExitingLabel" type="RichTextLabel" parent="UILayer" unique_id=482272356]
-visible = false
-clip_contents = false
-offset_left = 5.0
-offset_top = -4.0
-offset_right = 165.0
-offset_bottom = 28.0
-theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
-theme_override_constants/outline_size = 4
-bbcode_enabled = true
-text = "Exiting in 0.0"
-scroll_active = false
-
 [node name="CompleteLabel" type="RichTextLabel" parent="UILayer" unique_id=880060712]
 visible = false
 offset_right = 160.0

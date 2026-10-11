@@ -9,7 +9,6 @@ func _ready() -> void:
 		return
 	
 	_ready_completion_zones()
-	exiting_label.add_theme_color_override("font_outline_color", outline_color)
 	
 	if $NavigationRegion.navigation_polygon == null or $NavigationRegion.navigation_polygon.get_polygon_count() <= 0:
 		rebake.call()
@@ -19,13 +18,11 @@ func _ready() -> void:
 	PlayerManager.add_player(self)
 	PlayerManager.player.died.connect(player_dead)
 	RenderingServer.global_shader_parameter_set("outline_color", outline_color)
+	Music.set_pitch()
 	$CountDownTimer.show()
 	if PlayerManager.easy_mode:
 		$CountDownTimer.multiply_time(1.5)
 
-const EXITING := 1.0
-var exiting := EXITING
-@onready var exiting_label: RichTextLabel = $UILayer/ExitingLabel
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	
@@ -33,24 +30,8 @@ func _process(delta: float) -> void:
 		time_elapsed += delta
 		time_label.text = str(snappedf(time_elapsed, 0.01)).pad_decimals(2) + "s"
 	
-	_process_exiting(delta)
 	if Input.is_action_just_pressed("restart") and !completed:
 		player_dead()
-
-func _process_exiting(delta: float) -> void:
-	if exiting <= 0: return
-	
-	if Input.is_action_pressed("escape"):
-		exiting -= delta
-		if exiting <= 0.0:
-			Scenes.swap_scene("Level Select")
-			await Scenes.faded
-			Effects.unintensify()
-		exiting_label.text = "Exiting in " + str(snappedf(exiting, 0.1))
-		exiting_label.show()
-	else:
-		exiting = EXITING
-		exiting_label.hide()
 
 @export_tool_button("Rebake Navigation") var rebake := func() -> void:
 	$NavigationRegion.show()
@@ -83,16 +64,22 @@ const EXCITOTOXICITY = preload("uid://chwtaluiwow5n")
 func _on_count_down_timer_expired() -> void:
 	if completed: return
 	
+	if not is_player_dead:
+		Music.set_pitch(1.25)
 	Effects.intensify()
 	var excitotoxicity := EXCITOTOXICITY.instantiate()
 	add_child(excitotoxicity)
 	await Delays.wait(0.2)
 	spawn_enzyme()
 
+var is_player_dead := false
 func player_dead() -> void:
 	if completed: return
 	
-	await Scenes._fade_in(0.333)
+	is_player_dead = true
+	Music.set_pitch(0.5, 0.05)
+	GameTime.set_temp_scale(0.5)
+	await Scenes._fade_in(0.67)
 	if !get_tree(): return
 	get_tree().reload_current_scene()
 	Effects.unintensify()
@@ -110,10 +97,11 @@ func level_completed(game_completed := false) -> void:
 	tween.tween_property(complete_label, "offset_transform_scale:x", 1.0, 0.25).from(0.0)
 	tween.parallel().tween_property(complete_label, "offset_transform_scale:y", 1.0, 0.333).from(0.0)
 	PlayerManager.player.level_completed()
+	Music.set_pitch()
 	$CountDownTimer.process_mode = Node.PROCESS_MODE_DISABLED
 	Data.save()
 	
-	if !game_completed:
+	if not game_completed:
 		await Delays.wait(0.5)
 		var lvl := name.replacen("Level","")
 		Scenes.level_completed(int(lvl), time_elapsed)
@@ -121,6 +109,8 @@ func level_completed(game_completed := false) -> void:
 		await Scenes.faded
 		Effects.unintensify()
 	else:
+		Scenes.current_level += 1
+		Data.save()
 		await Delays.wait(1.0)
 		Effects.unintensify()
 		Scenes.swap_scene("Ending Cutscene")

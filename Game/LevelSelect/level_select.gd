@@ -68,6 +68,20 @@ const LEVEL_THUMBSNAILS: Dictionary[int, Texture2D] = {
 	11: preload("uid://bc1webkmd7kdd"),
 	12: preload("uid://ch26b76f2yf6i"),
 }
+const LEVEL_TRACKS: Dictionary[int, String] = {
+	 1: "Temporal",
+	 2: "Temporal",
+	 3: "Temporal",
+	 4: "Frontal",
+	 5: "Frontal",
+	 6: "Frontal",
+	 7: "Frontal",
+	 8: "Parietal",
+	 9: "Parietal",
+	10: "Parietal",
+	11: "Occipital",
+	12: "Occipital",
+}
 
 @onready var selector: CanvasGroup = $Selector
 var level: int = 1
@@ -96,6 +110,10 @@ func select_level(l: int, button: LevelButton) -> void:
 	level_label.text = "[tornado freq=5 radius=2.0]"+LEVEL_NAMES.get(level)
 	level_thumbnail.texture = LEVEL_THUMBSNAILS.get(level)
 	selector.set_target(button)
+	if LEVEL_TRACKS.has(l):
+		Music.play(LEVEL_TRACKS.get(level))
+	else:
+		Music.stop()
 	update_best_time_label()
 
 func update_best_time_label() -> void:

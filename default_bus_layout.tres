@@ -3,6 +3,12 @@
 [sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_j3pel"]
 resource_name = "PitchShift"
 
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_g28q7"]
+resource_name = "PitchShift"
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_n8wo2"]
+resource_name = "PitchShift"
+
 [resource]
 bus/0/effect/0/effect = SubResource("AudioEffectPitchShift_j3pel")
 bus/0/effect/0/enabled = true
@@ -12,9 +18,13 @@ bus/1/mute = false
 bus/1/bypass_fx = false
 bus/1/volume_db = 0.0
 bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectPitchShift_g28q7")
+bus/1/effect/0/enabled = true
 bus/2/name = &"Music"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.0
 bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectPitchShift_n8wo2")
+bus/2/effect/0/enabled = true
