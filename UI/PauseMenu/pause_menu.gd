@@ -19,6 +19,7 @@ var tween: Tween
 func open(time_mult := 1.0) -> void:
 	get_tree().paused = true
 	Effects.obscure()
+	Music.set_filter(150)
 	
 	if tween: tween.kill()
 	tween = create_tween()
@@ -33,6 +34,7 @@ func open(time_mult := 1.0) -> void:
 func close(time_mult := 1.0) -> void:
 	get_tree().paused = false
 	Effects.unobscure()
+	Music.set_filter()
 	
 	if tween: tween.kill()
 	tween = create_tween()

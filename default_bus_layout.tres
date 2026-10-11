@@ -9,6 +9,10 @@ resource_name = "PitchShift"
 [sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_n8wo2"]
 resource_name = "PitchShift"
 
+[sub_resource type="AudioEffectFilter" id="AudioEffectFilter_j3pel"]
+resource_name = "Filter"
+cutoff_hz = 20500.0
+
 [resource]
 bus/0/effect/0/effect = SubResource("AudioEffectPitchShift_j3pel")
 bus/0/effect/0/enabled = true
@@ -28,3 +32,5 @@ bus/2/volume_db = 0.0
 bus/2/send = &"Master"
 bus/2/effect/0/effect = SubResource("AudioEffectPitchShift_n8wo2")
 bus/2/effect/0/enabled = true
+bus/2/effect/1/effect = SubResource("AudioEffectFilter_j3pel")
+bus/2/effect/1/enabled = true

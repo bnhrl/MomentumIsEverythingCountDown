@@ -3,6 +3,7 @@ class_name MusicClass extends Node
 
 func _ready() -> void:
 	_load_tracks()
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 
 const TRACKS_PATH := "res://Assets/Music/"
@@ -56,3 +57,11 @@ func set_pitch(pitch := 1.0, time := 0.25) -> void:
 	pitch_tween = create_tween()
 	pitch_tween.set_ignore_time_scale()
 	pitch_tween.tween_property(music_pitch, "pitch_scale", pitch, time)
+
+@onready var music_filter: AudioEffectFilter = AudioServer.get_bus_effect(AudioServer.get_bus_index("Music"), 1)
+var filter_tween: Tween
+func set_filter(cutoff_hz := 20500, time := 0.1) -> void:
+	if filter_tween: filter_tween.kill()
+	filter_tween = create_tween()
+	filter_tween.set_ignore_time_scale()
+	filter_tween.tween_property(music_filter, "cutoff_hz", cutoff_hz, time)
