@@ -28,6 +28,7 @@ var exiting := EXITING
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	
+	time_elapsed += delta
 	_process_exiting(delta)
 	if Input.is_action_just_pressed("restart") and !completed:
 		player_dead()
@@ -111,7 +112,7 @@ func level_completed(game_completed := false) -> void:
 	if !game_completed:
 		await Delays.wait(0.5)
 		var lvl := name.replacen("Level","")
-		Scenes.level_completed(int(lvl))
+		Scenes.level_completed(int(lvl), time_elapsed)
 		Scenes.swap_scene("Level Select")
 		await Scenes.faded
 		Effects.unintensify()

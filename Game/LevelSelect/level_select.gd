@@ -24,10 +24,11 @@ func _ready() -> void:
 	if Data.save_data.get("current_level", 1) <= 12:
 		select_level(Data.save_data.get("current_level", 1), level_buttons.get(Data.save_data.get("current_level", 1)-1))
 	else:
-		select_level(12, $LevelButtons/BtnLevel12)
+		select_level(-1, null)
 	
-	if Scenes.current_level >= 13:
-		$BtnRewatch.show()
+	if Scenes.current_level >= 13: $BtnRewatch.show()
+	else:                          $BtnRewatch.hide()
+
 
 func _on_btn_main_menu_pressed() -> void:
 	Scenes.swap_scene("Main Menu")
@@ -72,11 +73,37 @@ const LEVEL_THUMBSNAILS: Dictionary[int, Texture2D] = {
 var level: int = 1
 @onready var level_label: RichTextLabel = $Hud/LevelLabel
 @onready var level_thumbnail: TextureRect = $Hud/LevelThumbnail
+@onready var best_time_label: RichTextLabel = $Hud/BestTimeLabel
 func select_level(l: int, button: LevelButton) -> void:
+	if l <= 0 or button == null:
+		$Hud.hide()
+		$LevelButtons.global_position.x = 320
+		$Brain.global_position.x = 320
+		return
+	else:
+		if not $Hud.visible:
+			var tween := create_tween()
+			tween.set_trans(Tween.TRANS_QUART)
+			tween.set_ease(Tween.EASE_OUT)
+			tween.set_parallel(true)
+			var time := 0.75
+			tween.tween_property($LevelButtons, "global_position:x", 248, time).from(320)
+			tween.tween_property($Brain, "global_position:x", 248,time).from(320)
+			tween.tween_property($Hud, "modulate:a", 1.0, time).from(0.0)
+		$Hud.show()
+	
 	level = l
 	level_label.text = "[tornado freq=5 radius=2.0]"+LEVEL_NAMES.get(level)
 	level_thumbnail.texture = LEVEL_THUMBSNAILS.get(level)
 	selector.target = button
+	update_best_time_label()
+
+func update_best_time_label() -> void:
+	var time := Data.get_best_time(level)
+	if time > 0.0:
+		best_time_label.text = "best time: " + str(snapped(time, 0.01))
+	else:
+		best_time_label.text = "best time: N/A"
 
 func _on_btn_go_pressed() -> void:
 	Scenes.swap_scene("Level " + str(level))
@@ -92,6 +119,7 @@ func _on_btn_mode_pressed() -> void:
 		PlayerManager.easy_mode = true
 		mode_sprite.animation = "easy_hover"
 	Data.save()
+	update_best_time_label()
 
 func _on_btn_mode_button_hovered(_button: UIButton) -> void:
 	mode_sprite.animation += "_hover"

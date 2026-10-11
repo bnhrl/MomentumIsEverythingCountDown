@@ -49,13 +49,13 @@ func swap_scene(scene_name: String) -> void:
 @onready var fade: ColorRect = $Fade
 signal faded
 func _fade_in(time := 0.5) -> Signal:
-	var tween := create_tween()
+	var tween := fade.create_tween()
 	fade.show()
 	tween.tween_property(fade, "modulate:a", 1.0, time).from(0.0)
 	return tween.finished
 
 func _fade_out(time := 0.5) -> Signal:
-	var tween := create_tween()
+	var tween := fade.create_tween()
 	tween.tween_property(fade, "modulate:a", 0.0, time).from(1.0)
 	tween.tween_property(fade, "visible", false, 0.0)
 	return tween.finished
@@ -68,6 +68,7 @@ func _ready_pause_menu() -> void:
 
 
 var current_level := 1
-func level_completed(level: int) -> void:
+func level_completed(level: int, time := -1.0) -> void:
+	Data.add_best_time(level, time)
 	if level >= current_level:
 		current_level += 1

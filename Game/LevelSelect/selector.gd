@@ -9,6 +9,14 @@ func _ready() -> void:
 		anchors.append(child)
 
 func _process(delta: float) -> void:
+	if !target: 
+		hide()
+		return
+	else: 
+		if !visible:
+			global_position = target.global_position + target.size / 2.0 - Vector2(1.0, 0.0)
+		show()
+	
 	var target_position := target.global_position + target.size / 2.0 - Vector2(1.0, 0.0)
 	for i in range(anchors.size()):
 		if i % 2 == 0: anchors[i].rotation += delta

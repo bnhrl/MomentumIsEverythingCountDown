@@ -5,10 +5,13 @@ var save_data: Dictionary = {
 	"fullscreen":false,
 	"easy_mode":true,
 	"current_level":1,
+	"best_times": {}
 }
+
 
 func _ready() -> void:
 	load_save()
+
 
 func load_save() -> void:
 	var save_file := FileAccess.open("user://save.exitoxicity", FileAccess.READ)
@@ -39,3 +42,22 @@ func save() -> void:
 func reset_save() -> void:
 	Scenes.current_level = 1
 	save()
+
+
+func add_best_time(level: int, time: float) -> void:
+	var l := str(level)
+	if PlayerManager.easy_mode: l += "_easy"
+	else: l += "_hard"
+	
+	if time > save_data.get_or_add("best_times", {}).get(l, -1):
+		save_data.get("best_times").set(l, time)
+
+func get_best_time(level: int) -> float:
+	var l := str(level)
+	if PlayerManager.easy_mode: l += "_easy"
+	else: l += "_hard"
+	
+	var time: Variant = save_data.get_or_add("best_times", {}).get(l)
+	if time and time > 0.0:
+		return time
+	return -1.0
