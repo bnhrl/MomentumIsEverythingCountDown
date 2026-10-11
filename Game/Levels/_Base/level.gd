@@ -130,3 +130,7 @@ func spawn_enzyme() -> void:
 		enzyme.global_position = Vector2(pos_x, pos_y)
 	await Delays.wait(0.125)
 	spawn_enzyme()
+
+var time_elapsed := 0.0
+func _process_timer(delta: float) -> void:
+	time_elapsed += delta

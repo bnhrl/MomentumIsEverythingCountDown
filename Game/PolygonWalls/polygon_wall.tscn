@@ -8,6 +8,8 @@
 shader = ExtResource("1_ijl1s")
 shader_parameter/tile_texture = ExtResource("2_esf1g")
 shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
 
 [node name="PolygonWall0" type="Polygon2D" unique_id=293361938]
 z_index = 1
@@ -17,5 +19,6 @@ polygon = PackedVector2Array(2, 2, 2, -2, -2, -2, -2, 2)
 script = ExtResource("1_85go0")
 
 [node name="StaticBody" type="StaticBody2D" parent="." unique_id=1621912054]
+collision_layer = 9
 
 [node name="Collision" type="CollisionPolygon2D" parent="StaticBody" unique_id=1280681852]

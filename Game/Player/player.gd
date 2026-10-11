@@ -17,6 +17,7 @@ func _physics_process(delta: float) -> void:
 	_process_grabber()
 	_process_momentum_ability() 
 	_process_grappling(delta)
+	_process_grapple_stuck()
 	_process_flash()
 
 
@@ -211,6 +212,15 @@ func _process_grapple_controls() -> void:
 			attempting_to_grapple = true
 			$GrappleTimer.start(0.5)
 
+@onready var stuck_raycast: RayCast2D = $StuckRaycast
+func _process_grapple_stuck() -> void:
+	stuck_raycast.target_position = grabber.position
+	if not stuck_raycast.is_colliding(): return
+	
+	var collider := stuck_raycast.get_collider()
+	if collider is StaticBody2D:
+		release_grapple()
+
 func hit_grapple(node: Node2D) -> void:
 	#print("Grappled " + node.name + "!")
 	momentum = Vector2.ZERO
@@ -254,7 +264,7 @@ func _process_momentum_ability() -> void:
 			reserve_cooldown.start(5.0)
 	else:
 		if not holding_store_button:
-			if Input.is_action_just_pressed("reserve_ion"): # Reserve
+			if Input.is_action_just_pressed("reserve_ion") and abs(get_momentum()) > 1.0: # Reserve
 				var clone_momentum := momentum
 				GameTime.set_temp_scale()
 				stored_momentum = momentum.length()
