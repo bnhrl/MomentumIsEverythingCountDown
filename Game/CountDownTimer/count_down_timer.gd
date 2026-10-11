@@ -15,6 +15,14 @@ func _process(delta: float) -> void:
 
 
 # Counting
+func set_time(t := time) -> void:
+	max_time = t
+	time = max_time
+
+func multiply_time(amount := 1.0) -> void:
+	max_time *= amount
+	time = max_time
+
 var color := Color("4d65b4")
 func _process_counting(delta: float) -> void:
 	time -= delta

@@ -6,14 +6,10 @@ func _ready() -> void:
 	_ready_pause_menu()
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") and get_tree().current_scene is Level:
 		if get_tree().paused:
-			get_tree().paused = false
-			Effects.unobscure()
 			pause_menu.close()
 		else:
-			get_tree().paused = true
-			Effects.obscure()
 			pause_menu.open()
 
 const SCENES: Dictionary[String, PackedScene] = {

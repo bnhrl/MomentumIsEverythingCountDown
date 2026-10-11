@@ -6,4 +6,4 @@ func _ready() -> void:
 	if Engine.is_editor_hint(): return
 	
 	if PlayerManager.easy_mode:
-		$CountDownTimer.time = 15.0
+		$CountDownTimer.set_time(15.0)

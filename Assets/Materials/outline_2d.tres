@@ -6,3 +6,4 @@
 shader = ExtResource("1_w87wa")
 shader_parameter/on_canvas_group = false
 shader_parameter/outline_thickness = 1.0
+shader_parameter/addition = Color(1, 1, 1, 0)

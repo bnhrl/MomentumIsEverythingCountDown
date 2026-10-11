@@ -21,7 +21,7 @@ func _ready() -> void:
 	RenderingServer.global_shader_parameter_set("outline_color", outline_color)
 	$CountDownTimer.show()
 	if PlayerManager.easy_mode:
-		$CountDownTimer.time *= 1.5
+		$CountDownTimer.multiply_time(1.5)
 
 const EXITING := 1.0
 var exiting := EXITING

@@ -228,16 +228,20 @@ process_material = SubResource("ParticleProcessMaterial_qwver")
 
 [node name="KillSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=224865394]
 max_polyphony = 20
+bus = &"SoundEffects"
 
 [node name="DeathSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=416051244]
 stream = ExtResource("7_ch4ko")
+bus = &"SoundEffects"
 
 [node name="RicochetSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1655605020]
 stream = ExtResource("8_vh1aq")
 max_polyphony = 2
+bus = &"SoundEffects"
 
 [node name="GrappleSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=537767284]
 stream = ExtResource("9_4ddeg")
+bus = &"SoundEffects"
 
 [node name="GrappleTimer" type="Timer" parent="." unique_id=1453170140]
 wait_time = 0.5

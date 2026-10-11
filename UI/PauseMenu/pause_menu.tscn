@@ -2,18 +2,29 @@
 
 [ext_resource type="Material" uid="uid://behb1ngel53g" path="res://Assets/Materials/outline_2d.tres" id="1_t3iro"]
 [ext_resource type="Script" uid="uid://bk7mfbw2ds6qi" path="res://UI/PauseMenu/pause_menu.gd" id="1_w5vkt"]
+[ext_resource type="Material" uid="uid://d2t4whxx1mrd8" path="res://Assets/Materials/outline_2d_canvas_group.tres" id="2_af6kt"]
+[ext_resource type="Texture2D" uid="uid://cwgfqpk74ruxg" path="res://UI/PauseMenu/border.png" id="3_lq2tb"]
+[ext_resource type="Shader" uid="uid://drkj0ypwy5bpc" path="res://Assets/Shaders/autoscroll.gdshader" id="4_af6kt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6smh"]
+shader = ExtResource("4_af6kt")
+shader_parameter/multiply = Vector2(0, 0.25)
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=1240024196]
 layer = 9
 script = ExtResource("1_w5vkt")
 
 [node name="Back" type="ColorRect" parent="." unique_id=350190489]
+unique_name_in_owner = true
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
-color = Color(0, 0, 0, 0.5)
+color = Color(0, 0, 0, 0.70000005)
 
-[node name="Label" type="RichTextLabel" parent="." unique_id=1182622038]
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=665751802]
+material = ExtResource("2_af6kt")
+
+[node name="Label" type="RichTextLabel" parent="CanvasGroup" unique_id=1182622038]
 material = ExtResource("1_t3iro")
 offset_right = 640.0
 offset_bottom = 360.0
@@ -21,24 +32,33 @@ mouse_filter = 2
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 bbcode_enabled = true
 text = "[font_size=32]game paused[/font_size]
-Press [TAB] to unpause"
+Press [TAB] to unpause
+Press [ESC] to exit"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+visible_characters_behavior = 1
 
-[node name="SideLeft" type="ColorRect" parent="." unique_id=1054860761]
-offset_left = -170.0
-offset_right = 70.0
-offset_bottom = 240.0
-rotation = -0.7853982
+[node name="SideLeft" type="TextureRect" parent="CanvasGroup" unique_id=824886758]
+unique_name_in_owner = true
+texture_repeat = 2
+material = SubResource("ShaderMaterial_c6smh")
+offset_left = 83.00001
+offset_top = -83.00001
+offset_right = 323.0
+offset_bottom = 157.0
+rotation = 0.7853982
 mouse_filter = 2
-color = Color(0.78031605, 0.86290884, 0.815826, 0.67)
+texture = ExtResource("3_lq2tb")
 
-[node name="SideRight" type="ColorRect" parent="." unique_id=386782155]
-offset_left = 470.0
-offset_top = 360.0
-offset_right = 710.0
-offset_bottom = 600.0
-rotation = -0.7853982
+[node name="SideRight" type="TextureRect" parent="CanvasGroup" unique_id=643155722]
+unique_name_in_owner = true
+texture_repeat = 2
+material = SubResource("ShaderMaterial_c6smh")
+offset_left = 554.00006
+offset_top = 446.00003
+offset_right = 794.00006
+offset_bottom = 686.0
+rotation = -2.3561945
 mouse_filter = 2
-color = Color(0.78031605, 0.86290884, 0.815826, 0.67)
+texture = ExtResource("3_lq2tb")

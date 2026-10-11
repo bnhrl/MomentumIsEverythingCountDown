@@ -34,5 +34,6 @@ vertical_alignment = 1
 one_shot = true
 
 [node name="SoundPlayer" type="AudioStreamPlayer" parent="." unique_id=489885819]
+bus = &"SoundEffects"
 
 [connection signal="timeout" from="BeatTimer" to="." method="_on_beat_timer_timeout"]
