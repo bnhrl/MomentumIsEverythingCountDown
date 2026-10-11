@@ -45,6 +45,7 @@ func reset_save() -> void:
 
 
 func add_best_time(level: int, time: float) -> void:
+	time = snappedf(time, 0.01)
 	var l := str(level)
 	if PlayerManager.easy_mode: l += "_easy"
 	else: l += "_hard"

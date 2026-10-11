@@ -74,9 +74,9 @@ vertical_alignment = 1
 [node name="TimeLabel" type="RichTextLabel" parent="UILayer" unique_id=348801823]
 clip_contents = false
 offset_left = 550.0
-offset_top = -2.0
+offset_top = -4.0
 offset_right = 636.0
-offset_bottom = 19.0
+offset_bottom = 17.0
 theme_override_colors/default_color = Color(0.78031605, 0.86290884, 0.815826, 0.70000005)
 theme_override_font_sizes/normal_font_size = 12
 text = "0.0s"

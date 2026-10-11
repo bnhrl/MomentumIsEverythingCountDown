@@ -95,7 +95,7 @@ func select_level(l: int, button: LevelButton) -> void:
 	level = l
 	level_label.text = "[tornado freq=5 radius=2.0]"+LEVEL_NAMES.get(level)
 	level_thumbnail.texture = LEVEL_THUMBSNAILS.get(level)
-	selector.target = button
+	selector.set_target(button)
 	update_best_time_label()
 
 func update_best_time_label() -> void:
