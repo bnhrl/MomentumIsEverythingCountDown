@@ -17,6 +17,7 @@ shader_parameter/autoscroll = false
 shader = ExtResource("3_4nsif")
 shader_parameter/on_canvas_group = true
 shader_parameter/outline_thickness = 1.0
+shader_parameter/addition = Color(1, 1, 1, 0)
 
 [sub_resource type="TileSet" id="TileSet_4nsif"]
 
@@ -69,6 +70,18 @@ bbcode_enabled = true
 text = "Level Completed!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TimeLabel" type="RichTextLabel" parent="UILayer" unique_id=348801823]
+clip_contents = false
+offset_left = 550.0
+offset_top = -2.0
+offset_right = 636.0
+offset_bottom = 19.0
+theme_override_colors/default_color = Color(0.78031605, 0.86290884, 0.815826, 0.70000005)
+theme_override_font_sizes/normal_font_size = 12
+text = "0.0s"
+scroll_active = false
+horizontal_alignment = 2
 
 [node name="CountDownTimer" parent="." unique_id=102296066 instance=ExtResource("2_mndar")]
 visible = false

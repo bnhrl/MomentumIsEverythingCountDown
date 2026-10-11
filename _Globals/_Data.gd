@@ -49,7 +49,7 @@ func add_best_time(level: int, time: float) -> void:
 	if PlayerManager.easy_mode: l += "_easy"
 	else: l += "_hard"
 	
-	if time > save_data.get_or_add("best_times", {}).get(l, -1):
+	if time < save_data.get_or_add("best_times", {}).get(l, 9999) and time < 9999:
 		save_data.get("best_times").set(l, time)
 
 func get_best_time(level: int) -> float:

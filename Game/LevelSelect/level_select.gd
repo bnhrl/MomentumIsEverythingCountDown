@@ -101,7 +101,7 @@ func select_level(l: int, button: LevelButton) -> void:
 func update_best_time_label() -> void:
 	var time := Data.get_best_time(level)
 	if time > 0.0:
-		best_time_label.text = "best time: " + str(snapped(time, 0.01))
+		best_time_label.text = "best time: " + str(snapped(time, 0.01)).pad_decimals(2) + "s"
 	else:
 		best_time_label.text = "best time: N/A"
 

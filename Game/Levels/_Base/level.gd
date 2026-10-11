@@ -1,6 +1,7 @@
 @tool class_name Level extends Node2D
 
 @export var outline_color := Color("3e3546")
+@onready var time_label: RichTextLabel = $UILayer/TimeLabel
 
 func _ready() -> void:
 	if Engine.is_editor_hint(): 
@@ -28,7 +29,10 @@ var exiting := EXITING
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	
-	time_elapsed += delta
+	if not completed:
+		time_elapsed += delta
+		time_label.text = str(snappedf(time_elapsed, 0.01)).pad_decimals(2) + "s"
+	
 	_process_exiting(delta)
 	if Input.is_action_just_pressed("restart") and !completed:
 		player_dead()
