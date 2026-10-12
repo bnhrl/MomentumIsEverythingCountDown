@@ -6,7 +6,7 @@ func _ready() -> void:
 	_ready_pause_menu()
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("pause") and get_tree().current_scene is Level:
+	if Input.is_action_just_pressed("escape") and get_tree().current_scene is Level:
 		if get_tree().paused:
 			pause_menu.close()
 		else:

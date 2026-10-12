@@ -5,12 +5,14 @@
 [ext_resource type="Material" uid="uid://d2t4whxx1mrd8" path="res://Assets/Materials/outline_2d_canvas_group.tres" id="2_af6kt"]
 [ext_resource type="Texture2D" uid="uid://cwgfqpk74ruxg" path="res://UI/PauseMenu/border.png" id="3_lq2tb"]
 [ext_resource type="Shader" uid="uid://drkj0ypwy5bpc" path="res://Assets/Shaders/autoscroll.gdshader" id="4_af6kt"]
+[ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/UIButton/ui_button.tscn" id="6_s0ulm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c6smh"]
 shader = ExtResource("4_af6kt")
 shader_parameter/multiply = Vector2(0, 0.25)
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=1240024196]
+process_mode = 3
 layer = 9
 script = ExtResource("1_w5vkt")
 
@@ -32,8 +34,17 @@ mouse_filter = 2
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 bbcode_enabled = true
 text = "[font_size=32]game paused[/font_size]
-Press [TAB] to unpause
-Press [ESC] to exit"
+[ESC] to unpause
+
+
+
+
+
+
+
+
+
+"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -62,3 +73,16 @@ offset_bottom = 686.0
 rotation = -2.3561945
 mouse_filter = 2
 texture = ExtResource("3_lq2tb")
+
+[node name="BtnMenu" parent="CanvasGroup" unique_id=1244101036 instance=ExtResource("6_s0ulm")]
+offset_left = 272.0
+offset_top = 306.0
+offset_right = 368.0
+offset_bottom = 341.0
+theme_override_colors/default_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Exit"
+default_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+hover_color = Color(1, 1, 1, 1)
+
+[connection signal="pressed" from="CanvasGroup/BtnMenu" to="." method="_on_btn_menu_pressed"]

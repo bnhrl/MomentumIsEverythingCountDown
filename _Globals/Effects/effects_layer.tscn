@@ -22,13 +22,14 @@ layer = 99
 script = ExtResource("1_btiq3")
 
 [node name="EffectLayer2" type="CanvasLayer" parent="." unique_id=1129677132]
-layer = 100
 
 [node name="Obscur" type="ColorRect" parent="EffectLayer2" unique_id=1321264766]
 modulate = Color(1, 1, 1, 0)
 material = SubResource("ShaderMaterial_esxch")
 offset_right = 640.0
 offset_bottom = 360.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="EffectLayer1" type="CanvasLayer" parent="." unique_id=646894591]
 
@@ -37,6 +38,7 @@ material = SubResource("ShaderMaterial_c6smh")
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="EffectLayer0" type="CanvasLayer" parent="." unique_id=1792592247]
 
@@ -45,3 +47,4 @@ material = SubResource("ShaderMaterial_ystob")
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true

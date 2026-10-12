@@ -137,6 +137,9 @@ animations = [{
 "speed": 3.5
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q0m6d"]
+radius = 5.9999995
+
 [sub_resource type="Curve" id="Curve_q0m6d"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -203,6 +206,15 @@ shape = SubResource("CircleShape2D_letr6")
 position = Vector2(5, 0)
 sprite_frames = SubResource("SpriteFrames_853w4")
 autoplay = "default"
+
+[node name="AnimatableBody" type="AnimatableBody2D" parent="Model/Grabber" unique_id=830811568]
+collision_layer = 0
+collision_mask = 4
+
+[node name="Collision" type="CollisionShape2D" parent="Model/Grabber/AnimatableBody" unique_id=1627928879]
+position = Vector2(12.999996, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_q0m6d")
 
 [node name="DirectionIndicator" type="Polygon2D" parent="." unique_id=1750413852]
 polygon = PackedVector2Array(12, -8, 24, 0, 12, 8, 18, 0)
