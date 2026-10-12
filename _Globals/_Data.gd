@@ -35,7 +35,7 @@ func save() -> void:
 	save_data.set("fullscreen", fullscreen)
 	save_data.set("easy_mode", PlayerManager.easy_mode)
 	save_data.set("current_level", Scenes.current_level)
-	var save_file := FileAccess.open("user://save.exitoxicity", FileAccess.WRITE)
+	var save_file := FileAccess.open("user://save.excitoxicity", FileAccess.WRITE)
 	var json_string := JSON.stringify(save_data)
 	save_file.store_line(json_string)
 	save_file.close()
