@@ -49,6 +49,7 @@ window/stretch/mode="viewport"
 
 folder_colors={
 "res://Assets/": "gray",
+"res://Game/BoostPads/": "yellow",
 "res://Game/CompletionZone/": "yellow",
 "res://Game/CountDownTimer/": "yellow",
 "res://Game/DeathPits/": "yellow",

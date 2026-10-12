@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c6cj7c34fudmb"]
+
+[ext_resource type="PackedScene" uid="uid://co1sgdv2x4nyr" path="res://Game/Levels/_Base/level.tscn" id="1_ygyb2"]
+[ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="2_4wv6u"]
+[ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="3_rf2eo"]
+[ext_resource type="PackedScene" uid="uid://d3xhd06mdlv8l" path="res://Game/Enemies/WhiteBloodCell/white_blood_cell.tscn" id="4_13ugc"]
+[ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="5_x5grr"]
+
+[node name="LevelBonus1" unique_id=1414133645 instance=ExtResource("1_ygyb2")]
+
+[node name="PlayerSpawnPoint" parent="." index="1" unique_id=1452407390]
+position = Vector2(104, -32)
+
+[node name="Background" parent="." index="4" unique_id=675105712]
+position = Vector2(1, 1)
+
+[node name="PolygonWalls" parent="WallLayer" parent_id_path=PackedInt32Array(332655601) index="1" unique_id=576414089]
+position = Vector2(-14, 55)
+
+[node name="PolygonWall0" parent="WallLayer/PolygonWalls" index="0" unique_id=293361938 instance=ExtResource("2_4wv6u")]
+visible = false
+polygon = PackedVector2Array(51, 16, 42.20749, -12.291318, -2, -2, -2, 2)
+
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("3_rf2eo")]
+position = Vector2(132, -49)
+
+[node name="WhiteBloodCell0" parent="." index="15" unique_id=613541596 instance=ExtResource("4_13ugc")]
+position = Vector2(45, -66)
+
+[node name="DeathPit0" parent="." index="16" unique_id=1582885165 instance=ExtResource("5_x5grr")]
+position = Vector2(93, -213)
+polygon = PackedVector2Array(14, 1, 0, 5, -5, 0, 0, -5, 16, -5)
