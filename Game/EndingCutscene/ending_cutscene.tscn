@@ -104,15 +104,15 @@ layout_mode = 0
 offset_left = 128.0
 offset_top = 64.0
 offset_right = 512.0
-offset_bottom = 276.0
+offset_bottom = 283.0
 theme_override_colors/default_color = Color(0.043137256, 0.36862746, 0.39607844, 1)
 theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "	Main Programmer (aka All* Of It)
-	Seriously he's magic I really don't
+	*Seriously he's magic I really don't
 	Ideas
-	Levels 5, 6, 8, 9, 11 Design
+	Levels 6, 8, 9, 11 Design
 	itch.io Page Design
 	Creator of [img]uid://bpta5g7b4fb26[/img]
 	Ending Cutscene Final Render"
@@ -124,7 +124,7 @@ visible = false
 layout_mode = 0
 offset_top = 60.0
 offset_right = 640.0
-offset_bottom = 300.0
+offset_bottom = 331.0
 theme_override_colors/default_color = Color(0.11764706, 0.7372549, 0.4509804, 1)
 theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 theme_override_constants/outline_size = 4
@@ -138,16 +138,17 @@ layout_mode = 0
 offset_left = 128.0
 offset_top = 64.0
 offset_right = 512.0
-offset_bottom = 244.0
+offset_bottom = 283.0
 theme_override_colors/default_color = Color(0.11764706, 0.7372549, 0.4509804, 1)
 theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "	\"Panic Attack\" Concept
 	Ideas
-	Levels 1, 2, 4, 7, 10, 12 Design
+	Levels 1, 2, 4, 5, 7, 10, 12 Design
 	Environmental Design
 	Enemy Design
+    Bacteriophage Design
 "
 scroll_active = false
 
@@ -156,7 +157,7 @@ visible = false
 layout_mode = 0
 offset_top = 60.0
 offset_right = 640.0
-offset_bottom = 300.0
+offset_bottom = 331.0
 theme_override_colors/default_color = Color(0.68235296, 0.13725491, 0.20392157, 1)
 theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 theme_override_constants/outline_size = 4
@@ -170,13 +171,14 @@ layout_mode = 0
 offset_left = 128.0
 offset_top = 64.0
 offset_right = 512.0
-offset_bottom = 244.0
+offset_bottom = 283.0
 theme_override_colors/default_color = Color(0.68235296, 0.13725491, 0.20392157, 1)
 theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "	Ideas
 	UI Design
+    Music Guy
 	Level 3 Design
 	Ending Cutscene Sprites
 	Detailed Credits
