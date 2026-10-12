@@ -13,8 +13,9 @@ func _ready() -> void:
 	load_save()
 
 
-func load_save() -> void:
-	var save_file := FileAccess.open("user://save.exitoxicity", FileAccess.READ)
+const SAVE_DATA_PATH := "user://save.excitoxicity"
+func load_save(path := SAVE_DATA_PATH) -> void:
+	var save_file := FileAccess.open(path, FileAccess.READ)
 	if !save_file: 
 		save()
 		return
