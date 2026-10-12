@@ -96,6 +96,7 @@ func _on_btn_reset_pressed() -> void:
 			Data.reset_save()
 
 func _on_btn_export_pressed() -> void:
+	Data.save()
 	var buffer := FileAccess.get_file_as_bytes(Data.SAVE_DATA_PATH)
 	JavaScriptBridge.download_buffer(buffer, "save.excitoxicity")
 

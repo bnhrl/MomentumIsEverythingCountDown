@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d24wa4jn2kt1o"]
+
+[ext_resource type="PackedScene" uid="uid://dh85w1vyk8sd0" path="res://Game/Entities/_Base/entity.tscn" id="1_5qp1c"]
+
+[node name="Bacteriophage0" unique_id=332664147 instance=ExtResource("1_5qp1c")]
