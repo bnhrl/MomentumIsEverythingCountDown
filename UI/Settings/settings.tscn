@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://bivu8j4wvfwos"]
+
+[ext_resource type="Script" uid="uid://c0hgkqm6kmvy8" path="res://UI/Settings/settings.gd" id="1_hfoeg"]
+[ext_resource type="Shader" uid="uid://drkj0ypwy5bpc" path="res://Assets/Shaders/autoscroll.gdshader" id="1_u23uq"]
+[ext_resource type="Texture2D" uid="uid://baodxxg4uk2ig" path="res://UI/MainMenu/background.png" id="2_6ukun"]
+[ext_resource type="Shader" uid="uid://chwkgj0slhnlv" path="res://Assets/Shaders/wavy.gdshader" id="2_wnv0n"]
+[ext_resource type="Texture2D" uid="uid://irh7x835h0bd" path="res://Assets/Textures/background_0.png" id="3_6ukun"]
+[ext_resource type="Texture2D" uid="uid://bs8j4ds8qc7y4" path="res://Assets/Textures/background_3.png" id="3_eeom4"]
+[ext_resource type="Texture2D" uid="uid://ogmg54ge4mqi" path="res://Assets/Textures/background_2.png" id="4_yuh4y"]
+[ext_resource type="Texture2D" uid="uid://cmj78k4wv6glq" path="res://UI/Settings/grabber_red.png" id="8_4ang8"]
+[ext_resource type="Texture2D" uid="uid://cljm5x6gh2vqu" path="res://UI/Settings/grabber_blue.png" id="9_qx4ph"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v3ito"]
+shader = ExtResource("2_wnv0n")
+shader_parameter/on_canvas_group = true
+shader_parameter/wave_x = 32.0
+shader_parameter/wave_y = 32.0
+shader_parameter/ferocity = 0.1
+shader_parameter/speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wnv0n"]
+shader = ExtResource("1_u23uq")
+shader_parameter/multiply = Vector2(-0.05, -0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yuh4y"]
+shader = ExtResource("1_u23uq")
+shader_parameter/multiply = Vector2(0.1, 0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eeom4"]
+shader = ExtResource("1_u23uq")
+shader_parameter/multiply = Vector2(0.3, -0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hfoeg"]
+shader = ExtResource("1_u23uq")
+shader_parameter/multiply = Vector2(-0.2, 0.1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnv0n"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.24313726, 0.20784314, 0.27450982, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ang8"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3019608, 0.39607844, 0.7058824, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx4ph"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.9411765, 0.30980393, 0.47058824, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3019608, 0.39607844, 0.7058824, 1)
+anti_aliasing = false
+
+[node name="Settings" type="Control" unique_id=1010738482]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hfoeg")
+
+[node name="Background" type="CanvasGroup" parent="." unique_id=208853329]
+z_index = -5
+material = SubResource("ShaderMaterial_v3ito")
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1640775359]
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background3" type="Sprite2D" parent="Background" unique_id=1045422618]
+modulate = Color(1, 1, 1, 0.25)
+texture_repeat = 3
+material = SubResource("ShaderMaterial_wnv0n")
+position = Vector2(320, 180)
+scale = Vector2(1.1, 1.15)
+texture = ExtResource("3_eeom4")
+
+[node name="Background0" type="Sprite2D" parent="Background" unique_id=303724209]
+modulate = Color(1, 1, 1, 0.1)
+texture_repeat = 3
+material = SubResource("ShaderMaterial_yuh4y")
+position = Vector2(320, 180)
+scale = Vector2(1.1, 1.15)
+texture = ExtResource("2_6ukun")
+
+[node name="Background1" type="Sprite2D" parent="Background" unique_id=1645355698]
+modulate = Color(1, 1, 1, 0.25)
+texture_repeat = 3
+material = SubResource("ShaderMaterial_eeom4")
+position = Vector2(320, 180)
+scale = Vector2(1.1, 1.15)
+texture = ExtResource("3_6ukun")
+
+[node name="Background2" type="Sprite2D" parent="Background" unique_id=1080850918]
+modulate = Color(1, 1, 1, 0.25)
+texture_repeat = 3
+material = SubResource("ShaderMaterial_hfoeg")
+position = Vector2(320, 180)
+scale = Vector2(1.1, 1.15)
+texture = ExtResource("4_yuh4y")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=91147556]
+clip_contents = false
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 81.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[tornado radius=5 freq=2]welcome to the settings menu"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SliderSFX" type="HSlider" parent="." unique_id=1098301117]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 81.0
+offset_right = 377.0
+offset_bottom = 97.0
+theme_override_icons/grabber = ExtResource("8_4ang8")
+theme_override_icons/grabber_highlight = ExtResource("8_4ang8")
+theme_override_styles/slider = SubResource("StyleBoxFlat_wnv0n")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_4ang8")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_4ang8")
+value = 50.0
+
+[node name="SliderMusic" type="HSlider" parent="." unique_id=1030209967]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 104.0
+offset_right = 377.0
+offset_bottom = 120.0
+theme_override_icons/grabber = ExtResource("9_qx4ph")
+theme_override_icons/grabber_highlight = ExtResource("9_qx4ph")
+theme_override_styles/slider = SubResource("StyleBoxFlat_wnv0n")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_qx4ph")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_qx4ph")
+value = 50.0

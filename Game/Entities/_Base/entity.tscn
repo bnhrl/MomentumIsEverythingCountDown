@@ -2,9 +2,30 @@
 
 [ext_resource type="Script" uid="uid://2o73gyyt76f3" path="res://Game/Entities/_Base/entity.gd" id="1_423tj"]
 [ext_resource type="Material" uid="uid://d2t4whxx1mrd8" path="res://Assets/Materials/outline_2d_canvas_group.tres" id="2_sxh73"]
+[ext_resource type="Texture2D" uid="uid://cgerxyyy2gsoi" path="res://Game/Enemies/_Base/not_blood.png" id="3_pq2a5"]
+[ext_resource type="Script" uid="uid://4ln5ipaq3o7b" path="res://Assets/Scripts/dynamic_particles_2d.gd" id="4_urajv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6smh"]
 radius = 5.0
+
+[sub_resource type="Curve" id="Curve_e0cgb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_obnpv"]
+curve = SubResource("Curve_e0cgb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dkkmn"]
+particle_flag_disable_z = true
+spread = 20.0
+initial_velocity_min = -2.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -100.0
+linear_accel_max = -25.000002
+radial_accel_min = -50.0
+radial_accel_max = 49.999996
+scale_curve = SubResource("CurveTexture_obnpv")
 
 [node name="Entity" type="CharacterBody2D" unique_id=332664147]
 collision_layer = 5
@@ -19,3 +40,17 @@ material = ExtResource("2_sxh73")
 scale = Vector2(0.8, 0.8)
 
 [node name="RedirectTimer" type="Timer" parent="." unique_id=47906977]
+
+[node name="NotBloodParticles" type="GPUParticles2D" parent="." unique_id=1895142897]
+z_index = -1
+scale = Vector2(0.99999994, 0.99999994)
+amount = 128
+texture = ExtResource("3_pq2a5")
+lifetime = 2.0
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.95
+randomness = 0.5
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_dkkmn")
+script = ExtResource("4_urajv")

@@ -49,7 +49,7 @@ func stop(fadeout: float = 1.0) -> void:
 @onready var music_pitch: AudioEffectPitchShift = AudioServer.get_bus_effect(AudioServer.get_bus_index("Music"), 0)
 var pitch_tween: Tween
 func set_pitch(pitch := 1.0, time := 0.25) -> void:
-	if pitch_tween: return
+	if !music_pitch: return
 	
 	if pitch_tween: pitch_tween.kill()
 	pitch_tween = create_tween()

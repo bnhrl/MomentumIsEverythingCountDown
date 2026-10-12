@@ -109,5 +109,6 @@ frame_progress = 1.0
 
 [node name="SoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=224769377]
 stream = ExtResource("5_kc8o7")
+bus = &"SoundEffects"
 
 [connection signal="interacted" from="ButtonInteractable" to="." method="_on_button_interactable_interacted"]

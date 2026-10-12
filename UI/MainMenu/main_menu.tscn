@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://bd8qt04xi4h20"]
+
+[ext_resource type="Script" uid="uid://psqqhskqcq2t" path="res://UI/MainMenu/main_menu.gd" id="1_2lp7i"]
+[ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/UIButton/ui_button.tscn" id="1_38cx4"]
+[ext_resource type="Texture2D" uid="uid://baodxxg4uk2ig" path="res://UI/MainMenu/background.png" id="3_5g5lb"]
+[ext_resource type="Texture2D" uid="uid://bj4ao8f456njj" path="res://UI/MainMenu/logo.png" id="5_052h3"]
+[ext_resource type="Shader" uid="uid://chwkgj0slhnlv" path="res://Assets/Shaders/wavy.gdshader" id="5_trxfs"]
+[ext_resource type="Texture2D" uid="uid://cmm28d6hlfyg0" path="res://UI/MainMenu/web_warning.png" id="6_trxfs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2gy78"]
+shader = ExtResource("5_trxfs")
+shader_parameter/on_canvas_group = true
+shader_parameter/wave_x = -100.0
+shader_parameter/wave_y = 100.0
+shader_parameter/ferocity = 0.03
+shader_parameter/speed = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8uv83"]
+shader = ExtResource("5_trxfs")
+shader_parameter/on_canvas_group = true
+shader_parameter/wave_x = 50.0
+shader_parameter/wave_y = 50.0
+shader_parameter/ferocity = 0.02
+shader_parameter/speed = 1.0
+
+[node name="MainMenu" type="Control" unique_id=1635845586]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+script = ExtResource("1_2lp7i")
+
+[node name="MainMenu" type="Node" parent="." unique_id=364565104]
+
+[node name="Background" type="CanvasGroup" parent="MainMenu" unique_id=249693910]
+z_index = -1
+material = SubResource("ShaderMaterial_2gy78")
+
+[node name="Background" type="Sprite2D" parent="MainMenu/Background" unique_id=2021198614]
+position = Vector2(320, 180)
+scale = Vector2(1.1, 1.15)
+texture = ExtResource("3_5g5lb")
+
+[node name="Logo" type="CanvasGroup" parent="MainMenu" unique_id=1432294507]
+material = SubResource("ShaderMaterial_8uv83")
+
+[node name="Logo" type="Sprite2D" parent="MainMenu/Logo" unique_id=459210881]
+unique_name_in_owner = true
+position = Vector2(320, 132)
+texture = ExtResource("5_052h3")
+
+[node name="LabelBtnDescription" type="RichTextLabel" parent="." unique_id=1869460710]
+layout_mode = 0
+offset_top = 300.0
+offset_right = 640.0
+offset_bottom = 350.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+bbcode_enabled = true
+text = "[wave]Hover a button button hover theory"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BtnStart" parent="." unique_id=1301211313 instance=ExtResource("1_38cx4")]
+layout_mode = 0
+offset_left = 241.0
+offset_top = 167.0
+offset_right = 287.0
+offset_bottom = 199.0
+scale = Vector2(3, 3)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+text = "[font_size=11] [/font_size]GO!"
+hover_size = Vector2(2, 2)
+
+[node name="BtnCredits" parent="." unique_id=1026356157 instance=ExtResource("1_38cx4")]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 239.0
+offset_right = 192.0
+offset_bottom = 271.0
+scale = Vector2(2, 2)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+text = "WHO"
+
+[node name="BtnSettings" parent="." unique_id=2052062682 instance=ExtResource("1_38cx4")]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 253.0
+offset_right = 311.0
+offset_bottom = 285.0
+scale = Vector2(2, 2)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+text = "FIX"
+
+[node name="BtnQuit" parent="." unique_id=1688920916 instance=ExtResource("1_38cx4")]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 239.0
+offset_right = 448.0
+offset_bottom = 271.0
+scale = Vector2(2, 2)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+text = "DIE"
+
+[node name="FullscreenLabel" type="RichTextLabel" parent="." unique_id=1258388438]
+layout_mode = 0
+offset_right = 366.0
+offset_bottom = 32.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+text = "Press F11 to fullscreen at any time."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnReset" parent="." unique_id=1632076101 instance=ExtResource("1_38cx4")]
+layout_mode = 0
+offset_left = 493.0
+offset_top = -5.0
+offset_right = 640.0
+offset_bottom = 19.0
+text = "reset save data"
+hover_size = Vector2(1, 1.5)
+
+[node name="BtnExport" parent="." unique_id=2014245668 instance=ExtResource("1_38cx4")]
+visible = false
+layout_mode = 0
+offset_left = 481.0
+offset_top = 19.0
+offset_right = 640.0
+offset_bottom = 47.0
+text = "export save data"
+hover_size = Vector2(1, 1.5)
+
+[node name="WebWarning" type="Node2D" parent="." unique_id=403124464]
+visible = false
+z_index = 5
+position = Vector2(320, 180)
+
+[node name="InputBlocker" type="Control" parent="WebWarning" unique_id=959368452]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="Background" type="Sprite2D" parent="WebWarning" unique_id=1540774827]
+texture = ExtResource("6_trxfs")
+
+[node name="Label" type="RichTextLabel" parent="WebWarning" unique_id=476632148]
+offset_left = -115.0
+offset_top = -115.0
+offset_right = 113.0
+offset_bottom = 46.0
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[font_size=24]- WARNING -[/font_size]
+You are playing on the WEB BUILD! This is not the intended experience, and your audiovisual experience of this game may be impacted!"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnWebWarning" parent="WebWarning" unique_id=669870460 instance=ExtResource("1_38cx4")]
+unique_name_in_owner = true
+offset_left = -115.0
+offset_top = 48.0
+offset_right = 113.0
+offset_bottom = 116.0
+text = "I understand, don't show again."
+hover_size = Vector2(1.1, 1.1)
+
+[connection signal="button_hovered" from="BtnStart" to="." method="button_hovered"]
+[connection signal="button_unhovered" from="BtnStart" to="." method="button_unhovered"]
+[connection signal="pressed" from="BtnStart" to="." method="_on_btn_start_pressed"]
+[connection signal="button_hovered" from="BtnCredits" to="." method="button_hovered"]
+[connection signal="button_unhovered" from="BtnCredits" to="." method="button_unhovered"]
+[connection signal="pressed" from="BtnCredits" to="." method="_on_btn_credits_pressed"]
+[connection signal="button_hovered" from="BtnSettings" to="." method="button_hovered"]
+[connection signal="button_unhovered" from="BtnSettings" to="." method="button_unhovered"]
+[connection signal="pressed" from="BtnSettings" to="." method="_on_btn_credits_pressed"]
+[connection signal="button_hovered" from="BtnQuit" to="." method="button_hovered"]
+[connection signal="button_unhovered" from="BtnQuit" to="." method="button_unhovered"]
+[connection signal="pressed" from="BtnQuit" to="." method="_on_btn_quit_pressed"]
+[connection signal="pressed" from="BtnReset" to="." method="_on_btn_reset_pressed"]
+[connection signal="button_hovered" from="BtnExport" to="." method="button_hovered"]
+[connection signal="button_unhovered" from="BtnExport" to="." method="button_unhovered"]
+[connection signal="pressed" from="BtnExport" to="." method="_on_btn_export_pressed"]
