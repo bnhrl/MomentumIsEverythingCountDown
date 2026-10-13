@@ -1,9 +1,23 @@
-extends Entity
+class_name EntityBacteriophage extends Entity
 
+
+const BLOOD_COLORS : Dictionary[int, Color] = {
+	0: Color("f04f78"),
+	1: Color("a884f3"),
+	2: Color("4d9be6"),
+	3: Color("30e1b9"),
+	4: Color("91db69"),
+	5: Color("a2a947"),
+	6: Color("f79617"),
+	7: Color("ae2334"),
+}
 
 func _ready() -> void:
 	super._ready()
-	sprite.play("default_"+str(randi_range(0,7)))
+	var variant := randi_range(0,7)
+	sprite.play("default_"+str(variant))
+	blood_color = BLOOD_COLORS.get(variant)
+	wall_raycast.show()
 	wall_raycast.rotation = randf_range(-PI, PI)
 	wall_raycast.force_raycast_update()
 	await get_tree().physics_frame

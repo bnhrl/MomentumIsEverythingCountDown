@@ -27,6 +27,7 @@ animations = [{
 }]
 
 [node name="DigestiveEnzyme" unique_id=613541596 instance=ExtResource("1_xs4ks")]
+collision_layer = 6
 collision_mask = 2
 script = ExtResource("2_xkb1b")
 speed = 17500.0

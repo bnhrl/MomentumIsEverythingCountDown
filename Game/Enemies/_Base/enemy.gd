@@ -114,6 +114,7 @@ func _process_passing() -> void:
 var dead := false
 func die() -> void:
 	if dead: return
+	dead = true
 	
 	for child in get_children():
 		if child is GrapplePoint: child.queue_free()
@@ -127,7 +128,7 @@ func die() -> void:
 	tween.parallel().tween_property($Model, "scale:x", 0.001, 0.5).set_trans(Tween.TRANS_EXPO)
 	$NotBloodParticles.modulate = blood_color
 	$NotBloodParticles.dp_restart()
-	await $NotBloodParticles.finished
+	await $NotBloodParticles.dp_finished
 	queue_free()
 
 # Visuals

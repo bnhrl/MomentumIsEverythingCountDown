@@ -1,4 +1,4 @@
-extends Enemy
+class_name EnemyEnzyme extends Enemy
 
 
 func _ready() -> void:

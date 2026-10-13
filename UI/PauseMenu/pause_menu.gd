@@ -63,6 +63,7 @@ func _on_btn_menu_pressed() -> void:
 	if closing: return
 	
 	closing = true
+	Effects.unintensify()
 	Scenes.swap_scene("Level Select")
 	await Scenes.faded
 	close(0.0)

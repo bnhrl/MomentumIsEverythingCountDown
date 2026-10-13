@@ -1,4 +1,4 @@
-extends Enemy
+class_name EnemyAmoeba extends Enemy
 
 
 @onready var tail_l: Line2D = $Model/TailL

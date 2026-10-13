@@ -266,7 +266,7 @@ func _process_momentum_ability() -> void:
 			reserve_cooldown.start(5.0)
 	else:
 		if not holding_store_button:
-			if Input.is_action_just_pressed("reserve_ion") and abs(get_momentum()) > 1.0: # Reserve
+			if Input.is_action_just_pressed("reserve_ion") and abs(get_momentum()) > 1.5: # Reserve
 				var clone_momentum := momentum
 				GameTime.set_temp_scale()
 				stored_momentum = momentum.length()

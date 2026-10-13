@@ -45,7 +45,7 @@ func play_opening() -> void:
 	tween.parallel().tween_property($BtnStart, "position:y", $BtnStart.position.y, 1.25).set_trans(Tween.TRANS_EXPO).from($BtnStart.position.y + 400)
 	tween.parallel().tween_property($BtnCredits, "position:y", $BtnCredits.position.y, 1.5).set_trans(Tween.TRANS_EXPO).from($BtnCredits.position.y + 400)
 	tween.parallel().tween_property($BtnQuit, "position:y", $BtnQuit.position.y, 1.5).set_trans(Tween.TRANS_EXPO).from($BtnQuit.position.y + 400)
-	tween.parallel().tween_property($BtnSettings, "position:y", $BtnSettings.position.y, 1.5).set_trans(Tween.TRANS_EXPO).from($BtnSettings.position.y + 400)
+	tween.parallel().tween_property($BtnSettings, "position:y", $BtnSettings.position.y, 1.75).set_trans(Tween.TRANS_EXPO).from($BtnSettings.position.y + 400)
 
 
 # Buttons

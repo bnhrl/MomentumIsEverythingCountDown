@@ -23,6 +23,8 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.2169423, 0.0, 0, 0]
 point_count = 2
 
 [node name="BEAmoeba0" unique_id=613541596 instance=ExtResource("1_uhq6v")]
+collision_layer = 6
+collision_mask = 3
 script = ExtResource("2_avk6h")
 speed = 10000.0
 blood_color = Color(0.9098039, 0.23137255, 0.23137255, 1)

@@ -32,7 +32,7 @@ scale_curve = SubResource("CurveTexture_obnpv")
 
 [node name="Enemy" type="CharacterBody2D" unique_id=613541596]
 z_index = 1
-collision_layer = 2
+collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_qsd2j")
 

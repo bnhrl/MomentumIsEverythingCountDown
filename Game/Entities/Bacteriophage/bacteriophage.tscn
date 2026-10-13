@@ -274,12 +274,34 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve" id="Curve_e0cgb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_obnpv"]
+curve = SubResource("Curve_e0cgb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_66148"]
+particle_flag_disable_z = true
+spread = 20.0
+initial_velocity_min = -1.0
+initial_velocity_max = 75.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -100.0
+linear_accel_max = -25.000002
+radial_accel_min = -50.0
+radial_accel_max = 49.999996
+scale_min = 0.5
+scale_max = 0.75
+scale_curve = SubResource("CurveTexture_obnpv")
+
 [node name="Bacteriophage0" unique_id=332664147 instance=ExtResource("1_5qp1c")]
 collision_layer = 0
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("2_66148")
 speed = 1200.0
+killable = true
 
 [node name="Collision" parent="." index="0" unique_id=2104399476]
 shape = SubResource("CircleShape2D_bjamh")
@@ -293,5 +315,10 @@ autoplay = "default_0"
 frame_progress = 0.2383958
 offset = Vector2(0.5, -3)
 
+[node name="NotBloodParticles" parent="." index="3" unique_id=1895142897]
+amount = 64
+process_material = SubResource("ParticleProcessMaterial_66148")
+
 [node name="WallRaycast" type="RayCast2D" parent="." index="4" unique_id=1245162331]
-target_position = Vector2(320, 0)
+visible = false
+target_position = Vector2(960, 0)
