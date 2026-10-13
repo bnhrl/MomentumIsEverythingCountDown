@@ -10,8 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="7_86ce5"]
 [ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="8_8b55i"]
 [ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="8_tlwvc"]
-[ext_resource type="PackedScene" uid="uid://bjng875ivkyon" path="res://Game/Enemies/BEAmoeba/b_e_amoeba.tscn" id="10_t2k4w"]
-[ext_resource type="PackedScene" uid="uid://d24wa4jn2kt1o" path="res://Game/Entities/Bacteriophage/bacteriophage.tscn" id="11_kv67y"]
+[ext_resource type="PackedScene" uid="uid://dkbbmtddces6c" path="res://Game/Entities/Bacteriophage/bacteriophage_spawner.tscn" id="11_t2k4w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kv67y"]
 shader = ExtResource("3_3uww5")
@@ -89,116 +88,10 @@ position = Vector2(1047, 728)
 polygon = PackedVector2Array(274, -68, -242, 146, -278, 76, 228, -146)
 uv = PackedVector2Array(322, -36, 6, 14, -22, -37, 292, -125)
 
-[node name="BEAmoeba0" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="0" unique_id=613541596 instance=ExtResource("10_t2k4w")]
-position = Vector2(466, 501)
-
-[node name="Bacteriophage0" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="0" unique_id=332664147 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage1" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="1" unique_id=1953260825 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage2" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="2" unique_id=1692829498 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage3" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="3" unique_id=1787960292 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage4" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="4" unique_id=865804812 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage5" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="5" unique_id=1666678559 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage6" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="6" unique_id=2078428060 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage7" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="7" unique_id=728410451 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage8" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="8" unique_id=1455798431 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage9" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="9" unique_id=123442074 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage10" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="10" unique_id=810811405 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage11" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="11" unique_id=751074096 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage12" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="12" unique_id=1826872598 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage13" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="13" unique_id=765966524 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage14" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="14" unique_id=991894277 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage15" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="15" unique_id=1565679458 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage16" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="16" unique_id=891543340 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage17" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="17" unique_id=30167952 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage18" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="18" unique_id=514900640 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage19" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="19" unique_id=1744019922 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage20" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="20" unique_id=1584932557 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage21" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="21" unique_id=1106534278 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage22" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="22" unique_id=672763526 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage23" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="23" unique_id=1411342585 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage24" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="24" unique_id=172230798 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage25" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="25" unique_id=1667646439 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage26" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="26" unique_id=2027645726 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage27" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="27" unique_id=2129801099 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage28" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="28" unique_id=720940157 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage29" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="29" unique_id=204587459 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage30" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="30" unique_id=53199303 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage31" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="31" unique_id=1049502414 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage32" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="32" unique_id=1715118594 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage33" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="33" unique_id=1856430889 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage34" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="34" unique_id=1299761786 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
-
-[node name="Bacteriophage35" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="35" unique_id=706514591 instance=ExtResource("11_kv67y")]
-position = Vector2(332, 475)
+[node name="BacteriophageSpawner0" parent="Entities" parent_id_path=PackedInt32Array(1626978206) index="0" unique_id=238806379 instance=ExtResource("11_t2k4w")]
+position = Vector2(1137, 920)
+min_phages = 5
+max_phages = 10
 
 [node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=485349368 instance=ExtResource("7_86ce5")]
 position = Vector2(538, 433)

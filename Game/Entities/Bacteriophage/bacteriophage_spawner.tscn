@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dkbbmtddces6c"]
+
+[ext_resource type="Script" uid="uid://cnyxnkgp5y0b" path="res://Game/Entities/Bacteriophage/bacteriophage_spawner.gd" id="1_ox0hr"]
+
+[node name="BacteriophageSpawner0" type="Node2D" unique_id=238806379]
+script = ExtResource("1_ox0hr")
+
+[node name="Gizmo0" type="Marker2D" parent="." unique_id=899082901]
+rotation = 0.7853982
+
+[node name="Gizmo1" type="Marker2D" parent="." unique_id=1068464865]
+rotation = 1.3089969
+gizmo_extents = 5.0
+
+[node name="Gizmos2" type="Marker2D" parent="." unique_id=1406403261]
+rotation = 1.8325958
+gizmo_extents = 5.0

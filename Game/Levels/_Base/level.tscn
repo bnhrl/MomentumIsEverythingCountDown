@@ -71,6 +71,7 @@ scroll_active = false
 horizontal_alignment = 2
 
 [node name="CountDownTimer" parent="." unique_id=102296066 instance=ExtResource("2_mndar")]
+layer = 0
 visible = false
 
 [node name="Background" type="Polygon2D" parent="." unique_id=675105712]

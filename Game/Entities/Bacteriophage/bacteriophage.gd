@@ -16,6 +16,7 @@ func _ready() -> void:
 	super._ready()
 	var variant := randi_range(0,7)
 	sprite.play("default_"+str(variant))
+	sprite.scale *= randf_range(0.8, 1.25)
 	blood_color = BLOOD_COLORS.get(variant)
 	wall_raycast.show()
 	wall_raycast.rotation = randf_range(-PI, PI)

@@ -33,7 +33,7 @@ func open(time_mult := 1.0) -> void:
 	tween.tween_property(self, "visible_characters", label.get_total_character_count(), 0.5*time_mult)
 	tween.tween_property(%SideLeft, "position:x", 83, OPEN_TIME*time_mult).set_trans(Tween.TRANS_CIRC)
 	tween.tween_property(%SideRight, "position:x", 554, OPEN_TIME*time_mult).set_trans(Tween.TRANS_CIRC)
-	tween.tween_property($CanvasGroup, "modulate:a", 0.5, OPEN_TIME*time_mult).set_trans(Tween.TRANS_EXPO)
+	tween.tween_property($CanvasGroup, "modulate:a", 1.0, OPEN_TIME*time_mult).set_trans(Tween.TRANS_EXPO)
 	tween.tween_property(%Back, "modulate:a", 0.5, OPEN_TIME*time_mult).set_trans(Tween.TRANS_EXPO)
 	tween.set_parallel(false)
 	tween.tween_property(self, "closing", false, 0.0)
