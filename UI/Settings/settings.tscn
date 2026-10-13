@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ogmg54ge4mqi" path="res://Assets/Textures/background_2.png" id="4_yuh4y"]
 [ext_resource type="Texture2D" uid="uid://cmj78k4wv6glq" path="res://UI/Settings/grabber_red.png" id="8_4ang8"]
 [ext_resource type="Texture2D" uid="uid://cljm5x6gh2vqu" path="res://UI/Settings/grabber_blue.png" id="9_qx4ph"]
+[ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/UIButton/ui_button.tscn" id="10_qx4ph"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v3ito"]
 shader = ExtResource("2_wnv0n")
@@ -47,25 +48,25 @@ border_width_bottom = 1
 border_color = Color(0.24313726, 0.20784314, 0.27450982, 1)
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ang8"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.3019608, 0.39607844, 0.7058824, 1)
-anti_aliasing = false
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx4ph"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
 bg_color = Color(0.9411765, 0.30980393, 0.47058824, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.68235296, 0.13725491, 0.20392157, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ang8"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -138,28 +139,64 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SliderSFX" type="HSlider" parent="." unique_id=1098301117]
+[node name="LabelMusic" type="RichTextLabel" parent="." unique_id=1319278353]
 layout_mode = 0
-offset_left = 41.0
+offset_left = 40.0
 offset_top = 81.0
-offset_right = 377.0
-offset_bottom = 97.0
-theme_override_icons/grabber = ExtResource("8_4ang8")
-theme_override_icons/grabber_highlight = ExtResource("8_4ang8")
-theme_override_styles/slider = SubResource("StyleBoxFlat_wnv0n")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_4ang8")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_4ang8")
-value = 50.0
+offset_right = 166.0
+offset_bottom = 104.0
+text = "Music"
+scroll_active = false
 
 [node name="SliderMusic" type="HSlider" parent="." unique_id=1030209967]
 layout_mode = 0
-offset_left = 41.0
-offset_top = 104.0
-offset_right = 377.0
-offset_bottom = 120.0
+offset_left = 183.0
+offset_top = 89.0
+offset_right = 618.0
+offset_bottom = 105.0
 theme_override_icons/grabber = ExtResource("9_qx4ph")
 theme_override_icons/grabber_highlight = ExtResource("9_qx4ph")
 theme_override_styles/slider = SubResource("StyleBoxFlat_wnv0n")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_qx4ph")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_qx4ph")
-value = 50.0
+max_value = 200.0
+step = 0.0
+value = 100.0
+
+[node name="LabelSFX" type="RichTextLabel" parent="." unique_id=1832234376]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 104.0
+offset_right = 166.0
+offset_bottom = 127.0
+text = "Sound Effects"
+scroll_active = false
+
+[node name="SliderSFX" type="HSlider" parent="." unique_id=1098301117]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 112.0
+offset_right = 618.0
+offset_bottom = 128.0
+theme_override_icons/grabber = ExtResource("8_4ang8")
+theme_override_icons/grabber_highlight = ExtResource("8_4ang8")
+theme_override_styles/slider = SubResource("StyleBoxFlat_wnv0n")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_4ang8")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_4ang8")
+max_value = 200.0
+step = 0.0
+value = 100.0
+
+[node name="BtnMainMenu" parent="." unique_id=1301211313 instance=ExtResource("10_qx4ph")]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 285.0
+offset_right = 122.0
+offset_bottom = 342.0
+theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+text = "Back to 
+Main Menu"
+
+[connection signal="drag_ended" from="SliderMusic" to="." method="_on_vol_slider_drag_ended"]
+[connection signal="drag_ended" from="SliderSFX" to="." method="_on_vol_slider_drag_ended"]
+[connection signal="pressed" from="BtnMainMenu" to="." method="_on_btn_main_menu_pressed"]

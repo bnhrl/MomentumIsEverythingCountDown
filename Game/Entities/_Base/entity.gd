@@ -10,6 +10,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	_process_movement(delta)
+	_process_visuals(delta)
+	move_and_slide()
 
 
 @onready var redirect_timer: Timer = $RedirectTimer
@@ -25,3 +27,8 @@ func _process_movement(delta: float) -> void:
 	
 	var target_velocity := direction * speed * delta
 	velocity = LerpHelper.lv2(velocity, target_velocity, 8.0, delta)
+
+
+@onready var model: CanvasGroup = $Model
+func _process_visuals(_delta: float) -> void:
+	pass

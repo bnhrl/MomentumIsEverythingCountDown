@@ -5,7 +5,9 @@ var save_data: Dictionary = {
 	"fullscreen":false,
 	"easy_mode":true,
 	"current_level":1,
-	"best_times": {}
+	"best_times": {},
+	"vol_mus":100.0,
+	"vol_sfx":100.0,
 }
 
 
@@ -13,6 +15,7 @@ func _ready() -> void:
 	load_save()
 
 
+# Actual Save Stuff
 const SAVE_DATA_PATH := "user://save.excitoxicity"
 func load_save(path := SAVE_DATA_PATH) -> void:
 	var save_file := FileAccess.open(path, FileAccess.READ)
@@ -28,6 +31,7 @@ func load_save(path := SAVE_DATA_PATH) -> void:
 	Scenes.current_level = save_data.get("current_level", 1)
 	if save_data.get("fullscreen"): DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	PlayerManager.easy_mode = save_data.get("easy_mode")
+	update_audio_settings()
 
 func save() -> void:
 	var fullscreen := false
@@ -45,6 +49,15 @@ func reset_save() -> void:
 	save()
 
 
+# Settings
+func update_audio_settings(vol_mus: float = save_data.get("vol_mus", 100.0), vol_sfx: float = save_data.get("vol_sfx", 100.0)) -> void:
+	save_data.set("vol_mus", vol_mus)
+	save_data.set("vol_sfx", vol_sfx)
+	AudioServer.set_bus_volume_linear(1, vol_sfx * 0.01)
+	AudioServer.set_bus_volume_linear(2, vol_mus * 0.01)
+
+
+# Best Times
 func add_best_time(level: int, time: float) -> void:
 	time = snappedf(time, 0.01)
 	var l := str(level)

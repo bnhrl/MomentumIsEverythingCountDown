@@ -161,6 +161,7 @@ func level_completed() -> void:
 
 
 # Grabber
+@onready var phage_smacker: AnimatableBody2D = $PhageSmacker
 @onready var grabber: Area2D = $Model/Grabber
 func _process_grabber() -> void: # Anchors and rotates the grabber based off of the tail
 	var last_point := tail_points[tail_points.size()-1]
@@ -168,6 +169,7 @@ func _process_grabber() -> void: # Anchors and rotates the grabber based off of 
 	grabber.rotation = last_point.angle()
 	for area in grabber.get_overlapping_areas():
 		if area is Interactable: area.interact()
+	phage_smacker.global_transform = grabber.global_transform
 
 
 # Grappling

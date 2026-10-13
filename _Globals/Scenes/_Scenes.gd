@@ -15,6 +15,7 @@ func _process(_delta: float) -> void:
 const SCENES: Dictionary[String, PackedScene] = {
 	"Main Menu":preload("uid://bd8qt04xi4h20"),
 	"Level Select":preload("uid://behlas1qvvn6n"),
+	"Settings":preload("uid://bivu8j4wvfwos"),
 	"Level 0":preload("uid://co1sgdv2x4nyr"), # Base level!! Do not use outside of testing!!
 	"Level 1":preload("uid://dhwaorb401jhg"),
 	"Level 2":preload("uid://bs0xsclp1lodr"),

@@ -90,19 +90,21 @@ tile_set = SubResource("TileSet_4nsif")
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_vgjax")
 
-[node name="BoostPads" type="Node" parent="." unique_id=839747053]
+[node name="CompletionZones" type="Node" parent="." unique_id=1863227345]
 
 [node name="Interactables" type="Node" parent="." unique_id=1223907740]
 
-[node name="Enemies" type="Node" parent="." unique_id=1295879779]
-
 [node name="DeathPits" type="Node" parent="." unique_id=1192831106 groups=["navigation_group"]]
 
-[node name="CompletionZones" type="Node" parent="." unique_id=1863227345]
+[node name="Enemies" type="Node" parent="." unique_id=1295879779]
+
+[node name="Entities" type="Node" parent="." unique_id=1626978206]
 
 [node name="Objects" type="Node" parent="." unique_id=438333042]
 
 [node name="GrapplePoints" type="Node" parent="." unique_id=882760734]
+
+[node name="BoostPads" type="Node" parent="." unique_id=839747053]
 
 [node name="Tutorials" type="Node" parent="." unique_id=750995765]
 

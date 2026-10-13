@@ -3,6 +3,8 @@ extends Control
 
 func _ready() -> void:
 	_ready_background()
+	$SliderMusic.value = Data.save_data.get("vol_mus", 100.0)
+	$SliderSFX.value = Data.save_data.get("vol_sfx", 100.0)
 
 func _process(delta: float) -> void:
 	_process_background(delta)
@@ -20,3 +22,12 @@ func _ready_background() -> void:
 func _process_background(delta: float) -> void:
 	for b in backgrounds:
 		b.modulate.h += delta * 0.2
+
+
+func _on_vol_slider_drag_ended(value_changed: bool) -> void:
+	if value_changed:
+		Data.update_audio_settings($SliderMusic.value, $SliderSFX.value)
+
+
+func _on_btn_main_menu_pressed() -> void:
+	Scenes.swap_scene("Main Menu")

@@ -58,6 +58,9 @@ func _on_btn_credits_pressed() -> void:
 	credits = preload("uid://og05ddis16cd").instantiate()
 	add_child(credits)
 
+func _on_btn_settings_pressed() -> void:
+	Scenes.swap_scene("Settings")
+
 func _on_btn_quit_pressed() -> void:
 	Effects.obscure()
 	Music.play("Clair de Lune", 0.2, 0.2)

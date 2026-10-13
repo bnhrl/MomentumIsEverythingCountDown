@@ -40,10 +40,12 @@ material = ExtResource("2_sxh73")
 scale = Vector2(0.8, 0.8)
 
 [node name="RedirectTimer" type="Timer" parent="." unique_id=47906977]
+one_shot = true
 
 [node name="NotBloodParticles" type="GPUParticles2D" parent="." unique_id=1895142897]
 z_index = -1
 scale = Vector2(0.99999994, 0.99999994)
+emitting = false
 amount = 128
 texture = ExtResource("3_pq2a5")
 lifetime = 2.0
