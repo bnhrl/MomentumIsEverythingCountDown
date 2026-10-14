@@ -6,6 +6,7 @@ class_name CountDownTimer extends CanvasLayer
 @export var time := 30.0
 @onready var max_time := time
 
+
 func _process(delta: float) -> void:
 	_process_background()
 	if has_expired: return
@@ -23,12 +24,12 @@ func multiply_time(amount := 1.0) -> void:
 	max_time *= amount
 	time = max_time
 
-var color := Color("4d65b4")
+var color := Color("2e222f")
 func _process_counting(delta: float) -> void:
 	time -= delta
-	label.text = str(snappedf(time, 0.1))
+	label.text = "[descent]" + str(snappedf(time, 0.01)).pad_decimals(2)
 	label.add_theme_color_override("default_color", color)
-	color = LerpHelper.l(color, Color("4d65b4"), 8.0, delta)
+	color = LerpHelper.l(color, Color("2e222f"), 8.0, delta)
 	label.offset_transform_scale = LerpHelper.lv2(label.offset_transform_scale, Vector2(1,1), 16.0, delta)
 	
 	if time <= max_time*0.5 and beat_timer.is_stopped():
@@ -60,7 +61,7 @@ func _process_expiration() -> void:
 	if time <= 0.0 and !has_expired:
 		expire()
 		time = 0.0
-		label.text = "0.0"
+		label.text = "[descent]0.0"
 
 var has_expired := false
 func expire() -> void:
@@ -68,20 +69,18 @@ func expire() -> void:
 	expired.emit()
 	await Delays.wait(0.25)
 	var tween := create_tween()
-	tween.parallel().tween_property(label, "position:y", 800, 1.4+randf_range(-0.2,0.2)).set_trans(Tween.TRANS_EXPO)
-	tween.parallel().tween_property(label, "rotation_degrees", randf_range(-30, 30), 1.4+randf_range(-0.2,0.2))
+	tween.parallel().tween_property(label.material, "shader_parameter/progress", 1.0, 0.8+randf_range(-0.2,0.2))
 	for b: Node2D in backgrounds:
-		tween.parallel().tween_property(b, "position:y", 800, 1.4+randf_range(-0.2,0.2)).set_trans(Tween.TRANS_EXPO)
-		tween.parallel().tween_property(b, "rotation_degrees", randf_range(-30, 30), 1.4+randf_range(-0.2,0.2))
+		tween.parallel().tween_property(b.material, "shader_parameter/progress", 1.0, 1.4+randf_range(-0.2,0.2))
 
 # Backgrounds
 @onready var backgrounds := [$Background0, $Background1]
 func _process_background() -> void:
-	if time > max_time*0.5 or has_expired: 
-		return
+	#if time > max_time*0.5 or has_expired: 
+		#return
 	
 	for b: Node2D in backgrounds:
-		var rand_x := clampf(randf_range(-max_time*0.5/time, max_time/time)+0.01, -8.0, 8.0)*0.2
-		var rand_y := clampf(randf_range(-max_time*0.5/time, max_time/time)+0.01, -8.0, 8.0)*0.2
+		var t := clampf(time, 0.001, max_time)
+		var rand_x := clampf(randf_range(-max_time*0.5/t, max_time/t)+0.01, -8.0, 8.0)*0.2
+		var rand_y := clampf(randf_range(-max_time*0.5/t, max_time/t)+0.01, -8.0, 8.0)*0.2
 		b.offset = Vector2(rand_x, rand_y)
-	
