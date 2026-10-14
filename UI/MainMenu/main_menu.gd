@@ -44,8 +44,8 @@ func play_opening() -> void:
 	tween.parallel().tween_property(%Logo, "scale:y", 1.0, 1.5).set_trans(Tween.TRANS_ELASTIC).from(0.001).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property($BtnStart, "position:y", $BtnStart.position.y, 1.25).set_trans(Tween.TRANS_EXPO).from($BtnStart.position.y + 400)
 	tween.parallel().tween_property($BtnCredits, "position:y", $BtnCredits.position.y, 1.5).set_trans(Tween.TRANS_EXPO).from($BtnCredits.position.y + 400)
-	tween.parallel().tween_property($BtnQuit, "position:y", $BtnQuit.position.y, 1.5).set_trans(Tween.TRANS_EXPO).from($BtnQuit.position.y + 400)
-	tween.parallel().tween_property($BtnSettings, "position:y", $BtnSettings.position.y, 1.75).set_trans(Tween.TRANS_EXPO).from($BtnSettings.position.y + 400)
+	tween.parallel().tween_property($BtnSettings, "position:y", $BtnSettings.position.y, 1.5).set_trans(Tween.TRANS_EXPO).from($BtnSettings.position.y + 400)
+	tween.parallel().tween_property($BtnQuit, "position:y", $BtnQuit.position.y, 1.75).set_trans(Tween.TRANS_EXPO).from($BtnQuit.position.y + 400)
 
 
 # Buttons
@@ -80,10 +80,12 @@ func button_hovered(button: UIButton) -> void:
 		label_btn_description.text = "[wave]Start playing the game."
 	elif button == $BtnCredits:
 		label_btn_description.text = "[wave]View the credits for the game."
-	elif button == $BtnQuit:
-		label_btn_description.text = "[wave]Close the game and exit to desktop."
 	elif button == $BtnSettings:
 		label_btn_description.text = "[wave]Go to the game settings menu."
+	elif button == $BtnQuit:
+		label_btn_description.text = "[wave]Close the game and exit to desktop."
+	elif button == $BtnReset:
+		label_btn_description.text = "[wave]Reset all saved data. Duh."
 	elif button == $BtnExport:
 		label_btn_description.text = "[wave]Export your save data. Drag and drop the file onto the game to load it."
 
