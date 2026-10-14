@@ -43,6 +43,7 @@ func _process_movement(delta: float) -> void:
 				if collider is BouncyObject:
 					momentum = momentum.bounce(collision.get_normal()) * collider.ricochet_speed_mult
 					velocity = velocity.bounce(collision.get_normal()) * collider.ricochet_speed_mult
+					collider.bounced_off_of()
 				else:
 					momentum = momentum.bounce(collision.get_normal())*0.8
 					velocity = velocity.bounce(collision.get_normal())*0.8

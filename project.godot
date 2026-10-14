@@ -51,7 +51,7 @@ folder_colors={
 "res://Assets/": "gray",
 "res://Game/BoostPads/": "yellow",
 "res://Game/CompletionZone/": "yellow",
-"res://Game/CountDownTimer/": "yellow",
+"res://Game/CountDownTimer/": "blue",
 "res://Game/DeathPits/": "yellow",
 "res://Game/EndingCutscene/": "pink",
 "res://Game/Enemies/": "yellow",

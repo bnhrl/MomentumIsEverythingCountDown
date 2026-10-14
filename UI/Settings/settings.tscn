@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ogmg54ge4mqi" path="res://Assets/Textures/background_2.png" id="4_yuh4y"]
 [ext_resource type="Texture2D" uid="uid://cmj78k4wv6glq" path="res://UI/Settings/grabber_red.png" id="8_4ang8"]
 [ext_resource type="Texture2D" uid="uid://cljm5x6gh2vqu" path="res://UI/Settings/grabber_blue.png" id="9_qx4ph"]
+[ext_resource type="Script" uid="uid://0souclp1a1d3" path="res://Assets/Scripts/control_hoverable.gd" id="9_van1q"]
 [ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/UIButton/ui_button.tscn" id="10_qx4ph"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v3ito"]
@@ -162,6 +163,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_qx4ph")
 max_value = 200.0
 step = 0.0
 value = 100.0
+script = ExtResource("9_van1q")
 
 [node name="LabelSFX" type="RichTextLabel" parent="." unique_id=1832234376]
 layout_mode = 0
@@ -186,6 +188,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_4ang8")
 max_value = 200.0
 step = 0.0
 value = 100.0
+script = ExtResource("9_van1q")
 
 [node name="BtnMainMenu" parent="." unique_id=1301211313 instance=ExtResource("10_qx4ph")]
 layout_mode = 0

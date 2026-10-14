@@ -3,32 +3,81 @@
 [ext_resource type="Script" uid="uid://cuufmsnljmbd8" path="res://Game/CountDownTimer/count_down_timer.gd" id="1_ddtig"]
 [ext_resource type="Texture2D" uid="uid://bcsrbcpelioff" path="res://Game/CountDownTimer/background_0.png" id="2_cknqb"]
 [ext_resource type="Texture2D" uid="uid://c0l5iyclmsmr3" path="res://Game/CountDownTimer/background_1.png" id="2_ngxpk"]
+[ext_resource type="Shader" uid="uid://07ao4jiomq6j" path="res://Assets/Shaders/dissolve_2d.gdshader" id="3_pcwc3"]
+[ext_resource type="FontFile" uid="uid://dkiwtgv8qe2k" path="res://Assets/Fonts/DigitTech16-Regular.ttf" id="4_qffe0"]
+[ext_resource type="Script" uid="uid://3m8ducflm8r4" path="res://Assets/Scripts/rich_text_descent.gd" id="5_rjtn0"]
+
+[sub_resource type="Gradient" id="Gradient_pcwc3"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6a1iq"]
+frequency = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pcwc3"]
+width = 118
+height = 32
+noise = SubResource("FastNoiseLite_6a1iq")
+color_ramp = SubResource("Gradient_pcwc3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rjtn0"]
+resource_local_to_scene = true
+shader = ExtResource("3_pcwc3")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_pcwc3")
+shader_parameter/progress = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pcwc3"]
+resource_local_to_scene = true
+shader = ExtResource("3_pcwc3")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_pcwc3")
+shader_parameter/progress = 0.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6a1iq"]
+width = 118
+height = 32
+noise = SubResource("FastNoiseLite_6a1iq")
+color_ramp = SubResource("Gradient_pcwc3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivx24"]
+resource_local_to_scene = true
+shader = ExtResource("3_pcwc3")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_6a1iq")
+shader_parameter/progress = 0.0
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_rjtn0"]
+script = ExtResource("5_rjtn0")
+metadata/_custom_type_script = "uid://3m8ducflm8r4"
 
 [node name="CountDownTimer" type="CanvasLayer" unique_id=468220952]
 script = ExtResource("1_ddtig")
 
 [node name="Background1" type="Sprite2D" parent="." unique_id=1236765804]
-position = Vector2(317, 32)
+material = SubResource("ShaderMaterial_rjtn0")
+position = Vector2(320, 40)
 texture = ExtResource("2_ngxpk")
 
 [node name="Background0" type="Sprite2D" parent="." unique_id=1675795084]
-position = Vector2(317, 32)
+material = SubResource("ShaderMaterial_pcwc3")
+position = Vector2(320, 22)
 texture = ExtResource("2_cknqb")
 
 [node name="Label" type="RichTextLabel" parent="." unique_id=53583873]
-offset_right = 640.0
-offset_bottom = 61.0
+material = SubResource("ShaderMaterial_ivx24")
+offset_left = 261.0
+offset_top = 2.0
+offset_right = 379.0
+offset_bottom = 52.0
 offset_transform_enabled = true
 mouse_filter = 2
-theme_override_colors/default_color = Color(0.3019608, 0.39607844, 0.7058824, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/default_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_colors/font_outline_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("4_qffe0")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "30.00"
+text = "[descent]30.00"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+custom_effects = [SubResource("RichTextEffect_rjtn0")]
 
 [node name="BeatTimer" type="Timer" parent="." unique_id=608885056]
 one_shot = true

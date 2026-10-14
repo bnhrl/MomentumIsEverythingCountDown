@@ -1,10 +1,10 @@
 extends Control
 
-@onready var buttons: Array[UIButton] = [$BtnBnhrl, $BtnCatJug, $BtnCuptain]
+@onready var buttons: Array[UIButton] = [$BtnBNHRL, $BtnCatJug, $BtnCuptain, $BtnLSchwin]
 func _ready() -> void:
 	buttons.shuffle()
 	for i in range(buttons.size()):
-		buttons[i].position.y = 92.0 + 55*i
+		buttons[i].position.y = 76.0 + 50*i
 	var tween := create_tween()
 	tween.tween_property(self, "scale:y", 1.0, 0.5).set_trans(Tween.TRANS_ELASTIC).from(0)
 
@@ -24,6 +24,9 @@ func _on_btn_cat_jug_pressed() -> void:
 
 func _on_btn_cuptain_pressed() -> void:
 	open_page("https://chiefcuptain.itch.io/")
+
+func _on_btn_lschwin_pressed() -> void:
+	open_page("https://lschwin.itch.io/")
 
 func open_page(page: String) -> void:
 	var i := randi_range(0,99)

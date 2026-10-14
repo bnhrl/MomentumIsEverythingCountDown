@@ -1,6 +1,7 @@
 
 outline shader:   https://godotshaders.com/shader/2d-outline-stroke/
-font:             https://itch.io/queue/c/5127941/cc0-fonts?game_id=1992921
+font:             https://zichy.itch.io/kubasta
+countdown font:   https://ggbot.itch.io/digit-tech-font
 heartbeat sfx:    https://pixabay.com/sound-effects/film-special-effects-heartbeat-02-225103/
 clair de lune:    https://soundcloud.com/laurensgoedhart/claude-debussys-clair-de-lune
 button press sfx: https://pixabay.com/sound-effects/film-special-effects-metal-hit-84608/
