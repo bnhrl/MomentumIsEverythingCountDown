@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bcrpxkjvv5umi"]
+
+[ext_resource type="PackedScene" uid="uid://co1sgdv2x4nyr" path="res://Game/Levels/_Base/level.tscn" id="1_2gen0"]
+[ext_resource type="Shader" uid="uid://wu085sklw13i" path="res://Assets/Shaders/world_tiling_2d.gdshader" id="2_uh337"]
+[ext_resource type="Texture2D" uid="uid://ogmg54ge4mqi" path="res://Assets/Textures/background_2.png" id="3_uh337"]
+[ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="3_ygtb4"]
+[ext_resource type="PackedScene" uid="uid://d3xhd06mdlv8l" path="res://Game/Enemies/WhiteBloodCell/white_blood_cell.tscn" id="5_ygtb4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nfqpi"]
+shader = ExtResource("2_uh337")
+shader_parameter/tile_texture = ExtResource("3_uh337")
+shader_parameter/tile_size = Vector2(720, 1280)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = false
+
+[node name="Level0" unique_id=1414133645 instance=ExtResource("1_2gen0")]
+
+[node name="Bounds" parent="." index="0" unique_id=1811867841]
+offset_left = 185.0
+offset_top = -9876.0
+offset_right = 12048.0
+offset_bottom = 222.0
+
+[node name="PlayerSpawnPoint" parent="." index="1" unique_id=1452407390]
+position = Vector2(353.425, 124.68)
+
+[node name="TimeLabel" parent="UILayer" parent_id_path=PackedInt32Array(3946053) index="1" unique_id=348801823]
+visible = false
+
+[node name="Background" parent="." index="4" unique_id=675105712]
+visible = false
+material = SubResource("ShaderMaterial_nfqpi")
+position = Vector2(154, -24)
+
+[node name="Path_PROTO1" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("3_ygtb4")]
+position = Vector2(2383.5208, 858.9104)
+rotation = -1.0358605
+polygon = PackedVector2Array(684, -103, 684, 30, 684, 146, 84, 142, -526, 146, -526, -103)
+
+[node name="Path_PROTO2" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="1" unique_id=782432243 instance=ExtResource("3_ygtb4")]
+position = Vector2(2166.7388, 732.3822)
+rotation = -1.0358605
+polygon = PackedVector2Array(685.66003, -103, 685.66003, 29, 685.66003, 148, 80, 148, -524, 148, -524, -103)
+
+[node name="Path_PROTO5" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="2" unique_id=1049034221 instance=ExtResource("3_ygtb4")]
+position = Vector2(1522.5208, 551.9104)
+rotation = -1.0358605
+polygon = PackedVector2Array(684, -103, 684, 30, 684, 146, 84, 142, -526, 146, -526, -103)
+
+[node name="Path_PROTO6" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="3" unique_id=700619125 instance=ExtResource("3_ygtb4")]
+position = Vector2(1305.7388, 425.3822)
+rotation = -1.0358605
+polygon = PackedVector2Array(685.66003, -103, 685.66003, 29, 685.66003, 148, 80, 148, -524, 148, -524, -103)
+
+[node name="Path_PROTO3" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="4" unique_id=1551343958 instance=ExtResource("3_ygtb4")]
+position = Vector2(534.81665, 29.9104)
+rotation = -1.0358605
+polygon = PackedVector2Array(962.87585, -103.07666, 963.2522, 203.5694, 963.4392, 419.662, -263.33658, 424.76813, -526, 146, -526, -103)
+
+[node name="Path_PROTO4" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="5" unique_id=843756267 instance=ExtResource("3_ygtb4")]
+position = Vector2(318.03476, -96.6178)
+rotation = -1.0358605
+polygon = PackedVector2Array(965.00696, -1157.7124, 964.7355, -295.06305, 964.53577, 147.92336, 80, 148, -524, 148, -524, -103, -364.05603, -732.8178)
+
+[node name="Path_End_PROTO" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="6" unique_id=232059423 instance=ExtResource("3_ygtb4")]
+position = Vector2(257, 244.99997)
+rotation = 3.6567464
+polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
+
+[node name="Path_End_PROTO2" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="7" unique_id=1384448663 instance=ExtResource("3_ygtb4")]
+position = Vector2(2657.0002, 1354.0002)
+rotation = 3.6567464
+polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
+
+[node name="Path_End_PROTO3" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="8" unique_id=442854425 instance=ExtResource("3_ygtb4")]
+position = Vector2(2657.0002, 1354.0002)
+rotation = 3.6567464
+polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
+
+[node name="WhiteBloodCell1" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="0" unique_id=613541596 instance=ExtResource("5_ygtb4")]
+position = Vector2(441, -23)
+speed = 0.0
+
+[node name="WhiteBloodCell2" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="1" unique_id=1079843778 instance=ExtResource("5_ygtb4")]
+position = Vector2(594, -278)
+speed = 0.0
+
+[node name="WhiteBloodCell3" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="2" unique_id=734751871 instance=ExtResource("5_ygtb4")]
+position = Vector2(748, -546)
+speed = 0.0
