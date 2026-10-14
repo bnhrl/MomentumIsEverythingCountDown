@@ -47,7 +47,7 @@ position = Vector2(934.54, 194.73)
 position = Vector2(638.585, 64)
 
 [node name="Gate" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="1" unique_id=1337174415 instance=ExtResource("8_16xm3")]
-position = Vector2(846.84, 186)
+position = Vector2(849.69, 135.25)
 rotation = 1.5707964
 polygon = PackedVector2Array(396, 5.9999695, -275, 4, -275, -14, 395, -21.00003)
 
