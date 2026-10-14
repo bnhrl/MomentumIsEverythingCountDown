@@ -55,6 +55,7 @@ func update_audio_settings(vol_mus: float = save_data.get("vol_mus", 100.0), vol
 	save_data.set("vol_sfx", vol_sfx)
 	AudioServer.set_bus_volume_linear(1, vol_sfx * 0.01)
 	AudioServer.set_bus_volume_linear(2, vol_mus * 0.01)
+	save()
 
 
 # Best Times

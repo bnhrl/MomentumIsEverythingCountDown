@@ -8,6 +8,10 @@
 shader = ExtResource("1_ge6cv")
 shader_parameter/tex = ExtResource("2_kdkso")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ou1td"]
+shader = ExtResource("1_ge6cv")
+shader_parameter/tex = ExtResource("2_kdkso")
+
 [node name="Gate0" type="Polygon2D" unique_id=1337174415]
 material = SubResource("ShaderMaterial_nocks")
 color = Color(0.9098039, 0.23137255, 0.23137255, 1)
@@ -32,3 +36,17 @@ text = "An obstacle is cleared..."
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Arrow" type="Polygon2D" parent="." unique_id=434222265]
+visible = false
+z_index = 1
+material = SubResource("ShaderMaterial_ou1td")
+scale = Vector2(4, 4)
+color = Color(0.9098039, 0.23137255, 0.23137255, 1)
+polygon = PackedVector2Array(0, 0, -1, -1, -2, -2, -1, -3, 3, 0, -1, 3, -2, 2, -1, 1)
+
+[node name="ArrowTimer" type="Timer" parent="Arrow" unique_id=1753283956]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="Arrow/ArrowTimer" to="." method="_on_arrow_timer_timeout"]

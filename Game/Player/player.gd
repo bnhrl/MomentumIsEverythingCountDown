@@ -51,6 +51,9 @@ func _process_movement(delta: float) -> void:
 				$RicochetSoundPlayer.stream = _RICOCHET_AUDIOS[randi_range(0, 2)]
 				$RicochetSoundPlayer.pitch_scale = randf_range(0.9, 1.1)
 				$RicochetSoundPlayer.play()
+				ricochets += 1
+				fog_intensified.emit(ricochets)
+				$FogClearCooldown.start(1.0)
 				break
 
 func get_momentum() -> float:
@@ -98,6 +101,7 @@ func _process_tail(delta: float) -> void:
 @onready var model: CanvasGroup = $Model
 @onready var _body: AnimatedSprite2D = $Model/Body
 @onready var _center: AnimatedSprite2D = $Model/Center
+var ricochets := 0
 func _process_visuals(delta: float) -> void: 
 	if dead: return
 	
@@ -150,6 +154,12 @@ func play_kill_audio() -> void:
 	$KillSoundPlayer.pitch_scale = randf_range(0.9, 1.1)
 	$KillSoundPlayer.play()
 
+signal fog_cleared
+signal fog_intensified(amount: int)
+func _on_fog_clear_cooldown_timeout() -> void:
+	ricochets = 0
+	fog_cleared.emit()
+
 func level_completed() -> void:
 	velocity = Vector2.ZERO
 	momentum = Vector2.ZERO
@@ -180,8 +190,8 @@ var attempting_to_grapple := false
 var grappled_object: Node2D
 @onready var direction_indicator: Polygon2D = $DirectionIndicator
 func _process_grappling(delta: float) -> void:
-	if !dead: _process_grapple_controls()
-	if !grappled_object: 
+	if not dead: _process_grapple_controls()
+	if not grappled_object: 
 		if attempting_to_grapple: # Attempting grapple
 			target_tail_dist = GRAPPLING_TAIL_DIST
 			for body in grabber.get_overlapping_bodies():

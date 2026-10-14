@@ -2,9 +2,65 @@
 
 [ext_resource type="Script" uid="uid://nhvbyg5sl1vd" path="res://Game/Levels/_Base/level.gd" id="1_4nsif"]
 [ext_resource type="PackedScene" uid="uid://crkrc2q1qfpns" path="res://Game/CountDownTimer/count_down_timer.tscn" id="2_mndar"]
+[ext_resource type="Shader" uid="uid://x153of6a5x05" path="res://Assets/Shaders/brain_fog_2d.gdshader" id="2_x38k5"]
 [ext_resource type="Shader" uid="uid://y6t5gm6jds58" path="res://Assets/Shaders/outline_2d.gdshader" id="3_4nsif"]
 [ext_resource type="Shader" uid="uid://wu085sklw13i" path="res://Assets/Shaders/world_tiling_2d.gdshader" id="4_vgjax"]
 [ext_resource type="Texture2D" uid="uid://irh7x835h0bd" path="res://Assets/Textures/background_0.png" id="5_x38k5"]
+
+[sub_resource type="Gradient" id="Gradient_x38k5"]
+offsets = PackedFloat32Array(0, 0.6336478, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.28235295, 0.2901961, 0.46666667, 1, 0.56078434, 0.827451, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ovoin"]
+noise_type = 3
+frequency = 0.0001
+fractal_type = 0
+domain_warp_fractal_octaves = 10
+domain_warp_fractal_lacunarity = 25.745
+domain_warp_fractal_gain = 5.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dno0g"]
+width = 1280
+height = 1280
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_ovoin")
+color_ramp = SubResource("Gradient_x38k5")
+seamless = true
+seamless_blend_skirt = 1.0
+
+[sub_resource type="Gradient" id="Gradient_dno0g"]
+offsets = PackedFloat32Array(0, 0.822327, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dno0g"]
+noise_type = 3
+frequency = 0.0001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x38k5"]
+width = 1280
+height = 1280
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_dno0g")
+color_ramp = SubResource("Gradient_dno0g")
+seamless = true
+seamless_blend_skirt = 0.465
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x38k5"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ovoin"]
+width = 1280
+height = 1280
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_x38k5")
+seamless = true
+seamless_blend_skirt = 0.125
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6smh"]
+shader = ExtResource("2_x38k5")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_dno0g")
+shader_parameter/noise_twoxture = SubResource("NoiseTexture2D_ovoin")
+shader_parameter/noise_threexture = SubResource("NoiseTexture2D_x38k5")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dno0g"]
 shader = ExtResource("4_vgjax")
@@ -37,9 +93,22 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
+metadata/_edit_use_anchors_ = true
 
 [node name="PlayerSpawnPoint" type="Marker2D" parent="." unique_id=1452407390]
 position = Vector2(320, 180)
+
+[node name="BrainFog" type="ColorRect" parent="." unique_id=1386560741]
+unique_name_in_owner = true
+visible = false
+z_index = 10
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_c6smh")
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=3946053]
 
@@ -69,6 +138,7 @@ theme_override_font_sizes/normal_font_size = 12
 text = "0.0s"
 scroll_active = false
 horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="CountDownTimer" parent="." unique_id=102296066 instance=ExtResource("2_mndar")]
 layer = 0
@@ -91,22 +161,22 @@ tile_set = SubResource("TileSet_4nsif")
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_vgjax")
 
-[node name="CompletionZones" type="Node" parent="." unique_id=1863227345]
+[node name="CompletionZones" type="Node2D" parent="." unique_id=1469306356]
 
-[node name="Interactables" type="Node" parent="." unique_id=1223907740]
+[node name="Interactables" type="Node2D" parent="." unique_id=1109439131]
 
-[node name="DeathPits" type="Node" parent="." unique_id=1192831106 groups=["navigation_group"]]
+[node name="DeathPits" type="Node2D" parent="." unique_id=958332027 groups=["navigation_group"]]
 
-[node name="Enemies" type="Node" parent="." unique_id=1295879779]
+[node name="Enemies" type="Node2D" parent="." unique_id=2032207038]
 
-[node name="Entities" type="Node" parent="." unique_id=1626978206]
+[node name="Entities" type="Node2D" parent="." unique_id=912229377]
 
-[node name="Objects" type="Node" parent="." unique_id=438333042]
+[node name="Objects" type="Node2D" parent="." unique_id=1818979769]
 
-[node name="GrapplePoints" type="Node" parent="." unique_id=882760734]
+[node name="GrapplePoints" type="Node2D" parent="." unique_id=2124046884]
 
-[node name="BoostPads" type="Node" parent="." unique_id=839747053]
+[node name="BoostPads" type="Node2D" parent="." unique_id=1513387696]
 
-[node name="Tutorials" type="Node" parent="." unique_id=750995765]
+[node name="Tutorials" type="Node2D" parent="." unique_id=106695431]
 
 [connection signal="expired" from="CountDownTimer" to="." method="_on_count_down_timer_expired"]

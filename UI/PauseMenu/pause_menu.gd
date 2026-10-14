@@ -62,6 +62,8 @@ func close(time_mult := 1.0) -> void:
 func _on_btn_menu_pressed() -> void:
 	if closing: return
 	
+	GameTime.set_time_scale(1.0)
+	Engine.time_scale = 1.0
 	closing = true
 	Effects.unintensify()
 	Scenes.swap_scene("Level Select")

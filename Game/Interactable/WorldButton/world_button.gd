@@ -1,10 +1,10 @@
-extends Node2D
+class_name WorldButton extends Node2D
 
 
-signal pressed
+signal pressed(button: WorldButton)
 func _on_button_interactable_interacted() -> void:
 	$Sprite.animation = "pressed"
-	pressed.emit()
+	pressed.emit(self)
 	$EffectSprite.show()
 	$EffectSprite.play("default")
 	var tween := create_tween()

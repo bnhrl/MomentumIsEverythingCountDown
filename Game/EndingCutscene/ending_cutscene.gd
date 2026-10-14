@@ -64,15 +64,25 @@ func step_3() -> Signal: # Detailed Credits
 	tween.tween_property($CameraAnchor/FadeOut, "modulate:a", 1.0, 3.0).from(0.0)
 	await tween.finished
 	await Delays.wait(0.5)
-	$CameraAnchor/FadeOut/Bnhrl.show()
-	await Delays.wait(6.0)
-	$CameraAnchor/FadeOut/Bnhrl.hide()
-	$CameraAnchor/FadeOut/CatJug.show()
-	await Delays.wait(6.0)
-	$CameraAnchor/FadeOut/CatJug.hide()
-	$CameraAnchor/FadeOut/Cuptain.show()
-	await Delays.wait(6.0)
-	$CameraAnchor/FadeOut/Cuptain.hide()
+	%Bnhrl.show()
+	%CatJug.show()
+	%Cuptain.show()
+	%Bnhrl.modulate.a = 0.0
+	%CatJug.modulate.a = 0.0
+	%Cuptain.modulate.a = 0.0
+	tween = create_tween()
+	tween.tween_property(%Bnhrl, "modulate:a", 1.0, 0.5)
+	await Delays.wait(6.0) # Bnhrl
+	tween = create_tween()
+	tween.tween_property(%Bnhrl, "modulate:a", 0.0, 0.25)
+	tween.tween_property(%CatJug, "modulate:a", 1.0, 0.25)
+	await Delays.wait(6.0) # CatJug
+	tween = create_tween()
+	tween.tween_property(%CatJug, "modulate:a", 0.0, 0.25)
+	tween.tween_property(%Cuptain, "modulate:a", 1.0, 0.25)
+	await Delays.wait(6.0) # Cuptain
+	tween = create_tween()
+	tween.tween_property(%Cuptain, "modulate:a", 0.0, 0.5)
 	return Delays.wait(1.0)
 
 func step_4() -> void: # The End

@@ -2,6 +2,7 @@
 
 @export var outline_color := Color("3e3546")
 @onready var time_label: RichTextLabel = $UILayer/TimeLabel
+@onready var brain_fog: ColorRect = %BrainFog
 
 func _ready() -> void:
 	if Engine.is_editor_hint(): 
@@ -15,8 +16,14 @@ func _ready() -> void:
 		push_error("Navigation is not baked on " + name + "! Fix that!!")
 	
 	Camera.set_bounds($Bounds.position, $Bounds.size + $Bounds.position)
+	%BrainFog.show()
+	%BrainFog.color.a = 0.0
+	%BrainFog.size = $Bounds.size
+	$BrainFog.position = $Bounds.position
 	PlayerManager.add_player(self)
 	PlayerManager.player.died.connect(player_dead)
+	PlayerManager.player.fog_intensified.connect(_player_ricocheted)
+	PlayerManager.player.fog_cleared.connect(_player_unricocheted)
 	RenderingServer.global_shader_parameter_set("outline_color", outline_color)
 	Music.set_pitch()
 	$CountDownTimer.show()
@@ -26,12 +33,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	
+	_process_brain_fog(delta)
 	if not completed:
 		time_elapsed += delta
 		time_label.text = str(snappedf(time_elapsed, 0.01)).pad_decimals(2) + "s"
 	
 	if Input.is_action_just_pressed("restart") and !completed:
 		player_dead()
+
 
 @export_tool_button("Rebake Navigation") var rebake := func() -> void:
 	$NavigationRegion.show()
@@ -129,3 +138,13 @@ func spawn_enzyme() -> void:
 var time_elapsed := 0.0
 func _process_timer(delta: float) -> void:
 	time_elapsed += delta
+
+var brain_fogress := 0
+func _process_brain_fog(delta: float) -> void:
+	brain_fog.color.a = LerpHelper.lf(brain_fog.color.a, brain_fogress * 0.1, 4.0, delta)
+
+func _player_ricocheted(ricochets: int) -> void:
+	brain_fogress += ricochets
+
+func _player_unricocheted() -> void:
+	brain_fogress = 0

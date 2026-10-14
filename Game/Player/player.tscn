@@ -187,9 +187,7 @@ frame_progress = 0.15166096
 
 [node name="Center" type="AnimatedSprite2D" parent="Model" unique_id=96553089]
 sprite_frames = SubResource("SpriteFrames_oshqu")
-animation = &"reserve_cooldown"
 autoplay = "default"
-frame_progress = 0.9284178
 
 [node name="Grabber" type="Area2D" parent="Model" unique_id=1042861233]
 position = Vector2(51, 0)
@@ -265,5 +263,9 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
+[node name="FogClearCooldown" type="Timer" parent="." unique_id=1687097785]
+one_shot = true
+
 [connection signal="timeout" from="GrappleTimer" to="." method="_on_grapple_timer_timeout"]
 [connection signal="timeout" from="ReserveCooldown" to="." method="_on_reserve_cooldown_timeout"]
+[connection signal="timeout" from="FogClearCooldown" to="." method="_on_fog_clear_cooldown_timeout"]
