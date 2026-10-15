@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="8_leq20"]
 [ext_resource type="PackedScene" uid="uid://bjng875ivkyon" path="res://Game/Enemies/BEAmoeba/b_e_amoeba.tscn" id="9_4u6db"]
 [ext_resource type="PackedScene" uid="uid://c5efma3oa0u0x" path="res://Game/Objects/computer.tscn" id="9_fr3p4"]
+[ext_resource type="PackedScene" uid="uid://dkbbmtddces6c" path="res://Game/Entities/Bacteriophage/bacteriophage_spawner.tscn" id="10_887xa"]
 [ext_resource type="PackedScene" uid="uid://bb3eohron17vo" path="res://Game/Objects/small_box.tscn" id="10_lrou5"]
 [ext_resource type="PackedScene" uid="uid://d3xhd06mdlv8l" path="res://Game/Enemies/WhiteBloodCell/white_blood_cell.tscn" id="11_0maof"]
 [ext_resource type="PackedScene" uid="uid://8f0iofd1efob" path="res://Game/Objects/monitor.tscn" id="11_foi73"]
@@ -47,7 +48,7 @@ source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
 agent_radius = 3.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0maof"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgbcd"]
 resource_local_to_scene = true
 shader = ExtResource("2_voq3k")
 shader_parameter/tile_texture = ExtResource("7_fr3p4")
@@ -55,7 +56,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = -0.5039987280984027
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_887xa"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8jvnf"]
 resource_local_to_scene = true
 shader = ExtResource("2_voq3k")
 shader_parameter/tile_texture = ExtResource("7_fr3p4")
@@ -63,7 +64,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgbcd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kim44"]
 resource_local_to_scene = true
 shader = ExtResource("2_voq3k")
 shader_parameter/tile_texture = ExtResource("7_fr3p4")
@@ -83,10 +84,10 @@ offset_bottom = 93.0
 [node name="PlayerSpawnPoint" parent="." index="1" unique_id=1452407390]
 position = Vector2(0, 0)
 
-[node name="CountDownTimer" parent="." index="3" unique_id=102296066]
+[node name="CountDownTimer" parent="." index="4" unique_id=102296066]
 time = 5.0
 
-[node name="Background" parent="." index="4" unique_id=675105712]
+[node name="Background" parent="." index="5" unique_id=675105712]
 material = SubResource("ShaderMaterial_4u6db")
 
 [node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("4_igeap")]
@@ -126,25 +127,79 @@ material = SubResource("ShaderMaterial_nxyy3")
 position = Vector2(128, 24)
 polygon = PackedVector2Array(1119, -1049, 1028, -838, 867, -792, 586, -903, 490, -1107)
 
-[node name="NavigationRegion" parent="." index="6" unique_id=517625210]
+[node name="NavigationRegion" parent="." index="7" unique_id=517625210]
 navigation_polygon = SubResource("NavigationPolygon_0maof")
 
-[node name="BoostPad2" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="0" unique_id=816347687 instance=ExtResource("6_4u6db")]
-material = SubResource("ShaderMaterial_0maof")
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1469306356) index="0" unique_id=241888325 instance=ExtResource("11_ykqav")]
+position = Vector2(1414, -821)
+
+[node name="BEAmoeba0" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="0" unique_id=613541596 instance=ExtResource("9_4u6db")]
+position = Vector2(848, -2)
+max_dist_from_origin = 20
+
+[node name="BEAmoeba1" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="1" unique_id=1496762571 instance=ExtResource("9_4u6db")]
+position = Vector2(777, 1)
+max_dist_from_origin = 20
+
+[node name="WhiteBloodCell0" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="2" unique_id=1451945749 instance=ExtResource("11_0maof")]
+position = Vector2(1515, -302)
+max_dist_from_origin = 10
+
+[node name="WhiteBloodCell1" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="3" unique_id=871647679 instance=ExtResource("11_0maof")]
+position = Vector2(1481, -313)
+max_dist_from_origin = 10
+
+[node name="WhiteBloodCell2" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="4" unique_id=643296221 instance=ExtResource("11_0maof")]
+position = Vector2(1520, -270)
+max_dist_from_origin = 10
+
+[node name="BacteriophageSpawner0" parent="Entities" parent_id_path=PackedInt32Array(912229377) index="0" unique_id=238806379 instance=ExtResource("10_887xa")]
+position = Vector2(1239, -277)
+
+[node name="SmallBox" parent="Objects" parent_id_path=PackedInt32Array(1818979769) index="0" unique_id=1695913543 instance=ExtResource("10_lrou5")]
+position = Vector2(1742.0001, -354)
+rotation = -0.33188143
+
+[node name="Computer" parent="Objects" parent_id_path=PackedInt32Array(1818979769) index="1" unique_id=589243546 instance=ExtResource("9_fr3p4")]
+position = Vector2(920.99994, -380)
+rotation = 0.5343101
+
+[node name="Monitor" parent="Objects" parent_id_path=PackedInt32Array(1818979769) index="2" unique_id=1153507537 instance=ExtResource("11_foi73")]
+position = Vector2(973.99994, -352.99997)
+rotation = -0.5235988
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CoffeeMaker" parent="Objects" parent_id_path=PackedInt32Array(1818979769) index="3" unique_id=1924321984 instance=ExtResource("12_ibyvd")]
+position = Vector2(919, -306)
+rotation = 0.16410583
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Mug" parent="Objects" parent_id_path=PackedInt32Array(1818979769) index="4" unique_id=514308791 instance=ExtResource("13_71741")]
+position = Vector2(1760, -399)
+rotation = 0.2617994
+
+[node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="0" unique_id=907286068 instance=ExtResource("8_leq20")]
+position = Vector2(1174, -269)
+
+[node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="1" unique_id=1756419611 instance=ExtResource("8_leq20")]
+position = Vector2(1513, -679)
+
+[node name="BoostPad2" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="0" unique_id=816347687 instance=ExtResource("6_4u6db")]
+material = SubResource("ShaderMaterial_hgbcd")
 polygon = PackedVector2Array(1399, -321, 1325, -168, 1398, -152, 1518, -217, 1410, -341)
 spin_speed = 0.0
 direction = -28.87700000000001
 
-[node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="1" unique_id=1491510217 instance=ExtResource("6_4u6db")]
-material = SubResource("ShaderMaterial_887xa")
+[node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="1" unique_id=1491510217 instance=ExtResource("6_4u6db")]
+material = SubResource("ShaderMaterial_8jvnf")
 position = Vector2(378.5, 1)
 scale = Vector2(9.366667, 3.1333334)
 polygon = PackedVector2Array(-15, -15, 0, -15, 0, 15, -15, 15)
 spin_speed = 0.0
 speed = 200.0
 
-[node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="2" unique_id=1636313232 instance=ExtResource("6_4u6db")]
-material = SubResource("ShaderMaterial_hgbcd")
+[node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="2" unique_id=1636313232 instance=ExtResource("6_4u6db")]
+material = SubResource("ShaderMaterial_kim44")
 position = Vector2(1024, 1)
 scale = Vector2(9.366667, 3.1333334)
 polygon = PackedVector2Array(-13.238434, -15, -0.10675812, -27.765957, 0, 15)
@@ -152,61 +207,10 @@ spin_speed = 0.0
 direction = -85.0
 speed = 150.0
 
-[node name="GrapplePoint0" parent="BoostPads" parent_id_path=PackedInt32Array(839747053) index="3" unique_id=389238612 instance=ExtResource("8_leq20")]
+[node name="GrapplePoint0" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="3" unique_id=389238612 instance=ExtResource("8_leq20")]
 position = Vector2(187, 0)
 
-[node name="BEAmoeba0" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="0" unique_id=613541596 instance=ExtResource("9_4u6db")]
-position = Vector2(848, -2)
-max_dist_from_origin = 20
-
-[node name="BEAmoeba1" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="1" unique_id=1496762571 instance=ExtResource("9_4u6db")]
-position = Vector2(777, 1)
-max_dist_from_origin = 20
-
-[node name="WhiteBloodCell0" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="2" unique_id=1451945749 instance=ExtResource("11_0maof")]
-position = Vector2(1515, -302)
-max_dist_from_origin = 10
-
-[node name="WhiteBloodCell1" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="3" unique_id=871647679 instance=ExtResource("11_0maof")]
-position = Vector2(1481, -313)
-max_dist_from_origin = 10
-
-[node name="WhiteBloodCell2" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="4" unique_id=643296221 instance=ExtResource("11_0maof")]
-position = Vector2(1520, -270)
-max_dist_from_origin = 10
-
-[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("11_ykqav")]
-position = Vector2(1414, -821)
-
-[node name="SmallBox" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="0" unique_id=1695913543 instance=ExtResource("10_lrou5")]
-position = Vector2(1742.0001, -354)
-rotation = -0.33188143
-
-[node name="Computer" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="1" unique_id=589243546 instance=ExtResource("9_fr3p4")]
-position = Vector2(920.99994, -380)
-rotation = 0.5343101
-
-[node name="Monitor" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="2" unique_id=1153507537 instance=ExtResource("11_foi73")]
-position = Vector2(973.99994, -352.99997)
-rotation = -0.5235988
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="CoffeeMaker" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="3" unique_id=1924321984 instance=ExtResource("12_ibyvd")]
-position = Vector2(919, -306)
-rotation = 0.16410583
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Mug" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="4" unique_id=514308791 instance=ExtResource("13_71741")]
-position = Vector2(1760, -399)
-rotation = 0.2617994
-
-[node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("8_leq20")]
-position = Vector2(1174, -269)
-
-[node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="1" unique_id=1756419611 instance=ExtResource("8_leq20")]
-position = Vector2(1513, -679)
-
-[node name="Tutorial0" type="RichTextLabel" parent="Tutorials" parent_id_path=PackedInt32Array(750995765) index="0" unique_id=951256283]
+[node name="Tutorial0" type="RichTextLabel" parent="Tutorials" parent_id_path=PackedInt32Array(106695431) index="0" unique_id=951256283]
 clip_contents = false
 offset_left = 72.0
 offset_top = -194.0

@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="11_g4df7"]
 [ext_resource type="PackedScene" uid="uid://d3xhd06mdlv8l" path="res://Game/Enemies/WhiteBloodCell/white_blood_cell.tscn" id="11_kmiko"]
 [ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="12_7njhx"]
+[ext_resource type="PackedScene" uid="uid://dkbbmtddces6c" path="res://Game/Entities/Bacteriophage/bacteriophage_spawner.tscn" id="13_qvxsj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b5xo0"]
 shader = ExtResource("3_tvcw1")
@@ -241,6 +242,12 @@ polygon = PackedVector2Array(-140.6, -173.2, 58.576477, 163.9384, 113.4, 116.8, 
 [node name="WhiteBloodCell" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="0" unique_id=613541596 instance=ExtResource("11_kmiko")]
 position = Vector2(-232, 4101)
 idle_movement = false
+
+[node name="BacteriophageSpawner0" parent="Entities" parent_id_path=PackedInt32Array(912229377) index="0" unique_id=238806379 instance=ExtResource("13_qvxsj")]
+position = Vector2(-341, 906)
+
+[node name="BacteriophageSpawner1" parent="Entities" parent_id_path=PackedInt32Array(912229377) index="1" unique_id=2016485418 instance=ExtResource("13_qvxsj")]
+position = Vector2(685, 2429)
 
 [node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="0" unique_id=907286068 instance=ExtResource("8_3bwwb")]
 position = Vector2(17, 106)

@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cwtxwjgpcpoa" path="res://Game/Objects/large_box.tscn" id="7_igeap"]
 [ext_resource type="PackedScene" uid="uid://8f0iofd1efob" path="res://Game/Objects/monitor.tscn" id="7_leq20"]
 [ext_resource type="PackedScene" uid="uid://dwlck6ltphhov" path="res://Game/Objects/stapler.tscn" id="8_leq20"]
+[ext_resource type="PackedScene" uid="uid://dkbbmtddces6c" path="res://Game/Entities/Bacteriophage/bacteriophage_spawner.tscn" id="8_m585n"]
 [ext_resource type="PackedScene" uid="uid://comwvn22x7xfy" path="res://Game/Objects/lamp.tscn" id="9_h23i5"]
 [ext_resource type="PackedScene" uid="uid://b1aob121surnv" path="res://Game/PolygonWalls/polygon_wall.tscn" id="10_4v75b"]
 [ext_resource type="PackedScene" uid="uid://lnswmlbjllhy" path="res://Game/Objects/soda.tscn" id="11_le0n6"]
@@ -98,10 +99,10 @@ offset_top = -120.0
 offset_right = 4075.0
 offset_bottom = 2047.0
 
-[node name="CountDownTimer" parent="." index="3" unique_id=102296066]
+[node name="CountDownTimer" parent="." index="4" unique_id=102296066]
 time = 22.5
 
-[node name="Background" parent="." index="4" unique_id=675105712]
+[node name="Background" parent="." index="5" unique_id=675105712]
 material = SubResource("ShaderMaterial_4u6db")
 position = Vector2(19, 16)
 
@@ -130,91 +131,94 @@ material = SubResource("ShaderMaterial_a6rk0")
 position = Vector2(2284, 455)
 polygon = PackedVector2Array(1707, 583, 1666, 855, 1708, 1093, 1822, 990, 1826, 548, 1698, 92, 1602, -14, 1396, 0, 1312, 53, 864, 59, 83, 44, -47, -46, -35, 322, 3, 216, 281, 167, 555, 168, 1086, 203, 1555, 170, 1659, 326)
 
-[node name="NavigationRegion" parent="." index="6" unique_id=517625210]
+[node name="NavigationRegion" parent="." index="7" unique_id=517625210]
 navigation_polygon = SubResource("NavigationPolygon_nxyy3")
 
-[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("12_nusqt")]
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1469306356) index="0" unique_id=241888325 instance=ExtResource("12_nusqt")]
 position = Vector2(3777, 1738.0002)
 
-[node name="Desk" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="0" unique_id=1695913543 instance=ExtResource("5_leq20")]
+[node name="BacteriophageSpawner0" parent="Entities" parent_id_path=PackedInt32Array(912229377) index="0" unique_id=238806379 instance=ExtResource("8_m585n")]
+position = Vector2(2249, 1678)
+
+[node name="Desk" parent="Objects" parent_id_path=PackedInt32Array(1818979769) index="0" unique_id=1695913543 instance=ExtResource("5_leq20")]
 position = Vector2(554, 514)
 rotation = 0.12683922
 ricochet_speed_mult = 2.0
 
-[node name="Monitor" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="1" unique_id=254489047 instance=ExtResource("7_leq20")]
+[node name="Monitor" parent="Objects" parent_id_path=PackedInt32Array(1818979769) index="1" unique_id=254489047 instance=ExtResource("7_leq20")]
 position = Vector2(1000.0001, 587.00006)
 rotation = 0.15004271
 ricochet_speed_mult = 1.75
 
-[node name="LargeBox" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="2" unique_id=1930564766 instance=ExtResource("7_igeap")]
+[node name="LargeBox" parent="Objects" parent_id_path=PackedInt32Array(1818979769) index="2" unique_id=1930564766 instance=ExtResource("7_igeap")]
 position = Vector2(1248, 21.999992)
 rotation = -1.7986581
 scale = Vector2(1.305402, 1.305402)
 ricochet_speed_mult = 2.25
 
-[node name="Stapler" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="3" unique_id=1104983667 instance=ExtResource("8_leq20")]
+[node name="Stapler" parent="Objects" parent_id_path=PackedInt32Array(1818979769) index="3" unique_id=1104983667 instance=ExtResource("8_leq20")]
 position = Vector2(1883, 483.00015)
 rotation = 0.7099842
 scale = Vector2(1.3952566, 1.3952566)
 
-[node name="Lamp" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="4" unique_id=1725695521 instance=ExtResource("9_h23i5")]
+[node name="Lamp" parent="Objects" parent_id_path=PackedInt32Array(1818979769) index="4" unique_id=1725695521 instance=ExtResource("9_h23i5")]
 position = Vector2(2174, 1818)
 rotation = 1.5707964
 ricochet_speed_mult = 1.75
 
-[node name="Soda" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="5" unique_id=705330812 instance=ExtResource("11_le0n6")]
+[node name="Soda" parent="Objects" parent_id_path=PackedInt32Array(1818979769) index="5" unique_id=705330812 instance=ExtResource("11_le0n6")]
 position = Vector2(2756.9998, 938)
 rotation = -1.6019378
 scale = Vector2(0.9999999, 0.9999999)
 
-[node name="Desk2" parent="Objects" parent_id_path=PackedInt32Array(438333042) index="6" unique_id=460144695 instance=ExtResource("5_leq20")]
+[node name="Desk2" parent="Objects" parent_id_path=PackedInt32Array(1818979769) index="6" unique_id=460144695 instance=ExtResource("5_leq20")]
 position = Vector2(3811, 773.0002)
 rotation = -2.2855475
 scale = Vector2(1.2290934, 1.2290934)
 
-[node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="0" unique_id=907286068 instance=ExtResource("4_igeap")]
 position = Vector2(446, 333)
 
-[node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="1" unique_id=1643396071 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint1" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="1" unique_id=1643396071 instance=ExtResource("4_igeap")]
 position = Vector2(917, 405)
 
-[node name="GrapplePoint2" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="2" unique_id=126683419 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint2" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="2" unique_id=126683419 instance=ExtResource("4_igeap")]
 position = Vector2(1233, 222)
 
-[node name="GrapplePoint3" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="3" unique_id=1064016268 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint3" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="3" unique_id=1064016268 instance=ExtResource("4_igeap")]
 position = Vector2(1682, 515)
 
-[node name="GrapplePoint4" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="4" unique_id=861349874 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint4" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="4" unique_id=861349874 instance=ExtResource("4_igeap")]
 position = Vector2(1917, 961)
 
-[node name="GrapplePoint5" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="5" unique_id=1392834097 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint5" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="5" unique_id=1392834097 instance=ExtResource("4_igeap")]
 position = Vector2(1991, 1325)
 
-[node name="GrapplePoint6" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="6" unique_id=1267257157 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint6" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="6" unique_id=1267257157 instance=ExtResource("4_igeap")]
 position = Vector2(2118, 1696)
 
-[node name="GrapplePoint7" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="7" unique_id=574843654 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint7" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="7" unique_id=574843654 instance=ExtResource("4_igeap")]
 position = Vector2(2370, 1372)
 
-[node name="GrapplePoint8" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="8" unique_id=1683308872 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint8" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="8" unique_id=1683308872 instance=ExtResource("4_igeap")]
 position = Vector2(2449, 910)
 
-[node name="GrapplePoint9" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="9" unique_id=2080558601 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint9" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="9" unique_id=2080558601 instance=ExtResource("4_igeap")]
 position = Vector2(2652, 792)
 
-[node name="GrapplePoint10" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="10" unique_id=368391291 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint10" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="10" unique_id=368391291 instance=ExtResource("4_igeap")]
 position = Vector2(3008, 769)
 
-[node name="GrapplePoint11" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="11" unique_id=1895211840 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint11" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="11" unique_id=1895211840 instance=ExtResource("4_igeap")]
 position = Vector2(3540, 776.9998)
 
-[node name="GrapplePoint12" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="12" unique_id=1134170612 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint12" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="12" unique_id=1134170612 instance=ExtResource("4_igeap")]
 position = Vector2(3781, 1090)
 
-[node name="GrapplePoint13" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="13" unique_id=282879064 instance=ExtResource("4_igeap")]
+[node name="GrapplePoint13" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="13" unique_id=282879064 instance=ExtResource("4_igeap")]
 position = Vector2(3789, 1421)
 
-[node name="Tutorial0" type="RichTextLabel" parent="Tutorials" parent_id_path=PackedInt32Array(750995765) index="0" unique_id=540437513]
+[node name="Tutorial0" type="RichTextLabel" parent="Tutorials" parent_id_path=PackedInt32Array(106695431) index="0" unique_id=540437513]
 clip_contents = false
 offset_left = 461.0
 offset_top = 353.0
