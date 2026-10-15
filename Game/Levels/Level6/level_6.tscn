@@ -62,10 +62,10 @@ offset_bottom = 4420.0
 [node name="PlayerSpawnPoint" parent="." index="1" unique_id=1452407390]
 position = Vector2(69, 17)
 
-[node name="CountDownTimer" parent="." index="3" unique_id=102296066]
-time = 22.0
+[node name="CountDownTimer" parent="." index="4" unique_id=102296066]
+time = 25.0
 
-[node name="Background" parent="." index="4" unique_id=675105712]
+[node name="Background" parent="." index="5" unique_id=675105712]
 material = SubResource("ShaderMaterial_b5xo0")
 
 [node name="PolygonWall0" parent="WallLayer/PolygonWalls" parent_id_path=PackedInt32Array(576414089) index="0" unique_id=293361938 instance=ExtResource("2_feqow")]
@@ -100,203 +100,203 @@ polygon = PackedVector2Array(-935, 773, -1561, 896, -1931, 581, -1925, -34, -126
 material = SubResource("ShaderMaterial_o31rp")
 polygon = PackedVector2Array(-1746, 3333, -1665, 5053, 1089, 5050, 1416, 3112, 463, 3807, -236, 3545, -217, 3706, -81, 3849, -68, 3976, -126, 4247, -333, 4315, -527, 4218, -567, 4004, -540, 3858, -385, 3689, -324, 3529, -286, 3277, -789, 3857, -1378, 3719)
 
-[node name="NavigationRegion" parent="." index="6" unique_id=517625210]
+[node name="NavigationRegion" parent="." index="7" unique_id=517625210]
 navigation_polygon = SubResource("NavigationPolygon_g4df7")
 
-[node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="0" unique_id=1337174415 instance=ExtResource("8_7njhx")]
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1469306356) index="0" unique_id=241888325 instance=ExtResource("12_7njhx")]
+position = Vector2(-1071, 483)
+
+[node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="0" unique_id=1337174415 instance=ExtResource("8_7njhx")]
 position = Vector2(-859, 809)
 polygon = PackedVector2Array(146, -354, 16, -91, -217, 61, -7, 173, 69, -50, 292, -197)
 
-[node name="WorldButton0" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="1" unique_id=1576954058 instance=ExtResource("9_g4df7")]
+[node name="WorldButton0" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="1" unique_id=1576954058 instance=ExtResource("9_g4df7")]
 position = Vector2(304, 1907)
 
-[node name="WorldButton1" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="2" unique_id=767172621 instance=ExtResource("9_g4df7")]
+[node name="WorldButton1" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="2" unique_id=767172621 instance=ExtResource("9_g4df7")]
 position = Vector2(622, 2538)
 
-[node name="WorldButton2" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="3" unique_id=125331390 instance=ExtResource("9_g4df7")]
+[node name="WorldButton2" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="3" unique_id=125331390 instance=ExtResource("9_g4df7")]
 position = Vector2(173, 3014)
 
-[node name="WorldButton38" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="4" unique_id=2057770444 instance=ExtResource("9_g4df7")]
+[node name="WorldButton38" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="4" unique_id=2057770444 instance=ExtResource("9_g4df7")]
 position = Vector2(-297, 3630)
 
-[node name="WorldButton10" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="5" unique_id=360651710 instance=ExtResource("9_g4df7")]
+[node name="WorldButton10" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="5" unique_id=360651710 instance=ExtResource("9_g4df7")]
 position = Vector2(-445, 3883)
 
-[node name="WorldButton11" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="6" unique_id=12619132 instance=ExtResource("9_g4df7")]
+[node name="WorldButton11" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="6" unique_id=12619132 instance=ExtResource("9_g4df7")]
 position = Vector2(-445, 3937)
 
-[node name="WorldButton12" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="7" unique_id=1960410902 instance=ExtResource("9_g4df7")]
+[node name="WorldButton12" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="7" unique_id=1960410902 instance=ExtResource("9_g4df7")]
 position = Vector2(-445, 3995)
 
-[node name="WorldButton13" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="8" unique_id=2060207857 instance=ExtResource("9_g4df7")]
+[node name="WorldButton13" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="8" unique_id=2060207857 instance=ExtResource("9_g4df7")]
 position = Vector2(-445, 4048)
 
-[node name="WorldButton14" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="9" unique_id=936911413 instance=ExtResource("9_g4df7")]
+[node name="WorldButton14" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="9" unique_id=936911413 instance=ExtResource("9_g4df7")]
 position = Vector2(-445, 4102)
 
-[node name="WorldButton15" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="10" unique_id=1127338556 instance=ExtResource("9_g4df7")]
+[node name="WorldButton15" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="10" unique_id=1127338556 instance=ExtResource("9_g4df7")]
 position = Vector2(-445, 4150)
 
-[node name="WorldButton16" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="11" unique_id=102378891 instance=ExtResource("9_g4df7")]
+[node name="WorldButton16" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="11" unique_id=102378891 instance=ExtResource("9_g4df7")]
 position = Vector2(-392, 3883)
 
-[node name="WorldButton17" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="12" unique_id=838515353 instance=ExtResource("9_g4df7")]
+[node name="WorldButton17" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="12" unique_id=838515353 instance=ExtResource("9_g4df7")]
 position = Vector2(-392, 3937)
 
-[node name="WorldButton18" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="13" unique_id=1588350556 instance=ExtResource("9_g4df7")]
+[node name="WorldButton18" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="13" unique_id=1588350556 instance=ExtResource("9_g4df7")]
 position = Vector2(-392, 3995)
 
-[node name="WorldButton19" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="14" unique_id=1533189140 instance=ExtResource("9_g4df7")]
+[node name="WorldButton19" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="14" unique_id=1533189140 instance=ExtResource("9_g4df7")]
 position = Vector2(-392, 4048)
 
-[node name="WorldButton20" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="15" unique_id=747735793 instance=ExtResource("9_g4df7")]
+[node name="WorldButton20" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="15" unique_id=747735793 instance=ExtResource("9_g4df7")]
 position = Vector2(-392, 4102)
 
-[node name="WorldButton21" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="16" unique_id=604388216 instance=ExtResource("9_g4df7")]
+[node name="WorldButton21" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="16" unique_id=604388216 instance=ExtResource("9_g4df7")]
 position = Vector2(-392, 4150)
 
-[node name="WorldButton22" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="17" unique_id=201721981 instance=ExtResource("9_g4df7")]
+[node name="WorldButton22" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="17" unique_id=201721981 instance=ExtResource("9_g4df7")]
 position = Vector2(-339, 3883)
 
-[node name="WorldButton23" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="18" unique_id=1466234832 instance=ExtResource("9_g4df7")]
+[node name="WorldButton23" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="18" unique_id=1466234832 instance=ExtResource("9_g4df7")]
 position = Vector2(-339, 3937)
 
-[node name="WorldButton24" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="19" unique_id=1863357224 instance=ExtResource("9_g4df7")]
+[node name="WorldButton24" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="19" unique_id=1863357224 instance=ExtResource("9_g4df7")]
 position = Vector2(-339, 3995)
 
-[node name="WorldButton25" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="20" unique_id=457436135 instance=ExtResource("9_g4df7")]
+[node name="WorldButton25" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="20" unique_id=457436135 instance=ExtResource("9_g4df7")]
 position = Vector2(-339, 4048)
 
-[node name="WorldButton26" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="21" unique_id=143911216 instance=ExtResource("9_g4df7")]
+[node name="WorldButton26" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="21" unique_id=143911216 instance=ExtResource("9_g4df7")]
 position = Vector2(-339, 4102)
 
-[node name="WorldButton27" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="22" unique_id=796148368 instance=ExtResource("9_g4df7")]
+[node name="WorldButton27" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="22" unique_id=796148368 instance=ExtResource("9_g4df7")]
 position = Vector2(-339, 4150)
 
-[node name="WorldButton28" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="23" unique_id=945376941 instance=ExtResource("9_g4df7")]
+[node name="WorldButton28" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="23" unique_id=945376941 instance=ExtResource("9_g4df7")]
 position = Vector2(-285, 3883)
 
-[node name="WorldButton29" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="24" unique_id=1997044330 instance=ExtResource("9_g4df7")]
+[node name="WorldButton29" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="24" unique_id=1997044330 instance=ExtResource("9_g4df7")]
 position = Vector2(-285, 3937)
 
-[node name="WorldButton30" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="25" unique_id=264611194 instance=ExtResource("9_g4df7")]
+[node name="WorldButton30" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="25" unique_id=264611194 instance=ExtResource("9_g4df7")]
 position = Vector2(-285, 3995)
 
-[node name="WorldButton31" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="26" unique_id=1945522853 instance=ExtResource("9_g4df7")]
+[node name="WorldButton31" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="26" unique_id=1945522853 instance=ExtResource("9_g4df7")]
 position = Vector2(-285, 4048)
 
-[node name="WorldButton32" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="27" unique_id=1748676626 instance=ExtResource("9_g4df7")]
+[node name="WorldButton32" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="27" unique_id=1748676626 instance=ExtResource("9_g4df7")]
 position = Vector2(-285, 4102)
 
-[node name="WorldButton33" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="28" unique_id=1626404704 instance=ExtResource("9_g4df7")]
+[node name="WorldButton33" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="28" unique_id=1626404704 instance=ExtResource("9_g4df7")]
 position = Vector2(-285, 4150)
 
-[node name="WorldButton34" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="29" unique_id=129916769 instance=ExtResource("9_g4df7")]
+[node name="WorldButton34" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="29" unique_id=129916769 instance=ExtResource("9_g4df7")]
 position = Vector2(-232, 3883)
 
-[node name="WorldButton35" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="30" unique_id=2121237426 instance=ExtResource("9_g4df7")]
+[node name="WorldButton35" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="30" unique_id=2121237426 instance=ExtResource("9_g4df7")]
 position = Vector2(-232, 3937)
 
-[node name="WorldButton36" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="31" unique_id=489058357 instance=ExtResource("9_g4df7")]
+[node name="WorldButton36" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="31" unique_id=489058357 instance=ExtResource("9_g4df7")]
 position = Vector2(-232, 3995)
 
-[node name="WorldButton37" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="32" unique_id=417504770 instance=ExtResource("9_g4df7")]
+[node name="WorldButton37" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="32" unique_id=417504770 instance=ExtResource("9_g4df7")]
 position = Vector2(-232, 4048)
 
-[node name="WorldButtonCorrect" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="33" unique_id=1048346725 instance=ExtResource("9_g4df7")]
+[node name="WorldButtonCorrect" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="33" unique_id=1048346725 instance=ExtResource("9_g4df7")]
 position = Vector2(-232, 4102)
 
-[node name="WorldButton39" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="34" unique_id=1483412254 instance=ExtResource("9_g4df7")]
+[node name="WorldButton39" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="34" unique_id=1483412254 instance=ExtResource("9_g4df7")]
 position = Vector2(-232, 4150)
 
-[node name="WorldButton40" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="35" unique_id=2044961462 instance=ExtResource("9_g4df7")]
+[node name="WorldButton40" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="35" unique_id=2044961462 instance=ExtResource("9_g4df7")]
 position = Vector2(-179, 3883)
 
-[node name="WorldButton41" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="36" unique_id=987699042 instance=ExtResource("9_g4df7")]
+[node name="WorldButton41" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="36" unique_id=987699042 instance=ExtResource("9_g4df7")]
 position = Vector2(-179, 3937)
 
-[node name="WorldButton42" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="37" unique_id=1452397246 instance=ExtResource("9_g4df7")]
+[node name="WorldButton42" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="37" unique_id=1452397246 instance=ExtResource("9_g4df7")]
 position = Vector2(-179, 3995)
 
-[node name="WorldButton43" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="38" unique_id=1118629886 instance=ExtResource("9_g4df7")]
+[node name="WorldButton43" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="38" unique_id=1118629886 instance=ExtResource("9_g4df7")]
 position = Vector2(-179, 4048)
 
-[node name="WorldButton44" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="39" unique_id=1778055573 instance=ExtResource("9_g4df7")]
+[node name="WorldButton44" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="39" unique_id=1778055573 instance=ExtResource("9_g4df7")]
 position = Vector2(-179, 4102)
 
-[node name="WorldButton45" parent="Interactables" parent_id_path=PackedInt32Array(1223907740) index="40" unique_id=521567953 instance=ExtResource("9_g4df7")]
+[node name="WorldButton45" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="40" unique_id=521567953 instance=ExtResource("9_g4df7")]
 position = Vector2(-179, 4150)
 
-[node name="WhiteBloodCell" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="0" unique_id=613541596 instance=ExtResource("11_kmiko")]
-position = Vector2(-232, 4101)
-idle_movement = false
-
-[node name="DeathPit0" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("11_g4df7")]
+[node name="DeathPit0" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="0" unique_id=1582885165 instance=ExtResource("11_g4df7")]
 position = Vector2(545, 2123)
 polygon = PackedVector2Array(-199, 59, 136, -110, 197, -39, -98, 127)
 
-[node name="DeathPit1" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="1" unique_id=2022160928 instance=ExtResource("11_g4df7")]
+[node name="DeathPit1" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="1" unique_id=2022160928 instance=ExtResource("11_g4df7")]
 position = Vector2(-125, 3145)
 polygon = PackedVector2Array(-140.6, -173.2, 58.576477, 163.9384, 113.4, 116.8, -94.6, -194.2)
 
-[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1863227345) index="0" unique_id=241888325 instance=ExtResource("12_7njhx")]
-position = Vector2(-1071, 483)
+[node name="WhiteBloodCell" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="0" unique_id=613541596 instance=ExtResource("11_kmiko")]
+position = Vector2(-232, 4101)
+idle_movement = false
 
-[node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="0" unique_id=907286068 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint0" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="0" unique_id=907286068 instance=ExtResource("8_3bwwb")]
 position = Vector2(17, 106)
 
-[node name="GrapplePoint2" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="1" unique_id=1403821485 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint2" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="1" unique_id=1403821485 instance=ExtResource("8_3bwwb")]
 position = Vector2(36, 512)
 
-[node name="GrapplePoint3" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="2" unique_id=624826758 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint3" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="2" unique_id=624826758 instance=ExtResource("8_3bwwb")]
 position = Vector2(312, 717)
 
-[node name="GrapplePoint5" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="3" unique_id=991024596 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint5" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="3" unique_id=991024596 instance=ExtResource("8_3bwwb")]
 position = Vector2(707, 844)
 
-[node name="GrapplePoint9" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="4" unique_id=306430399 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint9" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="4" unique_id=306430399 instance=ExtResource("8_3bwwb")]
 position = Vector2(317, 1019)
 
-[node name="GrapplePoint12" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="5" unique_id=3250248 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint12" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="5" unique_id=3250248 instance=ExtResource("8_3bwwb")]
 position = Vector2(113, 1065)
 
-[node name="GrapplePoint10" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="6" unique_id=313315070 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint10" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="6" unique_id=313315070 instance=ExtResource("8_3bwwb")]
 position = Vector2(-188, 955)
 
-[node name="GrapplePoint13" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="7" unique_id=778562162 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint13" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="7" unique_id=778562162 instance=ExtResource("8_3bwwb")]
 position = Vector2(-503, 876)
 
-[node name="GrapplePoint20" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="8" unique_id=1774901131 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint20" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="8" unique_id=1774901131 instance=ExtResource("8_3bwwb")]
 position = Vector2(-854, 709)
 
-[node name="GrapplePoint11" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="9" unique_id=1482337542 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint11" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="9" unique_id=1482337542 instance=ExtResource("8_3bwwb")]
 position = Vector2(130, 1196)
 
-[node name="GrapplePoint18" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="10" unique_id=101874602 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint18" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="10" unique_id=101874602 instance=ExtResource("8_3bwwb")]
 position = Vector2(79, 1553)
 
-[node name="GrapplePoint14" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="11" unique_id=1121416423 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint14" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="11" unique_id=1121416423 instance=ExtResource("8_3bwwb")]
 position = Vector2(391, 1956)
 
-[node name="GrapplePoint15" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="12" unique_id=547195955 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint15" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="12" unique_id=547195955 instance=ExtResource("8_3bwwb")]
 position = Vector2(678, 2286)
 
-[node name="GrapplePoint16" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="13" unique_id=1927495563 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint16" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="13" unique_id=1927495563 instance=ExtResource("8_3bwwb")]
 position = Vector2(577, 2638)
 
-[node name="GrapplePoint17" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="14" unique_id=1549960993 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint17" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="14" unique_id=1549960993 instance=ExtResource("8_3bwwb")]
 position = Vector2(67, 3059)
 
-[node name="GrapplePoint23" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="15" unique_id=1058372515 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint23" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="15" unique_id=1058372515 instance=ExtResource("8_3bwwb")]
 position = Vector2(389, 2844)
 
-[node name="GrapplePoint19" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="16" unique_id=1984108275 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint19" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="16" unique_id=1984108275 instance=ExtResource("8_3bwwb")]
 position = Vector2(-250, 3372)
 
-[node name="GrapplePoint21" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="17" unique_id=781163391 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint21" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="17" unique_id=781163391 instance=ExtResource("8_3bwwb")]
 position = Vector2(-300, 3732)
 
-[node name="GrapplePoint22" parent="GrapplePoints" parent_id_path=PackedInt32Array(882760734) index="18" unique_id=1372896590 instance=ExtResource("8_3bwwb")]
+[node name="GrapplePoint22" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="18" unique_id=1372896590 instance=ExtResource("8_3bwwb")]
 position = Vector2(-310, 4021)
 
 [connection signal="pressed" from="Interactables/WorldButtonCorrect" to="Interactables/Gate0" method="disable"]

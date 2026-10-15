@@ -69,17 +69,6 @@ func _ready_completion_zones() -> void:
 			if !child.level_completed.is_connected(level_completed):
 				child.level_completed.connect(level_completed)
 
-const EXCITOTOXICITY = preload("uid://chwtaluiwow5n")
-func _on_count_down_timer_expired() -> void:
-	if completed: return
-	
-	if not is_player_dead:
-		Music.set_pitch(1.25)
-	Effects.intensify()
-	var excitotoxicity := EXCITOTOXICITY.instantiate()
-	add_child(excitotoxicity)
-	await Delays.wait(0.2)
-	spawn_enzyme()
 
 var is_player_dead := false
 func player_dead() -> void:
@@ -124,6 +113,20 @@ func level_completed(game_completed := false) -> void:
 		Effects.unintensify()
 		Scenes.swap_scene("Ending Cutscene")
 
+
+# Count Down & Timer
+const EXCITOTOXICITY = preload("uid://chwtaluiwow5n")
+func _on_count_down_timer_expired() -> void:
+	if completed: return
+	
+	if not is_player_dead:
+		Music.set_pitch(1.25)
+	Effects.intensify()
+	var excitotoxicity := EXCITOTOXICITY.instantiate()
+	add_child(excitotoxicity)
+	await Delays.wait(0.2)
+	spawn_enzyme()
+
 func spawn_enzyme() -> void:
 	if $Enemies.get_children().size() < 50:
 		var enzyme := preload("uid://d1wd5lnv3285q").instantiate()
@@ -139,12 +142,15 @@ var time_elapsed := 0.0
 func _process_timer(delta: float) -> void:
 	time_elapsed += delta
 
+
+# Brain Fog
 var brain_fogress := 0
 func _process_brain_fog(delta: float) -> void:
 	brain_fog.color.a = LerpHelper.lf(brain_fog.color.a, brain_fogress * 0.1, 4.0, delta)
 
 func _player_ricocheted(ricochets: int) -> void:
 	%BrainFog.material.set_shader_parameter("scroll_dir", Vector2(randf_range(-1, 1), randf_range(-1, 1)))
+	%BrainFog.color.a = 0.0
 	brain_fogress += ricochets
 
 func _player_unricocheted() -> void:

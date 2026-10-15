@@ -47,12 +47,12 @@ func _process_movement(delta: float) -> void:
 				else:
 					momentum = momentum.bounce(collision.get_normal())*0.8
 					velocity = velocity.bounce(collision.get_normal())*0.8
+					ricochets += 1
+					fog_intensified.emit(ricochets)
 				Camera.add_shake(clampf(get_momentum()*0.005, 0.0, 2.5))
 				$RicochetSoundPlayer.stream = _RICOCHET_AUDIOS[randi_range(0, 2)]
 				$RicochetSoundPlayer.pitch_scale = randf_range(0.9, 1.1)
 				$RicochetSoundPlayer.play()
-				ricochets += 1
-				fog_intensified.emit(ricochets)
 				$FogClearCooldown.start(1.0)
 				break
 
