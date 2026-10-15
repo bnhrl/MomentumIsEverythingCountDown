@@ -270,6 +270,14 @@ one_shot = true
 [node name="FogClearCooldown" type="Timer" parent="." unique_id=1687097785]
 one_shot = true
 
+[node name="DebugGrappleRuler" type="Node2D" parent="." unique_id=1483264290]
+
+[node name="RULER" type="ColorRect" parent="DebugGrappleRuler" unique_id=252338964]
+offset_top = -1.0
+offset_right = 260.0
+offset_bottom = 1.0
+color = Color(0.05000007, 1, 0, 1)
+
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=670446571]
 
 [node name="DebugLabel" type="RichTextLabel" parent="DebugLayer" unique_id=834493063]

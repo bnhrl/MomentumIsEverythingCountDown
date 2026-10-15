@@ -64,6 +64,7 @@ func _on_btn_menu_pressed() -> void:
 	
 	GameTime.set_time_scale(1.0)
 	Engine.time_scale = 1.0
+	Music.set_pitch()
 	closing = true
 	Effects.unintensify()
 	Scenes.swap_scene("Level Select")

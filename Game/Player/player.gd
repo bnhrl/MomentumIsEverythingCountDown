@@ -9,6 +9,7 @@ func _ready() -> void:
 	_ready_tail()
 	Camera.target = self
 	$DebugLayer.hide()
+	debug_grapple_ruler.hide()
 
 func _physics_process(delta: float) -> void:
 	_process_movement(delta)
@@ -23,6 +24,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("debug"):
 		$DebugLayer.visible = not $DebugLayer.visible
+		debug_grapple_ruler.visible = $DebugLayer.visible
 	if $DebugLayer.visible:
 		_process_debug()
 
@@ -337,8 +339,11 @@ func die(reason := "") -> void:
 
 # Debug
 @onready var debug_label: RichTextLabel = $DebugLayer/DebugLabel
+@onready var debug_grapple_ruler: Node2D = $DebugGrappleRuler
 func _process_debug() -> void:
 	debug_label.text = "GRAPPLE MOMENTUM: "+str(momentum)+"
 VELOCITY: " + str(velocity)+"
 GRAPPLE MAGNITUDE: " + str(get_momentum())+"
 VELOCITY MAGNITUDE: " + str(velocity.length())
+	debug_grapple_ruler.global_position = model.global_position
+	debug_grapple_ruler.global_rotation = grabber.global_rotation
