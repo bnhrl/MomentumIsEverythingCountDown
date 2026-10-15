@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bjl66jmh7l2i5" path="res://UI/Settings/angry_cuptain.png" id="10_kmpgn"]
 [ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/UIButton/ui_button.tscn" id="10_qx4ph"]
 [ext_resource type="AudioStream" uid="uid://dgsxxymg84k6l" path="res://Assets/Sounds/button_press.mp3" id="11_nucuk"]
+[ext_resource type="Texture2D" uid="uid://btsn8aqerdfkl" path="res://UI/Settings/check_box_checked.png" id="14_y0l5p"]
+[ext_resource type="Texture2D" uid="uid://dbyv3i6gwedli" path="res://UI/Settings/check_box_unchecked.png" id="15_7rk7i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v3ito"]
 shader = ExtResource("2_wnv0n")
@@ -156,6 +158,16 @@ position = Vector2(320, 180)
 scale = Vector2(1.1, 1.15)
 texture = ExtResource("4_yuh4y")
 
+[node name="BtnMainMenu" parent="." unique_id=1301211313 instance=ExtResource("10_qx4ph")]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 285.0
+offset_right = 122.0
+offset_bottom = 342.0
+theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+text = "Back to 
+Main Menu"
+
 [node name="Title" type="RichTextLabel" parent="." unique_id=91147556]
 clip_contents = false
 layout_mode = 0
@@ -172,6 +184,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LabelMusic" type="RichTextLabel" parent="." unique_id=1319278353]
+clip_contents = false
 layout_mode = 0
 offset_left = 40.0
 offset_top = 81.0
@@ -179,6 +192,44 @@ offset_right = 166.0
 offset_bottom = 104.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "Music"
+scroll_active = false
+
+[node name="LabelSFX" type="RichTextLabel" parent="." unique_id=1832234376]
+clip_contents = false
+layout_mode = 0
+offset_left = 40.0
+offset_top = 104.0
+offset_right = 166.0
+offset_bottom = 127.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+text = "Sound Effects"
+scroll_active = false
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="LabelSFX" unique_id=1913102186]
+stream = ExtResource("11_nucuk")
+volume_db = -1.0
+bus = &"SoundEffects"
+
+[node name="LabelBrainFog" type="RichTextLabel" parent="." unique_id=1548112666]
+clip_contents = false
+layout_mode = 0
+offset_left = 40.0
+offset_top = 127.0
+offset_right = 166.0
+offset_bottom = 150.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+text = "Brain Fog"
+scroll_active = false
+
+[node name="LabelVSync" type="RichTextLabel" parent="." unique_id=1506976799]
+clip_contents = false
+layout_mode = 0
+offset_left = 40.0
+offset_top = 153.0
+offset_right = 166.0
+offset_bottom = 176.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+text = "V-Sync"
 scroll_active = false
 
 [node name="SliderMusic" type="HSlider" parent="." unique_id=1030209967]
@@ -204,21 +255,6 @@ sprite_frames = SubResource("SpriteFrames_c6smh")
 autoplay = "default"
 frame_progress = 0.12979272
 
-[node name="LabelSFX" type="RichTextLabel" parent="." unique_id=1832234376]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 104.0
-offset_right = 166.0
-offset_bottom = 127.0
-theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
-text = "Sound Effects"
-scroll_active = false
-
-[node name="AudioPlayer" type="AudioStreamPlayer" parent="LabelSFX" unique_id=1913102186]
-stream = ExtResource("11_nucuk")
-volume_db = -1.0
-bus = &"SoundEffects"
-
 [node name="SliderSFX" type="HSlider" parent="." unique_id=1098301117]
 layout_mode = 0
 offset_left = 183.0
@@ -235,16 +271,32 @@ step = 0.0
 value = 100.0
 script = ExtResource("9_van1q")
 
-[node name="BtnMainMenu" parent="." unique_id=1301211313 instance=ExtResource("10_qx4ph")]
+[node name="CheckBrainFog" type="CheckBox" parent="." unique_id=1938012417]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 285.0
-offset_right = 122.0
-offset_bottom = 342.0
-theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
-text = "Back to 
-Main Menu"
+offset_left = 179.0
+offset_top = 129.0
+offset_right = 203.0
+offset_bottom = 153.0
+theme_override_icons/checked = ExtResource("14_y0l5p")
+theme_override_icons/unchecked = ExtResource("15_7rk7i")
+button_pressed = true
+icon_alignment = 2
+script = ExtResource("9_van1q")
 
+[node name="CheckVSync" type="CheckBox" parent="." unique_id=1105689502]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 156.0
+offset_right = 203.0
+offset_bottom = 180.0
+theme_override_icons/checked = ExtResource("14_y0l5p")
+theme_override_icons/unchecked = ExtResource("15_7rk7i")
+button_pressed = true
+icon_alignment = 2
+script = ExtResource("9_van1q")
+
+[connection signal="pressed" from="BtnMainMenu" to="." method="_on_btn_main_menu_pressed"]
 [connection signal="drag_ended" from="SliderMusic" to="." method="_on_vol_slider_drag_ended"]
 [connection signal="drag_ended" from="SliderSFX" to="." method="_on_vol_slider_drag_ended"]
-[connection signal="pressed" from="BtnMainMenu" to="." method="_on_btn_main_menu_pressed"]
+[connection signal="toggled" from="CheckBrainFog" to="." method="_on_check_brain_fog_toggled"]
+[connection signal="toggled" from="CheckVSync" to="." method="_on_check_v_sync_toggled"]

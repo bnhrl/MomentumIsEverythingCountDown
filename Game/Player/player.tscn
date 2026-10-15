@@ -259,6 +259,10 @@ bus = &"SoundEffects"
 wait_time = 0.5
 one_shot = true
 
+[node name="GrappledTooLongTimer" type="Timer" parent="." unique_id=872702867]
+wait_time = 3.0
+one_shot = true
+
 [node name="ReserveCooldown" type="Timer" parent="." unique_id=2138869592]
 wait_time = 5.0
 one_shot = true
@@ -266,6 +270,25 @@ one_shot = true
 [node name="FogClearCooldown" type="Timer" parent="." unique_id=1687097785]
 one_shot = true
 
+[node name="DebugLayer" type="CanvasLayer" parent="." unique_id=670446571]
+
+[node name="DebugLabel" type="RichTextLabel" parent="DebugLayer" unique_id=834493063]
+clip_contents = false
+offset_left = 2.0
+offset_top = 265.0
+offset_right = 640.0
+offset_bottom = 357.0
+mouse_filter = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 12
+text = "GRAPPLE MOMENTUM: (0.0, 0.0)
+VELOCITY: (0.0, 0.0)
+GRAPPLE MAGNITUDE: 0.0
+VELOCITY MAGNITUDE: 0.0"
+scroll_active = false
+vertical_alignment = 2
+
 [connection signal="timeout" from="GrappleTimer" to="." method="_on_grapple_timer_timeout"]
+[connection signal="timeout" from="GrappledTooLongTimer" to="." method="_on_grappled_too_long_timer_timeout"]
 [connection signal="timeout" from="ReserveCooldown" to="." method="_on_reserve_cooldown_timeout"]
 [connection signal="timeout" from="FogClearCooldown" to="." method="_on_fog_clear_cooldown_timeout"]

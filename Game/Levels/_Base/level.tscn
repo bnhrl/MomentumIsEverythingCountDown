@@ -59,6 +59,8 @@ seamless_blend_skirt = 0.125
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c6smh"]
 shader = ExtResource("2_x38k5")
 shader_parameter/scroll_dir = Vector2(-1, -1)
+shader_parameter/offset = Vector2(1, 1)
+shader_parameter/rotation = 0.0
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_dno0g")
 shader_parameter/noise_twoxture = SubResource("NoiseTexture2D_ovoin")
 shader_parameter/noise_threexture = SubResource("NoiseTexture2D_x38k5")

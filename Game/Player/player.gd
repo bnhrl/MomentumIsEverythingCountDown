@@ -19,6 +19,11 @@ func _physics_process(delta: float) -> void:
 	_process_grappling(delta)
 	_process_grapple_stuck()
 	_process_flash()
+	
+	if Input.is_action_just_pressed("debug"):
+		$DebugLayer.show()
+	if $DebugLayer.visible:
+		_process_debug()
 
 
 # Movement
@@ -224,6 +229,7 @@ func _process_grapple_controls() -> void:
 			$GrappleSoundPlayer.play()
 			attempting_to_grapple = true
 			$GrappleTimer.start(0.5)
+			$GrappledTooLongTimer.start(1.75)
 
 @onready var stuck_raycast: RayCast2D = $StuckRaycast
 func _process_grapple_stuck() -> void:
@@ -254,6 +260,10 @@ func passed_grapple_object() -> void:
 func _on_grapple_timer_timeout() -> void:
 	if grappled_object: return
 	attempting_to_grapple = false
+	$GrappledTooLongTimer.stop()
+
+func _on_grappled_too_long_timer_timeout() -> void:
+	release_grapple()
 
 
 # Ion Reserve/Release
@@ -321,3 +331,13 @@ func die(reason := "") -> void:
 		$DeathSoundPlayer.pitch_scale = randf_range(0.8, 1.2)
 		$DeathSoundPlayer.play()
 		died.emit()
+
+
+
+# Debug
+@onready var debug_label: RichTextLabel = $DebugLayer/DebugLabel
+func _process_debug() -> void:
+	debug_label.text = "GRAPPLE MOMENTUM: "+str(momentum)+"
+VELOCITY: " + str(velocity)+"
+GRAPPLE MAGNITUDE: " + str(get_momentum())+"
+VELOCITY MAGNITUDE: " + str(velocity.length())

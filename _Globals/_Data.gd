@@ -8,6 +8,8 @@ var save_data: Dictionary = {
 	"best_times": {},
 	"vol_mus":100.0,
 	"vol_sfx":100.0,
+	"brain_fog":true,
+	"vsync":1,
 }
 
 
@@ -32,6 +34,7 @@ func load_save(path := SAVE_DATA_PATH) -> void:
 	if save_data.get("fullscreen"): DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	PlayerManager.easy_mode = save_data.get("easy_mode")
 	update_audio_settings()
+	update_vsync_settings()
 
 func save() -> void:
 	var fullscreen := false
@@ -55,8 +58,9 @@ func update_audio_settings(vol_mus: float = save_data.get("vol_mus", 100.0), vol
 	save_data.set("vol_sfx", vol_sfx)
 	AudioServer.set_bus_volume_linear(1, vol_sfx * 0.01)
 	AudioServer.set_bus_volume_linear(2, vol_mus * 0.01)
-	save()
 
+func update_vsync_settings() -> void:
+	DisplayServer.window_set_vsync_mode(save_data.get("vsync", 1) as DisplayServer.VSyncMode)
 
 # Best Times
 func add_best_time(level: int, time: float) -> void:

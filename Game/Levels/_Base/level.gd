@@ -146,10 +146,14 @@ func _process_timer(delta: float) -> void:
 # Brain Fog
 var brain_fogress := 0
 func _process_brain_fog(delta: float) -> void:
-	brain_fog.color.a = LerpHelper.lf(brain_fog.color.a, brain_fogress * 0.1, 4.0, delta)
+	brain_fog.color.a = LerpHelper.lf(brain_fog.color.a, brain_fogress * 0.075, 4.0, delta)
 
 func _player_ricocheted(ricochets: int) -> void:
+	if not Data.save_data.get("brain_fog", true): return
+	
 	%BrainFog.material.set_shader_parameter("scroll_dir", Vector2(randf_range(-1, 1), randf_range(-1, 1)))
+	%BrainFog.material.set_shader_parameter("offset", Vector2(randf_range(-10, 10), randf_range(-10, 10)))
+	%BrainFog.material.set_shader_parameter("rotation", randf_range(-PI, PI))
 	%BrainFog.color.a = 0.0
 	brain_fogress += ricochets
 
