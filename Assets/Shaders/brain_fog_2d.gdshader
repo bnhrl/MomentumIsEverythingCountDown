@@ -29,6 +29,7 @@ vec2 rotate(vec2 uv, vec2 pivot, float angle)
 	return uv;
 }
 
+// I don't actually know if this is what quantizing is. Don't @ me.
 vec4 quantize(vec4 input, float amount) {
 	input *= amount;
 	input = floor(input);

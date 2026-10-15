@@ -71,5 +71,5 @@ func _ready_pause_menu() -> void:
 var current_level := 1
 func level_completed(level: int, time := -1.0) -> void:
 	Data.add_best_time(level, time)
-	if level >= current_level and level < 12:
+	if level >= current_level and current_level <= 12:
 		current_level += 1

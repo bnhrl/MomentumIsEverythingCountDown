@@ -3,6 +3,7 @@
 @export var outline_color := Color("3e3546")
 @onready var time_label: RichTextLabel = $UILayer/TimeLabel
 @onready var brain_fog: ColorRect = %BrainFog
+var brain_fog_enabled := false
 
 func _ready() -> void:
 	if Engine.is_editor_hint(): 
@@ -16,10 +17,14 @@ func _ready() -> void:
 		push_error("Navigation is not baked on " + name + "! Fix that!!")
 	
 	Camera.set_bounds($Bounds.position, $Bounds.size + $Bounds.position)
-	%BrainFog.show()
-	%BrainFog.color.a = 0.0
-	%BrainFog.size = $Bounds.size
-	$BrainFog.position = $Bounds.position
+	brain_fog_enabled = Data.save_data.get("brain_fog", false)
+	if brain_fog_enabled:
+		%BrainFog.show()
+		%BrainFog.color.a = 0.0
+		%BrainFog.size = $Bounds.size
+		%BrainFog.position = $Bounds.position
+	else:
+		%BrainFog.queue_free()
 	PlayerManager.add_player(self)
 	PlayerManager.player.died.connect(player_dead)
 	PlayerManager.player.fog_intensified.connect(_player_ricocheted)
@@ -33,7 +38,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	
-	_process_brain_fog(delta)
+	if brain_fog_enabled:
+		_process_brain_fog(delta)
 	if not completed:
 		time_elapsed += delta
 		time_label.text = str(snappedf(time_elapsed, 0.01)).pad_decimals(2) + "s"
@@ -107,7 +113,6 @@ func level_completed(game_completed := false) -> void:
 		await Scenes.faded
 		Effects.unintensify()
 	else:
-		Scenes.current_level += 1
 		Data.save()
 		var lvl := name.replacen("Level","")
 		Scenes.level_completed(int(lvl), time_elapsed)
@@ -152,7 +157,7 @@ func _process_brain_fog(delta: float) -> void:
 	brain_fog.color.a = LerpHelper.lf(brain_fog.color.a, brain_fogress * 0.075, 4.0, delta)
 
 func _player_ricocheted(ricochets: int) -> void:
-	if not Data.save_data.get("brain_fog", true): return
+	if not Data.save_data.get("brain_fog", false): return
 	
 	%BrainFog.material.set_shader_parameter("scroll_dir", Vector2(randf_range(-1, 1), randf_range(-1, 1)))
 	%BrainFog.material.set_shader_parameter("offset", Vector2(randf_range(-10, 10), randf_range(-10, 10)))

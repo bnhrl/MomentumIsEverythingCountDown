@@ -5,7 +5,7 @@ func _ready() -> void:
 	_ready_background()
 	$SliderMusic.value = Data.save_data.get("vol_mus", 100.0)
 	$SliderSFX.value = Data.save_data.get("vol_sfx", 100.0)
-	$CheckBrainFog.button_pressed = Data.save_data.get("brain_fog", true)
+	$CheckBrainFog.button_pressed = Data.save_data.get("brain_fog", false)
 	$CheckVSync.button_pressed = Data.save_data.get("vsync", true)
 
 func _process(delta: float) -> void:

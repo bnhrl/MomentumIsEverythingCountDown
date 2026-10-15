@@ -122,8 +122,10 @@ z_index = -5
 material = SubResource("ShaderMaterial_v3ito")
 
 [node name="ColorRect" type="ColorRect" parent="Background" unique_id=1640775359]
-offset_right = 640.0
-offset_bottom = 360.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 670.0
+offset_bottom = 390.0
 color = Color(0, 0, 0, 1)
 
 [node name="Background3" type="Sprite2D" parent="Background" unique_id=1045422618]
@@ -304,7 +306,6 @@ offset_right = 203.0
 offset_bottom = 192.0
 theme_override_icons/checked = ExtResource("14_y0l5p")
 theme_override_icons/unchecked = ExtResource("15_7rk7i")
-button_pressed = true
 icon_alignment = 2
 script = ExtResource("9_van1q")
 

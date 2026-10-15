@@ -275,7 +275,9 @@ var holding_store_button := false
 var releasing_momentum := false
 @onready var reserve_cooldown: Timer = $ReserveCooldown
 func _process_momentum_ability() -> void:
-	if grappled_object or retracting_tail or not reserve_cooldown.is_stopped(): return
+	if grappled_object or retracting_tail or not reserve_cooldown.is_stopped(): 
+		holding_store_button = false
+		return
 	
 	if stored_momentum > 0.0 and not holding_store_button:
 		if Input.is_action_pressed("reserve_ion"): # Choosing direction
