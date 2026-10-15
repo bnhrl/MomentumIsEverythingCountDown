@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://d38rooefyc5h4"]
+
+[ext_resource type="Script" uid="uid://bdcjax3wneta6" path="res://Game/OpeningCutscene/opening_cutscene.gd" id="1_o3d41"]
+[ext_resource type="Texture2D" uid="uid://bixj1l3qofkqx" path="res://Game/EndingCutscene/background_cubicle.png" id="1_qnq20"]
+[ext_resource type="Texture2D" uid="uid://cpej4aeu54x58" path="res://Game/OpeningCutscene/computer_view.png" id="2_vg0ye"]
+[ext_resource type="Texture2D" uid="uid://covrrcjyvxel0" path="res://Game/EndingCutscene/background.png" id="3_v3pt5"]
+[ext_resource type="Texture2D" uid="uid://ccwngyu1w43nk" path="res://Game/EndingCutscene/guy_side_view.png" id="4_o3d41"]
+[ext_resource type="PackedScene" uid="uid://c71hxb78p853s" path="res://Game/OpeningCutscene/opening_cutscene_square.tscn" id="6_mg1xd"]
+
+[node name="OpeningCutscene" type="Node2D" unique_id=1678814421]
+script = ExtResource("1_o3d41")
+
+[node name="CameraAnchor" type="Node2D" parent="." unique_id=1927418913]
+position = Vector2(320, 180)
+
+[node name="Start" type="Node2D" parent="." unique_id=1867645945]
+
+[node name="BackgroundCubicle" type="Sprite2D" parent="Start" unique_id=628202140]
+z_index = -1
+position = Vector2(320, -180)
+texture = ExtResource("1_qnq20")
+
+[node name="Computer" type="Sprite2D" parent="Start" unique_id=1607307932]
+position = Vector2(320, 180)
+texture = ExtResource("2_vg0ye")
+
+[node name="End" type="Node2D" parent="." unique_id=2403041]
+
+[node name="Background" type="Sprite2D" parent="End" unique_id=1011334718]
+position = Vector2(320, -180)
+texture = ExtResource("3_v3pt5")
+
+[node name="BackgroundCubicle" type="Sprite2D" parent="End" unique_id=1164600378]
+z_index = -1
+position = Vector2(320, -180)
+texture = ExtResource("1_qnq20")
+
+[node name="Guy" type="Sprite2D" parent="End" unique_id=1991543729]
+position = Vector2(324, 168)
+texture = ExtResource("4_o3d41")
+
+[node name="Squares" type="Node2D" parent="." unique_id=1152032243]
+
+[node name="OCS0" parent="Squares" unique_id=1889999184 instance=ExtResource("6_mg1xd")]
+visible = false
+modulate = Color(0.91, 0.2275, 0.2275, 0.19607843)
+position = Vector2(320, 108)
+
+[node name="OCS1" parent="Squares" unique_id=2111297323 instance=ExtResource("6_mg1xd")]
+visible = false
+modulate = Color(0.98, 0.41944003, 0.11760001, 0.19607843)
+position = Vector2(320, 108)
+
+[node name="OCS2" parent="Squares" unique_id=896829059 instance=ExtResource("6_mg1xd")]
+visible = false
+modulate = Color(0.98, 0.76309335, 0.16660002, 0.19607843)
+position = Vector2(320, 108)
+
+[node name="OCS3" parent="Squares" unique_id=2089921216 instance=ExtResource("6_mg1xd")]
+visible = false
+modulate = Color(0.8406933, 0.88, 0.2904, 0.19607843)
+position = Vector2(320, 108)
+
+[node name="OCS4" parent="Squares" unique_id=1689113559 instance=ExtResource("6_mg1xd")]
+visible = false
+modulate = Color(0.11840002, 0.74, 0.44992, 0.19607843)
+position = Vector2(320, 108)
+
+[node name="OCS5" parent="Squares" unique_id=2020213417 instance=ExtResource("6_mg1xd")]
+visible = false
+modulate = Color(0.18479998, 0.88, 0.71778667, 0.19607843)
+position = Vector2(320, 108)
+
+[node name="OCS6" parent="Squares" unique_id=816928667 instance=ExtResource("6_mg1xd")]
+visible = false
+modulate = Color(0.18479998, 0.88, 0.71778667, 0.19607843)
+position = Vector2(320, 108)
+
+[node name="OCS7" parent="Squares" unique_id=733537638 instance=ExtResource("6_mg1xd")]
+visible = false
+modulate = Color(0.297, 0.60854995, 0.9, 0.19607843)
+position = Vector2(320, 108)
+
+[node name="OCS8" parent="Squares" unique_id=1785729205 instance=ExtResource("6_mg1xd")]
+visible = false
+modulate = Color(0.6513833, 0.51299995, 0.95, 0.19607843)
+position = Vector2(320, 108)
+
+[node name="OCS9" parent="Squares" unique_id=1422057886 instance=ExtResource("6_mg1xd")]
+visible = false
+modulate = Color(0.94, 0.31019998, 0.46765, 0.19607843)
+position = Vector2(320, 108)
+
+[node name="OCS10" parent="Squares" unique_id=375561770 instance=ExtResource("6_mg1xd")]
+visible = false
+modulate = Color(0, 0, 0, 0.19607843)
+position = Vector2(320, 108)

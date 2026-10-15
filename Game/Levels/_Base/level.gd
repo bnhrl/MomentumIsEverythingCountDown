@@ -144,6 +144,7 @@ func _process_brain_fog(delta: float) -> void:
 	brain_fog.color.a = LerpHelper.lf(brain_fog.color.a, brain_fogress * 0.1, 4.0, delta)
 
 func _player_ricocheted(ricochets: int) -> void:
+	%BrainFog.material.set_shader_parameter("scroll_dir", Vector2(randf_range(-1, 1), randf_range(-1, 1)))
 	brain_fogress += ricochets
 
 func _player_unricocheted() -> void:

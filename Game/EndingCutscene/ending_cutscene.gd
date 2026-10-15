@@ -26,7 +26,7 @@ func step_0() -> Signal: # Pan down to Man
 	await Delays.wait(0.5)
 	var tween := create_tween()
 	tween.tween_property(camera_anchor, "position", MIDDLE, 2).set_trans(Tween.TRANS_EXPO).from(MIDDLE*Vector2(1,-1))
-	tween.tween_property(background_flames, "modulate:a", 0.0, 1)
+	tween.tween_property(background_flames, "modulate:a", 0.0, 1.75)
 	await tween.finished
 	await Delays.wait(1.25)
 	await get_tree().process_frame
@@ -83,6 +83,10 @@ func step_3() -> Signal: # Detailed Credits
 	await Delays.wait(6.0) # Cuptain
 	tween = create_tween()
 	tween.tween_property(%Cuptain, "modulate:a", 0.0, 0.5)
+	await tween.finished
+	%Bnhrl.hide()
+	%CatJug.hide()
+	%Cuptain.hide()
 	return Delays.wait(1.0)
 
 func step_4() -> void: # The End

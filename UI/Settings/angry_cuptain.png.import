@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2a4815ubdc3p"
-path="res://.godot/imported/pointer.png-0e8a6661085ea98dccbca00710514d70.ctex"
+uid="uid://bjl66jmh7l2i5"
+path="res://.godot/imported/angry_cuptain.png-6e5f90177574d7cd1df60e316f5bbe4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Interactable/Gate/pointer.png"
-dest_files=["res://.godot/imported/pointer.png-0e8a6661085ea98dccbca00710514d70.ctex"]
+source_file="res://UI/Settings/angry_cuptain.png"
+dest_files=["res://.godot/imported/angry_cuptain.png-6e5f90177574d7cd1df60e316f5bbe4c.ctex"]
 
 [params]
 

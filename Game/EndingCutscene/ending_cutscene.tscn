@@ -16,7 +16,7 @@
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_lbcwi"]
 noise_type = 5
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_glr10"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lclin"]
 width = 640
 height = 360
 noise = SubResource("FastNoiseLite_lbcwi")
@@ -26,7 +26,7 @@ shader = ExtResource("1_glr10")
 shader_parameter/scale = Vector2(1, 1)
 shader_parameter/strength = 0.2
 shader_parameter/fps = 5.0
-shader_parameter/squiggle_noise = SubResource("NoiseTexture2D_glr10")
+shader_parameter/squiggle_noise = SubResource("NoiseTexture2D_lclin")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6cxgb"]
 atlas = ExtResource("7_ysm7e")

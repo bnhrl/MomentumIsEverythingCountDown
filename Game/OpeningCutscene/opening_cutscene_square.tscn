@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c71hxb78p853s"]
+
+[ext_resource type="Script" uid="uid://m5hkswxjqlkt" path="res://Game/OpeningCutscene/opening_cutscene_square.gd" id="1_mvbmc"]
+
+[node name="OpeningCutsceneSquare" type="CanvasGroup" unique_id=1889999184]
+script = ExtResource("1_mvbmc")
+
+[node name="Border" type="ColorRect" parent="." unique_id=1724409749]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+
+[node name="Fill" type="ColorRect" parent="." unique_id=12837720]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0, 0, 0, 1)

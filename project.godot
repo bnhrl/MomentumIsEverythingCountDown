@@ -60,6 +60,7 @@ folder_colors={
 "res://Game/Interactable/": "yellow",
 "res://Game/Levels/": "blue",
 "res://Game/Objects/": "yellow",
+"res://Game/OpeningCutscene/": "pink",
 "res://Game/Player/": "green",
 "res://Game/PolygonWalls/": "yellow",
 "res://_Globals/": "gray"

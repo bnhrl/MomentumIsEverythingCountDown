@@ -25,8 +25,14 @@ func _process_background(delta: float) -> void:
 
 
 func _on_vol_slider_drag_ended(value_changed: bool) -> void:
+	$LabelSFX/AudioPlayer.play()
 	if value_changed:
 		Data.update_audio_settings($SliderMusic.value, $SliderSFX.value)
+	if $SliderMusic.value == 0.0:
+		$SliderMusic/AngryCuptain.show()
+	else:
+		$SliderMusic/AngryCuptain.hide()
+	
 
 
 func _on_btn_main_menu_pressed() -> void:

@@ -95,9 +95,9 @@ text = "FIX"
 [node name="BtnQuit" parent="." unique_id=1688920916 instance=ExtResource("1_38cx4")]
 layout_mode = 0
 offset_left = 279.0
-offset_top = 261.0
+offset_top = 256.0
 offset_right = 311.0
-offset_bottom = 293.0
+offset_bottom = 288.0
 scale = Vector2(2, 2)
 theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 text = "DIE"

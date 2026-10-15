@@ -98,12 +98,12 @@ offset_left = 89.0
 offset_top = 271.0
 offset_right = 185.0
 offset_bottom = 313.0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
 text = "Source"
 vertical_alignment = 0
-default_color = Color(1, 1, 1, 1)
+default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.706441, 0.5381466, 1, 1)
 hover_size = Vector2(1.25, 1.6)
 
@@ -113,13 +113,13 @@ offset_left = 281.0
 offset_top = 271.0
 offset_right = 477.0
 offset_bottom = 313.0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
 text = "Asset Credits"
 vertical_alignment = 0
-default_color = Color(1, 1, 1, 1)
-hover_color = Color(0.7456534, 1, 0.51885736, 1)
+default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+hover_color = Color(0.706441, 0.5381466, 1, 1)
 hover_size = Vector2(1.25, 1.6)
 
 [connection signal="pressed" from="BtnBNHRL" to="." method="_on_btn_bnhrl_pressed"]

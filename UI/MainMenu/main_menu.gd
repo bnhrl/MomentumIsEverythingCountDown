@@ -50,7 +50,10 @@ func play_opening() -> void:
 
 # Buttons
 func _on_btn_start_pressed() -> void:
-	Scenes.swap_scene("Level Select")
+	if not Data.save_data.get("opening_cutscene_watched", false):
+		Scenes.swap_scene("Opening Cutscene")
+	else:
+		Scenes.swap_scene("Level Select")
 
 var credits: Control
 func _on_btn_credits_pressed() -> void:
@@ -85,7 +88,7 @@ func button_hovered(button: UIButton) -> void:
 	elif button == $BtnQuit:
 		label_btn_description.text = "[wave]Close the game and exit to desktop."
 	elif button == $BtnReset:
-		label_btn_description.text = "[wave]Reset all saved data. Duh."
+		label_btn_description.text = "[wave]Reset all saved data. Except settings. Duh."
 	elif button == $BtnExport:
 		label_btn_description.text = "[wave]Export your save data. Drag and drop the file onto the game to load it."
 

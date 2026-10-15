@@ -26,8 +26,8 @@ func _ready() -> void:
 	else:
 		select_level(-1, null)
 	
-	if Scenes.current_level >= 13: $BtnRewatch.show()
-	else:                          $BtnRewatch.hide()
+	if Scenes.current_level >= 13: $BtnRewatchEnding.show()
+	else:                          $BtnRewatchEnding.hide()
 
 
 func _on_btn_main_menu_pressed() -> void:
@@ -147,5 +147,8 @@ func _on_btn_mode_button_unhovered(_button: UIButton) -> void:
 
 
 # Rewatch
-func _on_btn_rewatch_pressed() -> void:
+func _on_btn_rewatch_opening_pressed() -> void:
+	Scenes.swap_scene("Opening Cutscene")
+
+func _on_btn_rewatch_ending_pressed() -> void:
 	Scenes.swap_scene("Ending Cutscene")

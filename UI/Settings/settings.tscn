@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cmj78k4wv6glq" path="res://UI/Settings/grabber_red.png" id="8_4ang8"]
 [ext_resource type="Texture2D" uid="uid://cljm5x6gh2vqu" path="res://UI/Settings/grabber_blue.png" id="9_qx4ph"]
 [ext_resource type="Script" uid="uid://0souclp1a1d3" path="res://Assets/Scripts/control_hoverable.gd" id="9_van1q"]
+[ext_resource type="Texture2D" uid="uid://bjl66jmh7l2i5" path="res://UI/Settings/angry_cuptain.png" id="10_kmpgn"]
 [ext_resource type="PackedScene" uid="uid://b8f2vxq8e2wo1" path="res://UI/Buttons/UIButton/ui_button.tscn" id="10_qx4ph"]
+[ext_resource type="AudioStream" uid="uid://dgsxxymg84k6l" path="res://Assets/Sounds/button_press.mp3" id="11_nucuk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v3ito"]
 shader = ExtResource("2_wnv0n")
@@ -61,6 +63,35 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.68235296, 0.13725491, 0.20392157, 1)
 anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nucuk"]
+atlas = ExtResource("10_kmpgn")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p0f4"]
+atlas = ExtResource("10_kmpgn")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0l5p"]
+atlas = ExtResource("10_kmpgn")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6smh"]
+animations = [{
+"frames": [{
+"duration": 0.75,
+"texture": SubResource("AtlasTexture_nucuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p0f4")
+}, {
+"duration": 0.75,
+"texture": SubResource("AtlasTexture_y0l5p")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ang8"]
 content_margin_left = 4.0
@@ -146,6 +177,7 @@ offset_left = 40.0
 offset_top = 81.0
 offset_right = 166.0
 offset_bottom = 104.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "Music"
 scroll_active = false
 
@@ -165,14 +197,27 @@ step = 0.0
 value = 100.0
 script = ExtResource("9_van1q")
 
+[node name="AngryCuptain" type="AnimatedSprite2D" parent="SliderMusic" unique_id=598284842]
+visible = false
+position = Vector2(-83, 8)
+sprite_frames = SubResource("SpriteFrames_c6smh")
+autoplay = "default"
+frame_progress = 0.12979272
+
 [node name="LabelSFX" type="RichTextLabel" parent="." unique_id=1832234376]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 104.0
 offset_right = 166.0
 offset_bottom = 127.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "Sound Effects"
 scroll_active = false
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="LabelSFX" unique_id=1913102186]
+stream = ExtResource("11_nucuk")
+volume_db = -1.0
+bus = &"SoundEffects"
 
 [node name="SliderSFX" type="HSlider" parent="." unique_id=1098301117]
 layout_mode = 0
