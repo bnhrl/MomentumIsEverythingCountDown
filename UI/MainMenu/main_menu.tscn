@@ -46,7 +46,7 @@ material = SubResource("ShaderMaterial_8uv83")
 
 [node name="Logo" type="Sprite2D" parent="MainMenu/Logo" unique_id=459210881]
 unique_name_in_owner = true
-position = Vector2(320, 132)
+position = Vector2(320, 108)
 texture = ExtResource("5_052h3")
 
 [node name="LabelBtnDescription" type="RichTextLabel" parent="." unique_id=1869460710]
@@ -55,6 +55,7 @@ offset_top = 300.0
 offset_right = 640.0
 offset_bottom = 350.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[wave]Hover a button button hover theory"
 scroll_active = false
@@ -101,16 +102,6 @@ offset_bottom = 288.0
 scale = Vector2(2, 2)
 theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 text = "DIE"
-
-[node name="FullscreenLabel" type="RichTextLabel" parent="." unique_id=1258388438]
-layout_mode = 0
-offset_right = 366.0
-offset_bottom = 32.0
-theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
-text = "Press F11 to fullscreen at any time."
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="BtnReset" parent="." unique_id=1632076101 instance=ExtResource("1_38cx4")]
 layout_mode = 0

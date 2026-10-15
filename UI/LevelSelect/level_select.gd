@@ -53,6 +53,10 @@ const LEVEL_NAMES: Dictionary[int, String] = {
 	10: "parietal c",
 	11: "occipital a",
 	12: "occipital b",
+	
+	14: "dark matter a",
+	15: "dark matter b",
+	16: "dark matter c",
 }
 const LEVEL_THUMBSNAILS: Dictionary[int, Texture2D] = {
 	 1: preload("uid://ym71ns7c4280"),
@@ -81,6 +85,10 @@ const LEVEL_TRACKS: Dictionary[int, String] = {
 	10: "Parietal",
 	11: "Occipital",
 	12: "Occipital",
+	
+	14: "Temporal",
+	15: "Frontal",
+	16: "Parietal",
 }
 
 @onready var selector: CanvasGroup = $Selector
@@ -107,8 +115,8 @@ func select_level(l: int, button: LevelButton) -> void:
 		$Hud.show()
 	
 	level = l
-	level_label.text = "[tornado freq=5 radius=2.0]"+LEVEL_NAMES.get(level)
-	level_thumbnail.texture = LEVEL_THUMBSNAILS.get(level)
+	level_label.text = "[tornado freq=5 radius=2.0]"+LEVEL_NAMES.get(level, "no name found")
+	level_thumbnail.texture = LEVEL_THUMBSNAILS.get(level, null)
 	selector.set_target(button)
 	if LEVEL_TRACKS.has(l):
 		Music.play(LEVEL_TRACKS.get(level))
@@ -124,7 +132,10 @@ func update_best_time_label() -> void:
 		best_time_label.text = "best time: N/A"
 
 func _on_btn_go_pressed() -> void:
-	Scenes.swap_scene("Level " + str(level))
+	if level <= 12:
+		Scenes.swap_scene("Level " + str(level))
+	else:
+		Scenes.swap_scene("Bonus Level " + str(level))
 
 
 # Mode

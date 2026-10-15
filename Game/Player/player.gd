@@ -8,6 +8,7 @@ var momentum := Vector2.ZERO
 func _ready() -> void:
 	_ready_tail()
 	Camera.target = self
+	$DebugLayer.hide()
 
 func _physics_process(delta: float) -> void:
 	_process_movement(delta)
@@ -21,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	_process_flash()
 	
 	if Input.is_action_just_pressed("debug"):
-		$DebugLayer.show()
+		$DebugLayer.visible = not $DebugLayer.visible
 	if $DebugLayer.visible:
 		_process_debug()
 

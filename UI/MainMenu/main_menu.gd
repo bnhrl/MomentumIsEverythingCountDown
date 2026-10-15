@@ -16,9 +16,6 @@ func _ready() -> void:
 			Data.save()
 	$WebWarning.queue_free()
 	play_opening()
-	await Delays.wait(3.33)
-	var tween := create_tween()
-	tween.tween_property($FullscreenLabel, "modulate:a", 0.0, 1.5).set_trans(Tween.TRANS_EXPO)
 
 func _process(delta: float) -> void:
 	_process_lbd(delta)
@@ -91,6 +88,8 @@ func button_hovered(button: UIButton) -> void:
 		label_btn_description.text = "[wave]Reset all saved data. Except settings. Duh."
 	elif button == $BtnExport:
 		label_btn_description.text = "[wave]Export your save data. Drag and drop the file onto the game to load it."
+	else:
+		label_btn_description.text = "I don't know what this one does."
 
 func button_unhovered(_button: UIButton) -> void:
 	lbd_hovered = false

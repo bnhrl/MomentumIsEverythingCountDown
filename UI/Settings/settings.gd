@@ -10,6 +10,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	_process_background(delta)
+	_process_lbd(delta)
 
 
 # Backgrounds
@@ -49,3 +50,29 @@ func _on_check_brain_fog_toggled(toggled_on: bool) -> void:
 func _on_check_v_sync_toggled(toggled_on: bool) -> void:
 	Data.save_data.set("vsync", toggled_on)
 	Data.update_vsync_settings()
+
+
+
+# LBD
+func _process_lbd(delta: float) -> void:
+	label_btn_description.modulate.a = LerpHelper.lf(label_btn_description.modulate.a, lbd_hovered, 8.0, delta)
+
+var lbd_hovered := false
+@onready var label_btn_description: RichTextLabel = $LabelBtnDescription
+func setting_hovered(control: Control) -> void:
+	lbd_hovered = true
+	if control == $LabelFullscreen:
+		label_btn_description.text = "Exactly what it says."
+	elif control == $SliderMusic:
+		label_btn_description.text = "Change the volume of the game's music."
+	elif control == $SliderSFX:
+		label_btn_description.text = "Change the volume of the game's sound effects."
+	elif control == $CheckBrainFog:
+		label_btn_description.text = "Toggles brain fog on and off. Brain fog appears when repeatedly slamming into walls."
+	elif control == $CheckVSync:
+		label_btn_description.text = "Toggles V-Sync on and off."
+	else:
+		label_btn_description.text = "I don't know what this one does."
+
+func setting_unhovered(_control: Control) -> void:
+	lbd_hovered = false

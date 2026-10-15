@@ -158,16 +158,6 @@ position = Vector2(320, 180)
 scale = Vector2(1.1, 1.15)
 texture = ExtResource("4_yuh4y")
 
-[node name="BtnMainMenu" parent="." unique_id=1301211313 instance=ExtResource("10_qx4ph")]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 285.0
-offset_right = 122.0
-offset_bottom = 342.0
-theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
-text = "Back to 
-Main Menu"
-
 [node name="Title" type="RichTextLabel" parent="." unique_id=91147556]
 clip_contents = false
 layout_mode = 0
@@ -183,13 +173,48 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="LabelBtnDescription" type="RichTextLabel" parent="." unique_id=1261209551]
+layout_mode = 0
+offset_top = 300.0
+offset_right = 640.0
+offset_bottom = 350.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[wave]Hover a button button hover theory"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BtnMainMenu" parent="." unique_id=1301211313 instance=ExtResource("10_qx4ph")]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 261.0
+offset_right = 365.0
+offset_bottom = 318.0
+theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
+text = "Back to
+Main Menu"
+
+[node name="LabelFullscreen" type="RichTextLabel" parent="." unique_id=375461447]
+clip_contents = false
+layout_mode = 0
+offset_left = 40.0
+offset_top = 97.0
+offset_right = 618.0
+offset_bottom = 120.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+text = "Press F11  /  ALT + ENTER to toggle fullscreen at any time."
+scroll_active = false
+script = ExtResource("9_van1q")
+
 [node name="LabelMusic" type="RichTextLabel" parent="." unique_id=1319278353]
 clip_contents = false
 layout_mode = 0
 offset_left = 40.0
-offset_top = 81.0
+offset_top = 120.0
 offset_right = 166.0
-offset_bottom = 104.0
+offset_bottom = 143.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "Music"
 scroll_active = false
@@ -198,9 +223,9 @@ scroll_active = false
 clip_contents = false
 layout_mode = 0
 offset_left = 40.0
-offset_top = 104.0
+offset_top = 143.0
 offset_right = 166.0
-offset_bottom = 127.0
+offset_bottom = 166.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "Sound Effects"
 scroll_active = false
@@ -214,9 +239,9 @@ bus = &"SoundEffects"
 clip_contents = false
 layout_mode = 0
 offset_left = 40.0
-offset_top = 127.0
+offset_top = 166.0
 offset_right = 166.0
-offset_bottom = 150.0
+offset_bottom = 189.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "Brain Fog"
 scroll_active = false
@@ -225,9 +250,9 @@ scroll_active = false
 clip_contents = false
 layout_mode = 0
 offset_left = 40.0
-offset_top = 153.0
+offset_top = 189.0
 offset_right = 166.0
-offset_bottom = 176.0
+offset_bottom = 212.0
 theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "V-Sync"
 scroll_active = false
@@ -235,9 +260,9 @@ scroll_active = false
 [node name="SliderMusic" type="HSlider" parent="." unique_id=1030209967]
 layout_mode = 0
 offset_left = 183.0
-offset_top = 89.0
+offset_top = 128.0
 offset_right = 618.0
-offset_bottom = 105.0
+offset_bottom = 144.0
 theme_override_icons/grabber = ExtResource("9_qx4ph")
 theme_override_icons/grabber_highlight = ExtResource("9_qx4ph")
 theme_override_styles/slider = SubResource("StyleBoxFlat_wnv0n")
@@ -258,9 +283,9 @@ frame_progress = 0.12979272
 [node name="SliderSFX" type="HSlider" parent="." unique_id=1098301117]
 layout_mode = 0
 offset_left = 183.0
-offset_top = 112.0
+offset_top = 151.0
 offset_right = 618.0
-offset_bottom = 128.0
+offset_bottom = 167.0
 theme_override_icons/grabber = ExtResource("8_4ang8")
 theme_override_icons/grabber_highlight = ExtResource("8_4ang8")
 theme_override_styles/slider = SubResource("StyleBoxFlat_wnv0n")
@@ -274,9 +299,9 @@ script = ExtResource("9_van1q")
 [node name="CheckBrainFog" type="CheckBox" parent="." unique_id=1938012417]
 layout_mode = 0
 offset_left = 179.0
-offset_top = 129.0
+offset_top = 168.0
 offset_right = 203.0
-offset_bottom = 153.0
+offset_bottom = 192.0
 theme_override_icons/checked = ExtResource("14_y0l5p")
 theme_override_icons/unchecked = ExtResource("15_7rk7i")
 button_pressed = true
@@ -286,17 +311,29 @@ script = ExtResource("9_van1q")
 [node name="CheckVSync" type="CheckBox" parent="." unique_id=1105689502]
 layout_mode = 0
 offset_left = 179.0
-offset_top = 156.0
+offset_top = 192.0
 offset_right = 203.0
-offset_bottom = 180.0
+offset_bottom = 216.0
 theme_override_icons/checked = ExtResource("14_y0l5p")
 theme_override_icons/unchecked = ExtResource("15_7rk7i")
 button_pressed = true
 icon_alignment = 2
 script = ExtResource("9_van1q")
 
+[connection signal="button_hovered" from="BtnMainMenu" to="." method="setting_hovered"]
+[connection signal="button_unhovered" from="BtnMainMenu" to="." method="setting_unhovered"]
 [connection signal="pressed" from="BtnMainMenu" to="." method="_on_btn_main_menu_pressed"]
+[connection signal="control_hovered" from="LabelFullscreen" to="." method="setting_hovered"]
+[connection signal="control_unhovered" from="LabelFullscreen" to="." method="setting_unhovered"]
+[connection signal="control_hovered" from="SliderMusic" to="." method="setting_hovered"]
+[connection signal="control_unhovered" from="SliderMusic" to="." method="setting_unhovered"]
 [connection signal="drag_ended" from="SliderMusic" to="." method="_on_vol_slider_drag_ended"]
+[connection signal="control_hovered" from="SliderSFX" to="." method="setting_hovered"]
+[connection signal="control_unhovered" from="SliderSFX" to="." method="setting_unhovered"]
 [connection signal="drag_ended" from="SliderSFX" to="." method="_on_vol_slider_drag_ended"]
+[connection signal="control_hovered" from="CheckBrainFog" to="." method="setting_hovered"]
+[connection signal="control_unhovered" from="CheckBrainFog" to="." method="setting_unhovered"]
 [connection signal="toggled" from="CheckBrainFog" to="." method="_on_check_brain_fog_toggled"]
+[connection signal="control_hovered" from="CheckVSync" to="." method="setting_hovered"]
+[connection signal="control_unhovered" from="CheckVSync" to="." method="setting_unhovered"]
 [connection signal="toggled" from="CheckVSync" to="." method="_on_check_v_sync_toggled"]
