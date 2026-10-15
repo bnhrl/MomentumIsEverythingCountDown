@@ -109,9 +109,12 @@ func level_completed(game_completed := false) -> void:
 	else:
 		Scenes.current_level += 1
 		Data.save()
+		var lvl := name.replacen("Level","")
+		Scenes.level_completed(int(lvl), time_elapsed)
 		await Delays.wait(1.0)
-		Effects.unintensify()
 		Scenes.swap_scene("Ending Cutscene")
+		await Scenes.faded
+		Effects.unintensify()
 
 
 # Count Down & Timer

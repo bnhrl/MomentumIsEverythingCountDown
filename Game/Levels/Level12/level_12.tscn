@@ -150,7 +150,7 @@ source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
 agent_radius = 3.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a2axm"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fmmgw"]
 resource_local_to_scene = true
 shader = ExtResource("2_lhlo1")
 shader_parameter/tile_texture = ExtResource("7_mt5cr")
@@ -158,7 +158,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 3.141592653589793
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jtekp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a2axm"]
 resource_local_to_scene = true
 shader = ExtResource("2_lhlo1")
 shader_parameter/tile_texture = ExtResource("7_mt5cr")
@@ -166,7 +166,7 @@ shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 3.7464888657459876
 shader_parameter/autoscroll = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uxnt4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jtekp"]
 resource_local_to_scene = true
 shader = ExtResource("2_lhlo1")
 shader_parameter/tile_texture = ExtResource("7_mt5cr")
@@ -494,14 +494,14 @@ position = Vector2(-6941, 795)
 position = Vector2(-7186, 823)
 
 [node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="0" unique_id=816347687 instance=ExtResource("6_fpxds")]
-material = SubResource("ShaderMaterial_a2axm")
+material = SubResource("ShaderMaterial_fmmgw")
 position = Vector2(-1248, 581)
 scale = Vector2(15.86667, 2.1666665)
 spin_speed = 0.0
 direction = 180.0
 
 [node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="1" unique_id=409973565 instance=ExtResource("6_fpxds")]
-material = SubResource("ShaderMaterial_jtekp")
+material = SubResource("ShaderMaterial_a2axm")
 position = Vector2(-4258, 1122)
 scale = Vector2(16.3, 3.1666667)
 polygon = PackedVector2Array(-25.889557, -52.736816, 16.932526, 0, 14.233139, 26.21054, -28.098145, -22.736816)
@@ -509,7 +509,7 @@ spin_speed = 0.0
 direction = 214.658
 
 [node name="BoostPad2" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="2" unique_id=988241145 instance=ExtResource("6_fpxds")]
-material = SubResource("ShaderMaterial_uxnt4")
+material = SubResource("ShaderMaterial_jtekp")
 position = Vector2(-8702, 839)
 scale = Vector2(89.8, 2.4000015)
 spin_speed = 0.0
