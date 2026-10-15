@@ -92,9 +92,9 @@ Main Menu"
 
 [node name="BtnRewatchOpening" parent="." unique_id=1258262224 instance=ExtResource("2_eeebr")]
 layout_mode = 0
-offset_left = 15.0
+offset_left = 47.0
 offset_top = 8.0
-offset_right = 195.0
+offset_right = 227.0
 offset_bottom = 32.0
 theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 theme_override_font_sizes/normal_font_size = 12
@@ -102,9 +102,9 @@ text = "Rewatch Opening Cutscene"
 
 [node name="BtnRewatchEnding" parent="." unique_id=798336002 instance=ExtResource("2_eeebr")]
 layout_mode = 0
-offset_left = 447.0
+offset_left = 423.0
 offset_top = 8.0
-offset_right = 627.0
+offset_right = 603.0
 offset_bottom = 32.0
 theme_override_colors/font_outline_color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 theme_override_font_sizes/normal_font_size = 12
