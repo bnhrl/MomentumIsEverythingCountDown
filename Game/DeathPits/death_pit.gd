@@ -9,11 +9,11 @@
 func _ready() -> void:
 	if build_at_run:
 		refresh.call()
+		$FallArea/Collision.polygon = shrink_polygon(polygon, collider)
 	
 	if Engine.is_editor_hint(): return
 	
 	if PlayerManager.easy_mode: momentum_required *= 0.667
-	$FallArea/Collision.polygon = shrink_polygon(polygon, collider)
 
 func _process(_delta: float) -> void:
 	_process_falling()
@@ -22,6 +22,7 @@ func _process(_delta: float) -> void:
 # Visuals
 @export_tool_button("Refresh") var refresh := func() -> void:
 	update_visuals()
+	$FallArea/Collision.polygon = shrink_polygon(polygon, collider)
 
 func update_visuals() -> void:
 	$Dark.polygon = shrink_polygon(polygon, outer)
