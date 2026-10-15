@@ -4,9 +4,11 @@
 @export var inner := 0.6
 @export var collider := 0.5
 @export var momentum_required := 200.0
+@export var build_at_run := true
 
 func _ready() -> void:
-	refresh.call()
+	if build_at_run:
+		refresh.call()
 	
 	if Engine.is_editor_hint(): return
 	
