@@ -11,7 +11,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	color.h += delta*0.05
-	notif.modulate = color
+	if notif:
+		notif.modulate = color
 	if arrow:
 		arrow.color = color
 
