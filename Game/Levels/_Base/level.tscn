@@ -71,6 +71,7 @@ shader_parameter/tile_texture = ExtResource("5_x38k5")
 shader_parameter/tile_size = Vector2(720, 1280)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = false
+shader_parameter/color = Color(1, 1, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mndar"]
 shader = ExtResource("3_4nsif")
@@ -181,5 +182,6 @@ navigation_polygon = SubResource("NavigationPolygon_vgjax")
 [node name="BoostPads" type="Node2D" parent="." unique_id=1513387696]
 
 [node name="Tutorials" type="Node2D" parent="." unique_id=106695431]
+z_index = -1
 
 [connection signal="expired" from="CountDownTimer" to="." method="_on_count_down_timer_expired"]
