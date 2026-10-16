@@ -60,6 +60,12 @@ func _on_check_v_sync_toggled(toggled_on: bool) -> void:
 	Data.save_data.set("vsync", toggled_on)
 	Data.update_vsync_settings()
 
+func _on_discord_rpc_toggled(toggled_on: bool) -> void:
+	Data.save_data.set("discord_rpc", toggled_on)
+	if toggled_on:
+		Data.create_discord_rpc()
+	else:
+		Data.destroy_discord_rpc()
 
 
 # LBD
@@ -80,6 +86,8 @@ func setting_hovered(control: Control) -> void:
 		label_btn_description.text = "Toggles brain fog on and off. Brain fog appears when repeatedly slamming into walls."
 	elif control == $CheckVSync:
 		label_btn_description.text = "Toggles V-Sync on and off."
+	elif control == $DiscordRPC:
+		label_btn_description.text = "Toggles Discord Rich Presence on and off."
 	else:
 		label_btn_description.text = "I don't know what this one does."
 
