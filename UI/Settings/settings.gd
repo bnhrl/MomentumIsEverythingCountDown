@@ -7,6 +7,8 @@ func _ready() -> void:
 	$SliderSFX.value = Data.save_data.get("vol_sfx", 100.0)
 	$CheckBrainFog.button_pressed = Data.save_data.get("brain_fog", false)
 	$CheckVSync.button_pressed = Data.save_data.get("vsync", true)
+	if $SliderMusic.value == 0.0:
+		$SliderMusic/AngryCuptain.show()
 
 func _process(delta: float) -> void:
 	_process_background(delta)
