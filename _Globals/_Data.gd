@@ -16,11 +16,22 @@ var save_data: Dictionary = {
 var presence: DiscordRichPresence
 func _ready() -> void:
 	load_save()
+	if Data.save_data.get("discord_rpc", true):
+		create_discord_rpc()
+
+func create_discord_rpc() -> void:
+	if presence: return
 	presence = DiscordRichPresence.new()
 	presence.app_id = "1530988478408691713"
 	add_child(presence)
-	presence.set_activity({"details": "Main Menu", "state": "Considering what to do."})
+	set_discord_activity({"details": "Main Menu", "state": "Considering what to do."})
 
+func destroy_discord_rpc() -> void:
+	presence.queue_free()
+
+func set_discord_activity(activity: Dictionary) -> void:
+	if not presence: return
+	presence.set_activity(activity)
 
 # Actual Save Stuff
 const SAVE_DATA_PATH := "user://save.excitoxicity"

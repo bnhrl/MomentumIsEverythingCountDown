@@ -259,6 +259,17 @@ theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 text = "V-Sync"
 scroll_active = false
 
+[node name="LabelDiscordRPC" type="RichTextLabel" parent="." unique_id=663963304]
+clip_contents = false
+layout_mode = 0
+offset_left = 40.0
+offset_top = 212.0
+offset_right = 166.0
+offset_bottom = 235.0
+theme_override_colors/default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
+text = "Discord RPC"
+scroll_active = false
+
 [node name="SliderMusic" type="HSlider" parent="." unique_id=1030209967]
 layout_mode = 0
 offset_left = 183.0
@@ -321,6 +332,18 @@ button_pressed = true
 icon_alignment = 2
 script = ExtResource("9_van1q")
 
+[node name="DiscordRPC" type="CheckBox" parent="." unique_id=1134542710]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 216.0
+offset_right = 203.0
+offset_bottom = 240.0
+theme_override_icons/checked = ExtResource("14_y0l5p")
+theme_override_icons/unchecked = ExtResource("15_7rk7i")
+button_pressed = true
+icon_alignment = 2
+script = ExtResource("9_van1q")
+
 [connection signal="button_hovered" from="BtnMainMenu" to="." method="setting_hovered"]
 [connection signal="button_unhovered" from="BtnMainMenu" to="." method="setting_unhovered"]
 [connection signal="pressed" from="BtnMainMenu" to="." method="_on_btn_main_menu_pressed"]
@@ -332,11 +355,14 @@ script = ExtResource("9_van1q")
 [connection signal="drag_started" from="SliderMusic" to="." method="_on_slider_music_drag_started"]
 [connection signal="control_hovered" from="SliderSFX" to="." method="setting_hovered"]
 [connection signal="control_unhovered" from="SliderSFX" to="." method="setting_unhovered"]
-[connection signal="drag_ended" from="SliderSFX" to="." method="_on_vol_slider_drag_ended"]
 [connection signal="drag_ended" from="SliderSFX" to="." method="_on_slider_sfx_drag_ended"]
+[connection signal="drag_ended" from="SliderSFX" to="." method="_on_vol_slider_drag_ended"]
 [connection signal="control_hovered" from="CheckBrainFog" to="." method="setting_hovered"]
 [connection signal="control_unhovered" from="CheckBrainFog" to="." method="setting_unhovered"]
 [connection signal="toggled" from="CheckBrainFog" to="." method="_on_check_brain_fog_toggled"]
 [connection signal="control_hovered" from="CheckVSync" to="." method="setting_hovered"]
 [connection signal="control_unhovered" from="CheckVSync" to="." method="setting_unhovered"]
 [connection signal="toggled" from="CheckVSync" to="." method="_on_check_v_sync_toggled"]
+[connection signal="control_hovered" from="DiscordRPC" to="." method="setting_hovered"]
+[connection signal="control_unhovered" from="DiscordRPC" to="." method="setting_unhovered"]
+[connection signal="toggled" from="DiscordRPC" to="." method="_on_discord_rpc_toggled"]

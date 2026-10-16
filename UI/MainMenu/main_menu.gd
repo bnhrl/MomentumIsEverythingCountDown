@@ -18,7 +18,7 @@ func _ready() -> void:
 			Data.save()
 	$WebWarning.queue_free()
 	play_opening()
-	Data.presence.set_activity({"details": "Main Menu", "state": "Considering what to do."})
+	Data.set_discord_activity({"details": "Main Menu", "state": "Considering what to do."})
 
 func _process(delta: float) -> void:
 	_process_lbd(delta)

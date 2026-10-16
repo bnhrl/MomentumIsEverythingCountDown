@@ -140,7 +140,7 @@ func select_level(l: int, button: LevelButton) -> void:
 	else:           level_label.text=""
 	level_label.text += "[tornado freq=5 radius=2.0]"+LEVEL_NAMES.get(level, "no name found")
 	level_thumbnail.texture = LEVEL_THUMBSNAILS.get(level, null)
-	Data.presence.set_activity(LEVEL_RPCS.get(level))
+	Data.set_discord_activity(LEVEL_RPCS.get(level))
 	selector.set_target(button)
 	if LEVEL_TRACKS.has(l):
 		Music.play(LEVEL_TRACKS.get(level))
