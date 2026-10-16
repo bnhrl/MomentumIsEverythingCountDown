@@ -11,6 +11,7 @@ fall:             https://pixabay.com/sound-effects/film-special-effects-whoosh-
 old ricochet:     https://pixabay.com/sound-effects/film-special-effects-2-liter-sprite-bottle-hitting-the-top-and-side-of-my-head-32460/
 ricochet:         https://pixabay.com/sound-effects/film-special-effects-basketball-99685/
 squigglevision:   https://godotshaders.com/shader/squigglevision/ by tentabrobpy 
+fire ambience:	  https://pixabay.com/sound-effects/film-special-effects-blazing-fire-394355/
 enemy killed sfx:
 	https://pixabay.com/sound-effects/film-special-effects-metal-hit-10-193281/
 	https://pixabay.com/sound-effects/film-special-effects-metal-whoosh-hit-11-202177/
