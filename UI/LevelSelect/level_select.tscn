@@ -246,7 +246,7 @@ level = 12
 default_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 hover_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
-[node name="BtnLevel14" parent="LevelButtons" unique_id=1295508329 instance=ExtResource("3_eeebr")]
+[node name="BtnLevel13" parent="LevelButtons" unique_id=1295508329 instance=ExtResource("3_eeebr")]
 offset_left = -64.0
 offset_top = -3.0000021
 offset_right = -40.0
@@ -255,10 +255,10 @@ theme_override_colors/default_color = Color(0.18039216, 0.13333334, 0.18431373, 
 theme_override_colors/font_outline_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 theme_override_font_sizes/normal_font_size = 12
 text = "A"
-level = 14
+level = 13
 default_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 
-[node name="BtnLevel15" parent="LevelButtons" unique_id=1598236958 instance=ExtResource("3_eeebr")]
+[node name="BtnLevel14" parent="LevelButtons" unique_id=1598236958 instance=ExtResource("3_eeebr")]
 offset_left = -24.0
 offset_top = -50.000008
 offset_right = 0.0
@@ -267,10 +267,10 @@ theme_override_colors/default_color = Color(0.18039216, 0.13333334, 0.18431373, 
 theme_override_colors/font_outline_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 theme_override_font_sizes/normal_font_size = 12
 text = "B"
-level = 15
+level = 14
 default_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 
-[node name="BtnLevel16" parent="LevelButtons" unique_id=1090432248 instance=ExtResource("3_eeebr")]
+[node name="BtnLevel15" parent="LevelButtons" unique_id=1090432248 instance=ExtResource("3_eeebr")]
 offset_left = 44.0
 offset_top = -10.000004
 offset_right = 68.0
@@ -279,7 +279,7 @@ theme_override_colors/default_color = Color(0.18039216, 0.13333334, 0.18431373, 
 theme_override_colors/font_outline_color = Color(0.78039217, 0.8627451, 0.8156863, 1)
 theme_override_font_sizes/normal_font_size = 12
 text = "C"
-level = 16
+level = 15
 default_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 
 [node name="Selector" parent="." unique_id=564478042 instance=ExtResource("10_fs4r2")]

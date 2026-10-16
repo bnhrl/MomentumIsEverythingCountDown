@@ -107,8 +107,9 @@ func level_completed(game_completed := false) -> void:
 	
 	if not game_completed:
 		await Delays.wait(0.5)
-		var lvl := name.replacen("Level","")
-		Scenes.level_completed(int(lvl), time_elapsed)
+		var lvl := int(name.replacen("Level",""))
+		if name.containsn("LevelBonus"): lvl = int(name.replacen("LevelBonus", "")) + 12
+		Scenes.level_completed(lvl, time_elapsed)
 		Scenes.swap_scene("Level Select")
 		await Scenes.faded
 		Effects.unintensify()
