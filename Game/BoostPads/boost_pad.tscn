@@ -11,6 +11,7 @@ shader_parameter/tile_texture = ExtResource("2_gh5d4")
 shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = true
+shader_parameter/color = Vector4(1, 1, 1, 1)
 
 [node name="BoostPad0" type="Polygon2D" unique_id=816347687]
 material = SubResource("ShaderMaterial_ex37j")
