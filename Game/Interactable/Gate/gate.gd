@@ -15,7 +15,10 @@ func _process(delta: float) -> void:
 		arrow.color = color
 
 const DISABLED_TEXTS := ["An obstacle is cleared...", "Somewhere, a gate opens.", "An obstacle has been removed!"]
+var disabled := false
 func disable(button: WorldButton = null) -> void:
+	if disabled: return
+	disabled = true
 	if button:
 		launch_arrow(button)
 	else:

@@ -12,6 +12,7 @@ extends Node2D
 @onready var computer_flames: AnimatedSprite2D = $Computer/ComputerFlames
 
 func _ready() -> void:
+	Music.play("Cognizance")
 	Camera.target = $CameraAnchor
 	await step_0()
 	await step_1()

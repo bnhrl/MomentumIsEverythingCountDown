@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://c0xfowxnk65ro" path="res://Assets/Sounds/ricochet_0.wav" id="8_vh1aq"]
 [ext_resource type="AudioStream" uid="uid://csv6ew2i6t7tl" path="res://Assets/Sounds/grapple_shoot.wav" id="9_4ddeg"]
 [ext_resource type="Texture2D" uid="uid://cgerxyyy2gsoi" path="res://Game/Enemies/_Base/not_blood.png" id="10_db2hk"]
+[ext_resource type="Texture2D" uid="uid://mqt8g0y20dx8" path="res://_Globals/Cursor/cursor_controller.png" id="13_nfw5o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6smh"]
 
@@ -295,6 +296,12 @@ GRAPPLE MAGNITUDE: 0.0
 VELOCITY MAGNITUDE: 0.0"
 scroll_active = false
 vertical_alignment = 2
+
+[node name="ControllerRotater" type="Node2D" parent="." unique_id=608378018]
+
+[node name="ControllerCursor" type="Sprite2D" parent="ControllerRotater" unique_id=1617235658]
+position = Vector2(104, 0)
+texture = ExtResource("13_nfw5o")
 
 [connection signal="timeout" from="GrappleTimer" to="." method="_on_grapple_timer_timeout"]
 [connection signal="timeout" from="GrappledTooLongTimer" to="." method="_on_grappled_too_long_timer_timeout"]

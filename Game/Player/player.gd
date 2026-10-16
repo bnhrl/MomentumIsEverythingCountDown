@@ -22,11 +22,40 @@ func _physics_process(delta: float) -> void:
 	_process_grapple_stuck()
 	_process_flash()
 	
+	if Cursor.using_controller:
+		controller_cursor.show()
+		_process_controller()
+	else:
+		controller_cursor.hide()
+	
 	if Input.is_action_just_pressed("debug"):
 		$DebugLayer.visible = not $DebugLayer.visible
 		debug_grapple_ruler.visible = $DebugLayer.visible
 	if $DebugLayer.visible:
 		_process_debug()
+
+
+# Cursor
+func get_cursor_position() -> Vector2:
+	if Cursor.using_controller:
+		return controller_cursor.global_position
+	return get_global_mouse_position()
+
+
+# Controller
+var controller_direction := Vector2.ZERO
+func _input(event: InputEvent) -> void:
+	if event is InputEventJoypadMotion:
+		if event.axis == JOY_AXIS_RIGHT_X:
+			controller_direction.x = event.axis_value
+		elif event.axis == JOY_AXIS_RIGHT_Y:
+			controller_direction.y = event.axis_value
+
+@onready var controller_rotater: Node2D = $ControllerRotater
+@onready var controller_cursor: Sprite2D = $ControllerRotater/ControllerCursor
+func _process_controller() -> void:
+	controller_rotater.rotation = controller_direction.angle()
+	
 
 
 # Movement
@@ -88,7 +117,8 @@ func _process_tail(delta: float) -> void:
 	tail_dist = LerpHelper.lf(tail_dist, target_tail_dist, 12.0, delta)
 	tail.width = clampf(DEFAULT_TAIL_DIST/tail_dist*12.0, 5.0, 16.0)
 	
-	var direction := global_position.direction_to(get_global_mouse_position())
+	var direction := global_position.direction_to(get_cursor_position())
+	
 	if grappled_object: direction = global_position.direction_to(grappled_object.global_position)
 	elif attempting_to_grapple: direction = grapple_direction
 	tail_points[1] = direction * tail_dist
@@ -113,7 +143,7 @@ var ricochets := 0
 func _process_visuals(delta: float) -> void: 
 	if dead: return
 	
-	var angle := get_angle_to(get_global_mouse_position())
+	var angle := get_angle_to(get_cursor_position())
 	_body.rotation = LerpHelper.la(_body.rotation, angle, 16.0, delta)
 	_center.rotation = LerpHelper.la(_center.rotation, angle, 4.0, delta)
 	model.material.set_shader_parameter("addition", flash_color)
@@ -124,7 +154,7 @@ func _process_visuals(delta: float) -> void:
 
 func _process_direction_indicator() -> void:
 	if retracting_tail or releasing_momentum:
-		direction_indicator.look_at(get_global_mouse_position())
+		direction_indicator.look_at(get_cursor_position())
 		direction_indicator.show()
 	else:
 		direction_indicator.hide()
@@ -227,7 +257,7 @@ func _process_grapple_controls() -> void:
 			GameTime.set_temp_scale(0.1)
 		elif Input.is_action_just_released("grapple") and !attempting_to_grapple: # Grapple shoot
 			retracting_tail = false
-			grapple_direction = global_position.direction_to(get_global_mouse_position())
+			grapple_direction = global_position.direction_to(get_cursor_position())
 			$GrappleSoundPlayer.pitch_scale = randf_range(0.75, 1.25)
 			$GrappleSoundPlayer.play()
 			attempting_to_grapple = true
@@ -284,7 +314,7 @@ func _process_momentum_ability() -> void:
 			GameTime.set_temp_scale(0.1)
 			releasing_momentum = true
 		elif Input.is_action_just_released("reserve_ion"): # Release
-			momentum += global_position.direction_to(get_global_mouse_position()) * stored_momentum
+			momentum += global_position.direction_to(get_cursor_position()) * stored_momentum
 			stored_momentum = 0.0
 			releasing_momentum = false
 			flash(0.25, Color("8fd3ff"))

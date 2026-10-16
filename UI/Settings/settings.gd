@@ -30,19 +30,26 @@ func _process_background(delta: float) -> void:
 
 # Back To Menu
 func _on_btn_main_menu_pressed() -> void:
+	Music.set_filter(20500, 0.25)
 	Data.save()
 	Scenes.swap_scene("Main Menu")
 
 
 # Settings
 func _on_vol_slider_drag_ended(value_changed: bool) -> void:
-	$LabelSFX/AudioPlayer.play()
 	if value_changed:
 		Data.update_audio_settings($SliderMusic.value, $SliderSFX.value)
 	if $SliderMusic.value == 0.0:
 		$SliderMusic/AngryCuptain.show()
 	else:
 		$SliderMusic/AngryCuptain.hide()
+	Music.set_filter(200, 1.5)
+
+func _on_slider_music_drag_started() -> void:
+	Music.set_filter()
+
+func _on_slider_sfx_drag_ended(_value_changed: bool) -> void:
+	$LabelSFX/AudioPlayer.play()
 
 func _on_check_brain_fog_toggled(toggled_on: bool) -> void:
 	Data.save_data.set("brain_fog", toggled_on)

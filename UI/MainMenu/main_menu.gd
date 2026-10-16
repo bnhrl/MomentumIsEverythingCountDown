@@ -2,6 +2,8 @@ extends Control
 
 
 func _ready() -> void:
+	Music.play("In Your Head")
+	Music.set_filter(20500, 0.25)
 	$LabelBtnDescription.modulate.a = 0.0
 	RenderingServer.global_shader_parameter_set("outline_color", Color("9babb2"))
 	prepare_opening()
@@ -59,6 +61,7 @@ func _on_btn_credits_pressed() -> void:
 	add_child(credits)
 
 func _on_btn_settings_pressed() -> void:
+	Music.set_filter(200, 0.25)
 	Scenes.swap_scene("Settings")
 
 func _on_btn_quit_pressed() -> void:
