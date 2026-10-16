@@ -4,7 +4,7 @@ uniform sampler2D tile_texture: source_color, repeat_enable, filter_nearest;
 uniform vec2 tile_size = vec2(16, 16);
 uniform float rotation = 0.0;
 uniform bool autoscroll = false;
-uniform vec4 color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform vec4 color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 
 varying vec2 world_position;
 varying vec4 modulate;
