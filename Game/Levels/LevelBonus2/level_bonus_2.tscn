@@ -249,7 +249,6 @@ polygon = PackedVector2Array(900.01935, -44.809418, 1082.042, 139.44513, 1275.95
 build_at_run = false
 
 [node name="Collision" parent="DeathPits/Path_PROTO3/FallArea" parent_id_path=PackedInt32Array(1551343958, 252475237) index="0" unique_id=1328679439]
-visible = false
 polygon = PackedVector2Array(760.7756, -51.14557, 1170.2949, 366.60913, 1212.2969, 409.4557, 1280.8513, 342.2525, 1540.5635, 607.18756, 1471.7483, 674.1248, 1660.3179, 866.4865, 1613.1865, 912.68866, 1677.5757, 979.80096, 1064.0215, 1452.4282, -131.66829, 212.38406, -263, 73, -263, -51.5)
 
 [node name="Dark" parent="DeathPits/Path_PROTO3" index="1" unique_id=2040589739]
@@ -302,7 +301,6 @@ momentum_required = 125.0
 build_at_run = false
 
 [node name="Collision" parent="DeathPits/Path_End_PROTO9/FallArea" parent_id_path=PackedInt32Array(335908172, 252475237) index="0" unique_id=1328679439]
-visible = false
 polygon = PackedVector2Array(2704, -1087, 2709.4878, -410.93634, 2862, -406, 3309, -411, 3423, -418, 3423, -799, 3647, -799, 3652, -408, 2859, -94, 2867, 643, 2854, 1686, 599, 1702, -188, 1707, -136, 171, -1337, 166, -1338, -1091)
 
 [node name="Dark" parent="DeathPits/Path_End_PROTO9" index="1" unique_id=2040589739]

@@ -83,3 +83,7 @@ func _on_arrow_timer_timeout() -> void:
 	tween.tween_property(effect, "modulate:a", 0.0, 0.333)
 	tween.tween_callback(effect.queue_free)
 	$Arrow/ArrowTimer.start(0.05)
+
+
+func _on_world_button_0_pressed(button: WorldButton) -> void:
+	pass # Replace with function body.
