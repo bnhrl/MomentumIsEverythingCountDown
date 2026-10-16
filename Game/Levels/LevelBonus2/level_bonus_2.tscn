@@ -18,6 +18,7 @@ shader_parameter/tile_texture = ExtResource("3_uh337")
 shader_parameter/tile_size = Vector2(720, 1280)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = false
+shader_parameter/color = Color(1, 1, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kl3m1"]
 resource_local_to_scene = true
@@ -26,6 +27,7 @@ shader_parameter/tile_texture = ExtResource("7_pg43r")
 shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = true
+shader_parameter/color = Color(1, 1, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u1shd"]
 resource_local_to_scene = true
@@ -34,6 +36,7 @@ shader_parameter/tile_texture = ExtResource("7_pg43r")
 shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = -1.5707963267948966
 shader_parameter/autoscroll = true
+shader_parameter/color = Color(1, 1, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g18c6"]
 resource_local_to_scene = true
@@ -42,8 +45,9 @@ shader_parameter/tile_texture = ExtResource("7_pg43r")
 shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = true
+shader_parameter/color = Color(1, 1, 1, 1)
 
-[node name="Level0" unique_id=1414133645 instance=ExtResource("1_2gen0")]
+[node name="LevelBonus2" unique_id=1414133645 instance=ExtResource("1_2gen0")]
 
 [node name="Bounds" parent="." index="0" unique_id=1811867841]
 visible = false
