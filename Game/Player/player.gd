@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Cursor.using_controller:
 		controller_cursor.show()
-		_process_controller()
+		_process_controller(delta * 1.0 / GameTime.time_scale)
 	else:
 		controller_cursor.hide()
 	
@@ -46,6 +46,7 @@ func get_cursor_position() -> Vector2:
 var controller_direction := Vector2.ZERO
 func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadMotion:
+		if abs(event.axis_value) < 0.1: return
 		if event.axis == JOY_AXIS_RIGHT_X:
 			controller_direction.x = event.axis_value
 		elif event.axis == JOY_AXIS_RIGHT_Y:
@@ -53,8 +54,8 @@ func _input(event: InputEvent) -> void:
 
 @onready var controller_rotater: Node2D = $ControllerRotater
 @onready var controller_cursor: Sprite2D = $ControllerRotater/ControllerCursor
-func _process_controller() -> void:
-	controller_rotater.rotation = controller_direction.angle()
+func _process_controller(delta: float) -> void:
+	controller_rotater.rotation = LerpHelper.la(controller_rotater.rotation, controller_direction.angle(), 16.0, delta)
 	
 
 
@@ -349,7 +350,7 @@ signal died
 var dead := false
 
 func die(reason := "") -> void:
-	if dead: return
+	if dead or not PlayerManager.player_added_to_scene: return
 	
 	dead = true
 	if reason == "Pit":

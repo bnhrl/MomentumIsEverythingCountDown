@@ -10,6 +10,7 @@ func _ready() -> void:
 		print_rich("[rainbow][font_size=32]Make sure to rebake your Navigation when necessary!")
 		return
 	
+	PlayerManager.player_added_to_scene = false
 	_ready_completion_zones()
 	
 	if $NavigationRegion.navigation_polygon == null or $NavigationRegion.navigation_polygon.get_polygon_count() <= 0:
@@ -141,8 +142,8 @@ func spawn_enzyme() -> void:
 		var enzyme := preload("uid://d1wd5lnv3285q").instantiate()
 		$Enemies.add_child(enzyme)
 		var theta := randf_range(-PI, PI)
-		var pos_x := 380 * cos(theta) + PlayerManager.player.global_position.x
-		var pos_y := 380 * sin(theta) + PlayerManager.player.global_position.y
+		var pos_x := 420 * cos(theta) + PlayerManager.player.global_position.x
+		var pos_y := 420 * sin(theta) + PlayerManager.player.global_position.y
 		enzyme.global_position = Vector2(pos_x, pos_y)
 	await Delays.wait(0.125)
 	spawn_enzyme()

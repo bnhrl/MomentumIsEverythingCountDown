@@ -16,6 +16,8 @@ func _ready() -> void:
 	if PlayerManager.easy_mode: momentum_required *= 0.667
 
 func _process(_delta: float) -> void:
+	if Engine.is_editor_hint(): return
+	
 	_process_falling()
 
 
@@ -38,7 +40,9 @@ func shrink_polygon(array: PackedVector2Array, amount: float) -> PackedVector2Ar
 # Falling in
 @onready var fall_area: Area2D = $FallArea
 func _process_falling() -> void:
+	if not PlayerManager.player_added_to_scene: return
+	
 	for body in fall_area.get_overlapping_bodies():
 		if body is Player:
-			if body.get_momentum() < momentum_required and body.grappled_object == null:
+			if body.get_momentum() < momentum_required and body.grappled_object == null and not body.dead:
 				body.die("Pit")

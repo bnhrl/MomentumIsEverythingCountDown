@@ -36,7 +36,7 @@ func _process_controller(delta: float) -> void:
 	cursor_object.global_position = position
 	position.x = clamp(position.x, 0.0, 640)
 	position.y = clamp(position.y, 0.0, 360)
-	var input := Input.get_vector("controller_aim_left", "controller_aim_right", "controller_aim_up", "controller_aim_down")
+	var input := Input.get_vector("left", "right", "up", "down")
 	
 	position += input * 200.0 * delta
 	if position != position_prev:
@@ -44,8 +44,24 @@ func _process_controller(delta: float) -> void:
 		var offputting := get_viewport().get_screen_transform().origin * 1
 		var transgender := get_viewport().get_final_transform()
 		event.position = offputting + position * transgender.get_scale()
-		print(offputting)
 		Input.parse_input_event(event)
 		position_prev = position
+	
 	if Input.is_action_just_pressed("controller_focus_aim"):
 		position = Vector2(640, 360) * 0.5
+	
+	#if Input.is_action_just_pressed("button_press"):
+		#var event := InputEventMouseButton.new()
+		#event.button_index = MOUSE_BUTTON_LEFT
+		#event.pressed = true
+		#event.button_mask = 1
+		#event.position = position
+		#Input.parse_input_event(event)
+	#if Input.is_action_just_released("button_press"):
+		#var event := InputEventMouseButton.new()
+		#event.button_index = MOUSE_BUTTON_LEFT
+		#event.pressed = false
+		#event.button_mask = 0
+		#event.position = position
+		#Input.parse_input_event(event)
+		

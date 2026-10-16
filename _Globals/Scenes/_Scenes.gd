@@ -33,7 +33,7 @@ const SCENES: Dictionary[String, PackedScene] = {
 	"Ending Cutscene":preload("uid://b4kooggapxsep"),
 	"Bonus Level 1": preload("uid://c6cj7c34fudmb"),
 	"Bonus Level 2": preload("uid://bcrpxkjvv5umi"),
-	#"Bonus Level 3": preload(""),
+	"Bonus Level 3": preload("uid://n0br58fdqwi0"),
 }
 
 func swap_scene(scene_name: String) -> void:

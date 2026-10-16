@@ -65,6 +65,7 @@ func save() -> void:
 
 func reset_save() -> void:
 	Scenes.current_level = 1
+	Data.save_data.set("best_times", {})
 	save()
 
 
