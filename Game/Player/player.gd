@@ -46,16 +46,18 @@ func get_cursor_position() -> Vector2:
 var controller_direction := Vector2.ZERO
 func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadMotion:
-		if abs(event.axis_value) < 0.1: return
+		var prev_dir := controller_direction
 		if event.axis == JOY_AXIS_RIGHT_X:
 			controller_direction.x = event.axis_value
 		elif event.axis == JOY_AXIS_RIGHT_Y:
 			controller_direction.y = event.axis_value
+		if abs(controller_direction.length()) < 0.95:
+			controller_direction = prev_dir
 
 @onready var controller_rotater: Node2D = $ControllerRotater
 @onready var controller_cursor: Sprite2D = $ControllerRotater/ControllerCursor
 func _process_controller(delta: float) -> void:
-	controller_rotater.rotation = LerpHelper.la(controller_rotater.rotation, controller_direction.angle(), 16.0, delta)
+	controller_rotater.rotation = LerpHelper.la(controller_rotater.rotation, controller_direction.angle(), 32.0, delta)
 	
 
 

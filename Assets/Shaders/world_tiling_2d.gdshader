@@ -4,14 +4,14 @@ uniform sampler2D tile_texture: source_color, repeat_enable, filter_nearest;
 uniform vec2 tile_size = vec2(16, 16);
 uniform float rotation = 0.0;
 uniform bool autoscroll = false;
-uniform vec4 color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform bool grayscale = false;
 
 varying vec2 world_position;
 varying vec4 modulate;
 
 void vertex() {
 	world_position = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
-	modulate = color;
+	modulate = COLOR;
 }
 
 vec2 rotate(vec2 uv, float angle) {
@@ -29,4 +29,6 @@ void fragment() {
 	if (autoscroll) { world_uv.x -= TIME; }
 	
 	COLOR = texture(tile_texture, world_uv) * modulate;
+	if (grayscale)
+		COLOR.rgb = vec3(dot(COLOR.rgb, vec3(0.299, 0.587, 0.114)));
 }

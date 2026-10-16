@@ -61,115 +61,80 @@ shader_parameter/tile_size = Vector2(720, 1280)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5fpb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7o6bb"]
 resource_local_to_scene = true
 shader = ExtResource("4_gp17i")
 shader_parameter/tile_texture = ExtResource("5_hunx4")
 shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = -1.5707963267948966
 shader_parameter/autoscroll = true
-shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/grayscale = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x5fej"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oryv6"]
 resource_local_to_scene = true
 shader = ExtResource("4_gp17i")
 shader_parameter/tile_texture = ExtResource("5_hunx4")
 shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 1.1344640137963142
 shader_parameter/autoscroll = true
-shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/grayscale = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ciah5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lb554"]
 resource_local_to_scene = true
 shader = ExtResource("4_gp17i")
 shader_parameter/tile_texture = ExtResource("5_hunx4")
 shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = true
-shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/grayscale = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xn1m6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t3gcr"]
 resource_local_to_scene = true
 shader = ExtResource("4_gp17i")
 shader_parameter/tile_texture = ExtResource("5_hunx4")
 shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = true
-shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/grayscale = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8o48"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpamy"]
 resource_local_to_scene = true
 shader = ExtResource("4_gp17i")
 shader_parameter/tile_texture = ExtResource("5_hunx4")
 shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 1.5707963267948966
 shader_parameter/autoscroll = true
-shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/grayscale = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hd3ty"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8mw7"]
 resource_local_to_scene = true
 shader = ExtResource("4_gp17i")
 shader_parameter/tile_texture = ExtResource("5_hunx4")
 shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = true
-shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/grayscale = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7o6bb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yi87y"]
 resource_local_to_scene = true
 shader = ExtResource("4_gp17i")
 shader_parameter/tile_texture = ExtResource("5_hunx4")
 shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 3.141592653589793
 shader_parameter/autoscroll = true
-shader_parameter/color = Color(1, 1, 1, 1)
-
-[sub_resource type="Shader" id="Shader_1svde"]
-code = "shader_type canvas_item;
-
-uniform sampler2D tile_texture: source_color, repeat_enable, filter_nearest; 
-uniform vec2 tile_size = vec2(16, 16);
-uniform float rotation = 0.0;
-uniform bool autoscroll = false;
-uniform vec4 color = vec4(1.0, 1.0, 1.0, 1.0);
-
-varying vec2 world_position;
-varying vec4 modulate;
-
-void vertex() {
-	world_position = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
-	modulate = color;
-}
-
-vec2 rotate(vec2 uv, float angle) {
-    mat2 rot = mat2(
-        vec2(sin(angle), -cos(angle)),
-        vec2(cos(angle), sin(angle))
-    );
-    uv = uv * rot;
-    return uv;
-}
-
-void fragment() {
-	vec2 world_uv = world_position / tile_size;
-	world_uv = rotate(world_uv, rotation+PI*0.5);
-	if (autoscroll) { world_uv.x -= TIME; }
-	
-	COLOR = texture(tile_texture, world_uv) * modulate;
-}
-"
+shader_parameter/grayscale = true
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k5fpb"]
 load_path = "res://.godot/imported/boost_pad.png-38d2a8d42063b99a439e00284516da64.ctex"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oryv6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ov52u"]
 resource_local_to_scene = true
-shader = SubResource("Shader_1svde")
+shader = ExtResource("4_gp17i")
 shader_parameter/tile_texture = SubResource("CompressedTexture2D_k5fpb")
 shader_parameter/tile_size = Vector2(16, 16)
 shader_parameter/rotation = 1.5707963267948966
 shader_parameter/autoscroll = true
-shader_parameter/color = Vector4(1, 0.5, 0.5, 1)
+shader_parameter/grayscale = false
 
 [node name="LevelBonus3" unique_id=1414133645 instance=ExtResource("1_nc8a6")]
 
@@ -1735,7 +1700,7 @@ position = Vector2(4434, -1550.479)
 position = Vector2(4484, -1550.4785)
 
 [node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="0" unique_id=816347687 instance=ExtResource("3_7tjjb")]
-material = SubResource("ShaderMaterial_k5fpb")
+material = SubResource("ShaderMaterial_7o6bb")
 position = Vector2(321, 67)
 scale = Vector2(0.6861703, 7.8756614)
 polygon = PackedVector2Array(-47, -362, 47, -362, 47, 16, -47, 16)
@@ -1744,7 +1709,7 @@ direction = -90.0
 speed = 15.0
 
 [node name="BoostPad7" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="1" unique_id=241601727 instance=ExtResource("3_7tjjb")]
-material = SubResource("ShaderMaterial_x5fej")
+material = SubResource("ShaderMaterial_oryv6")
 position = Vector2(6355.296, 1188.5531)
 rotation = -0.43705416
 scale = Vector2(0.6861703, 5.5979533)
@@ -1754,21 +1719,21 @@ direction = 65.0
 speed = 50.0
 
 [node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="2" unique_id=89171286 instance=ExtResource("3_7tjjb")]
-material = SubResource("ShaderMaterial_ciah5")
+material = SubResource("ShaderMaterial_lb554")
 position = Vector2(1573.75, -2643.5)
 scale = Vector2(43.649994, 1.2333333)
 polygon = PackedVector2Array(-15, -15, 15, -15, 15, 3.2936096, 15, 15, -15, 15)
 spin_speed = 0.0
 
 [node name="BoostPad2" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="3" unique_id=2120245150 instance=ExtResource("3_7tjjb")]
-material = SubResource("ShaderMaterial_xn1m6")
+material = SubResource("ShaderMaterial_t3gcr")
 position = Vector2(3135, -2636)
 scale = Vector2(34.966667, 1)
 polygon = PackedVector2Array(-15, -15, 15, -15, 15, 3.2936096, 15, 15, -15, 15)
 spin_speed = 0.0
 
 [node name="BoostPad5" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="4" unique_id=858320276 instance=ExtResource("3_7tjjb")]
-material = SubResource("ShaderMaterial_a8o48")
+material = SubResource("ShaderMaterial_gpamy")
 position = Vector2(1640.6428, -1452.8252)
 rotation = 1.5708317
 scale = Vector2(30.65505, 1.4369316)
@@ -1777,14 +1742,14 @@ spin_speed = 0.0
 direction = 90.0
 
 [node name="BoostPad6" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="5" unique_id=826734023 instance=ExtResource("3_7tjjb")]
-material = SubResource("ShaderMaterial_hd3ty")
+material = SubResource("ShaderMaterial_d8mw7")
 position = Vector2(1894.75, -390)
 scale = Vector2(48.050003, 1)
 polygon = PackedVector2Array(-15, -15, 15, -15, 15, 3.2936096, 15, 15, -15, 15)
 spin_speed = 0.0
 
 [node name="BoostPad4" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="6" unique_id=1635514522 instance=ExtResource("3_7tjjb")]
-material = SubResource("ShaderMaterial_7o6bb")
+material = SubResource("ShaderMaterial_yi87y")
 position = Vector2(4013.5, -1336.0001)
 scale = Vector2(75.16667, 1.4666667)
 polygon = PackedVector2Array(-15, -15, 15, -15, 15, 3.2936096, 15, 15, -15, 15)
@@ -1792,9 +1757,10 @@ spin_speed = 0.0
 direction = 180.0
 
 [node name="BoostPad3" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="7" unique_id=1818831827 instance=ExtResource("3_7tjjb")]
-material = SubResource("ShaderMaterial_oryv6")
+material = SubResource("ShaderMaterial_ov52u")
 position = Vector2(3789.5002, -2956)
 scale = Vector2(2.2333384, 8.73333)
+color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-15, -15, 15, -15, 15, 15, 0.44554138, 15, -15, 15, -15.000008, -0.34348297)
 spin_speed = 0.0
 direction = 90.0
@@ -1880,6 +1846,7 @@ position = Vector2(6160, -77)
 [connection signal="pressed" from="Interactables/WorldButton0" to="Interactables/Gate0" method="disable"]
 [connection signal="pressed" from="Interactables/WorldButton4" to="Interactables/Gate4" method="disable"]
 [connection signal="pressed" from="Interactables/WorldButton5" to="Interactables/Gate5" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton1" to="Interactables/Gate1" method="disable"]
 [connection signal="pressed" from="Interactables/WorldButton2" to="Interactables/Gate3" method="disable"]
 
 [editable path="DeathPits/Everything"]
