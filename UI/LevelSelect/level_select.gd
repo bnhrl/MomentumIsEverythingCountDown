@@ -41,18 +41,18 @@ func _on_btn_show_level_buttons_pressed() -> void:
 # Levels
 const LEVEL_NAMES: Dictionary[int, String] = {
 	 0: "NO DON'T",
-	 1: "temporal a",
-	 2: "temporal b",
-	 3: "temporal c",
-	 4: "frontal a",
-	 5: "frontal b",
-	 6: "frontal c",
-	 7: "frontal d",
-	 8: "parietal a",
-	 9: "parietal b",
-	10: "parietal c",
-	11: "occipital a",
-	12: "occipital b",
+	 1: "TEMPORAL A",
+	 2: "TEMPORAL B",
+	 3: "TEMPORAL C",
+	 4: "FRONTAL A",
+	 5: "FRONTAL B",
+	 6: "FRONTAL C",
+	 7: "FRONTAL D",
+	 8: "PARIETAL A",
+	 9: "PARIETAL B",
+	10: "PARIETAL C",
+	11: "OCCIPITAL A",
+	12: "OCCIPITAL B",
 	
 	13: "dark matter a",
 	14: "dark matter b",
@@ -94,6 +94,23 @@ const LEVEL_TRACKS: Dictionary[int, String] = {
 	14: "Frontal",
 	15: "Parietal",
 }
+const LEVEL_RPCS: Dictionary[int, Dictionary] = {
+	 1: {"details": "TEMPORAL",    "state": " A ", "assets":{"small_image": "level1"}},
+	 2: {"details": "TEMPORAL",    "state": " B ", "assets":{"small_image": "level2"}},
+	 3: {"details": "TEMPORAL",    "state": " C ", "assets":{"small_image": "level3"}},
+	 4: {"details": "FRONTAL",     "state": " A ", "assets":{"small_image": "level4"}},
+	 5: {"details": "FRONTAL",     "state": " B ", "assets":{"small_image": "level5"}},
+	 6: {"details": "FRONTAL",     "state": " C ", "assets":{"small_image": "level6"}},
+	 7: {"details": "FRONTAL",     "state": " D ", "assets":{"small_image": "level7"}},
+	 8: {"details": "PARIETAL",    "state": " A ", "assets":{"small_image": "level8"}},
+	 9: {"details": "PARIETAL",    "state": " B ", "assets":{"small_image": "level9"}},
+	10: {"details": "PARIETAL",    "state": " C ", "assets":{"small_image": "level10"}},
+	11: {"details": "OCCIPITAL",   "state": " A ", "assets":{"small_image": "level11"}},
+	12: {"details": "OCCIPITAL",   "state": " B ", "assets":{"small_image": "level12"}},
+	13: {"details": "dark matter", "state": " a ", "assets":{"small_image": "level13"}},
+	14: {"details": "dark matter", "state": " b ", "assets":{"small_image": "level14"}},
+	15: {"details": "dark matter", "state": " c ", "assets":{"small_image": "level15"}},
+}
 
 @onready var selector: CanvasGroup = $Selector
 var level: int = 1
@@ -123,6 +140,7 @@ func select_level(l: int, button: LevelButton) -> void:
 	else:           level_label.text=""
 	level_label.text += "[tornado freq=5 radius=2.0]"+LEVEL_NAMES.get(level, "no name found")
 	level_thumbnail.texture = LEVEL_THUMBSNAILS.get(level, null)
+	Data.presence.set_activity(LEVEL_RPCS.get(level))
 	selector.set_target(button)
 	if LEVEL_TRACKS.has(l):
 		Music.play(LEVEL_TRACKS.get(level))

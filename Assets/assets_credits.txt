@@ -1,3 +1,5 @@
+Discord RPC Plugin: https://github.com/SlayHorizon/discord-rich-presence-godot
+Its license can be found here: https://github.com/bnhrl/MomentumIsEverythingCountDown/addons/discord_rich_presence/LICENSE
 
 outline shader:   https://godotshaders.com/shader/2d-outline-stroke/
 font:             https://zichy.itch.io/kubasta
