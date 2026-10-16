@@ -5,6 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://ogmg54ge4mqi" path="res://Assets/Textures/background_2.png" id="3_uh337"]
 [ext_resource type="PackedScene" uid="uid://b26pe4dttgfvl" path="res://Game/DeathPits/death_pit.tscn" id="3_ygtb4"]
 [ext_resource type="PackedScene" uid="uid://d3xhd06mdlv8l" path="res://Game/Enemies/WhiteBloodCell/white_blood_cell.tscn" id="5_ygtb4"]
+[ext_resource type="PackedScene" uid="uid://da77ss23u811t" path="res://Game/BoostPads/boost_pad.tscn" id="6_nfqpi"]
+[ext_resource type="Texture2D" uid="uid://b1500w4u1lkct" path="res://Game/BoostPads/boost_pad.png" id="7_pg43r"]
+[ext_resource type="PackedScene" uid="uid://bvoyf8gip103i" path="res://Game/Interactable/Gate/gate.tscn" id="8_pg43r"]
+[ext_resource type="PackedScene" uid="uid://b4ofsy8drss" path="res://Game/CompletionZone/completion_zone.tscn" id="9_kl3m1"]
+[ext_resource type="PackedScene" uid="uid://bs2swopl87icu" path="res://Game/Interactable/WorldButton/world_button.tscn" id="9_xk1hl"]
+[ext_resource type="PackedScene" uid="uid://c2mrm5rc4nnir" path="res://Game/GrapplePoints/grapple_point.tscn" id="10_nbnhu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nfqpi"]
 shader = ExtResource("2_uh337")
@@ -13,78 +19,1406 @@ shader_parameter/tile_size = Vector2(720, 1280)
 shader_parameter/rotation = 0.0
 shader_parameter/autoscroll = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xk1hl"]
+resource_local_to_scene = true
+shader = ExtResource("2_uh337")
+shader_parameter/tile_texture = ExtResource("7_pg43r")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nbnhu"]
+resource_local_to_scene = true
+shader = ExtResource("2_uh337")
+shader_parameter/tile_texture = ExtResource("7_pg43r")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = -1.5707963267948966
+shader_parameter/autoscroll = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kl3m1"]
+resource_local_to_scene = true
+shader = ExtResource("2_uh337")
+shader_parameter/tile_texture = ExtResource("7_pg43r")
+shader_parameter/tile_size = Vector2(16, 16)
+shader_parameter/rotation = 0.0
+shader_parameter/autoscroll = true
+
 [node name="Level0" unique_id=1414133645 instance=ExtResource("1_2gen0")]
 
 [node name="Bounds" parent="." index="0" unique_id=1811867841]
-offset_left = 185.0
-offset_top = -9876.0
-offset_right = 12048.0
-offset_bottom = 222.0
+visible = false
+offset_left = 212.0
+offset_top = -2848.0
+offset_right = 6007.0
+offset_bottom = 264.0
 
 [node name="PlayerSpawnPoint" parent="." index="1" unique_id=1452407390]
-position = Vector2(353.425, 124.68)
+z_index = 50
+position = Vector2(332, 148)
 
 [node name="TimeLabel" parent="UILayer" parent_id_path=PackedInt32Array(3946053) index="1" unique_id=348801823]
 visible = false
 
-[node name="Background" parent="." index="4" unique_id=675105712]
+[node name="CountDownTimer" parent="." index="4" unique_id=102296066]
+time = 15.0
+
+[node name="Background" parent="." index="5" unique_id=675105712]
 visible = false
 material = SubResource("ShaderMaterial_nfqpi")
-position = Vector2(154, -24)
+position = Vector2(2672, -864)
 
-[node name="Path_PROTO1" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="0" unique_id=1582885165 instance=ExtResource("3_ygtb4")]
-position = Vector2(2383.5208, 858.9104)
-rotation = -1.0358605
-polygon = PackedVector2Array(684, -103, 684, 30, 684, 146, 84, 142, -526, 146, -526, -103)
+[node name="NavigationRegion" parent="." index="7" unique_id=517625210]
+visible = true
 
-[node name="Path_PROTO2" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="1" unique_id=782432243 instance=ExtResource("3_ygtb4")]
-position = Vector2(2166.7388, 732.3822)
-rotation = -1.0358605
-polygon = PackedVector2Array(685.66003, -103, 685.66003, 29, 685.66003, 148, 80, 148, -524, 148, -524, -103)
+[node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="0" unique_id=1337174415 instance=ExtResource("8_pg43r")]
+position = Vector2(5627, -2229)
+scale = Vector2(2.199997, 206.39998)
+polygon = PackedVector2Array(5, 5, -5, 5, -5, 0.41946542, -5, -5, -0.10677719, -4.999999, 5, -5, 5, -0.16161823)
 
-[node name="Path_PROTO5" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="2" unique_id=1049034221 instance=ExtResource("3_ygtb4")]
-position = Vector2(1522.5208, 551.9104)
-rotation = -1.0358605
-polygon = PackedVector2Array(684, -103, 684, 30, 684, 146, 84, 142, -526, 146, -526, -103)
+[node name="Gate1" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="1" unique_id=2010147415 instance=ExtResource("8_pg43r")]
+position = Vector2(5546, -2227)
+scale = Vector2(2.199997, 207.59999)
+polygon = PackedVector2Array(5, 5, -5, 5, -5, -5, -0.10677719, -4.999999, 5, -5, 5, -0.16161823)
 
-[node name="Path_PROTO6" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="3" unique_id=700619125 instance=ExtResource("3_ygtb4")]
-position = Vector2(1305.7388, 425.3822)
-rotation = -1.0358605
-polygon = PackedVector2Array(685.66003, -103, 685.66003, 29, 685.66003, 148, 80, 148, -524, 148, -524, -103)
+[node name="Gate6" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="2" unique_id=1626985890 instance=ExtResource("8_pg43r")]
+position = Vector2(5587, -2226)
+scale = Vector2(2.199997, 206.8)
+polygon = PackedVector2Array(5, 5, -5, 5, -5, -5, -0.10677719, -4.999999, 5, -5, 4.999878, -0.59273815, 5, -0.16161823)
 
-[node name="Path_PROTO3" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="4" unique_id=1551343958 instance=ExtResource("3_ygtb4")]
-position = Vector2(534.81665, 29.9104)
-rotation = -1.0358605
-polygon = PackedVector2Array(962.87585, -103.07666, 963.2522, 203.5694, 963.4392, 419.662, -263.33658, 424.76813, -526, 146, -526, -103)
+[node name="Gate2" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="3" unique_id=1533456988 instance=ExtResource("8_pg43r")]
+position = Vector2(5672.0005, -2222.5)
+scale = Vector2(2.199997, 206.10002)
+polygon = PackedVector2Array(5, 5, -5, 5, -5, -2.046692, -5, -5, -0.10677719, -4.999999, 5, -5, 5, -0.16161823)
 
-[node name="Path_PROTO4" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="5" unique_id=843756267 instance=ExtResource("3_ygtb4")]
-position = Vector2(318.03476, -96.6178)
-rotation = -1.0358605
-polygon = PackedVector2Array(965.00696, -1157.7124, 964.7355, -295.06305, 964.53577, 147.92336, 80, 148, -524, 148, -524, -103, -364.05603, -732.8178)
+[node name="Gate7" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="4" unique_id=2020153404 instance=ExtResource("8_pg43r")]
+position = Vector2(5712.0005, -2228.5)
+scale = Vector2(2.199997, 204.9)
+polygon = PackedVector2Array(5, 5, -5, 5, -5, -2.046692, -5, -5, -0.10677719, -4.999999, 5, -5, 5.000122, -0.86348677, 5, -0.16161823)
 
-[node name="Path_End_PROTO" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="6" unique_id=232059423 instance=ExtResource("3_ygtb4")]
-position = Vector2(257, 244.99997)
+[node name="Gate8" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="5" unique_id=486956761 instance=ExtResource("8_pg43r")]
+position = Vector2(5752.0005, -2229)
+scale = Vector2(2.199997, 206.20003)
+polygon = PackedVector2Array(5, 5, -5, 5, -5, -2.046692, -5, -5, -0.10677719, -4.999999, 5, -5, 5.000122, -0.86348677, 5, -0.16161823)
+
+[node name="Gate9" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="6" unique_id=398940419 instance=ExtResource("8_pg43r")]
+position = Vector2(5792.0005, -2238)
+scale = Vector2(2.199997, 203.2)
+polygon = PackedVector2Array(5, 5, -5, 5, -5, -2.046692, -5, -5, -0.10677719, -4.999999, 5, -5, 5.000122, -0.86348677, 5, -0.16161823)
+
+[node name="Gate10" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="7" unique_id=1501430679 instance=ExtResource("8_pg43r")]
+position = Vector2(5832.0005, -2237)
+scale = Vector2(2.199997, 204.6)
+polygon = PackedVector2Array(5, 5, -5, 5, -5, -2.046692, -5, -5, -0.10677719, -4.999999, 5, -5, 5.000122, -0.86348677, 5, -0.16161823)
+
+[node name="Gate3" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="8" unique_id=614102178 instance=ExtResource("8_pg43r")]
+position = Vector2(2061, -494)
+scale = Vector2(2.199997, 49.200005)
+polygon = PackedVector2Array(5, 5, -5, 5, -5, -5, -0.10677719, -4.999999, 5, -5, 5, -0.16161823)
+
+[node name="Gate4" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="9" unique_id=355991968 instance=ExtResource("8_pg43r")]
+position = Vector2(2373, -1332)
+rotation = 1.5707964
+scale = Vector2(2.1999967, 49.2)
+polygon = PackedVector2Array(5, 5, -5, 5, -5, -5, -0.10677719, -4.999999, 5, -5, 5, -0.16161823)
+
+[node name="Gate5" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="10" unique_id=109603878 instance=ExtResource("8_pg43r")]
+position = Vector2(2373, -1293.96)
+rotation = 1.5707964
+scale = Vector2(2.1999967, 49.2)
+polygon = PackedVector2Array(5, 5, -5, 5, -5, -5, -0.10677719, -4.999999, 5, -5, 5, -0.16161823)
+
+[node name="WorldButton0" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="11" unique_id=285619588 instance=ExtResource("9_xk1hl")]
+position = Vector2(2528.0002, -1950.9999)
+rotation = 1.5445447
+
+[node name="WorldButton11" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="12" unique_id=1576954058 instance=ExtResource("9_xk1hl")]
+position = Vector2(2555, -1925.9999)
+rotation = 1.5445447
+
+[node name="WorldButton12" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="13" unique_id=80987367 instance=ExtResource("9_xk1hl")]
+position = Vector2(2582.0002, -1897.9999)
+rotation = 1.5445447
+
+[node name="WorldButton1" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="14" unique_id=525798198 instance=ExtResource("9_xk1hl")]
+position = Vector2(2761.0002, -2086)
+rotation = -0.08189964
+
+[node name="WorldButton13" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="15" unique_id=1121293774 instance=ExtResource("9_xk1hl")]
+position = Vector2(2759, -2054.0002)
+rotation = -0.08189964
+
+[node name="WorldButton14" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="16" unique_id=983199561 instance=ExtResource("9_xk1hl")]
+position = Vector2(2755.0005, -2017.0002)
+rotation = -0.08189964
+
+[node name="WorldButton2" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="17" unique_id=262680046 instance=ExtResource("9_xk1hl")]
+position = Vector2(3065.9995, -1800.9999)
+rotation = 1.5445447
+
+[node name="WorldButton16" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="18" unique_id=912195650 instance=ExtResource("9_xk1hl")]
+position = Vector2(3059.9998, -1881.9999)
+rotation = 1.5445447
+
+[node name="WorldButton15" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="19" unique_id=1491941443 instance=ExtResource("9_xk1hl")]
+position = Vector2(3062.9995, -1839.9999)
+rotation = 1.5445447
+
+[node name="WorldButton6" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="20" unique_id=277755581 instance=ExtResource("9_xk1hl")]
+position = Vector2(3447.9998, -2258.9998)
+rotation = 1.5445447
+
+[node name="WorldButton20" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="21" unique_id=95139369 instance=ExtResource("9_xk1hl")]
+position = Vector2(3447.9998, -2258.9998)
+rotation = 1.5445447
+
+[node name="WorldButton18" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="22" unique_id=445256266 instance=ExtResource("9_xk1hl")]
+position = Vector2(3489.9998, -2261.9998)
+rotation = 1.5445447
+
+[node name="WorldButton19" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="23" unique_id=1513428201 instance=ExtResource("9_xk1hl")]
+position = Vector2(3489.9998, -2261.9998)
+rotation = 1.5445447
+
+[node name="WorldButton17" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="24" unique_id=618783621 instance=ExtResource("9_xk1hl")]
+position = Vector2(3403.9998, -2258)
+rotation = 1.5445447
+
+[node name="WorldButton7" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="25" unique_id=1284002486 instance=ExtResource("9_xk1hl")]
+position = Vector2(4903.9995, -2362.0002)
+rotation = 1.5445447
+
+[node name="WorldButton25" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="26" unique_id=1501178975 instance=ExtResource("9_xk1hl")]
+position = Vector2(4928, -2324.9998)
+rotation = 1.5445447
+
+[node name="WorldButton26" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="27" unique_id=156564603 instance=ExtResource("9_xk1hl")]
+position = Vector2(4949.9995, -2290)
+rotation = 1.5445447
+
+[node name="WorldButton10" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="28" unique_id=1990220640 instance=ExtResource("9_xk1hl")]
+position = Vector2(5433.9995, -2324)
+rotation = 1.5445447
+
+[node name="WorldButton27" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="29" unique_id=1385988615 instance=ExtResource("9_xk1hl")]
+position = Vector2(5434.9995, -2288.9998)
+rotation = 1.5445447
+
+[node name="WorldButton28" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="30" unique_id=150343508 instance=ExtResource("9_xk1hl")]
+position = Vector2(5433.9995, -2358.9998)
+rotation = 1.5445447
+
+[node name="WorldButton8" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="31" unique_id=1170957587 instance=ExtResource("9_xk1hl")]
+position = Vector2(3897.9995, -1458)
+rotation = 1.5445447
+
+[node name="WorldButton21" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="32" unique_id=1517862773 instance=ExtResource("9_xk1hl")]
+position = Vector2(3949.9998, -1533.9999)
+rotation = 1.5445447
+
+[node name="WorldButton22" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="33" unique_id=1308336917 instance=ExtResource("9_xk1hl")]
+position = Vector2(3921.9998, -1498)
+rotation = 1.5445447
+
+[node name="WorldButton9" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="34" unique_id=1351862474 instance=ExtResource("9_xk1hl")]
+position = Vector2(4553, -1428)
+rotation = 1.5445447
+
+[node name="WorldButton23" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="35" unique_id=104480622 instance=ExtResource("9_xk1hl")]
+position = Vector2(4593, -1391)
+rotation = 1.5445447
+
+[node name="WorldButton24" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="36" unique_id=1098101832 instance=ExtResource("9_xk1hl")]
+position = Vector2(4515.9995, -1467.9999)
+rotation = 1.5445447
+
+[node name="WorldButton3" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="37" unique_id=492882024 instance=ExtResource("9_xk1hl")]
+position = Vector2(1788, -662)
+
+[node name="WorldButton4" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="38" unique_id=2042261820 instance=ExtResource("9_xk1hl")]
+position = Vector2(2423.54, -1195.6)
+
+[node name="WorldButton5" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="39" unique_id=1636685606 instance=ExtResource("9_xk1hl")]
+position = Vector2(2453.13, -1195.6)
+
+[node name="Path_PROTO7" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="0" unique_id=639612804 instance=ExtResource("3_ygtb4")]
+position = Vector2(1406, -560)
+polygon = PackedVector2Array(641.499, -232.50705, 641.499, -99.50705, 641.499, 16.492947, 41.499058, 12.492948, -568.501, 16.492947, -568.501, -232.50705)
+
+[node name="Path_PROTO3" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="1" unique_id=1551343958 instance=ExtResource("3_ygtb4")]
+position = Vector2(537.9557, 99.081406)
+rotation = -0.7953527
+polygon = PackedVector2Array(900.01935, -44.809418, 1082.042, 139.44513, 1275.9512, 337.25372, 1223.8352, 386.94196, -263.33658, 424.76813, -526, 146, -526, -103, 784.51135, -103.06746, 842.9373, -103.070465)
+
+[node name="Collision" parent="DeathPits/Path_PROTO3/FallArea" parent_id_path=PackedInt32Array(1551343958, 252475237) index="0" unique_id=1328679439]
+polygon = PackedVector2Array(760.7756, -51.14557, 1170.2949, 366.60913, 481.7196, 209.831, -131.66829, 212.38406, -263, 73, -263, -51.5)
+
+[node name="Dark" parent="DeathPits/Path_PROTO3" index="1" unique_id=2040589739]
+polygon = PackedVector2Array(770.3007, -82.46133, 1209.905, 365.58917, 1227.4058, 383.44183, -210.66927, 339.8145, -420.80002, 116.8, -420.80002, -82.4)
+
+[node name="Darker" parent="DeathPits/Path_PROTO3/Dark" index="0" unique_id=1983333470]
+polygon = PackedVector2Array(763.7165, -62.430573, 866.60724, 43.957825, 1194.2227, 378.16162, -158.00195, 254.86089, -315.6, 87.600006, -315.6, -61.800003)
+
+[node name="Path_PROTO4" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="2" unique_id=843756267 instance=ExtResource("3_ygtb4")]
+position = Vector2(357.55188, -75.44153)
+rotation = -0.7953527
+polygon = PackedVector2Array(965.00696, -1157.7124, 964.7355, -295.06305, 964.53577, 147.92336, 785.2667, 147.93887, 80, 148, -524, 148, -524, -103, -364.05603, -732.8178)
+
+[node name="Collision" parent="DeathPits/Path_PROTO4/FallArea" parent_id_path=PackedInt32Array(843756267, 252475237) index="0" unique_id=1328679439]
+polygon = PackedVector2Array(482.50348, -578.8562, 482.36774, -147.53152, 482.26788, 73.96168, 40, 74, -262, 74, -262, -51.5, -182.02802, -366.4089)
+
+[node name="Dark" parent="DeathPits/Path_PROTO4" index="1" unique_id=2040589739]
+polygon = PackedVector2Array(772.00555, -926.1699, 771.7884, -236.05045, 815.57526, 118.35501, 64, 118.4, -419.2, 118.4, -419.2, -82.4, -291.24484, -586.2543)
+
+[node name="Darker" parent="DeathPits/Path_PROTO4/Dark" index="0" unique_id=1983333470]
+polygon = PackedVector2Array(579.0042, -694.62744, 578.8413, -177.03784, 578.7215, 88.75401, 48, 88.8, -314.40002, 88.8, -314.40002, -61.800003, -218.43362, -439.6907)
+
+[node name="Path_End_PROTO" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="3" unique_id=232059423 instance=ExtResource("3_ygtb4")]
+position = Vector2(216.90192, 241.80528)
+rotation = 3.8972542
+polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
+
+[node name="Path_End_PROTO10" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="4" unique_id=676986421 instance=ExtResource("3_ygtb4")]
+position = Vector2(670.99927, 1532.9998)
 rotation = 3.6567464
 polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
 
-[node name="Path_End_PROTO2" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="7" unique_id=1384448663 instance=ExtResource("3_ygtb4")]
-position = Vector2(2657.0002, 1354.0002)
-rotation = 3.6567464
+[node name="Collision" parent="DeathPits/Path_End_PROTO10/FallArea" parent_id_path=PackedInt32Array(676986421, 252475237) index="0" unique_id=1328679439]
+polygon = PackedVector2Array(255.5, -51.5, 256, 6.5, 255.5, 74, 40, 74, -262, 74, -262, -51.5)
+
+[node name="Dark" parent="DeathPits/Path_End_PROTO10" index="1" unique_id=2040589739]
+polygon = PackedVector2Array(408.80002, -82.4, 409.6, 10.400001, 408.80002, 118.4, 64, 118.4, -419.2, 118.4, -419.2, -82.4)
+
+[node name="Darker" parent="DeathPits/Path_End_PROTO10/Dark" index="0" unique_id=1983333470]
+polygon = PackedVector2Array(306.6, -61.800003, 307.2, 7.8, 306.6, 88.8, 48, 88.8, -314.40002, 88.8, -314.40002, -61.800003)
+
+[node name="Path_End_PROTO9" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="5" unique_id=335908172 instance=ExtResource("3_ygtb4")]
+z_index = -2
+position = Vector2(2635, -1765)
+polygon = PackedVector2Array(3438, -798, 3533, 669, 614, 731, 51, 505, -23, 150, -524, 148, -525, -870)
+momentum_required = 125.0
+
+[node name="Collision" parent="DeathPits/Path_End_PROTO9/FallArea" parent_id_path=PackedInt32Array(335908172, 252475237) index="0" unique_id=1328679439]
+polygon = PackedVector2Array(2704, -1087, 2709.4878, -410.93634, 2862, -406, 2859, -94, 2867, 643, 2854, 1686, 599, 1702, -188, 1707, -136, 171, -1337, 166, -1338, -1091)
+
+[node name="Dark" parent="DeathPits/Path_End_PROTO9" index="1" unique_id=2040589739]
+polygon = PackedVector2Array(3657, -986, 3630, 724, 29, 693, -36, 265, -644, 244, -628, -959)
+
+[node name="Darker" parent="DeathPits/Path_End_PROTO9/Dark" index="0" unique_id=1983333470]
+polygon = PackedVector2Array(2700, -766, 2711, -423, 2866, -415, 2889, 611, 2734, 636, 352.80002, 204.6, 48, 88.8, -314.40002, 88.8, -315, -522)
+
+[node name="Path_End_PROTO8" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="6" unique_id=1970755166 instance=ExtResource("3_ygtb4")]
+position = Vector2(2530, -554)
+rotation = 4.712389
+polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
+build_at_run = false
+
+[node name="Collision" parent="DeathPits/Path_End_PROTO8/FallArea" parent_id_path=PackedInt32Array(1970755166, 252475237) index="0" unique_id=1328679439]
+polygon = PackedVector2Array(255.5, -51.5, 256, 6.5, 255.5, 74, 40, 74, -262, 74, -262, -51.5)
+
+[node name="Dark" parent="DeathPits/Path_End_PROTO8" index="1" unique_id=2040589739]
+polygon = PackedVector2Array(408.80002, -82.4, 409.6, 10.400001, 408.80002, 118.4, 64, 118.4, -419.2, 118.4, -419.2, -82.4)
+
+[node name="Darker" parent="DeathPits/Path_End_PROTO8/Dark" index="0" unique_id=1983333470]
+polygon = PackedVector2Array(306.6, -61.800003, 307.2, 7.8, 306.6, 88.8, 48, 88.8, -314.40002, 88.8, -314.40002, -61.800003)
+
+[node name="Path_End_PROTO6" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="7" unique_id=2143637281 instance=ExtResource("3_ygtb4")]
+visible = false
+position = Vector2(1534, -404)
 polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
 
-[node name="Path_End_PROTO3" parent="DeathPits" parent_id_path=PackedInt32Array(1192831106) index="8" unique_id=442854425 instance=ExtResource("3_ygtb4")]
-position = Vector2(2657.0002, 1354.0002)
-rotation = 3.6567464
+[node name="Path_End_PROTO5" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="8" unique_id=1339423774 instance=ExtResource("3_ygtb4")]
+position = Vector2(1915, -543)
 polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
 
-[node name="WhiteBloodCell1" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="0" unique_id=613541596 instance=ExtResource("5_ygtb4")]
-position = Vector2(441, -23)
+[node name="Path_End_PROTO7" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="9" unique_id=335823168 instance=ExtResource("3_ygtb4")]
+position = Vector2(2392, -1157)
+rotation = 1.5707964
+polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
+
+[node name="Path_End_PROTO4" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="10" unique_id=1769984718 instance=ExtResource("3_ygtb4")]
+position = Vector2(762.99994, -531)
+rotation = -0.7958701
+polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -341.69165, 148.45804, -524, -103)
+
+[node name="Path_End_PROTO3" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="11" unique_id=442854425 instance=ExtResource("3_ygtb4")]
+position = Vector2(587.56354, -177.98749)
+rotation = 3.8972542
+polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
+
+[node name="LynxSegment1" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="0" unique_id=1101248976 instance=ExtResource("5_ygtb4")]
+position = Vector2(2427.789, -1653.5924)
+rotation = 0.38631317
 speed = 0.0
 
-[node name="WhiteBloodCell2" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="1" unique_id=1079843778 instance=ExtResource("5_ygtb4")]
-position = Vector2(594, -278)
+[node name="LynxSegment2" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="1" unique_id=457484007 instance=ExtResource("5_ygtb4")]
+position = Vector2(2485.789, -1797.5924)
+rotation = 0.27327564
 speed = 0.0
 
-[node name="WhiteBloodCell3" parent="Enemies" parent_id_path=PackedInt32Array(1295879779) index="2" unique_id=734751871 instance=ExtResource("5_ygtb4")]
-position = Vector2(748, -546)
+[node name="LynxSegment3" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="2" unique_id=1568876791 instance=ExtResource("5_ygtb4")]
+position = Vector2(2619.0613, -1984.883)
+rotation = 0.811705
 speed = 0.0
+
+[node name="LynxSegment4" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="3" unique_id=1834117985 instance=ExtResource("5_ygtb4")]
+position = Vector2(2825.567, -2022.1594)
+rotation = 2.2131417
+speed = 0.0
+
+[node name="LynxSegment5" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="4" unique_id=1402612861 instance=ExtResource("5_ygtb4")]
+position = Vector2(2934.567, -1919.1594)
+rotation = 2.2131417
+speed = 0.0
+
+[node name="LynxSegment22" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="5" unique_id=911514837 instance=ExtResource("5_ygtb4")]
+position = Vector2(5066.8413, -2357.2466)
+rotation = 1.5861365
+speed = 0.0
+
+[node name="LynxSegment23" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="6" unique_id=738867746 instance=ExtResource("5_ygtb4")]
+position = Vector2(5215.5405, -2337.791)
+rotation = 1.5861365
+speed = 0.0
+
+[node name="LynxSegment6" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="7" unique_id=660326903 instance=ExtResource("5_ygtb4")]
+position = Vector2(3126.6418, -1877.4878)
+rotation = 0.55012584
+speed = 0.0
+
+[node name="LynxSegment7" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="8" unique_id=1125143496 instance=ExtResource("5_ygtb4")]
+position = Vector2(3230.6418, -2009.4878)
+rotation = 0.55012584
+speed = 0.0
+
+[node name="LynxSegment8" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="9" unique_id=2128875117 instance=ExtResource("5_ygtb4")]
+position = Vector2(3329.6418, -2142.4878)
+rotation = 0.55012584
+speed = 0.0
+
+[node name="LynxSegment14" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="10" unique_id=330190565 instance=ExtResource("5_ygtb4")]
+position = Vector2(4030.437, -1472.1973)
+rotation = 1.57258
+speed = 0.0
+
+[node name="LynxSegment15" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="11" unique_id=874355037 instance=ExtResource("5_ygtb4")]
+position = Vector2(4197.297, -1452.2533)
+rotation = 1.57258
+speed = 0.0
+
+[node name="LynxSegment16" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="12" unique_id=1311133510 instance=ExtResource("5_ygtb4")]
+position = Vector2(4362.4043, -1437.097)
+rotation = 1.57258
+speed = 0.0
+
+[node name="LynxSegment9" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="13" unique_id=895767572 instance=ExtResource("5_ygtb4")]
+position = Vector2(3524.3347, -2195.631)
+rotation = 2.5290627
+speed = 0.0
+
+[node name="LynxSegment10" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="14" unique_id=1604380762 instance=ExtResource("5_ygtb4")]
+position = Vector2(3601.554, -2060.4785)
+rotation = 2.5290627
+speed = 0.0
+
+[node name="LynxSegment11" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="15" unique_id=1344334877 instance=ExtResource("5_ygtb4")]
+position = Vector2(3678.1895, -1919.3545)
+rotation = 2.5290627
+speed = 0.0
+
+[node name="LynxSegment12" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="16" unique_id=1965414820 instance=ExtResource("5_ygtb4")]
+position = Vector2(3754.8025, -1788.28)
+rotation = 2.5290627
+speed = 0.0
+
+[node name="LynxSegment13" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="17" unique_id=2136504593 instance=ExtResource("5_ygtb4")]
+position = Vector2(3834.9324, -1641.7905)
+rotation = 2.5290627
+speed = 0.0
+
+[node name="LynxSegment17" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="18" unique_id=1995935251 instance=ExtResource("5_ygtb4")]
+position = Vector2(4598.6855, -1549.8486)
+rotation = 0.23455638
+speed = 0.0
+
+[node name="LynxSegment18" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="19" unique_id=2024158038 instance=ExtResource("5_ygtb4")]
+position = Vector2(4648.8315, -1697.2068)
+rotation = 0.23455638
+speed = 0.0
+
+[node name="LynxSegment19" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="20" unique_id=284166858 instance=ExtResource("5_ygtb4")]
+position = Vector2(4703.8364, -1848.0823)
+rotation = 0.23455638
+speed = 0.0
+
+[node name="LynxSegment20" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="21" unique_id=1129845242 instance=ExtResource("5_ygtb4")]
+position = Vector2(4751.3267, -1992.2859)
+rotation = 0.23455638
+speed = 0.0
+
+[node name="LynxSegment21" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="22" unique_id=1934724253 instance=ExtResource("5_ygtb4")]
+position = Vector2(4808.0405, -2149.3323)
+rotation = 0.23455638
+speed = 0.0
+
+[node name="WhiteBloodCell1" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="23" unique_id=1075909053 instance=ExtResource("5_ygtb4")]
+position = Vector2(463, 18)
+speed = 0.0
+
+[node name="WhiteBloodCell3" parent="Enemies" parent_id_path=PackedInt32Array(2032207038) index="24" unique_id=734751871 instance=ExtResource("5_ygtb4")]
+position = Vector2(756.35, -274)
+momentum_to_kill = 270.0
+speed = 0.0
+
+[node name="GrapplePoint9" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="0" unique_id=791331296 instance=ExtResource("10_nbnhu")]
+position = Vector2(2400, -1664.8956)
+rotation = 0.38631317
+
+[node name="GrapplePoint10" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="1" unique_id=525606153 instance=ExtResource("10_nbnhu")]
+position = Vector2(2455.5781, -1642.2891)
+rotation = 0.38631317
+
+[node name="GrapplePoint11" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="2" unique_id=1675245208 instance=ExtResource("10_nbnhu")]
+position = Vector2(2427.789, -1653.5924)
+rotation = 0.38631317
+
+[node name="GrapplePoint12" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="3" unique_id=1817442933 instance=ExtResource("10_nbnhu")]
+position = Vector2(2415.071, -1701.9478)
+rotation = 0.38631317
+
+[node name="GrapplePoint13" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="4" unique_id=947175985 instance=ExtResource("10_nbnhu")]
+position = Vector2(2470.6492, -1679.3413)
+rotation = 0.38631317
+
+[node name="GrapplePoint14" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="5" unique_id=1140067687 instance=ExtResource("10_nbnhu")]
+position = Vector2(2442.86, -1690.6445)
+rotation = 0.38631317
+
+[node name="GrapplePoint15" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="6" unique_id=796505607 instance=ExtResource("10_nbnhu")]
+position = Vector2(2430.142, -1739)
+rotation = 0.38631317
+
+[node name="GrapplePoint16" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="7" unique_id=1948878989 instance=ExtResource("10_nbnhu")]
+position = Vector2(2485.7202, -1716.3934)
+rotation = 0.38631317
+
+[node name="GrapplePoint17" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="8" unique_id=104320449 instance=ExtResource("10_nbnhu")]
+position = Vector2(2457.9312, -1727.6967)
+rotation = 0.38631317
+
+[node name="GrapplePoint18" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="9" unique_id=417481826 instance=ExtResource("10_nbnhu")]
+position = Vector2(2458, -1808.8956)
+rotation = 0.27327564
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint19" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="10" unique_id=343889544 instance=ExtResource("10_nbnhu")]
+position = Vector2(2513.5781, -1786.2891)
+rotation = 0.27327564
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint20" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="11" unique_id=1613320378 instance=ExtResource("10_nbnhu")]
+position = Vector2(2485.789, -1797.5924)
+rotation = 0.27327564
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint21" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="12" unique_id=1247308142 instance=ExtResource("10_nbnhu")]
+position = Vector2(2473.071, -1845.9478)
+rotation = 0.27327564
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint22" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="13" unique_id=1366727722 instance=ExtResource("10_nbnhu")]
+position = Vector2(2528.6492, -1823.3413)
+rotation = 0.27327564
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint23" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="14" unique_id=357593109 instance=ExtResource("10_nbnhu")]
+position = Vector2(2500.86, -1834.6445)
+rotation = 0.27327564
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint24" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="15" unique_id=742031718 instance=ExtResource("10_nbnhu")]
+position = Vector2(2488.142, -1883)
+rotation = 0.27327564
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint25" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="16" unique_id=606666039 instance=ExtResource("10_nbnhu")]
+position = Vector2(2543.7202, -1860.3934)
+rotation = 0.27327564
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint26" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="17" unique_id=1510365987 instance=ExtResource("10_nbnhu")]
+position = Vector2(2515.9312, -1871.6967)
+rotation = 0.27327564
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint27" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="18" unique_id=930177229 instance=ExtResource("10_nbnhu")]
+position = Vector2(2601, -2008.8368)
+rotation = 0.811705
+
+[node name="GrapplePoint28" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="19" unique_id=473340684 instance=ExtResource("10_nbnhu")]
+position = Vector2(2637.1223, -1960.929)
+rotation = 0.811705
+
+[node name="GrapplePoint29" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="20" unique_id=1145672636 instance=ExtResource("10_nbnhu")]
+position = Vector2(2619.0613, -1984.883)
+rotation = 0.811705
+
+[node name="GrapplePoint30" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="21" unique_id=1303920288 instance=ExtResource("10_nbnhu")]
+position = Vector2(2632.9387, -2032.9185)
+rotation = 0.811705
+
+[node name="GrapplePoint31" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="22" unique_id=534226838 instance=ExtResource("10_nbnhu")]
+position = Vector2(2669.061, -1985.0107)
+rotation = 0.811705
+
+[node name="GrapplePoint32" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="23" unique_id=1720124708 instance=ExtResource("10_nbnhu")]
+position = Vector2(2650.9998, -2008.9645)
+rotation = 0.811705
+
+[node name="GrapplePoint33" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="24" unique_id=46186718 instance=ExtResource("10_nbnhu")]
+position = Vector2(2664.8774, -2057)
+rotation = 0.811705
+
+[node name="GrapplePoint34" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="25" unique_id=1073891238 instance=ExtResource("10_nbnhu")]
+position = Vector2(2700.9995, -2009.0922)
+rotation = 0.811705
+
+[node name="GrapplePoint35" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="26" unique_id=1035881473 instance=ExtResource("10_nbnhu")]
+position = Vector2(2682.9385, -2033.0461)
+rotation = 0.811705
+
+[node name="GrapplePoint36" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="27" unique_id=550922505 instance=ExtResource("10_nbnhu")]
+position = Vector2(2846.1338, -2044)
+rotation = 2.2131417
+
+[node name="GrapplePoint37" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="28" unique_id=1689461122 instance=ExtResource("10_nbnhu")]
+position = Vector2(2805, -2000.3196)
+rotation = 2.2131417
+
+[node name="GrapplePoint38" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="29" unique_id=1508034404 instance=ExtResource("10_nbnhu")]
+position = Vector2(2825.567, -2022.1594)
+rotation = 2.2131417
+
+[node name="GrapplePoint39" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="30" unique_id=678510304 instance=ExtResource("10_nbnhu")]
+position = Vector2(2875.2544, -2016.5773)
+rotation = 2.2131417
+
+[node name="GrapplePoint40" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="31" unique_id=1993367485 instance=ExtResource("10_nbnhu")]
+position = Vector2(2834.1204, -1972.8971)
+rotation = 2.2131417
+
+[node name="GrapplePoint41" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="32" unique_id=1398135254 instance=ExtResource("10_nbnhu")]
+position = Vector2(2854.6875, -1994.7369)
+rotation = 2.2131417
+
+[node name="GrapplePoint42" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="33" unique_id=1912117204 instance=ExtResource("10_nbnhu")]
+position = Vector2(2904.3745, -1989.1544)
+rotation = 2.2131417
+
+[node name="GrapplePoint43" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="34" unique_id=1587318391 instance=ExtResource("10_nbnhu")]
+position = Vector2(2863.2405, -1945.4741)
+rotation = 2.2131417
+
+[node name="GrapplePoint44" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="35" unique_id=734160060 instance=ExtResource("10_nbnhu")]
+position = Vector2(2883.8076, -1967.3142)
+rotation = 2.2131417
+
+[node name="GrapplePoint45" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="36" unique_id=2016704913 instance=ExtResource("10_nbnhu")]
+position = Vector2(2955.1338, -1941)
+rotation = 2.2131417
+
+[node name="GrapplePoint46" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="37" unique_id=1930741530 instance=ExtResource("10_nbnhu")]
+position = Vector2(2914, -1897.3196)
+rotation = 2.2131417
+
+[node name="GrapplePoint47" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="38" unique_id=1529318764 instance=ExtResource("10_nbnhu")]
+position = Vector2(2934.567, -1919.1594)
+rotation = 2.2131417
+
+[node name="GrapplePoint48" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="39" unique_id=112647645 instance=ExtResource("10_nbnhu")]
+position = Vector2(2984.2544, -1913.5773)
+rotation = 2.2131417
+
+[node name="GrapplePoint49" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="40" unique_id=2040958146 instance=ExtResource("10_nbnhu")]
+position = Vector2(2943.1204, -1869.8971)
+rotation = 2.2131417
+
+[node name="GrapplePoint50" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="41" unique_id=1533688199 instance=ExtResource("10_nbnhu")]
+position = Vector2(2963.6875, -1891.7369)
+rotation = 2.2131417
+
+[node name="GrapplePoint51" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="42" unique_id=861545414 instance=ExtResource("10_nbnhu")]
+position = Vector2(3013.3745, -1886.1544)
+rotation = 2.2131417
+
+[node name="GrapplePoint52" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="43" unique_id=1630238958 instance=ExtResource("10_nbnhu")]
+position = Vector2(2972.2405, -1842.4741)
+rotation = 2.2131417
+
+[node name="GrapplePoint53" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="44" unique_id=1326154662 instance=ExtResource("10_nbnhu")]
+position = Vector2(2992.8076, -1864.3142)
+rotation = 2.2131417
+
+[node name="GrapplePoint198" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="45" unique_id=1407579162 instance=ExtResource("10_nbnhu")]
+position = Vector2(5070.681, -2387)
+rotation = 1.5861365
+
+[node name="GrapplePoint199" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="46" unique_id=143425660 instance=ExtResource("10_nbnhu")]
+position = Vector2(5063, -2327.4937)
+rotation = 1.5861365
+
+[node name="GrapplePoint200" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="47" unique_id=1650426849 instance=ExtResource("10_nbnhu")]
+position = Vector2(5066.8413, -2357.2466)
+rotation = 1.5861365
+
+[node name="GrapplePoint201" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="48" unique_id=1934268318 instance=ExtResource("10_nbnhu")]
+position = Vector2(5110.3525, -2381.8792)
+rotation = 1.5861365
+
+[node name="GrapplePoint202" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="49" unique_id=1531092620 instance=ExtResource("10_nbnhu")]
+position = Vector2(5102.671, -2322.3728)
+rotation = 1.5861365
+
+[node name="GrapplePoint203" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="50" unique_id=584753093 instance=ExtResource("10_nbnhu")]
+position = Vector2(5106.5117, -2352.1255)
+rotation = 1.5861365
+
+[node name="GrapplePoint204" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="51" unique_id=1753294584 instance=ExtResource("10_nbnhu")]
+position = Vector2(5150.023, -2376.7578)
+rotation = 1.5861365
+
+[node name="GrapplePoint205" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="52" unique_id=1735705848 instance=ExtResource("10_nbnhu")]
+position = Vector2(5142.3413, -2317.2515)
+rotation = 1.5861365
+
+[node name="GrapplePoint206" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="53" unique_id=1317491595 instance=ExtResource("10_nbnhu")]
+position = Vector2(5146.1826, -2347.005)
+rotation = 1.5861365
+
+[node name="GrapplePoint207" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="54" unique_id=360544533 instance=ExtResource("10_nbnhu")]
+position = Vector2(5219.381, -2367.5447)
+rotation = 1.5861365
+
+[node name="GrapplePoint208" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="55" unique_id=2121803204 instance=ExtResource("10_nbnhu")]
+position = Vector2(5211.6997, -2308.038)
+rotation = 1.5861365
+
+[node name="GrapplePoint209" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="56" unique_id=858421418 instance=ExtResource("10_nbnhu")]
+position = Vector2(5215.5405, -2337.791)
+rotation = 1.5861365
+
+[node name="GrapplePoint210" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="57" unique_id=693136086 instance=ExtResource("10_nbnhu")]
+position = Vector2(5259.0522, -2362.4236)
+rotation = 1.5861365
+
+[node name="GrapplePoint211" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="58" unique_id=1306813107 instance=ExtResource("10_nbnhu")]
+position = Vector2(5251.3696, -2302.9172)
+rotation = 1.5861365
+
+[node name="GrapplePoint212" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="59" unique_id=1059803271 instance=ExtResource("10_nbnhu")]
+position = Vector2(5255.2114, -2332.6704)
+rotation = 1.5861365
+
+[node name="GrapplePoint213" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="60" unique_id=1246737989 instance=ExtResource("10_nbnhu")]
+position = Vector2(5298.723, -2357.3018)
+rotation = 1.5861365
+
+[node name="GrapplePoint214" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="61" unique_id=1679952892 instance=ExtResource("10_nbnhu")]
+position = Vector2(5291.0405, -2297.7961)
+rotation = 1.5861365
+
+[node name="GrapplePoint215" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="62" unique_id=879558369 instance=ExtResource("10_nbnhu")]
+position = Vector2(5294.882, -2327.5493)
+rotation = 1.5861365
+
+[node name="GrapplePoint54" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="63" unique_id=1213720587 instance=ExtResource("10_nbnhu")]
+position = Vector2(3103, -1895.9563)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint55" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="64" unique_id=1608646978 instance=ExtResource("10_nbnhu")]
+position = Vector2(3150.2827, -1859.0197)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint56" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="65" unique_id=1872223983 instance=ExtResource("10_nbnhu")]
+position = Vector2(3126.6418, -1877.4878)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint57" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="66" unique_id=438003976 instance=ExtResource("10_nbnhu")]
+position = Vector2(3127.6243, -1927.4783)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint58" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="67" unique_id=541399836 instance=ExtResource("10_nbnhu")]
+position = Vector2(3174.9072, -1890.5417)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint59" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="68" unique_id=1166177510 instance=ExtResource("10_nbnhu")]
+position = Vector2(3151.2659, -1909.0101)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint60" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="69" unique_id=2076104701 instance=ExtResource("10_nbnhu")]
+position = Vector2(3152.2488, -1959)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint61" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="70" unique_id=1062828401 instance=ExtResource("10_nbnhu")]
+position = Vector2(3199.5317, -1922.0634)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint62" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="71" unique_id=1241601468 instance=ExtResource("10_nbnhu")]
+position = Vector2(3175.8909, -1940.5322)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint63" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="72" unique_id=1540572197 instance=ExtResource("10_nbnhu")]
+position = Vector2(3207, -2027.9563)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint64" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="73" unique_id=544240575 instance=ExtResource("10_nbnhu")]
+position = Vector2(3254.2827, -1991.0197)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint65" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="74" unique_id=167504545 instance=ExtResource("10_nbnhu")]
+position = Vector2(3230.6418, -2009.4878)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint66" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="75" unique_id=1286944877 instance=ExtResource("10_nbnhu")]
+position = Vector2(3231.6243, -2059.4783)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint67" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="76" unique_id=31434515 instance=ExtResource("10_nbnhu")]
+position = Vector2(3278.9072, -2022.5417)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint68" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="77" unique_id=1768085429 instance=ExtResource("10_nbnhu")]
+position = Vector2(3255.2659, -2041.0101)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint69" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="78" unique_id=1714417882 instance=ExtResource("10_nbnhu")]
+position = Vector2(3256.2488, -2091)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint70" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="79" unique_id=131020480 instance=ExtResource("10_nbnhu")]
+position = Vector2(3303.5317, -2054.0635)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint71" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="80" unique_id=425120297 instance=ExtResource("10_nbnhu")]
+position = Vector2(3279.8909, -2072.5322)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint72" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="81" unique_id=1803432744 instance=ExtResource("10_nbnhu")]
+position = Vector2(3306, -2160.9563)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint73" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="82" unique_id=2028514571 instance=ExtResource("10_nbnhu")]
+position = Vector2(3353.2827, -2124.0195)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint74" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="83" unique_id=443560268 instance=ExtResource("10_nbnhu")]
+position = Vector2(3329.6418, -2142.4878)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint75" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="84" unique_id=125457476 instance=ExtResource("10_nbnhu")]
+position = Vector2(3330.6243, -2192.4783)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint76" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="85" unique_id=74777111 instance=ExtResource("10_nbnhu")]
+position = Vector2(3377.9072, -2155.5417)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint77" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="86" unique_id=284721089 instance=ExtResource("10_nbnhu")]
+position = Vector2(3354.2659, -2174.0103)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint78" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="87" unique_id=749940445 instance=ExtResource("10_nbnhu")]
+position = Vector2(3355.2488, -2224)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint79" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="88" unique_id=1565616150 instance=ExtResource("10_nbnhu")]
+position = Vector2(3402.5317, -2187.0635)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint80" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="89" unique_id=756754694 instance=ExtResource("10_nbnhu")]
+position = Vector2(3378.8909, -2205.5322)
+rotation = 0.55012584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint126" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="90" unique_id=2071747216 instance=ExtResource("10_nbnhu")]
+position = Vector2(4033.874, -1502)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint127" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="91" unique_id=1733048766 instance=ExtResource("10_nbnhu")]
+position = Vector2(4027, -1442.3956)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint128" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="92" unique_id=728108636 instance=ExtResource("10_nbnhu")]
+position = Vector2(4030.4373, -1472.1976)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint129" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="93" unique_id=61957546 instance=ExtResource("10_nbnhu")]
+position = Vector2(4073.6106, -1497.418)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint130" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="94" unique_id=2083493555 instance=ExtResource("10_nbnhu")]
+position = Vector2(4066.7368, -1437.8131)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint131" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="95" unique_id=1240903648 instance=ExtResource("10_nbnhu")]
+position = Vector2(4070.1738, -1467.6155)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint132" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="96" unique_id=206366676 instance=ExtResource("10_nbnhu")]
+position = Vector2(4113.347, -1492.8347)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint133" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="97" unique_id=1377081256 instance=ExtResource("10_nbnhu")]
+position = Vector2(4106.473, -1433.2301)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint134" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="98" unique_id=915568607 instance=ExtResource("10_nbnhu")]
+position = Vector2(4109.911, -1463.0328)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint135" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="99" unique_id=1715472349 instance=ExtResource("10_nbnhu")]
+position = Vector2(4200.7344, -1482.0558)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint136" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="100" unique_id=520621689 instance=ExtResource("10_nbnhu")]
+position = Vector2(4193.86, -1422.4513)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint137" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="101" unique_id=2123353353 instance=ExtResource("10_nbnhu")]
+position = Vector2(4197.2974, -1452.2537)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint138" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="102" unique_id=1979852811 instance=ExtResource("10_nbnhu")]
+position = Vector2(4240.4707, -1477.474)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint139" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="103" unique_id=732550408 instance=ExtResource("10_nbnhu")]
+position = Vector2(4233.5967, -1417.8682)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint140" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="104" unique_id=475040793 instance=ExtResource("10_nbnhu")]
+position = Vector2(4237.0337, -1447.6708)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint141" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="105" unique_id=1918952129 instance=ExtResource("10_nbnhu")]
+position = Vector2(4280.2075, -1472.8903)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint142" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="106" unique_id=1439722291 instance=ExtResource("10_nbnhu")]
+position = Vector2(4273.333, -1413.2854)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint143" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="107" unique_id=939387052 instance=ExtResource("10_nbnhu")]
+position = Vector2(4276.7705, -1443.0876)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint144" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="108" unique_id=1836329413 instance=ExtResource("10_nbnhu")]
+position = Vector2(4365.841, -1466.8992)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint145" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="109" unique_id=645322754 instance=ExtResource("10_nbnhu")]
+position = Vector2(4358.967, -1407.2947)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint146" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="110" unique_id=1516049256 instance=ExtResource("10_nbnhu")]
+position = Vector2(4362.404, -1437.0967)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint147" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="111" unique_id=696440052 instance=ExtResource("10_nbnhu")]
+position = Vector2(4405.577, -1462.3169)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint148" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="112" unique_id=1306056423 instance=ExtResource("10_nbnhu")]
+position = Vector2(4398.7036, -1402.712)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint149" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="113" unique_id=885086877 instance=ExtResource("10_nbnhu")]
+position = Vector2(4402.1406, -1432.515)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint150" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="114" unique_id=656677287 instance=ExtResource("10_nbnhu")]
+position = Vector2(4445.314, -1457.7336)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint151" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="115" unique_id=453252432 instance=ExtResource("10_nbnhu")]
+position = Vector2(4438.44, -1398.1295)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint152" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="116" unique_id=507120366 instance=ExtResource("10_nbnhu")]
+position = Vector2(4441.8774, -1427.9315)
+rotation = 1.57258
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GrapplePoint81" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="117" unique_id=871866958 instance=ExtResource("10_nbnhu")]
+position = Vector2(3550.6692, -2210)
+rotation = 2.5290627
+
+[node name="GrapplePoint82" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="118" unique_id=1786547498 instance=ExtResource("10_nbnhu")]
+position = Vector2(3498, -2181.2622)
+rotation = 2.5290627
+
+[node name="GrapplePoint83" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="119" unique_id=1457907705 instance=ExtResource("10_nbnhu")]
+position = Vector2(3524.3347, -2195.631)
+rotation = 2.5290627
+
+[node name="GrapplePoint84" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="120" unique_id=687300403 instance=ExtResource("10_nbnhu")]
+position = Vector2(3569.829, -2174.8882)
+rotation = 2.5290627
+
+[node name="GrapplePoint85" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="121" unique_id=844669989 instance=ExtResource("10_nbnhu")]
+position = Vector2(3517.1592, -2146.1487)
+rotation = 2.5290627
+
+[node name="GrapplePoint86" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="122" unique_id=2003142945 instance=ExtResource("10_nbnhu")]
+position = Vector2(3543.4944, -2160.5178)
+rotation = 2.5290627
+
+[node name="GrapplePoint87" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="123" unique_id=1592553839 instance=ExtResource("10_nbnhu")]
+position = Vector2(3588.9878, -2139.7754)
+rotation = 2.5290627
+
+[node name="GrapplePoint88" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="124" unique_id=1951540658 instance=ExtResource("10_nbnhu")]
+position = Vector2(3536.3186, -2111.0361)
+rotation = 2.5290627
+
+[node name="GrapplePoint89" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="125" unique_id=1847948268 instance=ExtResource("10_nbnhu")]
+position = Vector2(3562.6533, -2125.4053)
+rotation = 2.5290627
+
+[node name="GrapplePoint90" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="126" unique_id=96881911 instance=ExtResource("10_nbnhu")]
+position = Vector2(3627.8884, -2074.8474)
+rotation = 2.5290627
+
+[node name="GrapplePoint91" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="127" unique_id=1052284759 instance=ExtResource("10_nbnhu")]
+position = Vector2(3575.219, -2046.1099)
+rotation = 2.5290627
+
+[node name="GrapplePoint92" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="128" unique_id=1510294149 instance=ExtResource("10_nbnhu")]
+position = Vector2(3601.554, -2060.4785)
+rotation = 2.5290627
+
+[node name="GrapplePoint93" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="129" unique_id=855553944 instance=ExtResource("10_nbnhu")]
+position = Vector2(3647.048, -2039.7356)
+rotation = 2.5290627
+
+[node name="GrapplePoint94" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="130" unique_id=2056728201 instance=ExtResource("10_nbnhu")]
+position = Vector2(3594.3787, -2010.9965)
+rotation = 2.5290627
+
+[node name="GrapplePoint95" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="131" unique_id=822902286 instance=ExtResource("10_nbnhu")]
+position = Vector2(3620.7131, -2025.3652)
+rotation = 2.5290627
+
+[node name="GrapplePoint96" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="132" unique_id=685960538 instance=ExtResource("10_nbnhu")]
+position = Vector2(3666.2068, -2004.6228)
+rotation = 2.5290627
+
+[node name="GrapplePoint97" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="133" unique_id=1213298155 instance=ExtResource("10_nbnhu")]
+position = Vector2(3613.5378, -1975.8837)
+rotation = 2.5290627
+
+[node name="GrapplePoint98" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="134" unique_id=171394845 instance=ExtResource("10_nbnhu")]
+position = Vector2(3639.8726, -1990.2527)
+rotation = 2.5290627
+
+[node name="GrapplePoint99" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="135" unique_id=1041216275 instance=ExtResource("10_nbnhu")]
+position = Vector2(3704.524, -1933.7233)
+rotation = 2.5290627
+
+[node name="GrapplePoint100" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="136" unique_id=287110078 instance=ExtResource("10_nbnhu")]
+position = Vector2(3651.8542, -1904.9855)
+rotation = 2.5290627
+
+[node name="GrapplePoint101" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="137" unique_id=1854070411 instance=ExtResource("10_nbnhu")]
+position = Vector2(3678.1895, -1919.3545)
+rotation = 2.5290627
+
+[node name="GrapplePoint102" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="138" unique_id=314982888 instance=ExtResource("10_nbnhu")]
+position = Vector2(3723.6833, -1898.6116)
+rotation = 2.5290627
+
+[node name="GrapplePoint103" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="139" unique_id=1150730081 instance=ExtResource("10_nbnhu")]
+position = Vector2(3671.014, -1869.8722)
+rotation = 2.5290627
+
+[node name="GrapplePoint104" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="140" unique_id=535280299 instance=ExtResource("10_nbnhu")]
+position = Vector2(3697.3486, -1884.2412)
+rotation = 2.5290627
+
+[node name="GrapplePoint105" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="141" unique_id=1736664453 instance=ExtResource("10_nbnhu")]
+position = Vector2(3742.8423, -1863.499)
+rotation = 2.5290627
+
+[node name="GrapplePoint106" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="142" unique_id=1141398199 instance=ExtResource("10_nbnhu")]
+position = Vector2(3690.173, -1834.7594)
+rotation = 2.5290627
+
+[node name="GrapplePoint107" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="143" unique_id=1446211478 instance=ExtResource("10_nbnhu")]
+position = Vector2(3716.5078, -1849.1288)
+rotation = 2.5290627
+
+[node name="GrapplePoint108" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="144" unique_id=1143964858 instance=ExtResource("10_nbnhu")]
+position = Vector2(3781.1367, -1802.6492)
+rotation = 2.5290627
+
+[node name="GrapplePoint109" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="145" unique_id=221150924 instance=ExtResource("10_nbnhu")]
+position = Vector2(3728.4675, -1773.9113)
+rotation = 2.5290627
+
+[node name="GrapplePoint110" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="146" unique_id=3207383 instance=ExtResource("10_nbnhu")]
+position = Vector2(3754.8025, -1788.28)
+rotation = 2.5290627
+
+[node name="GrapplePoint111" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="147" unique_id=1683845607 instance=ExtResource("10_nbnhu")]
+position = Vector2(3800.2964, -1767.5372)
+rotation = 2.5290627
+
+[node name="GrapplePoint112" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="148" unique_id=459496155 instance=ExtResource("10_nbnhu")]
+position = Vector2(3747.627, -1738.798)
+rotation = 2.5290627
+
+[node name="GrapplePoint113" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="149" unique_id=991908514 instance=ExtResource("10_nbnhu")]
+position = Vector2(3773.9614, -1753.167)
+rotation = 2.5290627
+
+[node name="GrapplePoint114" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="150" unique_id=1425171692 instance=ExtResource("10_nbnhu")]
+position = Vector2(3819.455, -1732.4244)
+rotation = 2.5290627
+
+[node name="GrapplePoint115" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="151" unique_id=233486342 instance=ExtResource("10_nbnhu")]
+position = Vector2(3766.786, -1703.685)
+rotation = 2.5290627
+
+[node name="GrapplePoint116" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="152" unique_id=58983695 instance=ExtResource("10_nbnhu")]
+position = Vector2(3793.1206, -1718.0543)
+rotation = 2.5290627
+
+[node name="GrapplePoint117" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="153" unique_id=1393204815 instance=ExtResource("10_nbnhu")]
+position = Vector2(3861.2666, -1656.1597)
+rotation = 2.5290627
+
+[node name="GrapplePoint118" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="154" unique_id=2013200038 instance=ExtResource("10_nbnhu")]
+position = Vector2(3808.5977, -1627.4216)
+rotation = 2.5290627
+
+[node name="GrapplePoint119" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="155" unique_id=2103420253 instance=ExtResource("10_nbnhu")]
+position = Vector2(3834.9324, -1641.7905)
+rotation = 2.5290627
+
+[node name="GrapplePoint120" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="156" unique_id=2019552751 instance=ExtResource("10_nbnhu")]
+position = Vector2(3880.4263, -1621.0477)
+rotation = 2.5290627
+
+[node name="GrapplePoint121" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="157" unique_id=1611763382 instance=ExtResource("10_nbnhu")]
+position = Vector2(3827.7568, -1592.3083)
+rotation = 2.5290627
+
+[node name="GrapplePoint122" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="158" unique_id=523450994 instance=ExtResource("10_nbnhu")]
+position = Vector2(3854.0916, -1606.6772)
+rotation = 2.5290627
+
+[node name="GrapplePoint123" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="159" unique_id=265966134 instance=ExtResource("10_nbnhu")]
+position = Vector2(3899.5854, -1585.9349)
+rotation = 2.5290627
+
+[node name="GrapplePoint124" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="160" unique_id=137058555 instance=ExtResource("10_nbnhu")]
+position = Vector2(3846.916, -1557.1958)
+rotation = 2.5290627
+
+[node name="GrapplePoint125" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="161" unique_id=407604340 instance=ExtResource("10_nbnhu")]
+position = Vector2(3873.2505, -1571.5648)
+rotation = 2.5290627
+
+[node name="GrapplePoint153" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="162" unique_id=487016553 instance=ExtResource("10_nbnhu")]
+position = Vector2(4570.48, -1560.0675)
+rotation = 0.23455638
+
+[node name="GrapplePoint154" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="163" unique_id=2140643504 instance=ExtResource("10_nbnhu")]
+position = Vector2(4626.8916, -1539.6292)
+rotation = 0.23455638
+
+[node name="GrapplePoint155" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="164" unique_id=531489323 instance=ExtResource("10_nbnhu")]
+position = Vector2(4598.6855, -1549.8486)
+rotation = 0.23455638
+
+[node name="GrapplePoint156" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="165" unique_id=145920450 instance=ExtResource("10_nbnhu")]
+position = Vector2(4584.104, -1597.676)
+rotation = 0.23455638
+
+[node name="GrapplePoint157" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="166" unique_id=33786396 instance=ExtResource("10_nbnhu")]
+position = Vector2(4640.5176, -1577.2372)
+rotation = 0.23455638
+
+[node name="GrapplePoint158" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="167" unique_id=1268810125 instance=ExtResource("10_nbnhu")]
+position = Vector2(4612.3115, -1587.4562)
+rotation = 0.23455638
+
+[node name="GrapplePoint159" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="168" unique_id=1036536006 instance=ExtResource("10_nbnhu")]
+position = Vector2(4597.7295, -1635.2823)
+rotation = 0.23455638
+
+[node name="GrapplePoint160" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="169" unique_id=481828500 instance=ExtResource("10_nbnhu")]
+position = Vector2(4654.142, -1614.8442)
+rotation = 0.23455638
+
+[node name="GrapplePoint161" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="170" unique_id=992796646 instance=ExtResource("10_nbnhu")]
+position = Vector2(4625.9365, -1625.064)
+rotation = 0.23455638
+
+[node name="GrapplePoint162" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="171" unique_id=379024359 instance=ExtResource("10_nbnhu")]
+position = Vector2(4620.6245, -1707.4263)
+rotation = 0.23455638
+
+[node name="GrapplePoint163" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="172" unique_id=1996640440 instance=ExtResource("10_nbnhu")]
+position = Vector2(4677.0356, -1686.9873)
+rotation = 0.23455638
+
+[node name="GrapplePoint164" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="173" unique_id=1701762749 instance=ExtResource("10_nbnhu")]
+position = Vector2(4648.8315, -1697.2068)
+rotation = 0.23455638
+
+[node name="GrapplePoint165" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="174" unique_id=1892210850 instance=ExtResource("10_nbnhu")]
+position = Vector2(4634.2505, -1745.033)
+rotation = 0.23455638
+
+[node name="GrapplePoint166" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="175" unique_id=383661027 instance=ExtResource("10_nbnhu")]
+position = Vector2(4690.6616, -1724.5958)
+rotation = 0.23455638
+
+[node name="GrapplePoint167" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="176" unique_id=1702428208 instance=ExtResource("10_nbnhu")]
+position = Vector2(4662.4565, -1734.8142)
+rotation = 0.23455638
+
+[node name="GrapplePoint168" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="177" unique_id=1497991872 instance=ExtResource("10_nbnhu")]
+position = Vector2(4647.8755, -1782.6405)
+rotation = 0.23455638
+
+[node name="GrapplePoint169" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="178" unique_id=1787083741 instance=ExtResource("10_nbnhu")]
+position = Vector2(4704.286, -1762.2035)
+rotation = 0.23455638
+
+[node name="GrapplePoint170" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="179" unique_id=84862468 instance=ExtResource("10_nbnhu")]
+position = Vector2(4676.082, -1772.4225)
+rotation = 0.23455638
+
+[node name="GrapplePoint171" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="180" unique_id=211989066 instance=ExtResource("10_nbnhu")]
+position = Vector2(4675.632, -1858.3009)
+rotation = 0.23455638
+
+[node name="GrapplePoint172" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="181" unique_id=1636535371 instance=ExtResource("10_nbnhu")]
+position = Vector2(4732.043, -1837.8623)
+rotation = 0.23455638
+
+[node name="GrapplePoint173" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="182" unique_id=1038978571 instance=ExtResource("10_nbnhu")]
+position = Vector2(4703.8364, -1848.0823)
+rotation = 0.23455638
+
+[node name="GrapplePoint174" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="183" unique_id=1343822450 instance=ExtResource("10_nbnhu")]
+position = Vector2(4689.2554, -1895.9089)
+rotation = 0.23455638
+
+[node name="GrapplePoint175" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="184" unique_id=457424074 instance=ExtResource("10_nbnhu")]
+position = Vector2(4745.6685, -1875.4701)
+rotation = 0.23455638
+
+[node name="GrapplePoint176" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="185" unique_id=204396792 instance=ExtResource("10_nbnhu")]
+position = Vector2(4717.463, -1885.69)
+rotation = 0.23455638
+
+[node name="GrapplePoint177" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="186" unique_id=2109327609 instance=ExtResource("10_nbnhu")]
+position = Vector2(4702.881, -1933.5162)
+rotation = 0.23455638
+
+[node name="GrapplePoint178" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="187" unique_id=1933851984 instance=ExtResource("10_nbnhu")]
+position = Vector2(4759.2935, -1913.0779)
+rotation = 0.23455638
+
+[node name="GrapplePoint179" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="188" unique_id=2076980624 instance=ExtResource("10_nbnhu")]
+position = Vector2(4731.088, -1923.2974)
+rotation = 0.23455638
+
+[node name="GrapplePoint180" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="189" unique_id=845392213 instance=ExtResource("10_nbnhu")]
+position = Vector2(4723.123, -2002.5045)
+rotation = 0.23455638
+
+[node name="GrapplePoint181" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="190" unique_id=114175134 instance=ExtResource("10_nbnhu")]
+position = Vector2(4779.5327, -1982.0659)
+rotation = 0.23455638
+
+[node name="GrapplePoint182" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="191" unique_id=1667262418 instance=ExtResource("10_nbnhu")]
+position = Vector2(4751.3267, -1992.2859)
+rotation = 0.23455638
+
+[node name="GrapplePoint183" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="192" unique_id=1558300446 instance=ExtResource("10_nbnhu")]
+position = Vector2(4736.7456, -2040.1123)
+rotation = 0.23455638
+
+[node name="GrapplePoint184" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="193" unique_id=1231164798 instance=ExtResource("10_nbnhu")]
+position = Vector2(4793.1597, -2019.674)
+rotation = 0.23455638
+
+[node name="GrapplePoint185" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="194" unique_id=1674603032 instance=ExtResource("10_nbnhu")]
+position = Vector2(4764.953, -2029.8934)
+rotation = 0.23455638
+
+[node name="GrapplePoint186" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="195" unique_id=118030063 instance=ExtResource("10_nbnhu")]
+position = Vector2(4750.3716, -2077.7195)
+rotation = 0.23455638
+
+[node name="GrapplePoint187" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="196" unique_id=352043691 instance=ExtResource("10_nbnhu")]
+position = Vector2(4806.7837, -2057.2817)
+rotation = 0.23455638
+
+[node name="GrapplePoint188" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="197" unique_id=1828341230 instance=ExtResource("10_nbnhu")]
+position = Vector2(4778.5786, -2067.501)
+rotation = 0.23455638
+
+[node name="GrapplePoint189" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="198" unique_id=2042890022 instance=ExtResource("10_nbnhu")]
+position = Vector2(4779.8345, -2159.5513)
+rotation = 0.23455638
+
+[node name="GrapplePoint190" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="199" unique_id=580190196 instance=ExtResource("10_nbnhu")]
+position = Vector2(4836.246, -2139.1125)
+rotation = 0.23455638
+
+[node name="GrapplePoint191" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="200" unique_id=571993249 instance=ExtResource("10_nbnhu")]
+position = Vector2(4808.0405, -2149.3323)
+rotation = 0.23455638
+
+[node name="GrapplePoint192" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="201" unique_id=1044390105 instance=ExtResource("10_nbnhu")]
+position = Vector2(4793.46, -2197.1584)
+rotation = 0.23455638
+
+[node name="GrapplePoint193" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="202" unique_id=1655390570 instance=ExtResource("10_nbnhu")]
+position = Vector2(4849.8716, -2176.7207)
+rotation = 0.23455638
+
+[node name="GrapplePoint194" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="203" unique_id=1790863321 instance=ExtResource("10_nbnhu")]
+position = Vector2(4821.6655, -2186.94)
+rotation = 0.23455638
+
+[node name="GrapplePoint195" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="204" unique_id=1842658153 instance=ExtResource("10_nbnhu")]
+position = Vector2(4807.085, -2234.766)
+rotation = 0.23455638
+
+[node name="GrapplePoint196" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="205" unique_id=1377003766 instance=ExtResource("10_nbnhu")]
+position = Vector2(4863.4966, -2214.3281)
+rotation = 0.23455638
+
+[node name="GrapplePoint197" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="206" unique_id=617767914 instance=ExtResource("10_nbnhu")]
+position = Vector2(4835.2915, -2224.547)
+rotation = 0.23455638
+
+[node name="CompletionZone0" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="207" unique_id=241888325 instance=ExtResource("9_kl3m1")]
+position = Vector2(5937.499, -2315)
+
+[node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="0" unique_id=816347687 instance=ExtResource("6_nfqpi")]
+material = SubResource("ShaderMaterial_xk1hl")
+position = Vector2(1344.75, -558.50635)
+scale = Vector2(21.816664, 1.0995761)
+polygon = PackedVector2Array(-15, -15, 15, -15, 15, 44, 7.206232, 44.000015, -0.014312744, 44, -15, 44)
+spin_speed = 0.0
+
+[node name="BoostPad1" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="1" unique_id=1153656928 instance=ExtResource("6_nfqpi")]
+material = SubResource("ShaderMaterial_nbnhu")
+position = Vector2(2388, -765)
+rotation = 1.5707964
+scale = Vector2(21.816664, 0.9632283)
+polygon = PackedVector2Array(-15, -15, 15, -15, 15, 44, 7.206232, 44.000015, -0.014312744, 44, -15, 44)
+spin_speed = 0.0
+direction = -90.0
+
+[node name="BoostPad0" parent="." index="17" unique_id=1741900332 instance=ExtResource("6_nfqpi")]
+z_index = -2
+material = SubResource("ShaderMaterial_kl3m1")
+position = Vector2(5737.4995, -2317)
+scale = Vector2(10.566643, 1)
+polygon = PackedVector2Array(-15, -15, 15, -15, 15.0000305, -1.7665253, 15, 15, -15, 15)
+spin_speed = 0.0
+
+[connection signal="pressed" from="Interactables/WorldButton0" to="Interactables/Gate0" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton11" to="Interactables/Gate0" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton12" to="Interactables/Gate0" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton1" to="Interactables/Gate1" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton13" to="Interactables/Gate1" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton14" to="Interactables/Gate1" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton2" to="Interactables/Gate2" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton16" to="Interactables/Gate2" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton15" to="Interactables/Gate2" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton6" to="Interactables/Gate6" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton20" to="Interactables/Gate6" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton18" to="Interactables/Gate6" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton19" to="Interactables/Gate6" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton17" to="Interactables/Gate6" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton7" to="Interactables/Gate7" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton25" to="Interactables/Gate7" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton26" to="Interactables/Gate7" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton10" to="Interactables/Gate10" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton27" to="Interactables/Gate10" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton28" to="Interactables/Gate10" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton8" to="Interactables/Gate8" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton21" to="Interactables/Gate8" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton22" to="Interactables/Gate8" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton9" to="Interactables/Gate9" method="_on_world_button_9_pressed"]
+[connection signal="pressed" from="Interactables/WorldButton23" to="Interactables/Gate9" method="_on_world_button_9_pressed"]
+[connection signal="pressed" from="Interactables/WorldButton24" to="Interactables/Gate9" method="_on_world_button_9_pressed"]
+[connection signal="pressed" from="Interactables/WorldButton3" to="Interactables/Gate3" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton4" to="Interactables/Gate4" method="disable"]
+[connection signal="pressed" from="Interactables/WorldButton5" to="Interactables/Gate5" method="disable"]
+
+[editable path="DeathPits/Path_PROTO3"]
+[editable path="DeathPits/Path_PROTO4"]
+[editable path="DeathPits/Path_End_PROTO10"]
+[editable path="DeathPits/Path_End_PROTO9"]
+[editable path="DeathPits/Path_End_PROTO8"]

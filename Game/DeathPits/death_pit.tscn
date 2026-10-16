@@ -7,11 +7,11 @@ z_index = -1
 color = Color(0, 0, 0, 0.6)
 polygon = PackedVector2Array(5, 0, 0, 5, -5, 0, 0, -5)
 script = ExtResource("1_oo0c1")
-build_at_run = null
 
 [node name="FallArea" type="Area2D" parent="." unique_id=252475237]
 
 [node name="Collision" type="CollisionPolygon2D" parent="FallArea" unique_id=1328679439]
+z_index = 2
 polygon = PackedVector2Array(2.5, 0, 0, 2.5, -2.5, 0, 0, -2.5)
 
 [node name="Dark" type="Polygon2D" parent="." unique_id=2040589739]
