@@ -69,6 +69,9 @@ position = Vector2(2672, -864)
 [node name="NavigationRegion" parent="." index="7" unique_id=517625210]
 visible = true
 
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1469306356) index="0" unique_id=241888325 instance=ExtResource("9_kl3m1")]
+position = Vector2(5937.499, -2315)
+
 [node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="0" unique_id=1337174415 instance=ExtResource("8_pg43r")]
 position = Vector2(5627, -2229)
 scale = Vector2(2.199997, 206.39998)
@@ -1348,9 +1351,6 @@ rotation = 0.23455638
 [node name="GrapplePoint197" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="207" unique_id=617767914 instance=ExtResource("10_nbnhu")]
 position = Vector2(4835.2915, -2224.547)
 rotation = 0.23455638
-
-[node name="CompletionZone0" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="208" unique_id=241888325 instance=ExtResource("9_kl3m1")]
-position = Vector2(5937.499, -2315)
 
 [node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="0" unique_id=816347687 instance=ExtResource("6_nfqpi")]
 material = SubResource("ShaderMaterial_xk1hl")
