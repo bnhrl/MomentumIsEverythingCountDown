@@ -69,6 +69,9 @@ position = Vector2(2672, -864)
 [node name="NavigationRegion" parent="." index="7" unique_id=517625210]
 visible = true
 
+[node name="CompletionZone0" parent="CompletionZones" parent_id_path=PackedInt32Array(1469306356) index="0" unique_id=241888325 instance=ExtResource("9_kl3m1")]
+position = Vector2(5937.499, -2315)
+
 [node name="Gate0" parent="Interactables" parent_id_path=PackedInt32Array(1109439131) index="0" unique_id=1337174415 instance=ExtResource("8_pg43r")]
 position = Vector2(5627, -2229)
 scale = Vector2(2.199997, 206.39998)
@@ -242,40 +245,46 @@ position = Vector2(2453.13, -1195.6)
 [node name="Path_PROTO3" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="0" unique_id=1551343958 instance=ExtResource("3_ygtb4")]
 position = Vector2(537.9557, 99.081406)
 rotation = -0.7953527
-polygon = PackedVector2Array(900.01935, -44.809418, 1082.042, 139.44513, 1275.9512, 337.25372, 1223.8352, 386.94196, 453.2254, 1150.7625, -526, 146, -526, -103, 784.51135, -103.06746, 842.9373, -103.070465)
+polygon = PackedVector2Array(900.01935, -44.809418, 1082.042, 139.44513, 1275.9512, 337.25372, 1673.5698, 742.8686, 1723.5576, 693.8663, 1855.1641, 828.1191, 1753.06, 926.80963, 1116.7876, 1550.5391, -526, 146, -526, -103, 784.51135, -103.06746, 842.9373, -103.070465)
+build_at_run = false
 
 [node name="Collision" parent="DeathPits/Path_PROTO3/FallArea" parent_id_path=PackedInt32Array(1551343958, 252475237) index="0" unique_id=1328679439]
-polygon = PackedVector2Array(760.7756, -51.14557, 1170.2949, 366.60913, 481.7196, 209.831, -131.66829, 212.38406, -263, 73, -263, -51.5)
+visible = false
+polygon = PackedVector2Array(760.7756, -51.14557, 1170.2949, 366.60913, 1212.2969, 409.4557, 1280.8513, 342.2525, 1540.5635, 607.18756, 1471.7483, 674.1248, 1660.3179, 866.4865, 1613.1865, 912.68866, 1677.5757, 979.80096, 1064.0215, 1452.4282, -131.66829, 212.38406, -263, 73, -263, -51.5)
 
 [node name="Dark" parent="DeathPits/Path_PROTO3" index="1" unique_id=2040589739]
-polygon = PackedVector2Array(770.3007, -82.46133, 1209.905, 365.58917, 1227.4058, 383.44183, -210.66927, 339.8145, -420.80002, 116.8, -420.80002, -82.4)
+polygon = PackedVector2Array(770.3007, -82.46133, 1209.905, 365.58917, 1227.4058, 383.44183, 1233.0061, 389.15472, 1295.8477, 327.55182, 1555.5598, 592.4869, 1492.7183, 654.0898, 1623.6245, 787.6285, 1693.6277, 859.0395, 1636.4988, 915.0422, 1697.4016, 977.16986, 1560.2925, 1111.5762, 1060.0183, 1428.3455, -210.66927, 339.8145, -420.80002, 116.8, -420.80002, -82.4)
 
 [node name="Darker" parent="DeathPits/Path_PROTO3/Dark" index="0" unique_id=1983333470]
-polygon = PackedVector2Array(763.7165, -62.430573, 866.60724, 43.957825, 1194.2227, 378.16162, -158.00195, 254.86089, -315.6, 87.600006, -315.6, -61.800003)
+polygon = PackedVector2Array(763.7165, -62.430573, 866.60724, 43.957825, 1194.2227, 378.16162, 1218.7239, 403.1554, 1280.8513, 342.2525, 1540.5635, 607.18756, 1472.009, 674.3908, 1673.7451, 867.32733, 1625.8997, 914.22943, 1688.9028, 978.49945, 1124.7834, 1528.6973, -158.00195, 254.86089, -315.6, 87.600006, -315.6, -61.800003)
 
 [node name="Path_PROTO4" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="1" unique_id=843756267 instance=ExtResource("3_ygtb4")]
 position = Vector2(357.55188, -75.44153)
 rotation = -0.7953527
-polygon = PackedVector2Array(965.00696, -1157.7124, 964.7355, -295.06305, 1277.6111, 588.2538, 844.55383, 147.93378, 785.2667, 147.93887, 80, 148, -524, 148, -524, -103, -364.05603, -732.8178)
+polygon = PackedVector2Array(965.00696, -1157.7124, 2144.128, 135.11633, 2343.6375, 338.63782, 2298.6484, 382.73993, 1726.6458, 943.4663, 1675.2297, 993.86865, 1277.6111, 588.2538, 844.55383, 147.93378, 785.2667, 147.93887, 80, 148, -524, 148, -524, -103, -364.05603, -732.8178)
+build_at_run = false
 
 [node name="Collision" parent="DeathPits/Path_PROTO4/FallArea" parent_id_path=PackedInt32Array(843756267, 252475237) index="0" unique_id=1328679439]
-polygon = PackedVector2Array(482.50348, -578.8562, 482.36774, -147.53152, 482.26788, 73.96168, 40, 74, -262, 74, -262, -51.5, -182.02802, -366.4089)
+visible = false
+polygon = PackedVector2Array(482.50348, -578.8562, 1105.9443, -281.1181, 1579.0334, 854.3113, 1557.2197, 843.48694, 1542.2234, 858.1876, 1282.5112, 593.25256, 1297.5076, 578.5519, 1030.095, 305.76172, 836.186, 107.953064, 839.9113, 88.89731, 829.1856, 100.81195, 813.1552, 77.31674, 482.26788, 73.96168, 40, 74, -262, 74, -262, -51.5, -182.02802, -366.4089)
 
 [node name="Dark" parent="DeathPits/Path_PROTO4" index="1" unique_id=2040589739]
-polygon = PackedVector2Array(772.00555, -926.1699, 771.7884, -236.05045, 1277.6111, 588.2538, 815.57526, 118.35501, 64, 118.4, -419.2, 118.4, -419.2, -82.4, -291.24484, -586.2543)
+polygon = PackedVector2Array(772.00555, -926.1699, 2422.0398, -78.50256, 2419.1335, 71.38269, 2328.3147, 173.01416, 2418.619, 265.1344, 2397.883, 285.40808, 2421.7107, 309.7151, 2366.7244, 363.61768, 2296.0273, 432.9209, 1913.2642, 808.13855, 1821.9976, 897.6061, 1866.6602, 943.4458, 1743.833, 1063.8514, 1674.5298, 993.15454, 1277.6111, 588.2538, 815.57526, 118.35501, 64, 118.4, -419.2, 118.4, -419.2, -82.4, -291.24484, -586.2543)
 
 [node name="Darker" parent="DeathPits/Path_PROTO4/Dark" index="0" unique_id=1983333470]
-polygon = PackedVector2Array(579.0042, -694.62744, 578.8413, -177.03784, 578.7215, 88.75401, 48, 88.8, -314.40002, 88.8, -314.40002, -61.800003, -218.43362, -439.6907)
+polygon = PackedVector2Array(579.0042, -694.62744, 880.4532, -573.9981, 1219.6875, -199.37164, 2207.2664, 540.937, 1939.8875, 827.9898, 1934.7822, 848.6598, 1771.9651, 1008.26733, 1744.8289, 1034.8685, 1724.5276, 1014.1593, 1665.7249, 954.1741, 1292.6074, 573.5531, 824.9854, 96.52728, 48, 88.8, -314.40002, 88.8, -314.40002, -61.800003, -218.43362, -439.6907)
 
 [node name="Path_End_PROTO" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="2" unique_id=232059423 instance=ExtResource("3_ygtb4")]
 position = Vector2(216.90192, 241.80528)
 rotation = 3.8972542
 polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
+build_at_run = false
 
 [node name="Path_End_PROTO10" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="3" unique_id=676986421 instance=ExtResource("3_ygtb4")]
 position = Vector2(670.99927, 1532.9998)
 rotation = 3.6567464
 polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
+build_at_run = false
 
 [node name="Collision" parent="DeathPits/Path_End_PROTO10/FallArea" parent_id_path=PackedInt32Array(676986421, 252475237) index="0" unique_id=1328679439]
 polygon = PackedVector2Array(255.5, -51.5, 256, 6.5, 255.5, 74, 40, 74, -262, 74, -262, -51.5)
@@ -289,43 +298,36 @@ polygon = PackedVector2Array(306.6, -61.800003, 307.2, 7.8, 306.6, 88.8, 48, 88.
 [node name="Path_End_PROTO9" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="4" unique_id=335908172 instance=ExtResource("3_ygtb4")]
 z_index = -2
 position = Vector2(2635, -1765)
-polygon = PackedVector2Array(3438, -798, 3533, 669, 614, 731, 51, 505, -23, 150, -524, 148, -525, -870)
+polygon = PackedVector2Array(4079, -1337, 4042, 883, 614, 731, -160, 1017, -160, 149, -524, 148, -612, -1165)
 momentum_required = 125.0
-
-[node name="Collision" parent="DeathPits/Path_End_PROTO9/FallArea" parent_id_path=PackedInt32Array(335908172, 252475237) index="0" unique_id=1328679439]
-polygon = PackedVector2Array(2704, -1087, 2709.4878, -410.93634, 2862, -406, 2859, -94, 2867, 643, 2854, 1686, 599, 1702, -188, 1707, -136, 171, -1337, 166, -1338, -1091)
-
-[node name="Dark" parent="DeathPits/Path_End_PROTO9" index="1" unique_id=2040589739]
-polygon = PackedVector2Array(3657, -986, 3630, 724, 29, 693, -36, 265, -644, 244, -628, -959)
-
-[node name="Darker" parent="DeathPits/Path_End_PROTO9/Dark" index="0" unique_id=1983333470]
-polygon = PackedVector2Array(2700, -766, 2711, -423, 2866, -415, 2889, 611, 2734, 636, 352.80002, 204.6, 48, 88.8, -314.40002, 88.8, -315, -522)
-
-[node name="Path_End_PROTO8" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="5" unique_id=1970755166 instance=ExtResource("3_ygtb4")]
-position = Vector2(2530, -554)
-rotation = 4.712389
-polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
 build_at_run = false
 
-[node name="Collision" parent="DeathPits/Path_End_PROTO8/FallArea" parent_id_path=PackedInt32Array(1970755166, 252475237) index="0" unique_id=1328679439]
-polygon = PackedVector2Array(255.5, -51.5, 256, 6.5, 255.5, 74, 40, 74, -262, 74, -262, -51.5)
+[node name="Collision" parent="DeathPits/Path_End_PROTO9/FallArea" parent_id_path=PackedInt32Array(335908172, 252475237) index="0" unique_id=1328679439]
+visible = false
+polygon = PackedVector2Array(2704, -1087, 2709.4878, -410.93634, 2862, -406, 3309, -411, 3423, -418, 3423, -799, 3647, -799, 3652, -408, 2859, -94, 2867, 643, 2854, 1686, 599, 1702, -188, 1707, -136, 171, -1337, 166, -1338, -1091)
 
-[node name="Dark" parent="DeathPits/Path_End_PROTO8" index="1" unique_id=2040589739]
-polygon = PackedVector2Array(408.80002, -82.4, 409.6, 10.400001, 408.80002, 118.4, 64, 118.4, -419.2, 118.4, -419.2, -82.4)
+[node name="Dark" parent="DeathPits/Path_End_PROTO9" index="1" unique_id=2040589739]
+polygon = PackedVector2Array(3657, -986, 3630, 724, 1096, 1119, -140, 1119, -140, 710, -140, 252, -140, 176.73457, -192, 177, -395, 177, -395, 253, -644, 253, -628, -959)
 
-[node name="Darker" parent="DeathPits/Path_End_PROTO8/Dark" index="0" unique_id=1983333470]
-polygon = PackedVector2Array(306.6, -61.800003, 307.2, 7.8, 306.6, 88.8, 48, 88.8, -314.40002, 88.8, -314.40002, -61.800003)
+[node name="Darker" parent="DeathPits/Path_End_PROTO9/Dark" index="0" unique_id=1983333470]
+polygon = PackedVector2Array(2702, -902, 2701.1877, -704.6932, 2700, -416, 2889, -416, 2889, 611, 2734, 636, 55, 913, 48, 88.8, -458, 90, -457, -901)
 
-[node name="Path_End_PROTO5" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="6" unique_id=1339423774 instance=ExtResource("3_ygtb4")]
-position = Vector2(1915, -543)
-polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
-
-[node name="Path_End_PROTO7" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="7" unique_id=335823168 instance=ExtResource("3_ygtb4")]
+[node name="Path_End_PROTO7" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="5" unique_id=335823168 instance=ExtResource("3_ygtb4")]
 position = Vector2(2392, -1157)
 rotation = 1.5707964
-polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
+polygon = PackedVector2Array(511, -103, 511, 15, 511, 152, 80, 152, -292, 152, -355, 152, -459, 152, -459, -103, -347, -103)
+build_at_run = false
 
-[node name="Path_End_PROTO3" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="8" unique_id=442854425 instance=ExtResource("3_ygtb4")]
+[node name="Collision" parent="DeathPits/Path_End_PROTO7/FallArea" parent_id_path=PackedInt32Array(335823168, 252475237) index="0" unique_id=1328679439]
+polygon = PackedVector2Array(255.5, -51.5, 256, 6.5, 255.5, 74, 40, 74, -164, 74, -164, -52)
+
+[node name="Dark" parent="DeathPits/Path_End_PROTO7" index="1" unique_id=2040589739]
+polygon = PackedVector2Array(409, -83, 409.6, 10.400001, 408.80002, 118.4, 64, 118.4, -191, 118, -191, -83)
+
+[node name="Darker" parent="DeathPits/Path_End_PROTO7/Dark" index="0" unique_id=1983333470]
+polygon = PackedVector2Array(306.6, -61.800003, 307.2, 7.8, 306.6, 88.8, 48, 88.8, -165, 89, -166, -61)
+
+[node name="Path_End_PROTO3" parent="DeathPits" parent_id_path=PackedInt32Array(958332027) index="6" unique_id=442854425 instance=ExtResource("3_ygtb4")]
 position = Vector2(587.56354, -177.98749)
 rotation = 3.8972542
 polygon = PackedVector2Array(511, -103, 512, 13, 511, 148, 80, 148, -524, 148, -524, -103)
@@ -1349,9 +1351,6 @@ rotation = 0.23455638
 position = Vector2(4835.2915, -2224.547)
 rotation = 0.23455638
 
-[node name="CompletionZone0" parent="GrapplePoints" parent_id_path=PackedInt32Array(2124046884) index="208" unique_id=241888325 instance=ExtResource("9_kl3m1")]
-position = Vector2(5937.499, -2315)
-
 [node name="BoostPad0" parent="BoostPads" parent_id_path=PackedInt32Array(1513387696) index="0" unique_id=816347687 instance=ExtResource("6_nfqpi")]
 material = SubResource("ShaderMaterial_xk1hl")
 position = Vector2(1344.75, -558.50635)
@@ -1410,4 +1409,4 @@ spin_speed = 0.0
 [editable path="DeathPits/Path_PROTO4"]
 [editable path="DeathPits/Path_End_PROTO10"]
 [editable path="DeathPits/Path_End_PROTO9"]
-[editable path="DeathPits/Path_End_PROTO8"]
+[editable path="DeathPits/Path_End_PROTO7"]

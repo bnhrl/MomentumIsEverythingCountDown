@@ -54,9 +54,9 @@ const LEVEL_NAMES: Dictionary[int, String] = {
 	11: "occipital a",
 	12: "occipital b",
 	
-	14: "dark matter a",
-	15: "dark matter b",
-	16: "dark matter c",
+	13: "dark matter a",
+	14: "dark matter b",
+	15: "dark matter c",
 }
 const LEVEL_THUMBSNAILS: Dictionary[int, Texture2D] = {
 	 1: preload("uid://ym71ns7c4280"),
@@ -71,6 +71,10 @@ const LEVEL_THUMBSNAILS: Dictionary[int, Texture2D] = {
 	10: preload("uid://bpuptrsb86qda"),
 	11: preload("uid://bc1webkmd7kdd"),
 	12: preload("uid://ch26b76f2yf6i"),
+	
+	13: null,
+	14: null,
+	15: null,
 }
 const LEVEL_TRACKS: Dictionary[int, String] = {
 	 1: "Temporal",
@@ -86,9 +90,9 @@ const LEVEL_TRACKS: Dictionary[int, String] = {
 	11: "Occipital",
 	12: "Occipital",
 	
-	14: "Temporal",
-	15: "Frontal",
-	16: "Parietal",
+	13: "Temporal",
+	14: "Frontal",
+	15: "Parietal",
 }
 
 @onready var selector: CanvasGroup = $Selector
@@ -115,7 +119,7 @@ func select_level(l: int, button: LevelButton) -> void:
 		$Hud.show()
 	
 	level = l
-	if level >= 14: level_label.text="[font_size=14]"
+	if level >= 13: level_label.text="[font_size=18]"
 	else:           level_label.text=""
 	level_label.text += "[tornado freq=5 radius=2.0]"+LEVEL_NAMES.get(level, "no name found")
 	level_thumbnail.texture = LEVEL_THUMBSNAILS.get(level, null)
@@ -137,7 +141,7 @@ func _on_btn_go_pressed() -> void:
 	if level <= 12:
 		Scenes.swap_scene("Level " + str(level))
 	else:
-		Scenes.swap_scene("Bonus Level " + str(level))
+		Scenes.swap_scene("Bonus Level " + str(level-12))
 
 
 # Mode

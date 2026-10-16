@@ -39,6 +39,7 @@ vertical_alignment = 1
 
 [node name="Arrow" type="Polygon2D" parent="." unique_id=434222265]
 visible = false
+top_level = true
 z_index = 1
 material = SubResource("ShaderMaterial_ou1td")
 scale = Vector2(4, 4)
